@@ -10,3 +10,7 @@ Installation:
 
 
 ![Lavender Theme for NodeBB](http://burnaftercompiling.com/wp-content/uploads/2014/01/3-Overriding-Bootstrap.png)/
+
+## Credits
+
+variables.less modified from "White Plum" by [divshot](https://github.com/divshot/)
