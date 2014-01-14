@@ -5,3 +5,18 @@
 .container {
 	width: 100%;
  }
+
+ .loading-bar {
+ 	width: 100%;
+ 	position: absolute;
+ 	top: -2px;
+ 	right: 0px;
+ 	height: 2px;
+ 	background: white;
+	transition: width 0.5s ease-in;
+
+ 	&.reset {
+		transition: none;
+		width: 100% !important;
+ 	}
+ }

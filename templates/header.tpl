@@ -28,10 +28,12 @@
 		});
 	</script>
 	<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	<script src="{relative_path}/css/assets/lib/lavender.js"></script>
 </head>
 
 <body>
 	<div class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu">
+		<div class="loading-bar"></div>
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
