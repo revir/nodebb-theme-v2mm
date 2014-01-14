@@ -102,3 +102,75 @@
 	 	}
 	}
 }
+
+
+.category {
+	ul {
+		li {
+			padding-bottom: 0;
+		}
+	}
+
+	.category-stat {
+		text-align: center;
+
+		strong {
+			font-size: 25px;
+		}
+
+		small {
+			color: #aaa;
+		}
+
+		&.replies {
+			line-height: 10px;
+			padding-top: 8px;
+			.no-replies {
+				padding-top: 13px;
+				line-height: 15px;
+			}
+		}
+	}
+
+	.category-list {
+		margin-left: -15px;
+		background-color:#fff;
+		-webkit-box-shadow: inset 0px 0px 2px 2px #ffffff;
+		box-shadow: inset 0px 0px 2px 2px #ffffff;
+		-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+		box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+	}
+
+	.profile-image {
+		width: 52px;
+		height: 52px;
+		-webkit-border-radius: 150px;
+		-moz-border-radius: 150px;
+		border-radius: 150px;
+		border:4px solid #efefef;
+
+		&.small {
+			width: 26px;
+			height: 26px;
+			border: 2px solid #efefef;
+		}
+	}
+
+	.category-body {
+		padding: 10px;
+		padding-bottom:  5px;
+		margin-bottom: 0;
+	}
+
+	.category-profile-pic {
+		float: left;
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+
+	.category-text {
+		float: left;
+		font-size: 18px;
+		color: #666;
+	}
+}
