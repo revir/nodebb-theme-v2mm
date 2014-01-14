@@ -1,5 +1,21 @@
 $('document').ready(function() {
 
+	requirejs([
+		'css/assets/vendor/masonry.js',
+	], function(Masonry) {
+		$(document).bind('DOMNodeInserted', function(event) {
+			// Unsure about performance of this, probably pretty bad. Need to bind to ajaxify.on or similar instead.
+			if (event.target.className == 'row home') {
+				setTimeout(function() {
+					new Masonry('.row.home', {	
+						itemSelector: '.category-item',
+						columnWidth: '.col-lg-2',
+					});
+				}, 500);
+				
+			}
+		});
+	});
 
 	(function() {
 		// loading animation
