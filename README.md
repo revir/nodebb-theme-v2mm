@@ -7,11 +7,17 @@ A simple theme for NodeBB. Check out the theming guide that accompanies this wor
 ## Screenshots
 
 **Home View**
+
 [![Home View](http://i.imgur.com/IJDUFB4l.png)](http://i.imgur.com/IJDUFB4.png)
+
 **Category View**
+
 [![Category View](http://i.imgur.com/JalyDRpl.png)](http://i.imgur.com/JalyDRp.png)
+
 **Topic View**
+
 [![Topic View](http://i.imgur.com/R8YhchEl.png)](http://i.imgur.com/R8YhchE.png)
+
 ## Installation
 
     npm install nodebb-theme-lavender
