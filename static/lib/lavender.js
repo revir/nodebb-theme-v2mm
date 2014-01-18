@@ -34,8 +34,13 @@ $('document').ready(function() {
 						frag.appendChild(li.cloneNode(true));
 						recent_replies.appendChild(frag);
 					}
-					$('#category_recent_replies span.timeago').timeago();
-					app.createUserTooltips();
+
+					if (posts.length) {
+						$('#category_recent_replies span.timeago').timeago();
+						app.createUserTooltips();	
+					} else {
+						recent_replies.innerHTML = 'No topics have been posted yet.';
+					}
 				});
 			}
 		});
