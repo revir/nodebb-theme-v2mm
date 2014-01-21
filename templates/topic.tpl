@@ -93,14 +93,14 @@
 							</div>
 							<div class="pull-right">
 								<div class="btn-group post-tools">
-									<button class="btn btn-sm btn-link chat" type="button" title="[[topic:chat]]">[[topic:chat]]</button>
-									<button class="btn btn-sm btn-link quote" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i></button>
-									<button class="btn btn-sm btn-link post_reply" type="button">[[topic:reply]]</button>
+									<button class="btn btn-sm btn-link chat" type="button" title="[[topic:chat]]"><i class="fa fa-comment"></i> [[topic:chat]]</button>
+									<button class="btn btn-sm btn-link quote" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i> [[topic:quote]]</button>
+									<button class="btn btn-sm btn-link post_reply" type="button"><i class="fa fa-reply"></i> [[topic:reply]]</button>
 									<!-- IF posts.display_moderator_tools -->
-										<button class="btn btn-sm btn-link edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i></button>
-										<button class="btn btn-sm btn-link delete" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i></button>
+										<button class="btn btn-sm btn-link edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i> [[topic:edit]]</button>
+										<button class="btn btn-sm btn-link delete" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i> [[topic:delete]]</button>
 										<!-- IF !@first -->
-											<button class="btn btn-sm btn-link move" type="button" title="[[topic:move]]"><i class="fa fa-arrows"></i></button>
+											<button class="btn btn-sm btn-link move" type="button" title="[[topic:move]]"><i class="fa fa-arrows"></i> [[topic:move]]</button>
 										<!-- ENDIF !@first -->
 									<!-- ENDIF posts.display_moderator_tools -->	
 								</div>
