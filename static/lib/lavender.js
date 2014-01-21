@@ -5,12 +5,15 @@ $('document').ready(function() {
 		$(document).bind('DOMNodeInserted', function(event) {
 			// Unsure about performance of this, probably pretty bad. Need to bind to ajaxify.onchange or similar instead.
 			if (event.target.className == 'row home') {
-				setTimeout(function() {
-					new Masonry('.row.home > div', {	
-						itemSelector: '.category-item',
-						columnWidth: '.category-item',
-					});
-				}, 50);
+				if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+					setTimeout(function() {
+						new Masonry('.row.home > div', {	
+							itemSelector: '.category-item',
+							columnWidth: '.category-item',
+						});
+					}, 50);
+				}
+				
 
 				// Copied from categories.js
 				var li = document.createElement('li'),
