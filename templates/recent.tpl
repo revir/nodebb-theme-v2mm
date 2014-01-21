@@ -23,50 +23,44 @@
 	<div class="col-md-12">
 		<ul id="topics-container">
 		<!-- BEGIN topics -->
-		<li class="category-item {topics.deleted-class}">
-			<div class="row">
-				<div class="col-md-12 col-xs-12 topic-row img-thumbnail">
-
-					<a href="{relative_path}/topic/{topics.slug}">
-						<h3><span class="topic-title"><strong><i class="fa {topics.pin-icon}"></i> <i class="fa {topics.lock-icon}"></i></strong> {topics.title}</span></h3>
-					</a>
-					<small>
-						<span class="topic-stats">
-							posts
-							<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong>
-						</span>
-						|
-						<span class="topic-stats">
-							views
-							<strong class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</strong>
-						</span>
-						|
-						<span>
-							<a href="{relative_path}/user/{topics.userslug}">
-								<img class="teaser-pic" src="{topics.picture}" title="{topics.username}"/>
-							</a>
-							posted in
-							<a href="{relative_path}/category/{topics.categorySlug}">
-								<i class="fa {topics.categoryIcon}"></i> {topics.categoryName}
-							</a>
-							<span class="timeago" title="{topics.relativeTime}"></span>
-							</span>
-						</span>
-
-						<span class="pull-right hidden-xs">
+		<li class="category-item {topics.deleted-class}" itemprop="itemListElement">
+			<meta itemprop="name" content="{topics.title}">
+			<div class="category-item">
+				<div class="category-body">
+					<div class="row">
+						<div class="col-md-8 col-sm-9">
+							<div class="category-profile-pic">
+								<img src="{topics.picture}" alt="{topics.teaser_username}" class="profile-image">
+							</div>
+							<div class="category-text">
+								<p><strong><i class="fa {topics.pin-icon}"></i> <i class="fa {topics.lock-icon}"></i></strong>
+									<a href="../../topic/{topics.slug}" itemprop="url">{topics.title}</a><br />
+									<small>[[category:posted]] <span class="timeago" title="{topics.relativeTime}"></span> by {topics.username}</small>
+								</p>
+							</div>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong><br />
+							<small>[[category:posts]]</small>
+						</div>
+						<div class="col-xs-1 category-stat hidden-xs">
+							<strong class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</strong><br />
+							<small>[[category:views]]</small>
+						</div>
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
 							<!-- IF topics.unreplied -->
-							No one has replied
+							<p class="no-replies">[[category:no_replies]]</p>
 							<!-- ELSE -->
-							<a href="{relative_path}/user/{topics.teaser_userslug}">
-								<img class="teaser-pic" src="{topics.teaser_userpicture}" title="{topics.teaser_username}"/>
+							<a href="../../user/{topics.teaser_userslug}">
+								<img class="profile-image small" src="{topics.teaser_userpicture}" title="{topics.teaser_username}"/>
 							</a>
-							<a href="{relative_path}/topic/{topics.slug}#{topics.teaser_pid}">
-								replied
+							<a href="../../topic/{topics.slug}#{topics.teaser_pid}">
+								[[category:replied]]
+								<span class="timeago" title="{topics.teaser_timestamp}"></span>
 							</a>
-							<span class="timeago" title="{topics.teaser_timestamp}"></span>
 							<!-- ENDIF topics.unreplied -->
-						</span>
-					</small>
+						</div>
+					</div>
 				</div>
 			</div>
 		</li>
