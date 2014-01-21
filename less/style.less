@@ -345,8 +345,16 @@
 		}
 	}
 
+
+	.favourite, .follow {
+		cursor: pointer;
+	}
+	
 	.favourite.btn-warning, .follow.btn-success {
-		background: inherit !important;
+		background: white !important;
+		&:hover {
+			background: @brand-primary !important;
+		}
 	}
 
 	.topic-title {
