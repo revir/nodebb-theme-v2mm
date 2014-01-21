@@ -66,7 +66,7 @@
 						<a href="{relative_path}/admin"><i class="fa fa-cogs" title="[[global:header.admin]]"></i></a>
 					</li>
 					<li class="visible-xs">
-						<a href="{relative_path}/search">[[global:header.search]]</a>
+						 <a id="mobile-search-button" href="{relative_path}/search"><i class="fa fa-search" title="[[global:header.search]]"></i> [[global:header.search]]</a>
 					</li>
 					<!-- BEGIN navigation -->
 					<li class="{navigation.class}">
@@ -95,6 +95,10 @@
 								<a href="#"><i class="fa fa-refresh fa-spin"></i> [[global:notifications.loading]]</a>
 							</li>
 						</ul>
+					</li>
+
+					<li class="visible-xs">
+						<a href="{relative_path}/notifications"><i class="fa fa-exclamation-triangle" title="[[notifications:title]]"></i> [[notifications:title]]</a>
 					</li>
 
 					<li class="chats dropdown text-center hidden-xs">
