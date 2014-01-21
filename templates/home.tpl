@@ -6,7 +6,7 @@
 				<meta itemprop="name" content="{categories.name}">
 				
 				<div class="category-icon">
-					<div id="category-{categories.cid}" class="category-header" style="background: {categories.background}; color: {categories.color};">
+					<div id="category-{categories.cid}" class="category-header hidden-xs" style="background: {categories.background}; color: {categories.color};">
 						<span class="badge {categories.badgeclass}">{categories.topic_count} </span>
 						<a style="color: {categories.color};" href="category/{categories.slug}" itemprop="url">
 							<div><i class="fa {categories.icon} fa-4x"></i></div>
@@ -14,7 +14,7 @@
 					</div>
 					<div class="category-box">
 						<a href="category/{categories.slug}" itemprop="url">
-							<h4>{categories.name}</h4>
+							<h4><i class="fa {categories.icon} visible-xs-inline"></i> {categories.name}</h4>
 						</a>
 						<div class="description" itemprop="description">{categories.description}</div>
 						<!-- BEGIN posts -->
