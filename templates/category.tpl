@@ -29,7 +29,7 @@
 		<ul id="topics-container" itemscope itemtype="http://www.schema.org/ItemList">
 			<meta itemprop="itemListOrder" content="descending">
 			<!-- BEGIN topics -->
-			<li class="category-list {topics.deleted-class}" itemprop="itemListElement">
+			<li class="category-item {topics.deleted-class}" itemprop="itemListElement">
 				<meta itemprop="name" content="{topics.title}">
 				<div class="category-item">
 					<div class="category-body">
