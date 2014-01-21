@@ -291,15 +291,17 @@
 		padding-left: 15px;
 	}
 	
-	.posts li {
-		&:first-child {
-			.post-content {
-				min-height: 60px;
+	.posts {
+		> li {
+			&:first-child {
+				.post-content {
+					min-height: 60px;
+				}
+				border-left: none;	
 			}
-			border-left: none;	
+			
+			border-left: 2px solid @brand-primary;		
 		}
-		
-		border-left: 2px solid @brand-primary;		
 	}
 
 	.postMenu, .menu-icon {
