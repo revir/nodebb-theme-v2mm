@@ -7,9 +7,6 @@
 				
 				<div class="category-icon">
 					<div id="category-{categories.cid}" class="category-header" style="background: {categories.background}; color: {categories.color};">
-						<!-- IF categories.image -->
-						<img src="{categories.image}" />
-						<!-- ENDIF categories.image -->
 						<span class="badge {categories.badgeclass}">{categories.topic_count} </span>
 						<a style="color: {categories.color};" href="category/{categories.slug}" itemprop="url">
 							<div><i class="fa {categories.icon} fa-4x"></i></div>
