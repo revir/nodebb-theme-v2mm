@@ -4,9 +4,9 @@
 			<!-- BEGIN categories -->
 			<div class="col-md-3 col-sm-6 col-xs-12 category-item">
 				<meta itemprop="name" content="{categories.name}">
-				
+
 				<div class="category-icon">
-					<div id="category-{categories.cid}" class="category-header hidden-xs" style="background: {categories.background}; color: {categories.color};">
+					<div id="category-{categories.cid}" class="category-header hidden-xs category-header-image-{categories.imageClass}" style="background: {categories.background}; color: {categories.color};">
 						<span class="badge {categories.badgeclass}">{categories.topic_count} </span>
 						<a style="color: {categories.color};" href="category/{categories.slug}" itemprop="url">
 							<div><i class="fa {categories.icon} fa-4x"></i></div>
@@ -18,9 +18,19 @@
 						</a>
 						<div class="description" itemprop="description">{categories.description}</div>
 						<!-- BEGIN posts -->
-						<div class="post-preview">
-							<a style="color: {categories.color};" href="./user/{categories.posts.userslug}"><img src="{categories.posts.picture}" class="pull-left" /></a>
-							<p><a href="topic/{categories.posts.topicSlug}#{categories.posts.pid}">{categories.posts.content}</a> - {categories.posts.username}, <span class="timeago" title="{categories.posts.relativeTime}"></span></p>
+						<div class="post-preview clearfix">
+							<a style="color: {categories.color};" href="./user/{categories.posts.userslug}">
+								<img src="{categories.posts.picture}" title="{categories.posts.username}" class="pull-left user-img" />
+							</a>
+
+							<p>
+								<strong>{categories.posts.username}</strong><br/>
+								{categories.posts.content}
+							</p>
+							<span class="pull-right">
+								<a href="topic/{categories.posts.topicSlug}#{categories.posts.pid}">posted </a>
+								<span class="timeago" title="{categories.posts.relativeTime}"></span>
+							</span>
 						</div>
 						<!-- END posts -->
 					</div>
@@ -29,7 +39,7 @@
 			<!-- END categories -->
 		</div>
 	</div>
-	
+
 	<div class="col-lg-3 col-sm-12 {show_sidebar} category category-sidebar">
 		<div class="panel panel-default {motd_class}">
 			<div class="panel-heading">MOTD</div>
@@ -47,8 +57,8 @@
 		</div>
 
 		<div class="panel panel-default">
-			<div class="panel-heading">Forum Stats</div>	
-			<div class="panel-body">	
+			<div class="panel-heading">Forum Stats</div>
+			<div class="panel-body">
 				<div class="row footer-stats">
 					<div class="col-md-3 col-xs-6">
 						<div class="stats-card">

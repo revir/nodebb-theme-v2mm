@@ -77,13 +77,13 @@
 										<li role="presentation" class="divider"></li>
 										<li role="presentation" class="dropdown-header">Share this Post</li>
 										<li role="presentation">
-											<a role="menuitem facebook-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-facebook"></i></span> Facebook</a>
+											<a role="menuitem" class="facebook-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-facebook"></i></span> Facebook</a>
 										</li>
 										<li role="presentation">
-											<a role="menuitem twitter-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-twitter"></i></span> Twitter</a>
+											<a role="menuitem" class="twitter-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-twitter"></i></span> Twitter</a>
 										</li>
 										<li role="presentation">
-											<a role="menuitem google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
+											<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
 										</li>
 										<!-- ENDIF !disableSocialButtons -->
 									</ul>
@@ -102,7 +102,7 @@
 										<!-- IF !@first -->
 											<button class="btn btn-sm btn-link move" type="button" title="[[topic:move]]"><i class="fa fa-arrows"></i> [[topic:move]]</button>
 										<!-- ENDIF !@first -->
-									<!-- ENDIF posts.display_moderator_tools -->	
+									<!-- ENDIF posts.display_moderator_tools -->
 								</div>
 								<button class="status"><span class="username-field"></span></button>
 								<a href="{relative_path}/user/{posts.userslug}" itemprop="author">{posts.username}</a>
@@ -111,7 +111,7 @@
 								<span>, [[category:last_edited_by]] <strong><a href="{relative_path}/user/{posts.editorslug}">{posts.editorname}</a></strong></span>
 								<span class="timeago" title="{posts.relativeEditTime}"></span>
 								<!-- ENDIF posts.editor -->
-							</div> 
+							</div>
 						</div>
 					</div>
 				</div>
