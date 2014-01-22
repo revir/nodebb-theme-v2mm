@@ -69,9 +69,9 @@
 											<a role="menuitem" tabindex="-1" data-favourited="{posts.favourited}" class="favourite">
 												<span class="favourite-text">[[topic:favourite]]</span>
 												<!-- IF posts.favourited -->
-												<i class="fa fa-star"></i>
+												<i class="fa fa-heart"></i>
 												<!-- ELSE -->
-												<i class="fa fa-star-o"></i>
+												<i class="fa fa-heart-o"></i>
 												<!-- ENDIF posts.favourited -->
 											</a>
 										</li>
