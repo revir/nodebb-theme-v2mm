@@ -4,7 +4,7 @@
 			<!-- BEGIN categories -->
 			<div class="col-md-3 col-sm-6 col-xs-12 category-item">
 				<meta itemprop="name" content="{categories.name}">
-				
+
 				<div class="category-icon">
 					<div id="category-{categories.cid}" class="category-header hidden-xs" style="background: {categories.background}; color: {categories.color};">
 						<span class="badge {categories.badgeclass}">{categories.topic_count} </span>
@@ -29,7 +29,7 @@
 			<!-- END categories -->
 		</div>
 	</div>
-	
+
 	<div class="col-lg-3 col-sm-12 {show_sidebar} category category-sidebar">
 		<div class="panel panel-default {motd_class}">
 			<div class="panel-heading">MOTD</div>
@@ -47,8 +47,8 @@
 		</div>
 
 		<div class="panel panel-default">
-			<div class="panel-heading">Forum Stats</div>	
-			<div class="panel-body">	
+			<div class="panel-heading">Forum Stats</div>
+			<div class="panel-body">
 				<div class="row footer-stats">
 					<div class="col-md-3 col-xs-6">
 						<div class="stats-card">
