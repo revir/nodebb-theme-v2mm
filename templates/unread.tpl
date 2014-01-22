@@ -48,7 +48,7 @@
 								<!-- IF topics.unreplied -->
 								<p class="no-replies">[[category:no_replies]]</p>
 								<!-- ELSE -->
-								<a href="../../user/{topics.teaser_userslug}"><img class="profile-image small" src="{topics.teaser_userpicture}" title="{topics.teaser_username}"/></a>
+								<a href="../../user/{topics.teaser_userslug}"><img class="profile-image small user-img" src="{topics.teaser_userpicture}" title="{topics.teaser_username}"/></a>
 								<a href="../../topic/{topics.slug}#{topics.teaser_pid}">
 									[[category:replied]]
 									<span class="timeago" title="{topics.teaser_timestamp}"></span>
