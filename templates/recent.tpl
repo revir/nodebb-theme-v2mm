@@ -30,7 +30,9 @@
 					<div class="row">
 						<div class="col-md-8 col-sm-9">
 							<div class="category-profile-pic">
-								<img src="{topics.picture}" alt="{topics.teaser_username}" class="profile-image">
+								<a href="{relative_path}/user/{topics.userslug}">
+									<img src="{topics.picture}" alt="{topics.teaser_username}" class="profile-image user-img" title="{topics.username}">
+								</a>
 							</div>
 							<div class="category-text">
 								<p><strong><i class="fa {topics.pin-icon}"></i> <i class="fa {topics.lock-icon}"></i></strong>
@@ -51,9 +53,7 @@
 							<!-- IF topics.unreplied -->
 							<p class="no-replies">[[category:no_replies]]</p>
 							<!-- ELSE -->
-							<a href="../../user/{topics.teaser_userslug}">
-								<img class="profile-image small" src="{topics.teaser_userpicture}" title="{topics.teaser_username}"/>
-							</a>
+							<a href="../../user/{topics.teaser_userslug}"><img class="profile-image small user-img" src="{topics.teaser_userpicture}" title="{topics.teaser_username}"/></a>
 							<a href="../../topic/{topics.slug}#{topics.teaser_pid}">
 								[[category:replied]]
 								<span class="timeago" title="{topics.teaser_timestamp}"></span>

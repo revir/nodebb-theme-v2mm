@@ -34,7 +34,9 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="topic-profile-pic">
-									<img src="{posts.picture}" alt="{topics.teaser_username}" class="profile-image">
+									<a href="{relative_path}/user/{posts.userslug}">
+										<img src="{posts.picture}" alt="{topics.teaser_username}" class="profile-image user-img" title="{posts.username}">
+									</a>
 								</div>
 								<div class="topic-text">
 									<!-- IF @first -->
