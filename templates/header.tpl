@@ -54,19 +54,19 @@
 			<div class="navbar-collapse collapse navbar-ex1-collapse">
 				<ul id="main-nav" class="nav navbar-nav">
 					<li>
-						<a href="{relative_path}/recent"><i class="fa fa-clock-o" title="[[global:header.recent]]"></i></a>
+						<a href="{relative_path}/recent"><i class="fa fa-fw fa-clock-o" title="[[global:header.recent]]"></i><span class="visible-xs-inline"> [[global:header.recent]]</span></a>
 					</li>
 					<li class="nodebb-loggedin">
-						<a href="{relative_path}/unread"><i id="unread-count" class="fa fa-inbox" data-content="0" title="[[global:header.unread]]"></i></a>
+						<a href="{relative_path}/unread"><i id="unread-count" class="fa fa-fw fa-inbox" data-content="0" title="[[global:header.unread]]"></i><span class="visible-xs-inline"> [[global:header.unread]]</span></a>
 					</li>
 					<li>
-						<a href="{relative_path}/users"><i class="fa fa-users" title="[[global:header.users]]"></i></a>
+						<a href="{relative_path}/users"><i class="fa fa-fw fa-users" title="[[global:header.users]]"></i><span class="visible-xs-inline"> [[global:header.users]]</span></a>
 					</li>
 					<li class="{adminDisplay}">
-						<a href="{relative_path}/admin"><i class="fa fa-cogs" title="[[global:header.admin]]"></i></a>
+						<a href="{relative_path}/admin"><i class="fa fa-fw fa-cogs" title="[[global:header.admin]]"></i><span class="visible-xs-inline"> [[global:header.admin]]</span></a>
 					</li>
 					<li class="visible-xs">
-						 <a id="mobile-search-button" href="{relative_path}/search"><i class="fa fa-search" title="[[global:header.search]]"></i> [[global:header.search]]</a>
+						<a id="mobile-search-button" href="{relative_path}/search"><i class="fa fa-search" title="[[global:header.search]]"></i> [[global:header.search]]</a>
 					</li>
 					<!-- BEGIN navigation -->
 					<li class="{navigation.class}">
