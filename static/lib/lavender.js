@@ -7,43 +7,47 @@ $('document').ready(function() {
 			if (event.target.className == 'row home') {
 				if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 					setTimeout(function() {
-						new Masonry('.row.home > div', {	
+						new Masonry('.row.home > div', {
 							itemSelector: '.category-item',
 							columnWidth: '.category-item',
 						});
 					}, 50);
 				}
-				
+
 
 				// Copied from categories.js
-				var li = document.createElement('li'),
-					recent_replies = document.getElementById('category_recent_replies'),
-					frag = document.createDocumentFragment();
-
 				$.get(RELATIVE_PATH + '/api/recent/month', {}, function(posts) {
-					posts = posts.topics;
+					var recentReplies = $('#category_recent_replies');
 
-					for (var i = 0, numPosts = posts.length; i < numPosts; i++) {
-						li.setAttribute('data-pid', posts[i].pid);
-						li.innerHTML = '<a href="' + RELATIVE_PATH + '/user/' + posts[i].teaser_userslug + '"><img title="' + posts[i].teaser_username + '" class="img-rounded user-img" src="' + posts[i].teaser_userpicture + '"/></a>' +
-							'<a href="' + RELATIVE_PATH + '/topic/' + posts[i].slug + '#' + posts[i].teaser_pid + '">' +
-							'<strong><span>'+ posts[i].teaser_username + '</span></strong> posted in' +
-							'<p>' +
-							posts[i].title +
-							'</p>' +
-							'</a>' +
-							'<span class="timeago pull-right" title="' + posts[i].relativeTime + '"></span>';
-
-						frag.appendChild(li.cloneNode(true));
-						recent_replies.appendChild(frag);
+					if(!posts || !posts.topics || !posts.topics.length) {
+						recentReplies.html('No topics have been posted yet.');
+						return;
 					}
 
-					if (posts.length) {
-						$('#category_recent_replies span.timeago').timeago();
-						app.createUserTooltips();	
-					} else {
-						recent_replies.innerHTML = 'No topics have been posted yet.';
+					posts = posts.topics.slice(0, 8);
+
+					var replies = '';
+
+					for (var i = 0, numPosts = posts.length; i < numPosts; ++i) {
+						var lastPostIsoTime = utils.toISOString(posts[i].lastposttime);
+
+						replies += '<li data-pid="'+ posts[i].pid +'" class="clearfix">' +
+									'<a href="' + RELATIVE_PATH + '/user/' + posts[i].userslug + '"><img title="' + posts[i].username + '" class="img-rounded user-img" src="' + posts[i].picture + '"/></a>' +
+									'<p>' +
+										'<strong><span>'+ posts[i].username + '</span></strong>' +
+										'<span> posted in </span>' +
+										'<a href="' + RELATIVE_PATH + '/topic/' + posts[i].slug + '#' + posts[i].teaser_pid + '" >"' + posts[i].title + '"</a>' +
+									'</p>'+
+									'<span class="pull-right">'+
+										'<span class="timeago" title="' + lastPostIsoTime + '"></span>' +
+									'</span>'+
+									'</li>';
 					}
+
+					recentReplies.html(replies);
+
+					$('#category_recent_replies span.timeago').timeago();
+					app.createUserTooltips();
 				});
 			}
 		});

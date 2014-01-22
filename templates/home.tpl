@@ -18,9 +18,19 @@
 						</a>
 						<div class="description" itemprop="description">{categories.description}</div>
 						<!-- BEGIN posts -->
-						<div class="post-preview">
-							<a style="color: {categories.color};" href="./user/{categories.posts.userslug}"><img src="{categories.posts.picture}" class="pull-left" /></a>
-							<p><a href="topic/{categories.posts.topicSlug}#{categories.posts.pid}">{categories.posts.content}</a> - {categories.posts.username}, <span class="timeago" title="{categories.posts.relativeTime}"></span></p>
+						<div class="post-preview clearfix">
+							<a style="color: {categories.color};" href="./user/{categories.posts.userslug}">
+								<img src="{categories.posts.picture}" class="pull-left" />
+							</a>
+
+							<p>
+								<strong>{categories.posts.username}</strong><br/>
+								{categories.posts.content}
+							</p>
+							<span class="pull-right">
+								<a href="topic/{categories.posts.topicSlug}#{categories.posts.pid}">posted </a>
+								<span class="timeago" title="{categories.posts.relativeTime}"></span>
+							</span>
 						</div>
 						<!-- END posts -->
 					</div>
