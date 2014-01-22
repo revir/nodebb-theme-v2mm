@@ -20,7 +20,7 @@
 						<!-- BEGIN posts -->
 						<div class="post-preview clearfix">
 							<a style="color: {categories.color};" href="./user/{categories.posts.userslug}">
-								<img src="{categories.posts.picture}" class="pull-left" />
+								<img src="{categories.posts.picture}" title="{categories.posts.username}" class="pull-left user-img" />
 							</a>
 
 							<p>
