@@ -32,9 +32,9 @@ $('document').ready(function() {
 						var lastPostIsoTime = utils.toISOString(posts[i].lastposttime);
 
 						replies += '<li data-pid="'+ posts[i].pid +'" class="clearfix">' +
-									'<a href="' + RELATIVE_PATH + '/user/' + posts[i].userslug + '"><img title="' + posts[i].username + '" class="img-rounded user-img" src="' + posts[i].picture + '"/></a>' +
+									'<a href="' + RELATIVE_PATH + '/user/' + posts[i].teaser_userslug + '"><img title="' + posts[i].teaser_username + '" class="img-rounded user-img" src="' + posts[i].teaser_userpicture + '"/></a>' +
 									'<p>' +
-										'<strong><span>'+ posts[i].username + '</span></strong>' +
+										'<strong><span>'+ posts[i].teaser_username + '</span></strong>' +
 										'<span> posted in </span>' +
 										'"<a href="' + RELATIVE_PATH + '/topic/' + posts[i].slug + '#' + posts[i].teaser_pid + '" >' + posts[i].title + '</a>"' +
 									'</p>'+
