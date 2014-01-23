@@ -36,7 +36,7 @@ $('document').ready(function() {
 									'<p>' +
 										'<strong><span>'+ posts[i].username + '</span></strong>' +
 										'<span> posted in </span>' +
-										'<a href="' + RELATIVE_PATH + '/topic/' + posts[i].slug + '#' + posts[i].teaser_pid + '" >"' + posts[i].title + '"</a>' +
+										'"<a href="' + RELATIVE_PATH + '/topic/' + posts[i].slug + '#' + posts[i].teaser_pid + '" >' + posts[i].title + '</a>"' +
 									'</p>'+
 									'<span class="pull-right">'+
 										'<span class="timeago" title="' + lastPostIsoTime + '"></span>' +
