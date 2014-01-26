@@ -326,6 +326,13 @@
 	.posts {
 		> li {
 			border-left: 2px solid @brand-primary;
+			.topic-title {
+				margin-top: 0px;
+				margin-bottom: 5px;
+				font-weight: 500;
+				color: #7a62d3;
+				display: none;
+			}
 		}
 
 		> li[data-index="0"] {
@@ -333,6 +340,10 @@
 				min-height: 60px;
 			}
 			border-left: none;
+
+			.topic-title {
+				display: block;
+			}
 		}
 	}
 
@@ -386,12 +397,7 @@
 		}
 	}
 
-	.topic-title {
-		margin-top: 0px;
-		margin-bottom: 5px;
-		font-weight: 500;
-		color: #7a62d3;
-	}
+
 
 	.status {
 		display: inline-block;
