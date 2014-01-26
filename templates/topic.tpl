@@ -27,8 +27,6 @@
 		<!-- BEGIN posts -->
 			<li class="post-row infiniteloaded" data-pid="{posts.pid}" data-uid="{posts.uid}" data-username="{posts.username}" data-userslug="{posts.userslug}" data-index="{posts.index}" data-deleted="{posts.deleted}" itemscope itemtype="http://schema.org/Comment">
 
-				<div style="display:inline; float:right;"> # {posts.index} </div>
-
 				<a id="post_anchor_{posts.pid}" name="{posts.pid}"></a>
 
 				<meta itemprop="datePublished" content="{posts.relativeTime}">
@@ -125,7 +123,7 @@
 			</li>
 
 			<!-- IF @first -->
-			<li class="post-bar">
+			<li class="post-bar" data-index="{posts.index}">
 				<div class="inline-block">
 					<small class="topic-stats">
 						<span>[[category:posts]]</span>
@@ -158,8 +156,8 @@
 		<!-- END posts -->
 	</ul>
 
-	<div class="post-bar col-xs-12 pull-right hide">
-		<div class="topic-main-buttons pull-right inline-block hide">
+	<div class="post-bar col-xs-12 pull-right hide bottom-post-bar">
+		<div class="topic-main-buttons pull-right inline-block">
 			<div class="loading-indicator" done="0" style="display:none;">
 				<span class="hidden-xs-inline">[[topic:loading_more_posts]]</span> <i class="fa fa-refresh fa-spin"></i>
 			</div>

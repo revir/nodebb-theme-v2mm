@@ -325,14 +325,14 @@
 
 	.posts {
 		> li {
-			&:first-child {
-				.post-content {
-					min-height: 60px;
-				}
-				border-left: none;
-			}
-
 			border-left: 2px solid @brand-primary;
+		}
+
+		> li[data-index="0"] {
+			.post-content {
+				min-height: 60px;
+			}
+			border-left: none;
 		}
 	}
 
