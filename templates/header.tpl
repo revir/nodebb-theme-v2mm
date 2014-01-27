@@ -89,7 +89,7 @@
 					</li>
 
 					<li class="notifications dropdown text-center hidden-xs">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="notif_dropdown"></a>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="notif_dropdown"><i class="fa fa-bell-o" title="[[global:header.notifications]]"></i></a>
 						<ul id="notif-list" class="dropdown-menu" aria-labelledby="notif_dropdown">
 							<li>
 								<a href="#"><i class="fa fa-refresh fa-spin"></i> [[global:notifications.loading]]</a>
@@ -102,7 +102,7 @@
 					</li>
 
 					<li class="chats dropdown text-center hidden-xs">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="chat_dropdown"><i class="fa fa-comment-o"></i></a>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="chat_dropdown"><i class="fa fa-comment-o" title="[[global:header.chats]]"></i></a>
 						<ul id="chat-list" class="dropdown-menu" aria-labelledby="chat_dropdown">
 							<li>
 								<a href="#"><i class="fa fa-refresh fa-spin"></i> [[global:chats.loading]]</a>
@@ -111,7 +111,7 @@
 					</li>
 
 					<li id="user_label" class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="user_dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="user_dropdown" title="[[global:header.profile]]">
 							<img src=""/>
 						</a>
 						<ul id="user-control-list" class="dropdown-menu" aria-labelledby="user_dropdown">
@@ -157,7 +157,7 @@
 								</div>
 								<button type="submit" class="btn btn-default hide">[[global:search]]</button>
 							</div>
-							<button id="search-button" type="button" class="btn btn-link hide"><i class="fa fa-search"></i></button>
+							<button id="search-button" type="button" class="btn btn-link hide"><i class="fa fa-search" title="[[global:header.search]]"></i></button>
 						</form>
 					</li>
 				</ul>
