@@ -94,7 +94,9 @@
 									</ul>
 								</div>
 								<span class="post_rep_{posts.pid}">{posts.reputation} </span>
-								<span>{posts.additional_profile_info}</span>
+								<!-- BEGIN custom_profile_info -->
+								&bull; {posts.custom_profile_info.content}
+								<!-- END custom_profile_info -->
 							</div>
 							<div class="pull-right">
 								<div class="btn-group post-tools">
