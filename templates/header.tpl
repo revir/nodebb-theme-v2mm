@@ -5,11 +5,10 @@
 	<!-- BEGIN metaTags -->
 	<meta<!-- IF metaTags.name --> name="{metaTags.name}"<!-- ENDIF metaTags.name --><!-- IF metaTags.property --> property="{metaTags.property}"<!-- ENDIF metaTags.property --><!-- IF metaTags.content --> content="{metaTags.content}"<!-- ENDIF metaTags.content --> />
 	<!-- END metaTags -->
-	<link rel="icon" type="image/x-icon" href="{brand:favicon}" />
 	<link rel="stylesheet" href="{relative_path}/vendor/fontawesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="{relative_path}/css/theme.css?{cache-buster}" />
 	<!-- BEGIN linkTags -->
-	<link<!-- IF linkTags.link --> link="{linkTags.link}"<!-- ENDIF linkTags.link --><!-- IF linkTags.rel --> rel="{linkTags.rel}"<!-- ENDIF linkTags.rel --><!-- IF linkTags.href --> href="{linkTags.href}"<!-- ENDIF linkTags.href --> />
+	<link<!-- IF linkTags.link --> link="{linkTags.link}"<!-- ENDIF linkTags.link --><!-- IF linkTags.rel --> rel="{linkTags.rel}"<!-- ENDIF linkTags.rel --><!-- IF linkTags.type --> type="{linkTags.type}"<!-- ENDIF linkTags.type --><!-- IF linkTags.href --> href="{linkTags.href}"<!-- ENDIF linkTags.href --> />
 	<!-- END linkTags -->
 	<!-- BEGIN pluginCSS -->
 	<link rel="stylesheet" href="{pluginCSS.path}">
