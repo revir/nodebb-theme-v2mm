@@ -112,7 +112,10 @@
 										<!-- ENDIF posts.display_move_tools -->
 									<!-- ENDIF posts.display_moderator_tools -->
 								</div>
-								<button class="status"><span class="username-field"></span></button>
+								<span>
+									<i class="fa fa-circle status-offline"></i>
+									<span class="username-field"></span>
+								</span>
 								<a href="{relative_path}/user/{posts.userslug}" itemprop="author">{posts.username}</a>
 								[[category:posted]] <span class="relativeTimeAgo timeago" title="{posts.relativeTime}"></span>
 								<!-- IF posts.editor -->
