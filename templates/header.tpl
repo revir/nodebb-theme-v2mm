@@ -32,6 +32,9 @@
 	</script>
 	<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 	<script src="{relative_path}/css/assets/lib/lavender.js"></script>
+	<!-- IF useCustomCSS -->
+	<style type="text/css">{customCSS}</style>
+	<!-- ENDIF useCustomCSS -->
 </head>
 
 <body>
