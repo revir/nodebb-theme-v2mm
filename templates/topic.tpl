@@ -107,9 +107,9 @@
 									<!-- IF posts.display_moderator_tools -->
 										<button class="btn btn-sm btn-link edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i> [[topic:edit]]</button>
 										<button class="btn btn-sm btn-link delete" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i> [[topic:delete]]</button>
-										<!-- IF !@first -->
+										<!-- IF posts.display_move_tools -->
 											<button class="btn btn-sm btn-link move" type="button" title="[[topic:move]]"><i class="fa fa-arrows"></i> [[topic:move]]</button>
-										<!-- ENDIF !@first -->
+										<!-- ENDIF posts.display_move_tools -->
 									<!-- ENDIF posts.display_moderator_tools -->
 								</div>
 								<button class="status"><span class="username-field"></span></button>
