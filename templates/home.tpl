@@ -7,16 +7,28 @@
 
 				<div class="category-icon">
 					<div id="category-{categories.cid}" class="category-header hidden-xs category-header-image-{categories.imageClass}" style="background: {categories.background}; color: {categories.color};">
+						<!-- IF !categories.link -->
 						<span class="badge {categories.badgeclass}">{categories.topic_count} </span>
-						<a style="color: {categories.color};" href="category/{categories.slug}" itemprop="url">
+						<!-- ENDIF !categories.link -->
+
+						<!-- IF categories.link -->
+						<a style="color: {categories.color};" href="{categories.link}" itemprop="url" target="_blank">
+						<!-- ELSE -->
+						<a style="color: {categories.color};" href="{relative_path}/category/{categories.slug}" itemprop="url">
+						<!-- ENDIF categories.link -->
 							<div><i class="fa {categories.icon} fa-4x"></i></div>
 						</a>
 					</div>
 					<div class="category-box">
+						<!-- IF categories.link -->
+						<a href="{categories.link}" itemprop="url" target="_blank">
+						<!-- ELSE -->
 						<a href="category/{categories.slug}" itemprop="url">
+						<!-- ENDIF categories.link-->
 							<h4><i class="fa {categories.icon} visible-xs-inline"></i> {categories.name}</h4>
 						</a>
 						<div class="description" itemprop="description">{categories.description}</div>
+						<!-- IF !categories.link -->
 						<!-- BEGIN posts -->
 						<div class="post-preview clearfix">
 							<a style="color: {categories.color};" href="./user/{categories.posts.userslug}">
@@ -33,6 +45,7 @@
 							</span>
 						</div>
 						<!-- END posts -->
+						<!-- ENDIF !categories.link -->
 					</div>
 				</div>
 			</div>
