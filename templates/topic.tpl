@@ -59,7 +59,7 @@
 						<div class="row">
 							<div class="pull-left">
 								<div class="dropdown">
-									<a class="dropdown-toggle postMenu favourite-tooltip" id="postMenu_{posts.pid}" data-toggle="dropdown">
+									<a href="#" class="dropdown-toggle postMenu favourite-tooltip" id="postMenu_{posts.pid}" data-toggle="dropdown">
 										<i class="fa fa-heart"></i>
 									</a>
 									<ul class="dropdown-menu" role="menu" aria-labelledby="postMenu_{posts.pid}">
