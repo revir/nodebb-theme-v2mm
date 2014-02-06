@@ -57,7 +57,7 @@
 					</div>
 					<div class="topic-footer">
 						<div class="row">
-							<div class="pull-left">
+							<div class="">
 								<div class="dropdown">
 									<a href="#" class="dropdown-toggle postMenu favourite-tooltip" id="postMenu_{posts.pid}" data-toggle="dropdown">
 										<i class="fa fa-heart"></i>
@@ -97,31 +97,35 @@
 								<!-- BEGIN custom_profile_info -->
 								&bull; {posts.custom_profile_info.content}
 								<!-- END custom_profile_info -->
-							</div>
-							<div class="pull-right">
-								<div class="btn-group post-tools">
-									<button class="btn btn-sm btn-link chat" type="button" title="[[topic:chat]]"><i class="fa fa-comment"></i> [[topic:chat]]</button>
-									<button class="btn btn-sm btn-link quote" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i> [[topic:quote]]</button>
-									<button class="btn btn-sm btn-link post_reply" type="button"><i class="fa fa-reply"></i> [[topic:reply]]</button>
-									<button class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-flag-o"></i> [[topic:flag]]</button>
+
+								<span class="post-tools">
+									<button class="btn btn-sm btn-link chat" type="button" title="[[topic:chat]]"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> [[topic:chat]]</span></button>
+									<button class="btn btn-sm btn-link quote" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> [[topic:quote]]</span></button>
+									<button class="btn btn-sm btn-link post_reply" type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> [[topic:reply]]</span></button>
+									<button class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-flag-o"></i><span class="hidden-xs-inline"> [[topic:flag]]</span></button>
 									<!-- IF posts.display_moderator_tools -->
-										<button class="btn btn-sm btn-link edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i> [[topic:edit]]</button>
-										<button class="btn btn-sm btn-link delete" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i> [[topic:delete]]</button>
+										<button class="btn btn-sm btn-link edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i><span class="hidden-xs-inline"> [[topic:edit]]</span></button>
+										<button class="btn btn-sm btn-link delete" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i><span class="hidden-xs-inline"> [[topic:delete]]</span></button>
 										<!-- IF posts.display_move_tools -->
-											<button class="btn btn-sm btn-link move" type="button" title="[[topic:move]]"><i class="fa fa-arrows"></i> [[topic:move]]</button>
+											<button class="btn btn-sm btn-link move" type="button" title="[[topic:move]]"><i class="fa fa-arrows"></i><span class="hidden-xs-inline"> [[topic:move]]</span></button>
 										<!-- ENDIF posts.display_move_tools -->
 									<!-- ENDIF posts.display_moderator_tools -->
-								</div>
+								</span>
+
+								<small class="pull-right">
 								<span>
 									<i class="fa fa-circle status-offline"></i>
-									<span class="username-field"></span>
+									<span class="username-field">
+										<a href="{relative_path}/user/{posts.userslug}" itemprop="author">{posts.username}</a>
+										[[category:posted]] <span class="relativeTimeAgo timeago" title="{posts.relativeTime}"></span>
+									</span>
 								</span>
-								<a href="{relative_path}/user/{posts.userslug}" itemprop="author">{posts.username}</a>
-								[[category:posted]] <span class="relativeTimeAgo timeago" title="{posts.relativeTime}"></span>
+
 								<!-- IF posts.editor -->
 								<span>, [[category:last_edited_by]] <strong><a href="{relative_path}/user/{posts.editorslug}">{posts.editorname}</a></strong></span>
 								<span class="timeago" title="{posts.relativeEditTime}"></span>
 								<!-- ENDIF posts.editor -->
+								</small>
 							</div>
 						</div>
 					</div>

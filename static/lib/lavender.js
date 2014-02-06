@@ -63,10 +63,6 @@ $('document').ready(function() {
 			loadingBar = $('.loading-bar');
 
 		ajaxify.go = function(url, callback, quiet) {
-			if ($('#content').hasClass('ajaxifying')) {
-				return true;
-			}
-
 			loadingBar.addClass('reset').css('width', '100%');
 			return ajaxifyGo(url, callback, quiet);
 		};
