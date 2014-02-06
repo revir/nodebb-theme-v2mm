@@ -71,6 +71,7 @@
 										<li role="presentation">
 											<a role="menuitem" tabindex="-1" data-favourited="{posts.favourited}" class="favourite">
 												<span class="favourite-text">[[topic:favourite]]</span>
+												<span class="favouriteCount" data-favourites="{posts.reputation}">{posts.reputation}</span>&nbsp;
 												<!-- IF posts.favourited -->
 												<i class="fa fa-heart"></i>
 												<!-- ELSE -->
@@ -93,7 +94,15 @@
 										<!-- ENDIF !disableSocialButtons -->
 									</ul>
 								</div>
-								<span class="post_rep_{posts.pid}">{posts.reputation} </span>
+								&bull;
+								<a href="#" class="upvote <!-- IF posts.upvoted --> upvoted btn-primary <!-- ENDIF posts.upvoted -->">
+									<i class="fa fa-plus"></i>
+								</a>
+								<span class="votes" data-votes="{posts.votes}">{posts.votes}</span>
+								<a href="#" class="downvote <!-- IF posts.downvoted --> downvoted btn-primary <!-- ENDIF posts.downvoted -->">
+									<i class="fa fa-minus"></i>
+								</a>
+								
 								<!-- BEGIN custom_profile_info -->
 								&bull; {posts.custom_profile_info.content}
 								<!-- END custom_profile_info -->

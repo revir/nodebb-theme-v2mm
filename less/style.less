@@ -347,7 +347,18 @@
 		}
 	}
 
-	.postMenu, .menu-icon {
+	.upvote, .downvote {
+		border-radius: 100%;
+		border: 1px solid @brand-primary;
+		width: 20px;
+		height: 20px;
+		line-height: 18px;
+		font-size: 10px;
+		text-align: center;
+		display: inline-block;
+	}
+
+	.postMenu, .menu-icon, .upvote.btn-primary, .downvote.btn-primary {
 		border-radius: 100%;
 		background: @brand-primary;
 		color: white;
@@ -358,6 +369,10 @@
 		line-height: 20px;
 		font-size: 10px;
 		cursor: pointer;
+	}
+
+	.upvote.btn-primary, .downvote.btn-primary {
+		line-height: 18px;
 	}
 
 	.menu-icon {
