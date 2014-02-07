@@ -182,7 +182,7 @@
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right pagination-block hide">
-					<li class="active">
+					<li>
 						<a href="#">
 							<i class="fa fa-chevron-up pointer"></i>
 							<span id="pagination"></span>
