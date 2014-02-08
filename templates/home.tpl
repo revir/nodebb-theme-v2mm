@@ -6,7 +6,7 @@
 				<meta itemprop="name" content="{categories.name}">
 
 				<div class="category-icon">
-					<div id="category-{categories.cid}" class="category-header hidden-xs category-header-image-{categories.imageClass}" style="background: {categories.background}; color: {categories.color};">
+					<div id="category-{categories.cid}" class="category-header category-header-image-{categories.imageClass}" style="background: {categories.background}; color: {categories.color};">
 						<!-- IF !categories.link -->
 						<span class="badge {categories.badgeclass}">{categories.topic_count} </span>
 						<!-- ENDIF !categories.link -->
