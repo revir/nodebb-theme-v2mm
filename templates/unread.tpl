@@ -32,7 +32,11 @@
 								<div class="category-text">
 									<p><strong><i class="fa {topics.pin-icon}"></i> <i class="fa {topics.lock-icon}"></i></strong>
 										<a href="../../topic/{topics.slug}" itemprop="url">{topics.title}</a><br />
-										<small>[[category:posted]] <span class="timeago" title="{topics.relativeTime}"></span> by {topics.username}</small>
+										<small>[[category:posted]] [[global:in]]
+										<a href="{relative_path}/category/{topics.categorySlug}">
+											<i class="fa {topics.categoryIcon}"></i> {topics.categoryName}
+										</a>
+										<span class="timeago" title="{topics.relativeTime}"></span> by {topics.username}</small>
 									</p>
 								</div>
 							</div>
