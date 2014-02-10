@@ -38,7 +38,7 @@
 							<div class="col-md-12">
 								<div class="topic-profile-pic">
 									<a href="{relative_path}/user/{posts.userslug}">
-										<img src="{posts.picture}" alt="{topics.teaser_username}" class="profile-image user-img" title="{posts.username}">
+										<img src="{posts.picture}" alt="{posts.username}" class="profile-image user-img" title="{posts.username}">
 									</a>
 								</div>
 								<div class="topic-text">
