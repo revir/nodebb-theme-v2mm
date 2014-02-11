@@ -38,7 +38,7 @@
 							<div class="col-md-12">
 								<div class="topic-profile-pic">
 									<a href="{relative_path}/user/{posts.userslug}">
-										<img src="{posts.picture}" alt="{topics.teaser_username}" class="profile-image user-img" title="{posts.username}">
+										<img src="{posts.picture}" alt="{posts.username}" class="profile-image user-img" title="{posts.username}">
 									</a>
 								</div>
 								<div class="topic-text">
@@ -102,7 +102,7 @@
 								<a href="#" class="downvote <!-- IF posts.downvoted --> downvoted btn-primary <!-- ENDIF posts.downvoted -->">
 									<i class="fa fa-minus"></i>
 								</a>
-								
+
 								<!-- BEGIN custom_profile_info -->
 								&bull; {posts.custom_profile_info.content}
 								<!-- END custom_profile_info -->
@@ -124,7 +124,7 @@
 								<small class="pull-right">
 								<span>
 									<i class="fa fa-circle status-offline"></i>
-									<span class="username-field">
+									<span class="username-field" data-username="{posts.username}">
 										<a href="{relative_path}/user/{posts.userslug}" itemprop="author">{posts.username}</a>
 										[[category:posted]] <span class="relativeTimeAgo timeago" title="{posts.relativeTime}"></span>
 									</span>
