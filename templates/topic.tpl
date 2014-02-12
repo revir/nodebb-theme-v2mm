@@ -58,7 +58,7 @@
 					<div class="topic-footer">
 						<div class="row">
 							<div class="">
-								<div class="dropdown">
+								<div class="dropdown share-dropdown">
 									<a href="#" class="dropdown-toggle postMenu favourite-tooltip" id="postMenu_{posts.pid}" data-toggle="dropdown">
 										<i class="fa fa-heart"></i>
 									</a>
@@ -92,6 +92,9 @@
 											<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
 										</li>
 										<!-- ENDIF !disableSocialButtons -->
+										<li class="text-center">
+											<input type="text" id="post_{posts.pid}_link" value="" class="form-control post-link inline-block"></input>
+										<li>
 									</ul>
 								</div>
 								&bull;
