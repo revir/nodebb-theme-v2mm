@@ -1,15 +1,20 @@
 $('document').ready(function() {
 	requirejs([
 		'/css/assets/vendor/masonry.js',
-	], function(Masonry) {
+		'/css/assets/vendor/imagesLoaded.js',
+	], function(Masonry, imagesLoaded) {
 		$(document).bind('DOMNodeInserted', function(event) {
 			// Unsure about performance of this, probably pretty bad. Need to bind to ajaxify.onchange or similar instead.
 			if (event.target.className == 'row home') {
 				if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 					setTimeout(function() {
-						new Masonry('.row.home > div', {
+						var masonry = new Masonry('.row.home > div', {
 							itemSelector: '.category-item',
 							columnWidth: '.category-item',
+						});
+
+						$('.row.home > div').imagesLoaded(function() {
+							masonry.layout();
 						});
 					}, 50);
 				}
