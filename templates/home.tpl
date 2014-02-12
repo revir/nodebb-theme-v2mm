@@ -14,7 +14,7 @@
 					<!-- ENDIF categories.link -->
 						<div id="category-{categories.cid}" class="category-header category-header-image-{categories.imageClass}" style="background: {categories.background}; color: {categories.color};">
 							<!-- IF !categories.link -->
-							<span class="badge {categories.badgeclass}">{categories.topic_count} </span>
+							<span class="badge {categories.unread-class}">{categories.topic_count} </span>
 							<!-- ENDIF !categories.link -->
 
 							<div><i class="fa {categories.icon} fa-4x"></i></div>

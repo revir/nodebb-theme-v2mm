@@ -33,7 +33,7 @@
 		<ul id="topics-container" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}">
 			<meta itemprop="itemListOrder" content="descending">
 			<!-- BEGIN topics -->
-			<li class="category-item {topics.deleted-class}" itemprop="itemListElement">
+			<li class="category-item {topics.deleted-class} {topics.unread-class}" itemprop="itemListElement">
 				<meta itemprop="name" content="{topics.title}">
 				<div class="category-item">
 					<div class="category-body">
@@ -46,7 +46,7 @@
 								</div>
 								<div class="category-text">
 									<p><strong><i class="fa {topics.pin-icon}"></i> <i class="fa {topics.lock-icon}"></i></strong>
-										<a href="../../topic/{topics.slug}" itemprop="url">{topics.title}</a><br />
+										<a href="../../topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
 										<small>[[category:posted]] <span class="timeago" title="{topics.relativeTime}"></span> by {topics.username}</small>
 									</p>
 								</div>

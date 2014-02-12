@@ -23,7 +23,7 @@
 	<div class="col-md-12">
 		<ul id="topics-container" data-nextstart="{nextStart}">
 		<!-- BEGIN topics -->
-		<li class="category-item {topics.deleted-class}" itemprop="itemListElement">
+		<li class="category-item {topics.deleted-class} {topics.unread-class}" itemprop="itemListElement">
 			<meta itemprop="name" content="{topics.title}">
 			<div class="category-item">
 				<div class="category-body">
@@ -36,7 +36,7 @@
 							</div>
 							<div class="category-text">
 								<p><strong><i class="fa {topics.pin-icon}"></i> <i class="fa {topics.lock-icon}"></i></strong>
-									<a href="../../topic/{topics.slug}" itemprop="url">{topics.title}</a><br />
+									<a href="../../topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
 									<small>[[category:posted]] [[global:in]]
 									<a href="{relative_path}/category/{topics.categorySlug}">
 										<i class="fa {topics.categoryIcon}"></i> {topics.categoryName}
