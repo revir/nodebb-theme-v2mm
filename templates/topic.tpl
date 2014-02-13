@@ -58,6 +58,21 @@
 					<div class="topic-footer">
 						<div class="row">
 							<div class="">
+								<small class="pull-right">
+									<span>
+										<i class="fa fa-circle status-offline"></i>
+										<span class="username-field" data-username="{posts.username}">
+											<a href="{relative_path}/user/{posts.userslug}" itemprop="author">{posts.username}</a>
+											[[category:posted]] <span class="relativeTimeAgo timeago" title="{posts.relativeTime}"></span>
+										</span>
+									</span>
+
+									<!-- IF posts.editor -->
+									<span>, [[category:last_edited_by]] <strong><a href="{relative_path}/user/{posts.editorslug}">{posts.editorname}</a></strong></span>
+									<span class="timeago" title="{posts.relativeEditTime}"></span>
+									<!-- ENDIF posts.editor -->
+								</small>
+
 								<div class="dropdown share-dropdown">
 									<a href="#" class="dropdown-toggle postMenu favourite-tooltip" id="postMenu_{posts.pid}" data-toggle="dropdown">
 										<i class="fa fa-heart"></i>
@@ -123,21 +138,6 @@
 										<!-- ENDIF posts.display_move_tools -->
 									<!-- ENDIF posts.display_moderator_tools -->
 								</span>
-
-								<small class="pull-right">
-								<span>
-									<i class="fa fa-circle status-offline"></i>
-									<span class="username-field" data-username="{posts.username}">
-										<a href="{relative_path}/user/{posts.userslug}" itemprop="author">{posts.username}</a>
-										[[category:posted]] <span class="relativeTimeAgo timeago" title="{posts.relativeTime}"></span>
-									</span>
-								</span>
-
-								<!-- IF posts.editor -->
-								<span>, [[category:last_edited_by]] <strong><a href="{relative_path}/user/{posts.editorslug}">{posts.editorname}</a></strong></span>
-								<span class="timeago" title="{posts.relativeEditTime}"></span>
-								<!-- ENDIF posts.editor -->
-								</small>
 							</div>
 						</div>
 					</div>
