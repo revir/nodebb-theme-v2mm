@@ -80,7 +80,7 @@
 									<ul class="dropdown-menu" role="menu" aria-labelledby="postMenu_{posts.pid}">
 										<!-- IF @first -->
 										<li role="presentation">
-											<a role="menuitem" tabindex="-1" class="follow" title="Be notified of new replies in this topic">Watch <i class="fa fa-eye"></i></a>
+											<a role="menuitem" tabindex="-1" class="follow" title="Be notified of new replies in this topic">[[topic:watch]] <i class="fa fa-eye"></i></a>
 										</li>
 										<!-- ENDIF @first -->
 										<li role="presentation">
@@ -96,7 +96,7 @@
 										</li>
 										<!-- IF !disableSocialButtons -->
 										<li role="presentation" class="divider"></li>
-										<li role="presentation" class="dropdown-header">Share this Post</li>
+										<li role="presentation" class="dropdown-header">[[topic:share_this_post]]</li>
 										<li role="presentation">
 											<a role="menuitem" class="facebook-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-facebook"></i></span> Facebook</a>
 										</li>
