@@ -78,11 +78,9 @@
 										<i class="fa fa-heart"></i>
 									</a>
 									<ul class="dropdown-menu" role="menu" aria-labelledby="postMenu_{posts.pid}">
-										<!-- IF @first -->
 										<li role="presentation">
 											<a role="menuitem" tabindex="-1" class="follow" title="Be notified of new replies in this topic">[[topic:watch]] <i class="fa fa-eye"></i></a>
 										</li>
-										<!-- ENDIF @first -->
 										<li role="presentation">
 											<a role="menuitem" tabindex="-1" data-favourited="{posts.favourited}" class="favourite">
 												<span class="favourite-text">[[topic:favourite]]</span>
@@ -144,7 +142,6 @@
 				</div>
 			</li>
 
-			<!-- IF @first -->
 			<li class="post-bar" data-index="{posts.index}">
 				<div class="inline-block">
 					<small class="topic-stats">
@@ -174,7 +171,6 @@
 				</div>
 				<div style="clear:both;"></div>
 			</li>
-			<!-- ENDIF @first -->
 		<!-- END posts -->
 	</ul>
 
