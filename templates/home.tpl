@@ -55,48 +55,9 @@
 		</div>
 	</div>
 
-	<div class="col-lg-3 col-sm-12 {show_sidebar} category category-sidebar">
-		<div class="panel panel-default {motd_class}">
-			<div class="panel-heading">MOTD</div>
-			<div class="panel-body">
-				<div class="motd">
-					{motd}
-				</div>
-			</div>
-		</div>
-		<div class="panel panel-default">
-			<div class="panel-heading">[[category:sidebar.recent_replies]]</div>
-			<div class="panel-body recent-replies">
-				<ul id="category_recent_replies"></ul>
-			</div>
-		</div>
-
-		<div class="panel panel-default">
-			<div class="panel-heading">Forum Stats</div>
-			<div class="panel-body">
-				<div class="row footer-stats">
-					<div class="col-md-3 col-xs-6">
-						<div class="stats-card">
-							<h2><span id="stats_online"></span><br /><small>[[footer:stats.online]]</small></h2>
-						</div>
-					</div>
-					<div class="col-md-3 col-xs-6">
-						<div class="stats-card">
-							<h2><span id="stats_users"></span><br /><small>[[footer:stats.users]]</small></h2>
-						</div>
-					</div>
-					<div class="col-md-3 col-xs-6">
-						<div class="stats-card">
-							<h2><span id="stats_topics"></span><br /><small>[[footer:stats.topics]]</small></h2>
-						</div>
-					</div>
-					<div class="col-md-3 col-xs-6">
-						<div class="stats-card">
-							<h2><span id="stats_posts"></span><br /><small>[[footer:stats.posts]]</small></h2>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+	<div widget-area="sidebar" class="col-lg-3 col-sm-12">
+		<!-- BEGIN widgets -->
+		{widgets.html}
+		<!-- END widgets -->
 	</div>
 </div>
