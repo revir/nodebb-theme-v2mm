@@ -1,0 +1,9 @@
+{
+	"library": "./lib/theme.js",
+	"hooks": [
+		{
+			"hook": "filter:widgets.getAreas", "method": "defineWidgetAreas", "callbacked": true
+		}
+	],
+	"staticDir": "./public"
+}

@@ -29,7 +29,7 @@
 <!-- ENDIF !topics.length -->
 
 <div class="category row">
-	<div class="{topic_row_size}">
+	<div class="{topic_row_size}" no-widget-class="col-lg-12 col-sm-12">
 		<ul id="topics-container" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}">
 			<meta itemprop="itemListOrder" content="descending">
 			<!-- BEGIN topics -->
@@ -78,51 +78,21 @@
 			</li>
 			<!-- END topics -->
 		</ul>
-		<!-- IF usePagination -->
+		<!-- IF config.usePagination -->
 		<div class="text-center">
 			<ul class="pagination">
 				<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i> [[global:previouspage]]</a></li>
 				<li class="next pull-right"><a href="#">[[global:nextpage]] <i class="fa fa-chevron-right"></i></a></li>
 			</ul>
 		</div>
-		<!-- ENDIF usePagination -->
+		<!-- ENDIF config.usePagination -->
 	</div>
 
 	<!-- IF topics.length -->
-	<div class="col-md-3 category-sidebar">
-		<div class="panel panel-default">
-			<div class="panel-heading">[[category:sidebar.recent_replies]]</div>
-			<div class="panel-body recent-replies">
-				<ul id="category_recent_replies"></ul>
-			</div>
-		</div>
-
-		<div class="panel panel-default">
-			<div class="panel-heading">[[category:sidebar.active_participants]]</div>
-			<div class="panel-body active-users">
-				<!-- BEGIN active_users -->
-				<a data-uid="{active_users.uid}" href="../../user/{active_users.userslug}"><img title="{active_users.username}" src="{active_users.picture}" class="img-rounded user-img" /></a>
-				<!-- END active_users -->
-			</div>
-		</div>
-
-		<!-- IF moderators.length -->
-		<div class="panel panel-default">
-			<div class="panel-heading">[[category:sidebar.moderators]]</div>
-			<div class="panel-body moderators">
-				<!-- BEGIN moderators -->
-				<a href="../../user/{moderators.userslug}"><img title="{moderators.username}" src="{moderators.picture}" class="img-rounded" /></a>
-				<!-- END moderators -->
-			</div>
-		</div>
-		<!-- ENDIF moderators.length -->
-
-		<!-- BEGIN sidebars -->
-		<div class="panel panel-default">
-			<div class="panel panel-default {sidebars.block_class}">{sidebars.header}</div>
-			<div class="panel-body">{sidebars.content}</div>
-		</div>
-		<!-- END sidebars -->
+	<div widget-area="sidebar" class="col-md-3 col-xs-12 category-sidebar">
+		<!-- BEGIN widgets -->
+		{widgets.html}
+		<!-- END widgets -->
 	</div>
 	<!-- ENDIF topics.length -->
 </div>
