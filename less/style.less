@@ -2,10 +2,10 @@
 @import "./whiteplum";
 
 body {
-	background:#EDEDED;
+	background:#FAFAFA;
 }
 
- .loading-bar {
+.loading-bar {
  	width: 100%;
  	position: absolute;
  	top: -2px;
@@ -27,7 +27,16 @@ body {
  		transition: none;
  		width: 100% !important;
  	}
- }
+}
+
+.admin {
+	background: white;
+
+	.panel[data-widget] {
+		border-top: 0;
+		box-shadow: none;
+	}
+}
 
 .header #user_label {
 	>a {
