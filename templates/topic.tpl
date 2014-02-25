@@ -38,7 +38,7 @@
 							<div class="col-md-12">
 								<div class="topic-profile-pic">
 									<a href="{relative_path}/user/{posts.userslug}">
-										<img src="{posts.picture}" alt="{topics.teaser_username}" class="profile-image user-img" title="{posts.username}">
+										<img src="{posts.picture}" alt="{posts.username}" class="profile-image user-img" title="{posts.username}">
 									</a>
 								</div>
 								<div class="topic-text">
@@ -58,19 +58,33 @@
 					<div class="topic-footer">
 						<div class="row">
 							<div class="">
-								<div class="dropdown">
+								<small class="pull-right">
+									<span>
+										<i class="fa fa-circle status offline"></i>
+										<span class="username-field" data-username="{posts.username}">
+											<a href="{relative_path}/user/{posts.userslug}" itemprop="author">{posts.username}</a>
+											[[category:posted]] <span class="relativeTimeAgo timeago" title="{posts.relativeTime}"></span>
+										</span>
+									</span>
+
+									<!-- IF posts.editor -->
+									<span>, [[category:last_edited_by]] <strong><a href="{relative_path}/user/{posts.editorslug}">{posts.editorname}</a></strong></span>
+									<span class="timeago" title="{posts.relativeEditTime}"></span>
+									<!-- ENDIF posts.editor -->
+								</small>
+
+								<div class="dropdown share-dropdown">
 									<a href="#" class="dropdown-toggle postMenu favourite-tooltip" id="postMenu_{posts.pid}" data-toggle="dropdown">
 										<i class="fa fa-heart"></i>
 									</a>
 									<ul class="dropdown-menu" role="menu" aria-labelledby="postMenu_{posts.pid}">
-										<!-- IF @first -->
 										<li role="presentation">
-											<a role="menuitem" tabindex="-1" class="follow" title="Be notified of new replies in this topic">Watch <i class="fa fa-eye"></i></a>
+											<a role="menuitem" tabindex="-1" class="follow hide" title="Be notified of new replies in this topic">[[topic:watch]] <i class="fa fa-eye"></i></a>
 										</li>
-										<!-- ENDIF @first -->
 										<li role="presentation">
 											<a role="menuitem" tabindex="-1" data-favourited="{posts.favourited}" class="favourite">
 												<span class="favourite-text">[[topic:favourite]]</span>
+												<span class="favouriteCount" data-favourites="{posts.reputation}">{posts.reputation}</span>&nbsp;
 												<!-- IF posts.favourited -->
 												<i class="fa fa-heart"></i>
 												<!-- ELSE -->
@@ -80,7 +94,7 @@
 										</li>
 										<!-- IF !disableSocialButtons -->
 										<li role="presentation" class="divider"></li>
-										<li role="presentation" class="dropdown-header">Share this Post</li>
+										<li role="presentation" class="dropdown-header">[[topic:share_this_post]]</li>
 										<li role="presentation">
 											<a role="menuitem" class="facebook-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-facebook"></i></span> Facebook</a>
 										</li>
@@ -91,9 +105,20 @@
 											<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
 										</li>
 										<!-- ENDIF !disableSocialButtons -->
+										<li class="text-center">
+											<input type="text" id="post_{posts.pid}_link" value="" class="form-control post-link inline-block"></input>
+										<li>
 									</ul>
 								</div>
-								<span class="post_rep_{posts.pid}">{posts.reputation} </span>
+								&bull;
+								<a href="#" class="upvote <!-- IF posts.upvoted --> upvoted btn-primary <!-- ENDIF posts.upvoted -->">
+									<i class="fa fa-plus"></i>
+								</a>
+								<span class="votes" data-votes="{posts.votes}">{posts.votes}</span>
+								<a href="#" class="downvote <!-- IF posts.downvoted --> downvoted btn-primary <!-- ENDIF posts.downvoted -->">
+									<i class="fa fa-minus"></i>
+								</a>
+
 								<!-- BEGIN custom_profile_info -->
 								&bull; {posts.custom_profile_info.content}
 								<!-- END custom_profile_info -->
@@ -111,28 +136,13 @@
 										<!-- ENDIF posts.display_move_tools -->
 									<!-- ENDIF posts.display_moderator_tools -->
 								</span>
-
-								<small class="pull-right">
-								<span>
-									<i class="fa fa-circle status-offline"></i>
-									<span class="username-field">
-										<a href="{relative_path}/user/{posts.userslug}" itemprop="author">{posts.username}</a>
-										[[category:posted]] <span class="relativeTimeAgo timeago" title="{posts.relativeTime}"></span>
-									</span>
-								</span>
-
-								<!-- IF posts.editor -->
-								<span>, [[category:last_edited_by]] <strong><a href="{relative_path}/user/{posts.editorslug}">{posts.editorname}</a></strong></span>
-								<span class="timeago" title="{posts.relativeEditTime}"></span>
-								<!-- ENDIF posts.editor -->
-								</small>
 							</div>
 						</div>
 					</div>
 				</div>
 			</li>
 
-			<!-- IF @first -->
+			<!-- IF !posts.index -->
 			<li class="post-bar" data-index="{posts.index}">
 				<div class="inline-block">
 					<small class="topic-stats">
@@ -149,20 +159,25 @@
 					<div class="btn-group thread-tools hide">
 						<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">[[topic:thread_tools.title]] <span class="caret"></span></button>
 						<ul class="dropdown-menu pull-right">
-							<li><a href="#" class="markAsUnreadForAll"><i class="fa fa-inbox"></i> [[topic:thread_tools.markAsUnreadForAll]]</a></li>
-							<li><a href="#" class="pin_thread"><i class="fa fa-thumb-tack"></i> [[topic:thread_tools.pin]]</a></li>
-							<li><a href="#" class="lock_thread"><i class="fa fa-lock"></i> [[topic:thread_tools.lock]]</a></li>
+							<li><a href="#" class="markAsUnreadForAll"><i class="fa fa-fw fa-inbox"></i> [[topic:thread_tools.markAsUnreadForAll]]</a></li>
+							<li><a href="#" class="pin_thread"><i class="fa fa-fw fa-thumb-tack"></i> [[topic:thread_tools.pin]]</a></li>
+							<li><a href="#" class="lock_thread"><i class="fa fa-fw fa-lock"></i> [[topic:thread_tools.lock]]</a></li>
 							<li class="divider"></li>
-							<li><a href="#" class="move_thread"><i class="fa fa-arrows"></i> [[topic:thread_tools.move]]</a></li>
-							<li><a href="#" class="fork_thread"><i class="fa fa-code-fork"></i> [[topic:thread_tools.fork]]</a></li>
+							<li><a href="#" class="move_thread"><i class="fa fa-fw fa-arrows"></i> [[topic:thread_tools.move]]</a></li>
+							<li><a href="#" class="fork_thread"><i class="fa fa-fw fa-code-fork"></i> [[topic:thread_tools.fork]]</a></li>
 							<li class="divider"></li>
-							<li><a href="#" class="delete_thread"><span class="text-error"><i class="fa fa-trash-o"></i> [[topic:thread_tools.delete]]</span></a></li>
+							<li><a href="#" class="delete_thread"><span class="text-error"><i class="fa fa-fw fa-trash-o"></i> [[topic:thread_tools.delete]]</span></a></li>
+							<!-- BEGIN thread_tools -->
+							<li>
+								<a href="#" class="{thread_tools.class}"><i class="fa fa-fw {thread_tools.icon}"></i> {thread_tools.title}</a>
+							</li>
+							<!-- END thread_tools -->
 						</ul>
 					</div>
 				</div>
 				<div style="clear:both;"></div>
 			</li>
-			<!-- ENDIF @first -->
+			<!-- ENDIF !posts.index -->
 		<!-- END posts -->
 	</ul>
 
@@ -175,28 +190,33 @@
 			<div class="btn-group thread-tools hide dropup">
 				<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">[[topic:thread_tools.title]] <span class="caret"></span></button>
 				<ul class="dropdown-menu pull-right">
-					<li><a href="#" class="markAsUnreadForAll"><i class="fa fa-inbox"></i> [[topic:thread_tools.markAsUnreadForAll]]</a></li>
-					<li><a href="#" class="pin_thread"><i class="fa fa-thumb-tack"></i> [[topic:thread_tools.pin]]</a></li>
-					<li><a href="#" class="lock_thread"><i class="fa fa-lock"></i> [[topic:thread_tools.lock]]</a></li>
+					<li><a href="#" class="markAsUnreadForAll"><i class="fa fa-fw fa-inbox"></i> [[topic:thread_tools.markAsUnreadForAll]]</a></li>
+					<li><a href="#" class="pin_thread"><i class="fa fa-fw fa-thumb-tack"></i> [[topic:thread_tools.pin]]</a></li>
+					<li><a href="#" class="lock_thread"><i class="fa fa-fw fa-lock"></i> [[topic:thread_tools.lock]]</a></li>
 					<li class="divider"></li>
-					<li><a href="#" class="move_thread"><i class="fa fa-arrows"></i> [[topic:thread_tools.move]]</a></li>
-					<li><a href="#" class="fork_thread"><i class="fa fa-code-fork"></i> [[topic:thread_tools.fork]]</a></li>
+					<li><a href="#" class="move_thread"><i class="fa fa-fw fa-arrows"></i> [[topic:thread_tools.move]]</a></li>
+					<li><a href="#" class="fork_thread"><i class="fa fa-fw fa-code-fork"></i> [[topic:thread_tools.fork]]</a></li>
 					<li class="divider"></li>
-					<li><a href="#" class="delete_thread"><span class="text-error"><i class="fa fa-trash-o"></i> [[topic:thread_tools.delete]]</span></a></li>
+					<li><a href="#" class="delete_thread"><span class="text-error"><i class="fa fa-fw fa-trash-o"></i> [[topic:thread_tools.delete]]</span></a></li>
+					<!-- BEGIN thread_tools -->
+					<li>
+						<a href="#" class="{thread_tools.class}"><i class="fa fa-fw {thread_tools.icon}"></i> {thread_tools.title}</a>
+					</li>
+					<!-- END thread_tools -->
 				</ul>
 			</div>
 		</div>
 		<div style="clear:both;"></div>
 	</div>
 
-	<!-- IF usePagination -->
+	<!-- IF config.usePagination -->
 	<div class="text-center">
 		<ul class="pagination">
 			<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i> [[global:previouspage]]</a></li>
 			<li class="next pull-right"><a href="#">[[global:nextpage]] <i class="fa fa-chevron-right"></i></a></li>
 		</ul>
 	</div>
-	<!-- ENDIF usePagination -->
+	<!-- ENDIF config.usePagination -->
 
 	<div id="move_thread_modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Move Topic" aria-hidden="true">
 		<div class="modal-dialog">

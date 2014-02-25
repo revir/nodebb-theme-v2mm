@@ -25,7 +25,7 @@
 	<div class="col-md-12">
 		<ul id="topics-container" data-nextstart="{nextStart}">
 		<!-- BEGIN topics -->
-		<li class="category-item {topics.deleted-class}" itemprop="itemListElement">
+		<li class="category-item <!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement">
 			<meta itemprop="name" content="{topics.title}">
 			<div class="category-item">
 				<div class="category-body">
@@ -33,13 +33,15 @@
 						<div class="col-md-8 col-sm-9">
 							<div class="category-profile-pic">
 								<a href="{relative_path}/user/{topics.userslug}">
-									<img src="{topics.picture}" alt="{topics.teaser_username}" class="profile-image user-img" title="{topics.username}">
+									<img src="{topics.picture}" alt="{topics.username}" class="profile-image user-img" title="{topics.username}">
 								</a>
 							</div>
 							<div class="category-text">
-								<p><strong><i class="fa {topics.pin-icon}"></i> <i class="fa {topics.lock-icon}"></i></strong>
-									<a href="../../topic/{topics.slug}" itemprop="url">{topics.title}</a><br />
-									<small>[[category:posted]] <span class="timeago" title="{topics.relativeTime}"></span> by {topics.username}</small>
+								<p><strong><!-- IF topics.pinned --><i class="fa fa-thumb-tack"></i><!-- ENDIF topics.pinned --> <!-- IF topics.locked --><i class="fa fa-lock"></i><!-- ENDIF topics.locked --></strong>
+									<a href="../../topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
+									<small>[[category:posted]] [[global:in]]
+									<a href="{relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a>
+									<span class="timeago" title="{topics.relativeTime}"></span> by {topics.username}</small>
 								</p>
 							</div>
 						</div>
@@ -55,10 +57,10 @@
 							<!-- IF topics.unreplied -->
 							<p class="no-replies">[[category:no_replies]]</p>
 							<!-- ELSE -->
-							<a href="../../user/{topics.teaser_userslug}"><img class="profile-image small user-img" src="{topics.teaser_userpicture}" title="{topics.teaser_username}"/></a>
-							<a href="../../topic/{topics.slug}#{topics.teaser_pid}">
+							<a href="../../user/{topics.teaser.userslug}"><img class="profile-image small user-img" src="{topics.teaser.picture}" title="{topics.teaser.username}"/></a>
+							<a href="../../topic/{topics.slug}#{topics.teaser.pid}">
 								[[category:replied]]
-								<span class="timeago" title="{topics.teaser_timestamp}"></span>
+								<span class="timeago" title="{topics.teaser.timestamp}"></span>
 							</a>
 							<!-- ENDIF topics.unreplied -->
 						</div>

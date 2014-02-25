@@ -8,7 +8,9 @@
 </ol>
 
 <div>
-	<button id="new_post" class="btn btn-primary {show_topic_button}">[[category:new_topic_button]]</button>
+	<!-- IF privileges.write -->
+	<button id="new_post" class="btn btn-primary">[[category:new_topic_button]]</button>
+	<!-- ENDIF privileges.write -->
 	<!-- IF !disableSocialButtons -->
 	<div class="inline-block pull-right">
 		<a href="#" id="facebook-share"><i class="fa fa-facebook-square fa-2x"></i></a>&nbsp;
@@ -20,16 +22,18 @@
 
 <hr/>
 
-<div class="alert alert-warning hide {no_topics_message}" id="category-no-topics">
+<!-- IF !topics.length -->
+<div class="alert alert-warning" id="category-no-topics">
 	[[category:no_topics]]
 </div>
+<!-- ENDIF !topics.length -->
 
 <div class="category row">
-	<div class="{topic_row_size}">
+	<div class="{topic_row_size}" no-widget-class="col-lg-12 col-sm-12">
 		<ul id="topics-container" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}">
 			<meta itemprop="itemListOrder" content="descending">
 			<!-- BEGIN topics -->
-			<li class="category-item {topics.deleted-class}" itemprop="itemListElement">
+			<li class="category-item <!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement">
 				<meta itemprop="name" content="{topics.title}">
 				<div class="category-item">
 					<div class="category-body">
@@ -37,12 +41,12 @@
 							<div class="col-md-8 col-sm-9">
 								<div class="category-profile-pic">
 									<a href="../../user/{topics.userslug}">
-										<img src="{topics.picture}" alt="{topics.teaser_username}" class="profile-image user-img" title="{topics.username}">
+										<img src="{topics.picture}" alt="{topics.username}" class="profile-image user-img" title="{topics.username}">
 									</a>
 								</div>
 								<div class="category-text">
-									<p><strong><i class="fa {topics.pin-icon}"></i> <i class="fa {topics.lock-icon}"></i></strong>
-										<a href="../../topic/{topics.slug}" itemprop="url">{topics.title}</a><br />
+									<p><strong><!-- IF topics.pinned --><i class="fa fa-thumb-tack"></i><!-- ENDIF topics.pinned --> <!-- IF topics.locked --><i class="fa fa-lock"></i><!-- ENDIF topics.locked --></strong>
+										<a href="../../topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
 										<small>[[category:posted]] <span class="timeago" title="{topics.relativeTime}"></span> by {topics.username}</small>
 									</p>
 								</div>
@@ -59,12 +63,12 @@
 								<!-- IF topics.unreplied -->
 								<p class="no-replies">[[category:no_replies]]</p>
 								<!-- ELSE -->
-								<a href="../../user/{topics.teaser_userslug}">
-									<img class="profile-image small user-img" src="{topics.teaser_userpicture}" title="{topics.teaser_username}"/>
+								<a href="../../user/{topics.teaser.userslug}">
+									<img class="profile-image small user-img" src="{topics.teaser.picture}" title="{teaser.username}"/>
 								</a>
-								<a href="../../topic/{topics.slug}#{topics.teaser_pid}">
+								<a href="../../topic/{topics.slug}#{topics.teaser.pid}">
 									[[category:replied]]
-									<span class="timeago" title="{topics.teaser_timestamp}"></span>
+									<span class="timeago" title="{topics.teaser.timestamp}"></span>
 								</a>
 								<!-- ENDIF topics.unreplied -->
 							</div>
@@ -74,48 +78,23 @@
 			</li>
 			<!-- END topics -->
 		</ul>
-		<!-- IF usePagination -->
+		<!-- IF config.usePagination -->
 		<div class="text-center">
 			<ul class="pagination">
 				<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i> [[global:previouspage]]</a></li>
 				<li class="next pull-right"><a href="#">[[global:nextpage]] <i class="fa fa-chevron-right"></i></a></li>
 			</ul>
 		</div>
-		<!-- ENDIF usePagination -->
+		<!-- ENDIF config.usePagination -->
 	</div>
-	<div class="col-md-3 {show_sidebar} category-sidebar">
-		<div class="panel panel-default">
-			<div class="panel-heading">[[category:sidebar.recent_replies]]</div>
-			<div class="panel-body recent-replies">
-				<ul id="category_recent_replies"></ul>
-			</div>
-		</div>
 
-		<div class="panel panel-default">
-			<div class="panel-heading">[[category:sidebar.active_participants]]</div>
-			<div class="panel-body active-users">
-				<!-- BEGIN active_users -->
-				<a data-uid="{active_users.uid}" href="../../user/{active_users.userslug}"><img title="{active_users.username}" src="{active_users.picture}" class="img-rounded user-img" /></a>
-				<!-- END active_users -->
-			</div>
-		</div>
-
-		<div class="panel panel-default {moderator_block_class}">
-			<div class="panel-heading">[[category:sidebar.moderators]]</div>
-			<div class="panel-body moderators">
-				<!-- BEGIN moderators -->
-				<a href="../../user/{moderators.userslug}"><img title="{moderators.username}" src="{moderators.picture}" class="img-rounded" /></a>
-				<!-- END moderators -->
-			</div>
-		</div>
-
-		<!-- BEGIN sidebars -->
-		<div class="panel panel-default">
-			<div class="panel panel-default {sidebars.block_class}">{sidebars.header}</div>
-			<div class="panel-body">{sidebars.content}</div>
-		</div>
-		<!-- END sidebars -->
+	<!-- IF topics.length -->
+	<div widget-area="sidebar" class="col-md-3 col-xs-12 category-sidebar">
+		<!-- BEGIN widgets -->
+		{widgets.html}
+		<!-- END widgets -->
 	</div>
+	<!-- ENDIF topics.length -->
 </div>
 
 <input type="hidden" template-variable="category_id" value="{category_id}" />

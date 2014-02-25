@@ -1,7 +1,11 @@
 @import "./bootstrap/bootstrap";
 @import "./whiteplum";
 
- .loading-bar {
+body {
+	background:#FAFAFA;
+}
+
+.loading-bar {
  	width: 100%;
  	position: absolute;
  	top: -2px;
@@ -23,7 +27,16 @@
  		transition: none;
  		width: 100% !important;
  	}
- }
+}
+
+.admin {
+	background: white;
+
+	.panel[data-widget] {
+		border-top: 0;
+		box-shadow: 0px 0px 1px #555;
+	}
+}
 
 .header #user_label {
 	>a {
@@ -34,6 +47,13 @@
 	img {
 		width:24px;
 		height:24px;
+	}
+}
+
+.header-topic-title {
+	padding-top:5px;
+	#header-topic-title {
+		height:25px;
 	}
 }
 
@@ -77,7 +97,7 @@
 	 			top: 2px;
 	 			right: 20px;
 
-	 			&.badge-important:before {
+	 			&.unread:before {
 					font-family: FontAwesome;
 					content: '\f01c';
 					padding: 5px;
@@ -122,14 +142,21 @@
 
 	 	.post-preview {
 	 		margin-top: 10px;
+
 	 		img {
+	 			display: block;
+				max-width: 100%;
+				height: auto;
+	 		}
+
+	 		.user-img {
 	 			width: 20px;
 	 			height: 20px;
 	 			margin-right: 5px;
 	 		}
 
 			p {
-		 		max-height: 80px;
+		 		max-height: 200px;
 		 		overflow: hidden;
 			}
 
@@ -152,9 +179,7 @@
 }
 
 .breadcrumb {
-	background: white;
-	height: 40px;
-	padding: 0;
+	background-color: white;
 }
 
 .category {
@@ -347,7 +372,18 @@
 		}
 	}
 
-	.postMenu, .menu-icon {
+	.upvote, .downvote {
+		border-radius: 100%;
+		border: 1px solid @brand-primary;
+		width: 20px;
+		height: 20px;
+		line-height: 18px;
+		font-size: 10px;
+		text-align: center;
+		display: inline-block;
+	}
+
+	.postMenu, .menu-icon, .upvote.btn-primary, .downvote.btn-primary {
 		border-radius: 100%;
 		background: @brand-primary;
 		color: white;
@@ -358,6 +394,25 @@
 		line-height: 20px;
 		font-size: 10px;
 		cursor: pointer;
+	}
+
+	.facebook-share .menu-icon {
+		background: #3b5998;
+		color:white;
+	}
+
+	.twitter-share .menu-icon {
+		background: #2fc2ef;
+		color:white;
+	}
+
+	.google-share .menu-icon {
+		background: #df5138;
+		color:white;
+	}
+
+	.upvote.btn-primary, .downvote.btn-primary {
+		line-height: 18px;
 	}
 
 	.menu-icon {
@@ -379,6 +434,14 @@
 		.row {
 			padding: 10px 10px 10px 20px;
 		}
+
+		.post-link {
+			display:inline-block;
+			width:90%;
+			height:25px;
+			font-size:10px;
+			padding:0px;
+		}
 	}
 
 
@@ -398,4 +461,18 @@
 	-webkit-box-shadow: 0 1px 1px #555;
 	-moz-box-shadow: 0 1px 1px #555;
 	box-shadow: 0 1px 1px #555;
+}
+
+.taskbar {
+	li > a {
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+}
+
+.composer {
+	.instructions {
+		line-height: 25px;
+
+	}
 }

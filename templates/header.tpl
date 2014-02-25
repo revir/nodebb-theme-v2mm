@@ -76,9 +76,11 @@
 						<a href="{relative_path}/admin"><i class="fa fa-fw fa-cogs" title="[[global:header.admin]]"></i><span class="visible-xs-inline"> [[global:header.admin]]</span></a>
 					</li>
 					<!-- ENDIF isAdmin -->
+					<!-- IF searchEnabled -->
 					<li class="visible-xs">
 						<a id="mobile-search-button" href="{relative_path}/search"><i class="fa fa-search" title="[[global:header.search]]"></i> [[global:header.search]]</a>
 					</li>
+					<!-- ENDIF searchEnabled -->
 					<!-- BEGIN navigation -->
 					<li class="{navigation.class}">
 						<a href="{relative_path}{navigation.route}" title="{navigation.title}">
@@ -167,12 +169,13 @@
 					</li>
 				</ul>
 
+				<!-- IF searchEnabled -->
 				<ul id="logged-conditional-menu" class="nav navbar-nav navbar-right">
 					<li>
 						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="">
 							<div class="hide" id="search-fields">
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Search" name="query" value="">
+									<input type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">
 								</div>
 								<button type="submit" class="btn btn-default hide">[[global:search]]</button>
 							</div>
@@ -180,8 +183,10 @@
 						</form>
 					</li>
 				</ul>
+				<!-- ENDIF searchEnabled -->
 
 				<ul class="nav navbar-nav navbar-right pagination-block hide">
+
 					<li>
 						<a href="#">
 							<i class="fa fa-chevron-up pointer"></i>
@@ -193,6 +198,10 @@
 						</a>
 					</li>
 				</ul>
+
+				<div class="header-topic-title pull-right hidden-md-inline">
+					<span id="header-topic-title"></span>
+				</div>
 			</div>
 		</div>
 	</div>
