@@ -92,7 +92,7 @@
 												<!-- ENDIF posts.favourited -->
 											</a>
 										</li>
-										<!-- IF !disableSocialButtons -->
+										<!-- IF !config.disableSocialButtons -->
 										<li role="presentation" class="divider"></li>
 										<li role="presentation" class="dropdown-header">[[topic:share_this_post]]</li>
 										<li role="presentation">
@@ -104,7 +104,7 @@
 										<li role="presentation">
 											<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
 										</li>
-										<!-- ENDIF !disableSocialButtons -->
+										<!-- ENDIF !config.disableSocialButtons -->
 										<li class="text-center">
 											<input type="text" id="post_{posts.pid}_link" value="" class="form-control post-link inline-block"></input>
 										<li>
