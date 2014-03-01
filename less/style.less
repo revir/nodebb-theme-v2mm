@@ -1,5 +1,6 @@
 @import "./bootstrap/bootstrap";
 @import "./whiteplum";
+@import "./keyframes";
 
 body {
 	background:#FAFAFA;
@@ -479,4 +480,8 @@ body {
 		line-height: 25px;
 
 	}
+}
+
+.thread_active_users a[data-uid].replying::after {
+	.animation(topic-reply-pulse 2s ease-in infinite);
 }
