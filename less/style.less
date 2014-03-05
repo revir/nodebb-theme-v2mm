@@ -1,5 +1,6 @@
 @import "./bootstrap/bootstrap";
 @import "./whiteplum";
+@import "./keyframes";
 
 body {
 	background:#FAFAFA;
@@ -52,7 +53,7 @@ body {
 
 .header-topic-title {
 	padding-top:5px;
-	#header-topic-title {
+	span {
 		height:25px;
 	}
 }
@@ -213,9 +214,9 @@ body {
 	.category-item {
 		background-color:#fff;
 		-webkit-box-shadow: inset 0px 0px 2px 2px #ffffff;
-        box-shadow: inset 0px 0px 2px 2px #ffffff;
-        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-        box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+		box-shadow: inset 0px 0px 2px 2px #ffffff;
+		-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+		box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 	}
 
 	.profile-image {
@@ -360,6 +361,10 @@ body {
 			}
 		}
 
+		.post-content {
+			padding-top:1px;
+		}
+
 		> li[data-index="0"] {
 			.post-content {
 				min-height: 60px;
@@ -394,6 +399,21 @@ body {
 		line-height: 20px;
 		font-size: 10px;
 		cursor: pointer;
+	}
+
+	.facebook-share .menu-icon {
+		background: #3b5998;
+		color:white;
+	}
+
+	.twitter-share .menu-icon {
+		background: #2fc2ef;
+		color:white;
+	}
+
+	.google-share .menu-icon {
+		background: #df5138;
+		color:white;
 	}
 
 	.upvote.btn-primary, .downvote.btn-primary {
@@ -446,4 +466,40 @@ body {
 	-webkit-box-shadow: 0 1px 1px #555;
 	-moz-box-shadow: 0 1px 1px #555;
 	box-shadow: 0 1px 1px #555;
+}
+
+.taskbar {
+	li > a {
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+}
+
+.composer {
+	.instructions {
+		line-height: 25px;
+
+	}
+}
+
+.thread_active_users a[data-uid] {
+	img {
+		position: relative;
+		z-index: 1;
+	}
+
+	&::after {
+		z-index: 0;
+		margin-left: -24px;
+		-webkit-transition: opacity 250ms ease, margin-left 250ms ease;
+		-moz-transition: opacity 250ms ease, margin-left 250ms ease;
+		-ms-transition: opacity 250ms ease, margin-left 250ms ease;
+		-o-transition: opacity 250ms ease, margin-left 250ms ease;
+		transition: opacity 250ms ease, margin-left 250ms ease;
+	}
+
+	&.replying::after {
+		margin-left: 0px;
+		.animation(topic-reply-pulse 2s ease-in infinite);
+	}
 }

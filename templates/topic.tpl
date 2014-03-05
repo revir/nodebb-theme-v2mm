@@ -1,11 +1,11 @@
 <input type="hidden" template-variable="expose_tools" value="{expose_tools}" />
-<input type="hidden" template-variable="topic_id" value="{topic_id}" />
+<input type="hidden" template-variable="topic_id" value="{tid}" />
 <input type="hidden" template-variable="currentPage" value="{currentPage}" />
 <input type="hidden" template-variable="pageCount" value="{pageCount}" />
 <input type="hidden" template-variable="locked" value="{locked}" />
 <input type="hidden" template-variable="deleted" value="{deleted}" />
 <input type="hidden" template-variable="pinned" value="{pinned}" />
-<input type="hidden" template-variable="topic_name" value="{topic_name}" />
+<input type="hidden" template-variable="topic_name" value="{title}" />
 <input type="hidden" template-variable="postcount" value="{postcount}" />
 
 
@@ -15,15 +15,15 @@
 			<a href="{relative_path}/" itemprop="url"><span itemprop="title">[[global:home]]</span></a>
 		</li>
 		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-			<a href="{relative_path}/category/{category_slug}" itemprop="url"><span itemprop="title">{category_name}</span></a>
+			<a href="{relative_path}/category/{category.slug}" itemprop="url"><span itemprop="title">{category.name}</span></a>
 		</li>
 		<li class="active" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-			<span itemprop="title">{topic_name} <a target="_blank" href="../{topic_id}.rss"><i class="fa fa-rss-square"></i></a></span>
+			<span itemprop="title">{title} <a target="_blank" href="../{tid}.rss"><i class="fa fa-rss-square"></i></a></span>
 		</li>
 
 	</ol>
 
-	<ul id="post-container" class="posts" data-tid="{topic_id}">
+	<ul id="post-container" class="posts" data-tid="{tid}">
 		<!-- BEGIN posts -->
 			<li class="post-row infiniteloaded" data-pid="{posts.pid}" data-uid="{posts.uid}" data-username="{posts.username}" data-userslug="{posts.userslug}" data-index="{posts.index}" data-deleted="{posts.deleted}" itemscope itemtype="http://schema.org/Comment">
 
@@ -44,7 +44,7 @@
 								<div class="topic-text">
 									<!-- IF @first -->
 									<h3 class="topic-title">
-										<p id="topic_title_{posts.pid}" class="topic-title" itemprop="name">{topic_name}</p>
+										<p id="topic_title_{posts.pid}" class="topic-title" itemprop="name">{title}</p>
 									</h3>
 									<!-- ENDIF @first -->
 									<div id="content_{posts.pid}" class="post-content" itemprop="text">{posts.content}</div>
@@ -60,7 +60,7 @@
 							<div class="">
 								<small class="pull-right">
 									<span>
-										<i class="fa fa-circle status-offline"></i>
+										<i class="fa fa-circle status offline"></i>
 										<span class="username-field" data-username="{posts.username}">
 											<a href="{relative_path}/user/{posts.userslug}" itemprop="author">{posts.username}</a>
 											[[category:posted]] <span class="relativeTimeAgo timeago" title="{posts.relativeTime}"></span>
@@ -79,7 +79,7 @@
 									</a>
 									<ul class="dropdown-menu" role="menu" aria-labelledby="postMenu_{posts.pid}">
 										<li role="presentation">
-											<a role="menuitem" tabindex="-1" class="follow hide" title="Be notified of new replies in this topic">[[topic:watch]] <i class="fa fa-eye"></i></a>
+											<a href="#" role="menuitem" tabindex="-1" class="follow hide" title="Be notified of new replies in this topic">[[topic:watch]] <i class="fa fa-eye"></i></a>
 										</li>
 										<li role="presentation">
 											<a role="menuitem" tabindex="-1" data-favourited="{posts.favourited}" class="favourite">
@@ -92,7 +92,7 @@
 												<!-- ENDIF posts.favourited -->
 											</a>
 										</li>
-										<!-- IF !disableSocialButtons -->
+										<!-- IF !config.disableSocialButtons -->
 										<li role="presentation" class="divider"></li>
 										<li role="presentation" class="dropdown-header">[[topic:share_this_post]]</li>
 										<li role="presentation">
@@ -104,7 +104,7 @@
 										<li role="presentation">
 											<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
 										</li>
-										<!-- ENDIF !disableSocialButtons -->
+										<!-- ENDIF !config.disableSocialButtons -->
 										<li class="text-center">
 											<input type="text" id="post_{posts.pid}_link" value="" class="form-control post-link inline-block"></input>
 										<li>
@@ -142,6 +142,7 @@
 				</div>
 			</li>
 
+			<!-- IF !posts.index -->
 			<li class="post-bar" data-index="{posts.index}">
 				<div class="inline-block">
 					<small class="topic-stats">
@@ -176,6 +177,7 @@
 				</div>
 				<div style="clear:both;"></div>
 			</li>
+			<!-- ENDIF !posts.index -->
 		<!-- END posts -->
 	</ul>
 
