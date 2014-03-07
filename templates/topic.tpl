@@ -112,11 +112,11 @@
 								</div>
 								&bull;
 								<a href="#" class="upvote <!-- IF posts.upvoted --> upvoted btn-primary <!-- ENDIF posts.upvoted -->">
-									<i class="fa fa-plus"></i>
+									<i class="fa fa-chevron-up"></i>
 								</a>
 								<span class="votes" data-votes="{posts.votes}">{posts.votes}</span>
 								<a href="#" class="downvote <!-- IF posts.downvoted --> downvoted btn-primary <!-- ENDIF posts.downvoted -->">
-									<i class="fa fa-minus"></i>
+									<i class="fa fa-chevron-down"></i>
 								</a>
 
 								<!-- BEGIN custom_profile_info -->
