@@ -17,11 +17,16 @@ $('document').ready(function() {
 			}
 		}
 
-		function resize(fluid) {
-			$('.container').animate({
-				width: parseInt(fluid, 10) === 1 ? '95%' : '1280px'
-			}, function() {
-				localStorage.setItem('fluid', fluid);
+		function resize(fixed) {
+			fixed = parseInt(fixed, 10);
+			if (fixed !== 1) {
+				$('.container').css('width', '95%');
+			} else {
+				$('.container').removeAttr('style');
+			}
+
+			$('.container').bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
+				localStorage.setItem('fixed', fixed);
 				doMasonry();
 			});
 		}
@@ -51,11 +56,11 @@ $('document').ready(function() {
 			}
 		});
 
-		var fluid = localStorage.getItem('fluid');
-		resize(fluid);
+		var fixed = localStorage.getItem('fixed') || 0;
+		resize(fixed);
 		div.on('click', function() {
-			fluid = parseInt(fluid, 10) === 1 ? 0 : 1;
-			resize(fluid);
+			fixed = parseInt(fixed, 10) === 1 ? 0 : 1;
+			resize(fixed);
 		});
 	});
 
