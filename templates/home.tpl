@@ -42,7 +42,7 @@
 								{categories.posts.content}
 							</p>
 							<span class="pull-right">
-								<a href="topic/{categories.posts.topicSlug}#{categories.posts.pid}">[[category:posted]]</a>
+								<a href="topic/{categories.posts.topic.slug}#{categories.posts.pid}">[[category:posted]]</a>
 								<span class="timeago" title="{categories.posts.relativeTime}"></span>
 							</span>
 						</div>

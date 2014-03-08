@@ -53,7 +53,7 @@ body {
 
 .header-topic-title {
 	padding-top:5px;
-	#header-topic-title {
+	span {
 		height:25px;
 	}
 }
@@ -287,7 +287,7 @@ body {
 		 	-ms-transition: opacity 0.25s ease-in;
 		 	transition: opacity 0.25s ease-in;
 			button {
-				color: #333;
+				color: @gray-dark;
 			}
 		}
 
@@ -361,10 +361,6 @@ body {
 			}
 		}
 
-		.post-content {
-			padding-top:1px;
-		}
-
 		> li[data-index="0"] {
 			.post-content {
 				min-height: 60px;
@@ -378,42 +374,43 @@ body {
 	}
 
 	.upvote, .downvote {
-		border-radius: 100%;
-		border: 1px solid @brand-primary;
+		color: @gray-light;
 		width: 20px;
 		height: 20px;
 		line-height: 18px;
-		font-size: 10px;
 		text-align: center;
 		display: inline-block;
 	}
 
 	.postMenu, .menu-icon, .upvote.btn-primary, .downvote.btn-primary {
-		border-radius: 100%;
-		background: @brand-primary;
-		color: white;
+		background: transparent;
 		width: 20px;
 		height: 20px;
 		text-align: center;
 		display: inline-block;
 		line-height: 20px;
-		font-size: 10px;
 		cursor: pointer;
+	}
+
+	.upvote.btn-primary, .downvote.btn-primary {
+		color: @brand-primary;
 	}
 
 	.facebook-share .menu-icon {
 		background: #3b5998;
-		color:white;
 	}
 
 	.twitter-share .menu-icon {
 		background: #2fc2ef;
-		color:white;
 	}
 
 	.google-share .menu-icon {
 		background: #df5138;
+	}
+
+	.facebook-share .menu-icon, .twitter-share .menu-icon, .google-share .menu-icon {
 		color:white;
+		border-radius: 100%;
 	}
 
 	.upvote.btn-primary, .downvote.btn-primary {
@@ -456,6 +453,7 @@ body {
 
 	.favourite.btn-warning, .follow.btn-success {
 		background: white !important;
+		color: #333;
 		&:hover {
 			background: @brand-primary !important;
 		}
