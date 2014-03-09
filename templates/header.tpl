@@ -10,9 +10,6 @@
 	<!-- BEGIN linkTags -->
 	<link<!-- IF linkTags.link --> link="{linkTags.link}"<!-- ENDIF linkTags.link --><!-- IF linkTags.rel --> rel="{linkTags.rel}"<!-- ENDIF linkTags.rel --><!-- IF linkTags.type --> type="{linkTags.type}"<!-- ENDIF linkTags.type --><!-- IF linkTags.href --> href="{linkTags.href}"<!-- ENDIF linkTags.href --> />
 	<!-- END linkTags -->
-	<!-- BEGIN pluginCSS -->
-	<link rel="stylesheet" href="{pluginCSS.path}">
-	<!-- END pluginCSS -->
 	<script>
 		var RELATIVE_PATH = "{relative_path}";
 	</script>

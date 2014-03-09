@@ -1,7 +1,7 @@
 $('document').ready(function() {
 	requirejs([
-		'/css/assets/vendor/masonry.js',
-		'/css/assets/vendor/imagesLoaded.js',
+		RELATIVE_PATH + '/css/assets/vendor/masonry.js',
+		RELATIVE_PATH + '/css/assets/vendor/imagesLoaded.js',
 	], function(Masonry, imagesLoaded) {
 
 		function doMasonry() {
