@@ -32,8 +32,8 @@
 					<div class="row">
 						<div class="col-md-8 col-sm-9">
 							<div class="category-profile-pic">
-								<a href="{relative_path}/user/{topics.userslug}">
-									<img src="{topics.picture}" alt="{topics.username}" class="profile-image user-img" title="{topics.username}">
+								<a href="{relative_path}/user/{topics.user.userslug}">
+									<img src="{topics.user.picture}" alt="{topics.user.username}" class="profile-image user-img" title="{topics.user.username}">
 								</a>
 							</div>
 							<div class="category-text">
@@ -41,7 +41,7 @@
 									<a href="../../topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
 									<small>[[category:posted]] [[global:in]]
 									<a href="{relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a>
-									<span class="timeago" title="{topics.relativeTime}"></span> by {topics.username}</small>
+									<span class="timeago" title="{topics.relativeTime}"></span> by {topics.user.username}</small>
 								</p>
 							</div>
 						</div>
