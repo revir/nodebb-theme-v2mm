@@ -8,7 +8,7 @@ A simple theme for NodeBB. Check out the theming guide that accompanies this wor
 
 **Home View**
 
-[![Home View](http://imgur.com/gfQYGHl)](http://imgur.com/gfQYGHl)
+[![Home View](http://i.imgur.com/gfQYGHl.png)](http://i.imgur.com/gfQYGHl.png)
 
 **Category View**
 
