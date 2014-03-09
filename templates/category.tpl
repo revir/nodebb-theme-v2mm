@@ -45,14 +45,14 @@
 					<div class="row">
 						<div class="col-md-8 col-sm-9">
 							<div class="category-profile-pic">
-								<a href="../../user/{topics.userslug}">
-									<img src="{topics.picture}" alt="{topics.username}" class="profile-image user-img" title="{topics.username}">
+								<a href="../../user/{topics.user.userslug}">
+									<img src="{topics.user.picture}" alt="{topics.user.username}" class="profile-image user-img" title="{topics.user.username}">
 								</a>
 							</div>
 							<div class="category-text">
 								<p><strong><!-- IF topics.pinned --><i class="fa fa-thumb-tack"></i><!-- ENDIF topics.pinned --> <!-- IF topics.locked --><i class="fa fa-lock"></i><!-- ENDIF topics.locked --></strong>
 									<a href="../../topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
-									<small>[[category:posted]] <span class="timeago" title="{topics.relativeTime}"></span> by {topics.username}</small>
+									<small>[[category:posted]] <span class="timeago" title="{topics.relativeTime}"></span> by {topics.user.username}</small>
 								</p>
 							</div>
 						</div>
