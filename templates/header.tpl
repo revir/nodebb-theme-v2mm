@@ -74,7 +74,7 @@
 					</li>
 					<!-- IF isAdmin -->
 					<li>
-						<a href="{relative_path}/admin"><i class="fa fa-fw fa-cogs" title="[[global:header.admin]]"></i><span class="visible-xs-inline"> [[global:header.admin]]</span></a>
+						<a href="{relative_path}/admin" target="_top"><i class="fa fa-fw fa-cogs" title="[[global:header.admin]]"></i><span class="visible-xs-inline"> [[global:header.admin]]</span></a>
 					</li>
 					<!-- ENDIF isAdmin -->
 					<!-- IF searchEnabled -->
@@ -210,4 +210,4 @@
 	<input id="csrf_token" type="hidden" template-variable="csrf" value="{csrf}" />
 
 	<div class="container" id="content">
-	<!-- IMPORT partials/noscript.tpl -->
+	<!-- IMPORT partials/noscript/warning.tpl -->
