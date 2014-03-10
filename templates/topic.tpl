@@ -7,6 +7,7 @@
 <input type="hidden" template-variable="pinned" value="{pinned}" />
 <input type="hidden" template-variable="topic_name" value="{title}" />
 <input type="hidden" template-variable="postcount" value="{postcount}" />
+<input type="hidden" template-variable="viewcount" value="{viewcount}" />
 
 
 <div class="topic">
