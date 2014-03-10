@@ -290,5 +290,6 @@
 			</div>
 		</div>
 	</div>
-
 </div>
+
+<!-- IMPORT partials/noscript/paginator.tpl -->
