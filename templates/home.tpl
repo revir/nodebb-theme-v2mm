@@ -55,7 +55,7 @@
 		</div>
 	</div>
 
-	<div widget-area="sidebar" class="col-lg-3 col-sm-12">
+	<div widget-area="sidebar" class="col-lg-3 col-sm-12 hidden">
 		<!-- BEGIN widgets -->
 		{widgets.html}
 		<!-- END widgets -->
