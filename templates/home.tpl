@@ -12,7 +12,14 @@
 					<!-- ELSE -->
 					<a style="color: {categories.color};" href="{relative_path}/category/{categories.slug}" itemprop="url">
 					<!-- ENDIF categories.link -->
-						<div id="category-{categories.cid}" class="category-header category-header-image-{categories.imageClass}" style="background: {categories.background}; color: {categories.color};">
+						<div
+							id="category-{categories.cid}" class="category-header category-header-image-{categories.imageClass}"
+							style="
+								<!-- IF categories.backgroundImage -->background-image: {categories.backgroundImage};<!-- ENDIF categories.backgroundImage -->
+								<!-- IF categories.bgColor -->background-color: {categories.bgColor};<!-- ENDIF categories.bgColor -->
+								color: {categories.color};
+							"
+						>
 							<!-- IF !categories.link -->
 							<span class="badge {categories.unread-class}">{categories.topic_count} </span>
 							<!-- ENDIF !categories.link -->
