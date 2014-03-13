@@ -32,7 +32,7 @@
 						<!-- IF categories.link -->
 						<a href="{categories.link}" itemprop="url" target="_blank">
 						<!-- ELSE -->
-						<a href="category/{categories.slug}" itemprop="url">
+						<a href="{relative_path}/category/{categories.slug}" itemprop="url">
 						<!-- ENDIF categories.link-->
 							<h4><i class="fa {categories.icon} visible-xs-inline"></i> {categories.name}</h4>
 						</a>
