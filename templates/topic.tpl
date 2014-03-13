@@ -26,7 +26,7 @@
 
 	<ul id="post-container" class="posts" data-tid="{tid}">
 		<!-- BEGIN posts -->
-			<li class="post-row infiniteloaded" data-pid="{posts.pid}" data-uid="{posts.uid}" data-username="{posts.username}" data-userslug="{posts.userslug}" data-index="{posts.index}" data-deleted="{posts.deleted}" itemscope itemtype="http://schema.org/Comment">
+			<li class="post-row infiniteloaded" data-pid="{posts.pid}" data-uid="{posts.uid}" data-username="{posts.user.username}" data-userslug="{posts.user.userslug}" data-index="{posts.index}" data-deleted="{posts.deleted}" itemscope itemtype="http://schema.org/Comment">
 
 				<a id="post_anchor_{posts.pid}" name="{posts.pid}"></a>
 
@@ -38,8 +38,8 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="topic-profile-pic">
-									<a href="{relative_path}/user/{posts.userslug}">
-										<img src="{posts.picture}" alt="{posts.username}" class="profile-image user-img" title="{posts.username}">
+									<a href="{relative_path}/user/{posts.user.userslug}">
+										<img src="{posts.user.picture}" alt="{posts.user.username}" class="profile-image user-img" title="{posts.user.username}">
 									</a>
 								</div>
 								<div class="topic-text">
@@ -62,16 +62,16 @@
 								<small class="pull-right">
 									<span>
 										<i class="fa fa-circle status offline"></i>
-										<span class="username-field" data-username="{posts.username}">
-											<a href="{relative_path}/user/{posts.userslug}" itemprop="author">{posts.username}</a>
+										<span class="username-field" data-username="{posts.user.username}">
+											<a href="{relative_path}/user/{posts.userslug}" itemprop="author">{posts.user.username}</a>
 											[[category:posted]] <span class="relativeTimeAgo timeago" title="{posts.relativeTime}"></span>
 										</span>
 									</span>
 
-									<!-- IF posts.editor -->
-									<span>, [[category:last_edited_by]] <strong><a href="{relative_path}/user/{posts.editorslug}">{posts.editorname}</a></strong></span>
+									<!-- IF posts.editor.username -->
+									<span>, [[category:last_edited_by]] <strong><a href="{relative_path}/user/{posts.editor.userslug}">{posts.editor.username}</a></strong></span>
 									<span class="timeago" title="{posts.relativeEditTime}"></span>
-									<!-- ENDIF posts.editor -->
+									<!-- ENDIF posts.editor.username -->
 								</small>
 
 								<div class="dropdown share-dropdown">

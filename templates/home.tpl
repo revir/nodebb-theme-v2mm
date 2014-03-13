@@ -40,12 +40,12 @@
 						<!-- IF !categories.link -->
 						<!-- BEGIN posts -->
 						<div class="post-preview clearfix">
-							<a style="color: {categories.color};" href="./user/{categories.posts.userslug}">
-								<img src="{categories.posts.picture}" title="{categories.posts.username}" class="pull-left user-img" />
+							<a style="color: {categories.color};" href="./user/{categories.posts.user.userslug}">
+								<img src="{categories.posts.user.picture}" title="{categories.posts.user.username}" class="pull-left user-img" />
 							</a>
 
 							<p>
-								<strong>{categories.posts.username}</strong><br/>
+								<strong>{categories.posts.user.username}</strong><br/>
 								{categories.posts.content}
 							</p>
 							<span class="pull-right">
