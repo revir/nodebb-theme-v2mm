@@ -46,7 +46,11 @@
 						<div class="col-md-8 col-sm-9">
 							<div class="category-profile-pic">
 								<a href="../../user/{topics.user.userslug}">
+									<!-- IF topics.thumb -->
+									<img src="{topics.thumb}" alt="{topics.title}" class="profile-image user-img" title="{topics.title}">
+									<!-- ELSE -->
 									<img src="{topics.user.picture}" alt="{topics.user.username}" class="profile-image user-img" title="{topics.user.username}">
+									<!-- ENDIF topics.thumb -->
 								</a>
 							</div>
 							<div class="category-text">
