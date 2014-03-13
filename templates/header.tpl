@@ -23,7 +23,9 @@
 			waitSeconds: 3,
 			urlArgs: "{cache-buster}",
 			paths: {
-				"forum": '../forum'
+				'forum': '../forum',
+				'vendor': '../../vendor',
+				'buzz': '../../vendor/buzz/buzz.min'
 			}
 		});
 	</script>
