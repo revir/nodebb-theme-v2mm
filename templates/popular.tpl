@@ -26,7 +26,7 @@
 		<div class="col-md-12">
 			<ul id="topics-container" data-nextstart="{nextStart}">
 			<!-- BEGIN topics -->
-			<li class="category-item <!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement">
+			<li class="category-item <!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}">
 				<meta itemprop="name" content="{topics.title}">
 				<div class="category-item">
 					<div class="category-body">

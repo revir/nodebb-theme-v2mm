@@ -18,7 +18,7 @@
 		<div class="col-md-12">
 			<ul id="topics-container" data-nextstart="{nextStart}">
 			<!-- BEGIN topics -->
-			<li class="category-item<!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted -->" itemprop="itemListElement" data-tid="{topics.tid}">
+			<li class="category-item <!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}">
 				<meta itemprop="name" content="{topics.title}">
 				<div class="category-item">
 					<div class="category-body">
@@ -31,10 +31,10 @@
 								</div>
 								<div class="category-text">
 									<p><strong><!-- IF topics.pinned --><i class="fa fa-thumb-tack"></i><!-- ENDIF topics.pinned --> <!-- IF topics.locked --><i class="fa fa-lock"></i><!-- ENDIF topics.locked --></strong>
-										<a href="../../topic/{topics.slug}" itemprop="url">{topics.title}</a><br />
+										<a href="../../topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
 										<small>[[category:posted]] [[global:in]]
 										<a href="{relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a>
-										<span class="timeago" title="{topics.relativeTime}"></span> by {topics.username}</small>
+										<span class="timeago" title="{topics.relativeTime}"></span> by {topics.user.username}</small>
 									</p>
 								</div>
 							</div>
