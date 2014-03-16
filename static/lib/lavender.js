@@ -49,7 +49,7 @@ $('document').ready(function() {
 		}).hide().appendTo(document.body);
 
 		$(window).on('mousemove', function(ev) {
-			if (ev.pageX > $(window).width() - 150 && ev.pageY > $(window).height() - 150) {
+			if (ev.clientX > $(window).width() - 150 && ev.clientY > $(window).height() - 150) {
 				div.fadeIn();
 			} else {
 				div.stop(true, true).fadeOut();
