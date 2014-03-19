@@ -120,10 +120,11 @@
 									<i class="fa fa-chevron-down"></i>
 								</a>
 
-								<!-- BEGIN custom_profile_info -->
-								&bull; {posts.custom_profile_info.content}
-								<!-- END custom_profile_info -->
-
+								<!-- IF custom_profile_info -->
+									<!-- BEGIN custom_profile_info -->
+									&bull; {posts.custom_profile_info.content}
+									<!-- END custom_profile_info -->
+								<!-- ENDIF custom_profile_info -->
 								<span class="post-tools">
 									<button class="btn btn-sm btn-link chat" type="button" title="[[topic:chat]]"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> [[topic:chat]]</span></button>
 									<button class="btn btn-sm btn-link quote" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> [[topic:quote]]</span></button>
