@@ -63,7 +63,7 @@
 									<span>
 										<i class="fa fa-circle status offline"></i>
 										<span class="username-field" data-username="{posts.user.username}">
-											<a href="{relative_path}/user/{posts.userslug}" itemprop="author">{posts.user.username}</a>
+											<a href="{relative_path}/user/{posts.user.userslug}" itemprop="author">{posts.user.username}</a>
 											[[category:posted]] <span class="relativeTimeAgo timeago" title="{posts.relativeTime}"></span>
 										</span>
 									</span>
