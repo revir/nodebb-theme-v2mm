@@ -15,7 +15,7 @@
 						<div
 							id="category-{categories.cid}" class="category-header category-header-image-{categories.imageClass}"
 							style="
-								<!-- IF categories.backgroundImage -->background-image: {categories.backgroundImage};<!-- ENDIF categories.backgroundImage -->
+								<!-- IF categories.backgroundImage -->background-image: url({categories.backgroundImage});<!-- ENDIF categories.backgroundImage -->
 								<!-- IF categories.bgColor -->background-color: {categories.bgColor};<!-- ENDIF categories.bgColor -->
 								color: {categories.color};
 							"
