@@ -29,13 +29,17 @@ $('document').ready(function() {
 		}
 
 		function resize() {
-			$('.container').off('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', onTransitionEnd)
+			$('#content.container').off('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', onTransitionEnd)
 				.on('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', onTransitionEnd);
 
 			if (fixed !== 1) {
 				$('.container').css('width', '95%');
 			} else {
-				$('.container').removeAttr('style');
+				if(!!$('.container').attr('style')) {
+					$('.container').removeAttr('style');
+				} else {
+					doMasonry();
+				}
 			}
 		}
 
@@ -66,7 +70,7 @@ $('document').ready(function() {
 
 		div.on('click', function() {
 			fixed = fixed === 1 ? 0 : 1;
-			resize(fixed);
+			resize();
 		});
 	});
 
