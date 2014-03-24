@@ -13,9 +13,6 @@
 		var RELATIVE_PATH = "{relative_path}";
 	</script>
 
-	<!-- Lavender Specific Library -->
-	<script src="{relative_path}/css/assets/lib/lavender.js"></script>
-
 	<!-- IF useCustomCSS -->
 	<style type="text/css">{customCSS}</style>
 	<!-- ENDIF useCustomCSS -->

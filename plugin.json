@@ -6,5 +6,10 @@
 			"hook": "filter:widgets.getAreas", "method": "defineWidgetAreas", "callbacked": true
 		}
 	],
-	"staticDir": "./public"
+	"staticDirs": {
+		"vendor": "static/vendor"
+	},
+	"scripts": [
+		"static/lib/lavender.js"
+	]
 }
