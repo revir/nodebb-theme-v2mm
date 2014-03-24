@@ -49,9 +49,9 @@
 									</h3>
 									<!-- ENDIF @first -->
 									<div id="content_{posts.pid}" class="post-content" itemprop="text">{posts.content}</div>
-									<!-- IF posts.signature -->
-									<div class="post-signature">{posts.signature}</div>
-									<!-- ENDIF posts.signature -->
+									<!-- IF posts.user.signature -->
+									<div class="post-signature">{posts.user.signature}</div>
+									<!-- ENDIF posts.user.signature -->
 								</div>
 							</div>
 						</div>
