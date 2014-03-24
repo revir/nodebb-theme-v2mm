@@ -12,6 +12,20 @@
 	<script>
 		var RELATIVE_PATH = "{relative_path}";
 	</script>
+	<script src="{relative_path}/socket.io/socket.io.js"></script>
+	<script src="{relative_path}/nodebb.min.js?{cache-buster}"></script>
+	<script>
+		require.config({
+			baseUrl: "{relative_path}/src/modules",
+			waitSeconds: 3,
+			urlArgs: "{cache-buster}",
+			paths: {
+				'forum': '../forum',
+				'vendor': '../../vendor',
+				'buzz': '../../vendor/buzz/buzz.min'
+			}
+		});
+	</script>
 
 	<!-- IF useCustomCSS -->
 	<style type="text/css">{customCSS}</style>
