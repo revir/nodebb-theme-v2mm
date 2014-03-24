@@ -1,9 +1,14 @@
+'use strict';
+
+/* globals requirejs, RELATIVE_PATH, ajaxify, templates, app */
+
 $('document').ready(function() {
 	requirejs([
 		RELATIVE_PATH + '/css/assets/vendor/masonry.js',
 		RELATIVE_PATH + '/css/assets/vendor/imagesLoaded.js',
 	], function(Masonry, imagesLoaded) {
 		var fixed = localStorage.getItem('fixed') || 0;
+		fixed = parseInt(fixed, 10);
 
 		function doMasonry() {
 			if($('.home').length) {
@@ -18,27 +23,28 @@ $('document').ready(function() {
 			}
 		}
 
-		function resize(fixed) {
-			fixed = parseInt(fixed, 10);
+		function onTransitionEnd() {
+			localStorage.setItem('fixed', fixed);
+			doMasonry();
+		}
+
+		function resize() {
+			$('.container').off('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', onTransitionEnd)
+				.on('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', onTransitionEnd);
+
 			if (fixed !== 1) {
 				$('.container').css('width', '95%');
 			} else {
 				$('.container').removeAttr('style');
 			}
-
-			$('.container').bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
-				localStorage.setItem('fixed', fixed);
-				doMasonry();
-			});
 		}
 
 		$(window).on('action:ajaxify.end', function(ev, data) {
 			var url = data.url;
 
-			if (url === "") {
+			if (url === '') {
 				if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-					doMasonry();
-					resize(fixed);
+					resize();
 				}
 			}
 		});
@@ -59,7 +65,7 @@ $('document').ready(function() {
 		});
 
 		div.on('click', function() {
-			fixed = parseInt(fixed, 10) === 1 ? 0 : 1;
+			fixed = fixed === 1 ? 0 : 1;
 			resize(fixed);
 		});
 	});
