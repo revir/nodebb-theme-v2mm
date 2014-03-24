@@ -29,17 +29,13 @@ $('document').ready(function() {
 		}
 
 		function resize() {
-			$('#content.container').off('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', onTransitionEnd)
+			$('.container').off('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', onTransitionEnd)
 				.on('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', onTransitionEnd);
 
 			if (fixed !== 1) {
 				$('.container').css('width', '95%');
 			} else {
-				if(!!$('.container').attr('style')) {
-					$('.container').removeAttr('style');
-				} else {
-					doMasonry();
-				}
+				$('.container').removeAttr('style');
 			}
 		}
 
@@ -70,7 +66,7 @@ $('document').ready(function() {
 
 		div.on('click', function() {
 			fixed = fixed === 1 ? 0 : 1;
-			resize();
+			resize(fixed);
 		});
 	});
 
