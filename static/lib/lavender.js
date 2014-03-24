@@ -43,15 +43,26 @@ $('document').ready(function() {
 			}
 		}
 
+		function isMobile() {
+			return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i).test(navigator.userAgent);
+		}
+
 		$(window).on('action:ajaxify.end', function(ev, data) {
 			var url = data.url;
 
 			if (url === '') {
-				if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+				if(!isMobile()) {
 					resize();
 				}
 			}
 		});
+
+		if (ajaxify.currentPage) {
+			if(!isMobile()) {
+				resize();
+			}
+		}
+
 
 		var div = $('<div class="panel resizer pointer"><div class="panel-body"><i class="fa fa-bars fa-2x"></i></div></div>');
 		div.css({
