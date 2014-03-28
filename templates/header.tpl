@@ -3,7 +3,7 @@
 <head>
 	<title>{browserTitle}</title>
 	<!-- BEGIN metaTags -->
-	<meta<!-- IF metaTags.name --> name="{metaTags.name}"<!-- ENDIF metaTags.name --><!-- IF metaTags.property --> property="{metaTags.property}"<!-- ENDIF metaTags.property --><!-- IF metaTags.content --> content="{metaTags.content}"<!-- ENDIF metaTags.content --> />
+	{function.buildMetaTag}
 	<!-- END metaTags -->
 	<link rel="stylesheet" type="text/css" href="{relative_path}/stylesheet.css?{cache-buster}" />
 	<!-- BEGIN linkTags -->
