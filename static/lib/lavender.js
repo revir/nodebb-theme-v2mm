@@ -67,7 +67,7 @@ $('document').ready(function() {
 	(function() {
 		// loading animation
 		var ajaxifyGo = ajaxify.go,
-			loadTemplates = templates.load_template,
+			loadData = ajaxify.loadData,
 			refreshTitle = app.refreshTitle,
 			loadingBar = $('.loading-bar');
 
@@ -76,12 +76,12 @@ $('document').ready(function() {
 			return ajaxifyGo(url, callback, quiet);
 		};
 
-		templates.load_template = function(callback, url, template) {
+		ajaxify.loadData = function(callback, url, template) {
 			setTimeout(function() {
-				loadingBar.removeClass('reset').css('width', (Math.random() * 25) + 5 + '%');
+				loadingBar.removeClass('reset').css('width', (Math.random() * 20) + 5 + '%');
 			}, 10);
 
-			return loadTemplates(callback, url, template);
+			return loadData(callback, url, template);
 		};
 
 		app.refreshTitle = function(url) {
