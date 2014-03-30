@@ -58,6 +58,7 @@ body {
 	}
 }
 
+
 .home {
 
 	@media screen and (min-width: @screen-md-min) {
@@ -192,6 +193,27 @@ body {
 	ul {
 		li {
 			padding-bottom: 0;
+		}
+	}
+
+	.header {
+		margin-bottom:20px;
+	}
+
+	.title {
+		display: inline-block;
+		margin: 0px 0px 0px 20px;
+		i {
+			font-size:2.6em;
+		}
+
+		h3 {
+			position: relative;
+			top: -3px;
+			left: 15px;
+			margin: 0px;
+			display: inline-block;
+			font-weight: 400;
 		}
 	}
 
@@ -387,35 +409,10 @@ body {
 		display: inline-block;
 	}
 
-	.postMenu, .menu-icon, .upvote.btn-primary, .downvote.btn-primary {
-		background: transparent;
-		width: 20px;
-		height: 20px;
-		text-align: center;
-		display: inline-block;
-		line-height: 20px;
-		cursor: pointer;
-	}
+
 
 	.upvote.btn-primary, .downvote.btn-primary {
 		color: @brand-primary;
-	}
-
-	.facebook-share .menu-icon {
-		background: #3b5998;
-	}
-
-	.twitter-share .menu-icon {
-		background: #2fc2ef;
-	}
-
-	.google-share .menu-icon {
-		background: #df5138;
-	}
-
-	.facebook-share .menu-icon, .twitter-share .menu-icon, .google-share .menu-icon {
-		color:white;
-		border-radius: 100%;
 	}
 
 	.upvote.btn-primary, .downvote.btn-primary {
@@ -440,14 +437,6 @@ body {
 
 		.row {
 			padding: 10px 10px 10px 20px;
-		}
-
-		.post-link {
-			display:inline-block;
-			width:90%;
-			height:25px;
-			font-size:10px;
-			padding:0px;
 		}
 	}
 
@@ -505,4 +494,35 @@ body {
 		margin-left: 0px;
 		.animation(topic-reply-pulse 2s ease-in infinite);
 	}
+}
+
+.postMenu, .menu-icon, .upvote.btn-primary, .downvote.btn-primary {
+	background: transparent;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	display: inline-block;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+.facebook-share, .twitter-share, .google-share {
+	background: transparent;
+}
+
+.facebook-share .menu-icon {
+	background: #3b5998;
+}
+
+.twitter-share .menu-icon {
+	background: #2fc2ef;
+}
+
+.google-share .menu-icon {
+	background: #df5138;
+}
+
+.facebook-share .menu-icon, .twitter-share .menu-icon, .google-share .menu-icon {
+	color:white;
+	border-radius: 100%;
 }

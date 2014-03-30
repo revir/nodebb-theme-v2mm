@@ -108,7 +108,7 @@
 										<!-- ENDIF !config.disableSocialButtons -->
 										<li class="text-center">
 											<input type="text" id="post_{posts.pid}_link" value="" class="form-control post-link inline-block"></input>
-										<li>
+										</li>
 									</ul>
 								</div>
 								&bull;

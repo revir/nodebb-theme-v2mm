@@ -12,29 +12,57 @@
 	</li>
 </ol>
 
-<div>
-	<!-- IF privileges.write -->
-	<button id="new_post" class="btn btn-primary">[[category:new_topic_button]]</button>
-	<!-- ENDIF privileges.write -->
-	<!-- IF !config.disableSocialButtons -->
-	<div class="inline-block pull-right">
-		<a href="#" id="facebook-share"><i class="fa fa-facebook-square fa-2x"></i></a>&nbsp;
-		<a href="#" id="twitter-share"><i class="fa fa-twitter-square fa-2x"></i></a>&nbsp;
-		<a href="#" id="google-share"><i class="fa fa-google-plus-square fa-2x"></i></a>&nbsp;
-	</div>
-	<!-- ENDIF !config.disableSocialButtons -->
-</div>
-
-<hr/>
-
-<!-- IF !topics.length -->
-<div class="alert alert-warning" id="category-no-topics">
-	[[category:no_topics]]
-</div>
-<!-- ENDIF !topics.length -->
-
 <div class="category row">
 	<div class="{topic_row_size}" no-widget-class="col-lg-12 col-sm-12">
+
+		<div class="header" class="category-tools" style="background-color:{bgColor};">
+			<div class="panel-body">
+
+				<span class="title" style="color:{color};">
+					<!-- IF icon -->
+					<i class="fa {icon} fa-3x" ></i>
+					<!-- ENDIF icon-->
+					<h3>{name}</h3>
+				</span>
+
+				<span class="pull-right">
+					<!-- IF privileges.write -->
+					<button id="new_post" class="btn btn-primary">[[category:new_topic_button]]</button>
+					<!-- ENDIF privileges.write -->
+
+					<span class="dropdown share-dropdown">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							[[topic:share]] <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu pull-right" role="menu">
+
+							<li role="presentation" class="dropdown-header">[[category:share_this_category]]</li>
+							<!-- IF !config.disableSocialButtons -->
+							<li role="presentation">
+								<a role="menuitem" class="facebook-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-facebook"></i></span> Facebook</a>
+							</li>
+							<li role="presentation">
+								<a role="menuitem" class="twitter-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-twitter"></i></span> Twitter</a>
+							</li>
+							<li role="presentation">
+								<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
+							</li>
+							<!-- ENDIF !config.disableSocialButtons -->
+							<li class="text-center">
+								<input id="category-link" type="text" value="" class="form-control post-link inline-block"></input>
+							</li>
+						</ul>
+					</span>
+				</span>
+			</div>
+		</div>
+
+		<!-- IF !topics.length -->
+		<div class="alert alert-warning" id="category-no-topics">
+			[[category:no_topics]]
+		</div>
+		<!-- ENDIF !topics.length -->
+
 		<ul id="topics-container" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}">
 			<meta itemprop="itemListOrder" content="descending">
 			<!-- BEGIN topics -->
