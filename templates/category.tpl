@@ -15,12 +15,12 @@
 <div class="category row">
 	<div class="{topic_row_size}" no-widget-class="col-lg-12 col-sm-12">
 
-		<div class="header" class="category-tools" style="background-color:{bgColor};">
+		<div class="panel header" class="category-tools">
 			<div class="panel-body">
 
-				<span class="title" style="color:{color};">
+				<span class="title" >
 					<!-- IF icon -->
-					<i class="fa {icon} fa-3x" ></i>
+					<i class="fa {icon} fa-3x"></i>
 					<!-- ENDIF icon-->
 					<h3>{name}</h3>
 				</span>
