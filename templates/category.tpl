@@ -15,46 +15,35 @@
 <div class="category row">
 	<div class="{topic_row_size}" no-widget-class="col-lg-12 col-sm-12">
 
-		<div class="panel header" class="category-tools">
-			<div class="panel-body">
+		<div class="header" class="category-tools">
+			<!-- IF privileges.write -->
+			<button id="new_post" class="btn btn-primary">[[category:new_topic_button]]</button>
+			<!-- ENDIF privileges.write -->
 
-				<span class="title" >
-					<!-- IF icon -->
-					<i class="fa {icon} fa-3x"></i>
-					<!-- ENDIF icon-->
-					<h3>{name}</h3>
-				</span>
+			<span class="dropdown share-dropdown pull-right">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					[[topic:share]] <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" role="menu">
 
-				<span class="pull-right">
-					<!-- IF privileges.write -->
-					<button id="new_post" class="btn btn-primary">[[category:new_topic_button]]</button>
-					<!-- ENDIF privileges.write -->
+					<li role="presentation" class="dropdown-header">[[category:share_this_category]]</li>
+					<!-- IF !config.disableSocialButtons -->
+					<li role="presentation">
+						<a role="menuitem" class="facebook-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-facebook"></i></span> Facebook</a>
+					</li>
+					<li role="presentation">
+						<a role="menuitem" class="twitter-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-twitter"></i></span> Twitter</a>
+					</li>
+					<li role="presentation">
+						<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
+					</li>
+					<!-- ENDIF !config.disableSocialButtons -->
+					<li class="text-center">
+						<input id="category-link" type="text" value="" class="form-control post-link inline-block"></input>
+					</li>
+				</ul>
+			</span>
 
-					<span class="dropdown share-dropdown">
-						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-							[[topic:share]] <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu pull-right" role="menu">
-
-							<li role="presentation" class="dropdown-header">[[category:share_this_category]]</li>
-							<!-- IF !config.disableSocialButtons -->
-							<li role="presentation">
-								<a role="menuitem" class="facebook-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-facebook"></i></span> Facebook</a>
-							</li>
-							<li role="presentation">
-								<a role="menuitem" class="twitter-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-twitter"></i></span> Twitter</a>
-							</li>
-							<li role="presentation">
-								<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
-							</li>
-							<!-- ENDIF !config.disableSocialButtons -->
-							<li class="text-center">
-								<input id="category-link" type="text" value="" class="form-control post-link inline-block"></input>
-							</li>
-						</ul>
-					</span>
-				</span>
-			</div>
 		</div>
 
 		<!-- IF !topics.length -->
