@@ -13,8 +13,7 @@
 </ol>
 
 <div class="category row">
-	<div class="{topic_row_size}" no-widget-class="col-lg-12 col-sm-12">
-
+	<div class="{topic_row_size}" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
 		<div class="header" class="category-tools">
 			<!-- IF privileges.write -->
 			<button id="new_post" class="btn btn-primary">[[category:new_topic_button]]</button>
