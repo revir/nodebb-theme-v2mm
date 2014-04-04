@@ -40,14 +40,16 @@
 						<!-- IF !categories.link -->
 						<!-- BEGIN posts -->
 						<div class="post-preview clearfix">
-							<a style="color: {categories.color};" href="./user/{categories.posts.user.userslug}">
-								<img src="{categories.posts.user.picture}" title="{categories.posts.user.username}" class="pull-left user-img" />
-							</a>
+							<div class="post-preview-content">
+								<a style="color: {categories.color};" href="./user/{categories.posts.user.userslug}">
+									<img src="{categories.posts.user.picture}" title="{categories.posts.user.username}" class="pull-left user-img" />
+								</a>
 
-							<p>
-								<strong>{categories.posts.user.username}</strong><br/>
-								{categories.posts.content}
-							</p>
+								<p>
+									<strong>{categories.posts.user.username}</strong><br/>
+									{categories.posts.content}
+								</p>
+							</div>
 							<span class="pull-right">
 								<a href="topic/{categories.posts.topic.slug}#{categories.posts.pid}">[[category:posted]]</a>
 								<span class="timeago" title="{categories.posts.relativeTime}"></span>
