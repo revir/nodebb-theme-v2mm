@@ -114,9 +114,7 @@
 		<!-- ENDIF config.usePagination -->
 	</div>
 
-	<!-- IF topics.length -->
 	<div widget-area="sidebar" class="col-md-3 col-xs-12 category-sidebar hidden"></div>
-	<!-- ENDIF topics.length -->
 </div>
 
 <!-- IMPORT partials/noscript/paginator.tpl -->
