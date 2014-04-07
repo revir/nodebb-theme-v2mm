@@ -21,7 +21,9 @@
 		<li class="active" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
 			<span itemprop="title">{title} <a target="_blank" href="../{tid}.rss"><i class="fa fa-rss-square"></i></a></span>
 		</li>
-
+		<div class="loading-indicator pull-right" done="0" style="display:none;">
+			<i class="fa fa-refresh fa-spin"></i>
+		</div>
 	</ol>
 
 	<ul id="post-container" class="posts" data-tid="{tid}">
