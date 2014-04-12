@@ -24,7 +24,9 @@
 							<span class="badge {categories.unread-class}">{categories.topic_count} </span>
 							<!-- ENDIF !categories.link -->
 
+							<!-- IF categories.icon -->
 							<div><i class="fa {categories.icon} fa-4x"></i></div>
+							<!-- ENDIF categories.icon -->
 						</div>
 					</a>
 
@@ -34,7 +36,7 @@
 						<!-- ELSE -->
 						<a href="{relative_path}/category/{categories.slug}" itemprop="url">
 						<!-- ENDIF categories.link-->
-							<h4><i class="fa {categories.icon} visible-xs-inline"></i> {categories.name}</h4>
+							<h4><!-- IF categories.icon --><i class="fa {categories.icon} visible-xs-inline"></i> <!-- ENDIF categories.icon -->{categories.name}</h4>
 						</a>
 						<div class="description" itemprop="description">{categories.description}</div>
 						<!-- IF !categories.link -->
