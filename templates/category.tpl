@@ -24,26 +24,9 @@
 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 					[[topic:share]] <span class="caret"></span>
 				</button>
-				<ul class="dropdown-menu" role="menu">
 
-					<li role="presentation" class="dropdown-header">[[category:share_this_category]]</li>
-					<!-- IF !config.disableSocialButtons -->
-					<li role="presentation">
-						<a role="menuitem" class="facebook-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-facebook"></i></span> Facebook</a>
-					</li>
-					<li role="presentation">
-						<a role="menuitem" class="twitter-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-twitter"></i></span> Twitter</a>
-					</li>
-					<li role="presentation">
-						<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
-					</li>
-					<!-- ENDIF !config.disableSocialButtons -->
-					<li class="text-center">
-						<input id="category-link" type="text" value="" class="form-control post-link inline-block"></input>
-					</li>
-				</ul>
+				<!-- IMPORT partials/share_dropdown.tpl -->
 			</span>
-
 		</div>
 
 		<!-- IF !topics.length -->

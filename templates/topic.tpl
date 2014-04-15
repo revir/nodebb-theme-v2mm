@@ -148,69 +148,14 @@
 
 			<!-- IF !posts.index -->
 			<li class="post-bar" data-index="{posts.index}">
-				<div class="inline-block">
-					<small class="topic-stats">
-						<span>[[category:posts]]</span>
-						<strong><span id="topic-post-count" class="human-readable-number" title="{postcount}">{postcount}</span></strong> |
-						<span>[[category:views]]</span>
-						<strong><span class="human-readable-number" title="{viewcount}">{viewcount}</span></strong> |
-						<span>[[category:browsing]]</span>
-					</small>
-					<div class="thread_active_users active-users inline-block"></div>
-				</div>
-				<div class="topic-main-buttons pull-right inline-block">
-					<button class="btn btn-primary post_reply" type="button">[[topic:reply]]</button>
-					<div class="btn-group thread-tools hide">
-						<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">[[topic:thread_tools.title]] <span class="caret"></span></button>
-						<ul class="dropdown-menu pull-right">
-							<li><a href="#" class="markAsUnreadForAll"><i class="fa fa-fw fa-inbox"></i> [[topic:thread_tools.markAsUnreadForAll]]</a></li>
-							<li><a href="#" class="pin_thread"><i class="fa fa-fw fa-thumb-tack"></i> [[topic:thread_tools.pin]]</a></li>
-							<li><a href="#" class="lock_thread"><i class="fa fa-fw fa-lock"></i> [[topic:thread_tools.lock]]</a></li>
-							<li class="divider"></li>
-							<li><a href="#" class="move_thread"><i class="fa fa-fw fa-arrows"></i> [[topic:thread_tools.move]]</a></li>
-							<li><a href="#" class="fork_thread"><i class="fa fa-fw fa-code-fork"></i> [[topic:thread_tools.fork]]</a></li>
-							<li class="divider"></li>
-							<li><a href="#" class="delete_thread"><span class="text-error"><i class="fa fa-fw fa-trash-o"></i> [[topic:thread_tools.delete]]</span></a></li>
-							<!-- BEGIN thread_tools -->
-							<li>
-								<a href="#" class="{thread_tools.class}"><i class="fa fa-fw {thread_tools.icon}"></i> {thread_tools.title}</a>
-							</li>
-							<!-- END thread_tools -->
-						</ul>
-					</div>
-				</div>
-				<div style="clear:both;"></div>
+				<!-- IMPORT partials/post_bar.tpl -->
 			</li>
 			<!-- ENDIF !posts.index -->
 		<!-- END posts -->
 	</ul>
 
 	<div class="post-bar col-xs-12 pull-right hide bottom-post-bar">
-		<div class="topic-main-buttons pull-right inline-block">
-			<div class="loading-indicator" done="0" style="display:none;">
-				<span class="hidden-xs-inline">[[topic:loading_more_posts]]</span> <i class="fa fa-refresh fa-spin"></i>
-			</div>
-			<button class="btn btn-primary post_reply" type="button">[[topic:reply]]</button>
-			<div class="btn-group thread-tools hide dropup">
-				<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">[[topic:thread_tools.title]] <span class="caret"></span></button>
-				<ul class="dropdown-menu pull-right">
-					<li><a href="#" class="markAsUnreadForAll"><i class="fa fa-fw fa-inbox"></i> [[topic:thread_tools.markAsUnreadForAll]]</a></li>
-					<li><a href="#" class="pin_thread"><i class="fa fa-fw fa-thumb-tack"></i> [[topic:thread_tools.pin]]</a></li>
-					<li><a href="#" class="lock_thread"><i class="fa fa-fw fa-lock"></i> [[topic:thread_tools.lock]]</a></li>
-					<li class="divider"></li>
-					<li><a href="#" class="move_thread"><i class="fa fa-fw fa-arrows"></i> [[topic:thread_tools.move]]</a></li>
-					<li><a href="#" class="fork_thread"><i class="fa fa-fw fa-code-fork"></i> [[topic:thread_tools.fork]]</a></li>
-					<li class="divider"></li>
-					<li><a href="#" class="delete_thread"><span class="text-error"><i class="fa fa-fw fa-trash-o"></i> [[topic:thread_tools.delete]]</span></a></li>
-					<!-- BEGIN thread_tools -->
-					<li>
-						<a href="#" class="{thread_tools.class}"><i class="fa fa-fw {thread_tools.icon}"></i> {thread_tools.title}</a>
-					</li>
-					<!-- END thread_tools -->
-				</ul>
-			</div>
-		</div>
-		<div style="clear:both;"></div>
+		<!-- IMPORT partials/post_bar.tpl -->
 	</div>
 
 	<!-- IF config.usePagination -->
@@ -222,78 +167,9 @@
 	</div>
 	<!-- ENDIF config.usePagination -->
 
-	<div id="move_thread_modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="Move Topic" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h3>[[topic:move_topic]]</h3>
-				</div>
-				<div class="modal-body">
-					<p id="categories-loading"><i class="fa fa-spin fa-refresh"></i> [[topic:load_categories]]</p>
-					<ul class="category-list"></ul>
-					<p>
-						[[topic:disabled_categories_note]]
-					</p>
-					<div id="move-confirm" style="display: none;">
-						<hr />
-						<div class="alert alert-info">[[topic:topic_will_be_moved_to]] <strong><span id="confirm-category-name"></span></strong></div>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal" id="move_thread_cancel">[[global:buttons.close]]</button>
-					<button type="button" class="btn btn-primary" id="move_thread_commit" disabled>[[topic:confirm_move]]</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<div id="fork-thread-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4>[[topic:fork_topic]]</h4>
-				</div>
-				<div class="modal-body">
-					<div class="form-group">
-						<label for="title">Title</label>
-						<input id="fork-title" type="text" class="form-control" placeholder="Enter new thread title"><br/>
-						<label>[[topic:fork_topic_instruction]]</label> <br/>
-						<span id="fork-pids"></span>
-					</div>
-				</div>
-
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal" id="fork_thread_cancel">[[global:buttons.close]]</button>
-					<button type="button" class="btn btn-primary" id="fork_thread_commit" disabled>[[topic:confirm_fork]]</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="move-post-modal" class="hide" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true" data-backdrop="none">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4>[[topic:move_post]]</h4>
-				</div>
-				<div class="modal-body">
-					<div class="form-group">
-						<label for="topicId">Topic ID</label>
-						<input id="topicId" type="text" class="form-control" placeholder="Enter topic ID"><br/>
-					</div>
-				</div>
-
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal" id="move_post_cancel">[[global:buttons.close]]</button>
-					<button type="button" class="btn btn-primary" id="move_post_commit" disabled>[[topic:confirm_move]]</button>
-				</div>
-			</div>
-		</div>
-	</div>
+	<!-- IMPORT partials/move_thread_modal.tpl -->
+	<!-- IMPORT partials/fork_thread_modal.tpl -->
+	<!-- IMPORT partials/move_post_modal.tpl -->
 </div>
 
 <!-- IMPORT partials/noscript/paginator.tpl -->
