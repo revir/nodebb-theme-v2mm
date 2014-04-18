@@ -28,11 +28,11 @@
 						</div>
 						<div class="col-xs-1 category-stat hidden-xs">
 							<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong><br />
-							<small>[[category:posts]]</small>
+							<small>[[global:posts]]</small>
 						</div>
 						<div class="col-xs-1 category-stat hidden-xs">
 							<strong class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</strong><br />
-							<small>[[category:views]]</small>
+							<small>[[global:views]]</small>
 						</div>
 						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
 							<!-- IF topics.unreplied -->

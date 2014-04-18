@@ -64,17 +64,17 @@
 							<div class="category-text">
 								<p><strong><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
 									<a href="../../topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
-									<small>[[category:posted]] <span class="timeago" title="{topics.relativeTime}"></span> by {topics.user.username}</small>
+									<small>[[global:posted_ago_by, {topics.relativeTime}, {topics.user.username}]]</small>
 								</p>
 							</div>
 						</div>
 						<div class="col-xs-1 category-stat hidden-xs">
 							<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong><br />
-							<small>[[category:posts]]</small>
+							<small>[[global:posts]]</small>
 						</div>
 						<div class="col-xs-1 category-stat hidden-xs">
 							<strong class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</strong><br />
-							<small>[[category:views]]</small>
+							<small>[[global:views]]</small>
 						</div>
 						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
 							<!-- IF topics.unreplied -->
