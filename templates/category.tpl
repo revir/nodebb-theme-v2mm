@@ -20,12 +20,16 @@
 			<button id="new_post" class="btn btn-primary">[[category:new_topic_button]]</button>
 			<!-- ENDIF privileges.write -->
 
-			<span class="dropdown share-dropdown pull-right">
-				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-					[[topic:share]] <span class="caret"></span>
-				</button>
+			<span class="pull-right">
+				<!-- IMPORT partials/category_tools.tpl -->
 
-				<!-- IMPORT partials/share_dropdown.tpl -->
+				<div class="dropdown share-dropdown inline-block">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						[[topic:share]] <span class="caret"></span>
+					</button>
+
+					<!-- IMPORT partials/share_dropdown.tpl -->
+				</div>
 			</span>
 		</div>
 
@@ -38,7 +42,7 @@
 		<ul id="topics-container" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}">
 			<meta itemprop="itemListOrder" content="descending">
 			<!-- BEGIN topics -->
-			<li class="category-item <!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-index="{topics.index}">
+			<li class="category-item<!-- IF topics.locked --> locked<!-- ENDIF topics.locked --><!-- IF topics.pinned --> pinned<!-- ENDIF topics.pinned --><!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-index="{topics.index}">
 				<meta itemprop="name" content="{topics.title}">
 
 				<div class="category-body">
@@ -58,7 +62,7 @@
 								</a>
 							</div>
 							<div class="category-text">
-								<p><strong><!-- IF topics.pinned --><i class="fa fa-thumb-tack"></i><!-- ENDIF topics.pinned --> <!-- IF topics.locked --><i class="fa fa-lock"></i><!-- ENDIF topics.locked --></strong>
+								<p><strong><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
 									<a href="../../topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
 									<small>[[category:posted]] <span class="timeago" title="{topics.relativeTime}"></span> by {topics.user.username}</small>
 								</p>
@@ -104,4 +108,5 @@
 	<div widget-area="sidebar" class="col-md-3 col-xs-12 category-sidebar hidden"></div>
 </div>
 
+<!-- IMPORT partials/move_thread_modal.tpl -->
 <!-- IMPORT partials/noscript/paginator.tpl -->
