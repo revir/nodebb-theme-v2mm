@@ -84,8 +84,7 @@
 								<img class="profile-image small user-img" src="{topics.teaser.picture}" title="{topics.teaser.username}"/>
 							</a>
 							<a href="../../topic/{topics.slug}#{topics.teaser.pid}">
-								[[category:replied]]
-								<span class="timeago" title="{topics.teaser.timestamp}"></span>
+								[[global:replied_ago, {topics.teaser.timestamp}]]
 							</a>
 							<!-- ENDIF topics.unreplied -->
 						</div>

@@ -66,14 +66,12 @@
 									<span>
 										<i class="fa fa-circle status offline"></i>
 										<span class="username-field" data-username="{posts.user.username}">
-											<a href="{relative_path}/user/{posts.user.userslug}" itemprop="author">{posts.user.username}</a>
-											[[category:posted]] <span class="relativeTimeAgo timeago" title="{posts.relativeTime}"></span>
+											[[global:user_posted_ago, {relative_path}/user/{posts.user.userslug}, {posts.user.username}, {posts.relativeTime}]]
 										</span>
 									</span>
 
 									<!-- IF posts.editor.username -->
-									<span>, [[category:last_edited_by]] <strong><a href="{relative_path}/user/{posts.editor.userslug}">{posts.editor.username}</a></strong></span>
-									<span class="timeago" title="{posts.relativeEditTime}"></span>
+									<span>, [[global:last_edited_by_ago, {relative_path}/user/{posts.editor.userslug}, {posts.editor.username}, {posts.relativeTime}]]</span>
 									<!-- ENDIF posts.editor.username -->
 								</small>
 

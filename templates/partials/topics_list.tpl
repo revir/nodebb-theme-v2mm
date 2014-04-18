@@ -20,9 +20,7 @@
 							<div class="category-text">
 								<p><strong><!-- IF topics.pinned --><i class="fa fa-thumb-tack"></i><!-- ENDIF topics.pinned --> <!-- IF topics.locked --><i class="fa fa-lock"></i><!-- ENDIF topics.locked --></strong>
 									<a href="../../topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
-									<small>[[category:posted]] [[global:in]]
-									<a href="{relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a>
-									<span class="timeago" title="{topics.relativeTime}"></span> by {topics.user.username}</small>
+									<small>[[global:posted_in_ago_by, {relative_path}/category/{topics.category.slug}, {topics.category.icon}, {topics.category.name}, {topics.relativeTime}, {topics.user.username}]]</small>
 								</p>
 							</div>
 						</div>
@@ -40,8 +38,7 @@
 							<!-- ELSE -->
 							<a href="../../user/{topics.teaser.userslug}"><img class="profile-image small user-img" src="{topics.teaser.picture}" title="{topics.teaser.username}"/></a>
 							<a href="../../topic/{topics.slug}#{topics.teaser.pid}">
-								[[category:replied]]
-								<span class="timeago" title="{topics.teaser.timestamp}"></span>
+								[[global:replied_ago, {topics.teaser.timestamp}]]
 							</a>
 							<!-- ENDIF topics.unreplied -->
 						</div>
