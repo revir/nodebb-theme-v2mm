@@ -13,7 +13,7 @@
 							<!-- ENDIF showSelect -->
 
 							<div class="category-profile-pic">
-								<a href="{relative_path}/user/{topics.user.userslug}">
+								<a href="<!-- IF topics.user.userslug -->{relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
 									<img src="{topics.user.picture}" alt="{topics.user.username}" class="profile-image user-img" title="{topics.user.username}">
 								</a>
 							</div>
@@ -36,10 +36,11 @@
 							<!-- IF topics.unreplied -->
 							<p class="no-replies">[[category:no_replies]]</p>
 							<!-- ELSE -->
-							<a href="../../user/{topics.teaser.userslug}"><img class="profile-image small user-img" src="{topics.teaser.picture}" title="{topics.teaser.username}"/></a>
+							<a href="<!-- IF topics.teaser.user.userslug -->../../user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->"><img class="profile-image small user-img" src="{topics.teaser.user.picture}" title="{topics.teaser.user.username}"/></a>
 							<a href="../../topic/{topics.slug}#{topics.teaser.pid}">
 								[[global:replied_ago, {topics.teaser.timestamp}]]
 							</a>
+
 							<!-- ENDIF topics.unreplied -->
 						</div>
 					</div>

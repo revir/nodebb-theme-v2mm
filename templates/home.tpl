@@ -43,7 +43,7 @@
 						<!-- BEGIN posts -->
 						<div class="post-preview clearfix">
 							<div class="post-preview-content">
-								<a style="color: {categories.color};" href="./user/{categories.posts.user.userslug}">
+								<a style="color: {categories.color};" href="<!-- IF categories.posts.user.userslug -->./user/{categories.posts.user.userslug}<!-- ELSE -->#<!-- ENDIF categories.posts.user.userslug-->">
 									<img src="{categories.posts.user.picture}" title="{categories.posts.user.username}" class="pull-left user-img" />
 								</a>
 

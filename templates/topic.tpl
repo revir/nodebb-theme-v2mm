@@ -41,7 +41,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="topic-profile-pic">
-									<a href="{relative_path}/user/{posts.user.userslug}">
+									<a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
 										<img src="{posts.user.picture}" alt="{posts.user.username}" class="profile-image user-img" title="{posts.user.username}">
 									</a>
 								</div>
@@ -66,7 +66,7 @@
 									<span>
 										<i class="fa fa-circle status offline"></i>
 										<span class="username-field" data-username="{posts.user.username}">
-											[[global:user_posted_ago, {relative_path}/user/{posts.user.userslug}, {posts.user.username}, {posts.relativeTime}]]
+											[[global:user_posted_ago, <!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->, {posts.user.username}, {posts.relativeTime}]]
 										</span>
 									</span>
 
