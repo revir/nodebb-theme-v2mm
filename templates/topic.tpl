@@ -64,9 +64,15 @@
 							<div class="">
 								<small class="pull-right">
 									<span>
+										<!-- IF posts.user.userslug -->
 										<i class="fa fa-circle status offline"></i>
+										<!-- ENDIF posts.user.userslug -->
 										<span class="username-field" data-username="{posts.user.username}">
-											[[global:user_posted_ago, <!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->, {posts.user.username}, {posts.relativeTime}]]
+											<!-- IF posts.user.userslug -->
+											[[global:user_posted_ago, {relative_path}/user/{posts.user.userslug}, {posts.user.username}, {posts.relativeTime}]]
+											<!-- ELSE -->
+											[[global:guest_posted_ago, {posts.relativeTime}]]
+											<!-- ENDIF posts.user.userslug -->
 										</span>
 									</span>
 

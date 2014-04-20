@@ -80,9 +80,7 @@
 							<!-- IF topics.unreplied -->
 							<p class="no-replies">[[category:no_replies]]</p>
 							<!-- ELSE -->
-							<a href="../../user/{topics.teaser.user.userslug}">
-								<img class="profile-image small user-img" src="{topics.teaser.user.picture}" title="{topics.teaser.user.username}"/>
-							</a>
+							<a href="<!-- IF topics.teaser.user.userslug -->../../user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->"><img class="profile-image small user-img" src="{topics.teaser.user.picture}" title="{topics.teaser.user.username}" /></a>
 							<a href="../../topic/{topics.slug}#{topics.teaser.pid}">
 								[[global:replied_ago, {topics.teaser.timestamp}]]
 							</a>
