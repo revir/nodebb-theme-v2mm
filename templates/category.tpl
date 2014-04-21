@@ -53,7 +53,7 @@
 							<!-- ENDIF privileges.editable -->
 
 							<div class="category-profile-pic">
-								<a href="../../user/{topics.user.userslug}">
+								<a href="<!-- IF topics.user.userslug -->../../user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
 									<!-- IF topics.thumb -->
 									<img src="{topics.thumb}" alt="{topics.title}" class="profile-image user-img" title="{topics.title}">
 									<!-- ELSE -->
@@ -64,7 +64,13 @@
 							<div class="category-text">
 								<p><strong><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
 									<a href="../../topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
-									<small>[[global:posted_ago_by, {topics.relativeTime}, {topics.user.username}]]</small>
+									<small>
+									<!-- IF topics.user.userslug -->
+									[[global:posted_ago_by, <span class="timeago" title="{topics.relativeTime}"></span>, {topics.user.username}]]
+									<!-- ELSE -->
+									[[global:posted_ago_by_guest, <span class="timeago" title="{topics.relativeTime}"></span>]]
+									<!-- ENDIF topics.user.userslug -->
+									</small>
 								</p>
 							</div>
 						</div>
@@ -82,7 +88,7 @@
 							<!-- ELSE -->
 							<a href="<!-- IF topics.teaser.user.userslug -->../../user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->"><img class="profile-image small user-img" src="{topics.teaser.user.picture}" title="{topics.teaser.user.username}" /></a>
 							<a href="../../topic/{topics.slug}#{topics.teaser.pid}">
-								[[global:replied_ago, {topics.teaser.timestamp}]]
+								[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]
 							</a>
 							<!-- ENDIF topics.unreplied -->
 						</div>

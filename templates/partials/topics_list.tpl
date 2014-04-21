@@ -20,7 +20,14 @@
 							<div class="category-text">
 								<p><strong><!-- IF topics.pinned --><i class="fa fa-thumb-tack"></i><!-- ENDIF topics.pinned --> <!-- IF topics.locked --><i class="fa fa-lock"></i><!-- ENDIF topics.locked --></strong>
 									<a href="../../topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
-									<small>[[global:posted_in_ago_by, {relative_path}/category/{topics.category.slug}, {topics.category.icon}, {topics.category.name}, {topics.relativeTime}, {topics.user.username}]]</small>
+
+									<small>
+									<!-- IF topics.user.userslug -->
+										[[global:posted_in_ago_by, <a href="{relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a>, <span class="timeago" title="{topics.relativeTime}"></span>, {topics.user.username}]]
+									<!-- ELSE -->
+										[[global:posted_in_ago_by_guest, <a href="{relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a>, <span class="timeago" title="{topics.relativeTime}"></span>]]
+									<!-- ENDIF topics.user.userslug -->
+									</small>
 								</p>
 							</div>
 						</div>
@@ -40,7 +47,7 @@
 
 							<a href="<!-- IF topics.teaser.user.userslug -->../../user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->"><img class="profile-image small user-img" src="{topics.teaser.user.picture}" title="{topics.teaser.user.username}" /></a>
 							<a href="../../topic/{topics.slug}#{topics.teaser.pid}">
-								[[global:replied_ago, {topics.teaser.timestamp}]]
+								[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]
 							</a>
 
 							<!-- ENDIF topics.unreplied -->

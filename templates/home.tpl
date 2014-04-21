@@ -53,7 +53,7 @@
 								</p>
 							</div>
 							<span class="pull-right">
-								[[global:posted_ago, {categories.posts.relativeTime}]] &bull;
+								[[global:posted_ago, <span class="timeago" title="{categories.posts.relativeTime}"></span>]] &bull;
 								<a href="topic/{categories.posts.topic.slug}#{categories.posts.pid}">[[global:read_more]] <i class="fa fa-chevron-circle-right"></i></a>
 							</span>
 						</div>
