@@ -77,7 +77,7 @@
 									</span>
 
 									<!-- IF posts.editor.username -->
-									<span>, [[global:last_edited_by_ago, <strong><a href="{relative_path}/user/{posts.editor.userslug}">{posts.editor.username}</a></strong>, <span class="timeago" title="{posts.relativeTime}"></span>]]</span>
+									<span>, [[global:last_edited_by_ago, <strong><a href="{relative_path}/user/{posts.editor.userslug}">{posts.editor.username}</a></strong>, <span class="timeago" title="{posts.relativeEditTime}"></span>]]</span>
 									<!-- ENDIF posts.editor.username -->
 								</small>
 
