@@ -3,16 +3,17 @@ $('document').ready(function() {
 		RELATIVE_PATH + '/css/assets/vendor/masonry.js',
 		RELATIVE_PATH + '/css/assets/vendor/imagesLoaded.js',
 	], function(Masonry, imagesLoaded) {
-		var fixed = localStorage.getItem('fixed') || 0;
+		var fixed = localStorage.getItem('fixed') || 0,
+			masonry;
 
 		function doMasonry() {
 			if($('.home').length) {
-				var masonry = new Masonry('.row.home > div', {
+				masonry = new Masonry('.row.home > div', {
 					itemSelector: '.category-item',
-					columnWidth: '.category-item',
+					columnWidth: '.category-item'
 				});
 
-				$('.row.home > div').imagesLoaded(function() {
+				$('.row.home > div p img').imagesLoaded(function() {
 					masonry.layout();
 				});
 			}
