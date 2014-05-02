@@ -167,6 +167,12 @@ body {
 
 			.post-preview-content {
 				max-height: 250px;
+				p {
+					display: none;
+				}
+				*:first-child + p + p {
+					display: block;
+				}
 				overflow: hidden;
 			}
 
