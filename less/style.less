@@ -121,8 +121,17 @@ body {
 
 			}
 
-	 		padding: 10px;
 	 		min-height: 30px;
+
+	 		.category-info {
+	 			background: #f7f7f7;
+	 			padding:10px;
+	 			border-bottom: 1px solid #e9e9e9;
+	 		}
+
+	 		.post-preview {
+	 			padding:10px;
+	 		}
 	 	}
 		.category-box:after, .category-box:before {
 			bottom: 100%;
@@ -136,7 +145,7 @@ body {
 		}
 		.category-box:after {
 			border-color: rgba(140, 113, 242, 0);
-			border-bottom-color: #fff;
+			border-bottom-color: #f7f7f7;
 			border-width: 10px;
 			margin-left: -10px;
 		}
@@ -148,9 +157,13 @@ body {
 	 	}
 
 	 	.post-preview {
-	 		margin-top: 10px;
 	 		padding-top: 10px;
-			border-top: 1px dashed #dedede;
+			border-bottom: 1px dashed #dedede;
+
+	 		&:last-child {
+				border-bottom: none;
+			}
+
 			word-break: break-word;
 
 	 		img {
