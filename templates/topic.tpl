@@ -40,7 +40,7 @@
 					<div class="topic-body">
 						<div class="row">
 							<div class="col-md-12">
-								<div class="topic-profile-pic">
+								<div class="topic-profile-pic hidden-xs">
 									<a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
 										<img src="{posts.user.picture}" alt="{posts.user.username}" class="profile-image user-img" title="{posts.user.username}">
 									</a>
