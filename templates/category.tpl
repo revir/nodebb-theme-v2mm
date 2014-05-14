@@ -16,9 +16,9 @@
 <div class="category row">
 	<div class="{topic_row_size}" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
 		<div class="header" class="category-tools">
-			<!-- IF privileges.write -->
+			<!-- IF privileges.meta.topics:create -->
 			<button id="new_post" class="btn btn-primary">[[category:new_topic_button]]</button>
-			<!-- ENDIF privileges.write -->
+			<!-- ENDIF privileges.meta.topics:create -->
 
 			<span class="pull-right">
 				<!-- IMPORT partials/category_tools.tpl -->
