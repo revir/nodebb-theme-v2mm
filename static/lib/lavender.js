@@ -21,11 +21,7 @@ $('document').ready(function() {
 
 		function resize(fixed) {
 			fixed = parseInt(fixed, 10);
-			if (fixed !== 1) {
-				$('.container').css('width', '95%');
-			} else {
-				$('.container').removeAttr('style');
-			}
+			$('.container').toggleClass('container-fluid', fixed !== 1).toggleClass('container', fixed === 1);
 
 			$('.container').bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
 				localStorage.setItem('fixed', fixed);
