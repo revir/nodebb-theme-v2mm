@@ -48,9 +48,9 @@
 				<div class="category-body">
 					<div class="row">
 						<div class="col-md-8 col-sm-9">
-							<!-- IF privileges.editable -->
+							<!-- IF privileges.meta.editable -->
 								<i class="fa fa-fw fa-square-o pull-left select pointer"></i>
-							<!-- ENDIF privileges.editable -->
+							<!-- ENDIF privileges.meta.editable -->
 
 							<div class="category-profile-pic">
 								<a href="<!-- IF topics.user.userslug -->../../user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
