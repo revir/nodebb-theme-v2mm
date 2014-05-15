@@ -21,9 +21,10 @@ $('document').ready(function() {
 
 		function resize(fixed) {
 			fixed = parseInt(fixed, 10);
-			$('.container').toggleClass('container-fluid', fixed !== 1).toggleClass('container', fixed === 1);
+			var container = $('.container').length ? $('.container') : $('.container-fluid');
+			container.toggleClass('container-fluid', fixed !== 1).toggleClass('container', fixed === 1);
 
-			$('.container').bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
+			container.bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
 				localStorage.setItem('fixed', fixed);
 				doMasonry();
 			});
