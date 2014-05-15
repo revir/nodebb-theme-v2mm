@@ -1,4 +1,3 @@
-<input type="hidden" template-variable="expose_tools" value="{expose_tools}" />
 <input type="hidden" template-variable="topic_id" value="{tid}" />
 <input type="hidden" template-variable="category_id" value="{category.cid}" />
 <input type="hidden" template-variable="currentPage" value="{currentPage}" />
