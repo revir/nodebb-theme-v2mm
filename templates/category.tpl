@@ -15,7 +15,7 @@
 
 <div class="category row">
 	<div class="{topic_row_size}" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
-		<div class="header" class="category-tools">
+		<div class="header category-tools clearfix">
 			<!-- IF privileges.meta.topics:create -->
 			<button id="new_post" class="btn btn-primary">[[category:new_topic_button]]</button>
 			<!-- ENDIF privileges.meta.topics:create -->
