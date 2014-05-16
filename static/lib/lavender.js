@@ -24,10 +24,8 @@ $('document').ready(function() {
 			var container = $('.container').length ? $('.container') : $('.container-fluid');
 			container.toggleClass('container-fluid', fixed !== 1).toggleClass('container', fixed === 1);
 
-			container.bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
-				localStorage.setItem('fixed', fixed);
-				doMasonry();
-			});
+			localStorage.setItem('fixed', fixed);
+			doMasonry();
 		}
 
 		$(window).on('action:ajaxify.end', function(ev, data) {
