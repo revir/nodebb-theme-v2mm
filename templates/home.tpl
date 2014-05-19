@@ -21,7 +21,7 @@
 							"
 						>
 							<!-- IF !categories.link -->
-							<span class="badge {categories.unread-class}">{categories.topic_count} </span>
+							<span class="badge {categories.unread-class}"><i class="fa fa-book" data-toggle="tooltip" title="[[global:topics]]"></i> <span class="human-readable-number" title="{categories.topic_count}">{categories.topic_count}</span>&nbsp; <i class="fa fa-pencil" data-toggle="tooltip" title="[[global:posts]]"></i> <span class="human-readable-number" title="{categories.post_count}">{categories.post_count}</span></span>
 							<!-- ENDIF !categories.link -->
 
 							<!-- IF categories.icon -->

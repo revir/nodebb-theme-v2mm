@@ -34,6 +34,7 @@ $('document').ready(function() {
 			if (url === "") {
 				if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 					doMasonry();
+					$('.category-header .badge i').tooltip();
 					resize(fixed);
 				}
 			}
