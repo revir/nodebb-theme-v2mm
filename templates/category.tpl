@@ -72,11 +72,7 @@
 									[[global:posted_ago_by_guest, <span class="timeago" title="{topics.relativeTime}"></span>]]
 									<!-- ENDIF topics.user.userslug -->
 
-									<!-- BEGIN tags -->
-									<span class="pull-right">
-										&nbsp;<a href="{relative_path}/tags/{topics.tags.name}"><span class="label label-info">{topics.tags.name}</span></a>
-									</span>
-									<!-- END tags -->
+									<!-- IMPORT partials/category_tags.tpl -->
 									</small>
 								</p>
 							</div>
