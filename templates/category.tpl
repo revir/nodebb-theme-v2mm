@@ -16,9 +16,9 @@
 <div class="category row">
 	<div class="{topic_row_size}" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
 		<div class="header category-tools clearfix">
-			<!-- IF privileges.meta.topics:create -->
+			<!-- IF privileges.topics:create -->
 			<button id="new_post" class="btn btn-primary">[[category:new_topic_button]]</button>
-			<!-- ENDIF privileges.meta.topics:create -->
+			<!-- ENDIF privileges.topics:create -->
 
 			<span class="pull-right">
 				<!-- IMPORT partials/category_tools.tpl -->
@@ -48,9 +48,9 @@
 				<div class="category-body">
 					<div class="row">
 						<div class="col-md-8 col-sm-9">
-							<!-- IF privileges.meta.editable -->
+							<!-- IF privileges.editable -->
 								<i class="fa fa-fw fa-square-o pull-left select pointer"></i>
-							<!-- ENDIF privileges.meta.editable -->
+							<!-- ENDIF privileges.editable -->
 
 							<div class="category-profile-pic">
 								<a href="<!-- IF topics.user.userslug -->../../user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
