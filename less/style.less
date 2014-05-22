@@ -48,6 +48,7 @@ body {
 	img {
 		width:24px;
 		height:24px;
+		border-radius: 50%;
 	}
 }
 
@@ -112,14 +113,6 @@ body {
 	 			span, i {
 	 				opacity: 0.8;
 	 			}
-
-
-	 			/*&.unread:before {
-					font-family: FontAwesome;
-					content: '\f01c';
-					padding: 5px;
-					font-size: 11px;
-				}*/
 	 		}
 	 	}
 
@@ -169,12 +162,11 @@ body {
 	 	.post-preview {
 	 		padding-top: 10px;
 			border-bottom: 1px dashed #dedede;
+			word-break: break-word;
 
 	 		&:last-child {
 				border-bottom: none;
 			}
-
-			word-break: break-word;
 
 	 		img {
 	 			display: block;
@@ -183,20 +175,21 @@ body {
 	 		}
 
 	 		.user-img {
-	 			width: 20px;
-	 			height: 20px;
-	 			margin-right: 5px;
+				width: 24px;
+				height: 24px;
+				margin-right: 5px;
+				border-radius: 50%;
 	 		}
 
 			.post-preview-content {
 				max-height: 250px;
-				p {
-					display: none;
-				}
-				*:first-child + p + p, *:first-child + p + blockquote, *:first-child + p + blockquote p {
-					display: inline;
-				}
 				overflow: hidden;
+				.content {
+					margin-left: 30px;
+					p {
+						font-size:14px;
+					}
+				}
 			}
 
 			span {
@@ -216,6 +209,25 @@ body {
 
 .breadcrumb {
 	background-color: white;
+}
+
+.profile-image {
+	width: 52px;
+	height: 52px;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+
+	&.small {
+		width: 26px;
+		height: 26px;
+	}
+}
+
+.account {
+	.user-profile-picture {
+		border-radius: 50%;
+	}
 }
 
 .category {
@@ -252,21 +264,6 @@ body {
 		box-shadow: inset 0px 0px 2px 2px #ffffff;
 		-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 		box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-	}
-
-	.profile-image {
-		width: 52px;
-		height: 52px;
-		-webkit-border-radius: 100%;
-		-moz-border-radius: 100%;
-		border-radius: 100%;
-		border:4px solid #efefef;
-
-		&.small {
-			width: 26px;
-			height: 26px;
-			border: 2px solid #efefef;
-		}
 	}
 
 	.category-body {
@@ -346,21 +343,6 @@ body {
 		box-shadow: inset 0px 0px 2px 2px #ffffff;
 		-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 		box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-	}
-
-	.profile-image {
-		width: 52px;
-		height: 52px;
-		-webkit-border-radius: 100%;
-		-moz-border-radius: 100%;
-		border-radius: 100%;
-		border:4px solid #efefef;
-
-		&.small {
-			width: 26px;
-			height: 26px;
-			border: 2px solid #efefef;
-		}
 	}
 
 	.topic-body {
@@ -461,12 +443,6 @@ body {
 	}
 }
 
-.user-img {
-	-webkit-box-shadow: 0 1px 1px #555;
-	-moz-box-shadow: 0 1px 1px #555;
-	box-shadow: 0 1px 1px #555;
-}
-
 .taskbar {
 	li > a {
 		padding-top:10px;
@@ -485,6 +461,7 @@ body {
 	img {
 		position: relative;
 		z-index: 1;
+		border-radius: 50%;
 	}
 
 	&::after {

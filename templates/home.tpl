@@ -48,15 +48,14 @@
 								<a style="color: {categories.color};" href="<!-- IF categories.posts.user.userslug -->./user/{categories.posts.user.userslug}<!-- ELSE -->#<!-- ENDIF categories.posts.user.userslug-->">
 									<img src="{categories.posts.user.picture}" title="{categories.posts.user.username}" class="pull-left user-img" />
 								</a>
-
-								<p>
-									<strong>{categories.posts.user.username}</strong><br/>
+								<div class="content">
 									{categories.posts.content}
-								</p>
+								</div>
+
 							</div>
-							<span class="pull-right">
-								[[global:posted_ago, <span class="timeago" title="{categories.posts.relativeTime}"></span>]] &bull;
-								<a href="topic/{categories.posts.topic.slug}#{categories.posts.pid}">[[global:read_more]] <i class="fa fa-chevron-circle-right"></i></a>
+							<span class="pull-right footer">
+								<span class="timeago" title="{categories.posts.relativeTime}"></span> &bull;
+								<a href="topic/{categories.posts.topic.slug}#{categories.posts.pid}">[[global:read_more]]</a>
 							</span>
 						</div>
 						<!-- END posts -->
