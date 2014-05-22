@@ -65,11 +65,18 @@
 								<p><strong><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
 									<a href="../../topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
 									<small>
+
 									<!-- IF topics.user.userslug -->
 									[[global:posted_ago_by, <span class="timeago" title="{topics.relativeTime}"></span>, {topics.user.username}]]
 									<!-- ELSE -->
 									[[global:posted_ago_by_guest, <span class="timeago" title="{topics.relativeTime}"></span>]]
 									<!-- ENDIF topics.user.userslug -->
+
+									<!-- BEGIN tags -->
+									<span class="pull-right">
+										&nbsp;<a href="{relative_path}/tags/{topics.tags.name}"><span class="label label-info">{topics.tags.name}</span></a>
+									</span>
+									<!-- END tags -->
 									</small>
 								</p>
 							</div>
