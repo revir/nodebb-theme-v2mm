@@ -50,8 +50,8 @@
 								</a>
 								<div class="content">
 									{categories.posts.content}
+									<p class="fade-out"></p>
 								</div>
-
 							</div>
 							<span class="pull-right footer">
 								<span class="timeago" title="{categories.posts.relativeTime}"></span> &bull;
