@@ -10,7 +10,8 @@ $('document').ready(function() {
 			if($('.home').length) {
 				masonry = new Masonry('.row.home > div', {
 					itemSelector: '.category-item',
-					columnWidth: '.category-item'
+					columnWidth: '.category-item',
+					transitionDuration: 0
 				});
 
 				$('.row.home > div p img').imagesLoaded(function() {
