@@ -70,22 +70,23 @@ $('document').ready(function() {
 			loadingBar = $('.loading-bar');
 
 		ajaxify.go = function(url, callback, quiet) {
-			loadingBar.addClass('reset').css('width', '100%');
+			loadingBar.fadeIn(0).removeClass('reset')
 			return ajaxifyGo(url, callback, quiet);
 		};
 
-		ajaxify.loadData = function(callback, url, template) {
-			setTimeout(function() {
-				loadingBar.removeClass('reset').css('width', (Math.random() * 20) + 5 + '%');
-			}, 10);
-
-			return loadData(callback, url, template);
-		};
+		$(window).on('action:ajaxify.loadingTemplates', function() {
+			loadingBar.css('width', '90%');
+		});
 
 		app.refreshTitle = function(url) {
+			loadingBar.css('width', '100%');
 			setTimeout(function() {
-				loadingBar.css('width', '0%');
-			}, 300);
+				loadingBar.fadeOut(250);
+
+				setTimeout(function() {
+					loadingBar.addClass('reset').css('width', '0%');
+				}, 250);
+			}, 750);
 
 			return refreshTitle(url);
 		};

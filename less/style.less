@@ -7,27 +7,18 @@ body {
 }
 
 .loading-bar {
- 	width: 100%;
+ 	width: 0%;
  	position: absolute;
- 	top: -2px;
- 	right: 0px;
+ 	left: 0px;
  	height: 2px;
- 	background: white;
+ 	background: @brand-primary;
+ 	z-index: 1;
 
- 	-webkit-transition: width 0.5s ease-in;
- 	-moz-transition: width 0.5s ease-in;
- 	-o-transition: width 0.5s ease-in;
- 	-ms-transition: width 0.5s ease-in;
- 	transition: width 0.5s ease-in;
-
-	&.reset {
-		-webkit-transition: none;
- 		-moz-transition: none;
- 		-o-transition: none;
- 		-ms-transition: none;
- 		transition: none;
- 		width: 100% !important;
- 	}
+ 	-webkit-transition: width 0.2s ease-in;
+ 	-moz-transition: width 0.2s ease-in;
+ 	-o-transition: width 0.2s ease-in;
+ 	-ms-transition: width 0.2s ease-in;
+ 	transition: width 0.2s ease-in;
 }
 
 .admin {
