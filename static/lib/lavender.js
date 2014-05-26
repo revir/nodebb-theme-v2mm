@@ -42,6 +42,10 @@ $('document').ready(function() {
 			}
 		});
 
+		$(window).on('action:widgets.loaded', function(ev, data) {
+			doMasonry();
+		});
+
 		var div = $('<div class="panel resizer pointer"><div class="panel-body"><i class="fa fa-bars fa-2x"></i></div></div>');
 		div.css({
 			position:'fixed',
