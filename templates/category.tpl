@@ -111,7 +111,7 @@
 		<!-- ENDIF config.usePagination -->
 	</div>
 
-	<div widget-area="sidebar" class="col-md-3 col-xs-12 category-sidebar hidden"></div>
+	<div widget-area="sidebar" class="col-md-3 col-xs-12 category-sidebar"></div>
 </div>
 
 <!-- IMPORT partials/move_thread_modal.tpl -->

@@ -67,5 +67,5 @@
 		</div>
 	</div>
 
-	<div widget-area="sidebar" class="col-lg-3 col-sm-12 hidden"></div>
+	<div widget-area="sidebar" class="col-lg-3 col-sm-12"></div>
 </div>
