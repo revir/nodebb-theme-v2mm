@@ -19,7 +19,7 @@
 							</div>
 							<div class="category-text">
 								<p><strong><!-- IF topics.pinned --><i class="fa fa-thumb-tack"></i><!-- ENDIF topics.pinned --> <!-- IF topics.locked --><i class="fa fa-lock"></i><!-- ENDIF topics.locked --></strong>
-									<a href="../../topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
+									<a href="{relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
 
 									<small>
 									<!-- IF topics.user.userslug -->
@@ -46,8 +46,8 @@
 							<p class="no-replies">[[category:no_replies]]</p>
 							<!-- ELSE -->
 
-							<a href="<!-- IF topics.teaser.user.userslug -->../../user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->"><img class="profile-image small user-img" src="{topics.teaser.user.picture}" title="{topics.teaser.user.username}" /></a>
-							<a href="../../topic/{topics.slug}#{topics.teaser.pid}">
+							<a href="<!-- IF topics.teaser.user.userslug -->{relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->"><img class="profile-image small user-img" src="{topics.teaser.user.picture}" title="{topics.teaser.user.username}" /></a>
+							<a href="{relative_path}/topic/{topics.slug}#{topics.teaser.pid}">
 								[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]
 							</a>
 
