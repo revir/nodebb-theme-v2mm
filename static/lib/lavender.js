@@ -8,7 +8,7 @@ $('document').ready(function() {
 
 		function doMasonry() {
 			if($('.home').length) {
-				masonry = new Masonry('.row.home', {
+				masonry = new Masonry('.row.home > div', {
 					itemSelector: '.category-item',
 					columnWidth: '.category-item',
 					transitionDuration: 0,
