@@ -18,6 +18,36 @@ $('document').ready(function() {
 				$('.row.home > div p img').imagesLoaded(function() {
 					masonry.layout();
 				});
+
+				var saved = JSON.parse(localStorage.getItem('masonry:layout'));
+				if (saved) {
+					for (var cid in saved) {
+						if (saved.hasOwnProperty(cid)) {
+							var category = saved[cid];
+
+							$('.category-item[data-cid="' + cid + '"]').css({
+								left: category.left,
+								top: category.top,
+								position: 'absolute'
+							});
+						}
+					}
+				}
+				
+				masonry.on('layoutComplete', function() {
+					var saved = {};
+
+					$('.category-item').each(function() {
+						var $this = $(this);
+
+						saved[$this.attr('data-cid')] = {
+							left: $this.css('left'),
+							top: $this.css('top'),
+						};
+					});
+
+					localStorage.setItem('masonry:layout', JSON.stringify(saved));
+				});
 			}
 		}
 
