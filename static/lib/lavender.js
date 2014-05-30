@@ -1,7 +1,7 @@
 $('document').ready(function() {
 	requirejs([
-		RELATIVE_PATH + '/plugins/nodebb-theme-lavender/vendor/masonry.js',
-		RELATIVE_PATH + '/plugins/nodebb-theme-lavender/vendor/imagesLoaded.js',
+		'lavender/masonry',
+		'lavender/imagesLoaded',
 	], function(Masonry, imagesLoaded) {
 		var fixed = localStorage.getItem('fixed') || 0,
 			masonry;

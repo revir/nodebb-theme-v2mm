@@ -10,6 +10,8 @@
 		"vendor": "static/vendor"
 	},
 	"scripts": [
-		"static/lib/lavender.js"
+		"static/lib/lavender.js",
+		"static/vendor/masonry.js",
+		"static/vendor/imagesLoaded.js"
 	]
 }
