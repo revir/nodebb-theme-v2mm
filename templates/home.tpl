@@ -55,7 +55,7 @@
 							</div>
 							<span class="pull-right footer">
 								<span class="timeago" title="{categories.posts.relativeTime}"></span> &bull;
-								<a href="{relative_path}/topic/{categories.posts.topic.slug}#{categories.posts.pid}">[[global:read_more]]</a>
+								<a href="{relative_path}/topic/{categories.posts.topic.slug}/{categories.posts.index}">[[global:read_more]]</a>
 							</span>
 						</div>
 						<!-- END posts -->
