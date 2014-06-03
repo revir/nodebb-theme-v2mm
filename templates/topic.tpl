@@ -166,7 +166,7 @@
 		<!-- END posts -->
 	</ul>
 
-	<div class="post-bar col-xs-12 pull-right hide bottom-post-bar">
+	<div class="post-bar col-xs-12 hide bottom-post-bar">
 		<!-- IMPORT partials/post_bar.tpl -->
 	</div>
 
