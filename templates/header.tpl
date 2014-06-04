@@ -27,9 +27,13 @@
 		});
 	</script>
 
+	<!-- IF useCustomJS -->
+	{customJS}
+	<!-- ENDIF useCustomJS -->
 	<!-- IF useCustomCSS -->
 	<style type="text/css">{customCSS}</style>
 	<!-- ENDIF useCustomCSS -->
+
 </head>
 
 <body>
