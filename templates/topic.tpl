@@ -1,4 +1,5 @@
 <input type="hidden" template-variable="topic_id" value="{tid}" />
+<input type="hidden" template-variable="topic_slug" value="{slug}" />
 <input type="hidden" template-variable="category_id" value="{category.cid}" />
 <input type="hidden" template-variable="currentPage" value="{currentPage}" />
 <input type="hidden" template-variable="pageCount" value="{pageCount}" />
@@ -28,8 +29,7 @@
 
 	<ul id="post-container" class="posts" data-tid="{tid}">
 		<!-- BEGIN posts -->
-			<li class="post-row<!-- IF posts.deleted --> deleted<!-- ENDIF posts.deleted -->" data-pid="{posts.pid}" data-uid="{posts.uid}" data-username="{posts.user.username}" data-userslug="{posts.user.userslug}" data-index="{posts.index}" itemscope itemtype="http://schema.org/Comment">
-
+			<li class="post-row<!-- IF posts.deleted --> deleted<!-- ENDIF posts.deleted -->" data-pid="{posts.pid}" data-uid="{posts.uid}" data-username="{posts.user.username}" data-userslug="{posts.user.userslug}" data-index="{posts.index}" data-timestamp="{posts.timestamp}" data-votes="{posts.votes}" itemscope itemtype="http://schema.org/Comment">
 				<a id="post_anchor_{posts.index}" name="{posts.index}"></a>
 
 				<meta itemprop="datePublished" content="{posts.relativeTime}">
