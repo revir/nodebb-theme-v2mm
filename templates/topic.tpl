@@ -39,10 +39,18 @@
 					<div class="topic-body">
 						<div class="row">
 							<div class="col-md-12">
-								<div class="topic-profile-pic hidden-xs">
+								<div class="topic-profile-pic hidden-xs text-center">
 									<a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
 										<img src="{posts.user.picture}" alt="{posts.user.username}" class="profile-image user-img" title="{posts.user.username}">
 									</a>
+
+									<!-- IF posts.user.groups.length -->
+									<div class="text-center">
+									<!-- BEGIN groups -->
+									<span class="label label-warning inline-block">{posts.user.groups.userTitle}</span><br/>
+									<!-- END groups -->
+									</div>
+									<!-- ENDIF posts.user.groups.length -->
 								</div>
 								<div class="topic-text">
 									<!-- IF @first -->
@@ -126,11 +134,11 @@
 									<i class="fa fa-chevron-down"></i>
 								</a>
 
-								<!-- IF posts.user.custom_profile_info -->
-									<!-- BEGIN posts.user.custom_profile_info -->
+								<!-- IF posts.user.custom_profile_info.length -->
+									<!-- BEGIN custom_profile_info -->
 									&bull; {posts.user.custom_profile_info.content}
-									<!-- END posts.user.custom_profile_info -->
-								<!-- ENDIF custom_profile_info -->
+									<!-- END custom_profile_info -->
+								<!-- ENDIF posts.user.custom_profile_info.length -->
 								<span class="post-tools">
 									<!-- IF !posts.selfPost -->
 									<!-- IF posts.user.userslug -->
