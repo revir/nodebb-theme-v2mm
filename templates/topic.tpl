@@ -126,10 +126,10 @@
 									<i class="fa fa-chevron-down"></i>
 								</a>
 
-								<!-- IF custom_profile_info -->
-									<!-- BEGIN custom_profile_info -->
-									&bull; {posts.custom_profile_info.content}
-									<!-- END custom_profile_info -->
+								<!-- IF posts.user.custom_profile_info -->
+									<!-- BEGIN posts.user.custom_profile_info -->
+									&bull; {posts.user.custom_profile_info.content}
+									<!-- END posts.user.custom_profile_info -->
 								<!-- ENDIF custom_profile_info -->
 								<span class="post-tools">
 									<!-- IF !posts.selfPost -->
