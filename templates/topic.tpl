@@ -47,7 +47,7 @@
 									<!-- IF posts.user.groups.length -->
 									<div class="text-center">
 									<!-- BEGIN groups -->
-									<span class="label label-warning inline-block">{posts.user.groups.userTitle}</span><br/>
+									<span class="label inline-block" style="background-color: {posts.user.groups.labelColor};"><i class="fa {posts.user.groups.icon}"></i> {posts.user.groups.userTitle}</span><br/>
 									<!-- END groups -->
 									</div>
 									<!-- ENDIF posts.user.groups.length -->
