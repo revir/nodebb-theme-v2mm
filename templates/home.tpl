@@ -40,8 +40,8 @@
 								<h4><!-- IF categories.icon --><i class="fa {categories.icon} visible-xs-inline"></i> <!-- ENDIF categories.icon -->{categories.name}</h4>
 							</a>
 							<div class="description" itemprop="description">{categories.description}</div>
-							<!-- IF !categories.link -->
 						</div>
+						<!-- IF !categories.link -->
 						<!-- BEGIN posts -->
 						<div class="post-preview clearfix">
 							<div class="post-preview-content">
