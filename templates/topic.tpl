@@ -55,7 +55,7 @@
 								<div class="topic-text">
 									<!-- IF @first -->
 									<h3 class="topic-title">
-										<p id="topic_title_{posts.pid}" class="topic-title" itemprop="name">{title}</p>
+										<p id="topic_title_{posts.pid}" class="topic-title" itemprop="name"><i class="fa fa-thumb-tack hide"></i> <i class="fa fa-lock hide"></i> {title}</p>
 									</h3>
 									<!-- ENDIF @first -->
 									<div id="content_{posts.pid}" class="post-content" itemprop="text">{posts.content}</div>
