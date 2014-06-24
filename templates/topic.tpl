@@ -57,6 +57,7 @@
 									<h3 class="topic-title">
 										<p id="topic_title_{posts.pid}" class="topic-title" itemprop="name">{title}</p>
 									</h3>
+									<hr>
 									<!-- ENDIF @first -->
 									<div id="content_{posts.pid}" class="post-content" itemprop="text">{posts.content}</div>
 									<!-- IF posts.user.signature -->
