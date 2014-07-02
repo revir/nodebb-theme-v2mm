@@ -74,7 +74,13 @@ $('document').ready(function() {
 		});
 
 		$(window).on('action:widgets.loaded', function(ev, data) {
-			doMasonry();
+			var url = data.url;
+			
+			if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+				if (url === "") {
+					doMasonry();
+				}
+			}
 		});
 
 		var div = $('<div class="panel resizer pointer"><div class="panel-body"><i class="fa fa-arrows-h fa-2x"></i></div></div>');
