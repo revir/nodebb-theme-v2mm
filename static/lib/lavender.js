@@ -83,7 +83,8 @@ $('document').ready(function() {
 			}
 		});
 
-		var div = $('<div class="panel resizer pointer"><div class="panel-body"><i class="fa fa-arrows-h fa-2x"></i></div></div>');
+
+		var div = $('<div class="overlay-container"><div class="panel resizer pointer"><div class="panel-body"><i class="fa fa-arrows-h fa-2x"></i></div></div></div>');
 		div.css({
 			position:'fixed',
 			bottom: '20px',
@@ -98,7 +99,7 @@ $('document').ready(function() {
 			}
 		});
 
-		div.on('click', function() {
+		div.find('.resizer').on('click', function() {
 			fixed = parseInt(fixed, 10) === 1 ? 0 : 1;
 			resize(fixed);
 		});
