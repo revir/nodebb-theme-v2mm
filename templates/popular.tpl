@@ -5,8 +5,10 @@
 	</ol>
 
 	<ul class="nav nav-pills">
-		<li class=''><a href='{relative_path}/popular/posts'>[[global:posts]]</a></li>
-		<li class=''><a href='{relative_path}/popular/views'>[[global:views]]</a></li>
+		<li><a href='{relative_path}/popular/daily'>[[recent:day]]</a></li>
+		<li><a href='{relative_path}/popular/weekly'>[[recent:week]]</a></li>
+		<li><a href='{relative_path}/popular/monthly'>[[recent:month]]</a></li>
+		<li><a href='{relative_path}/popular/yearly'>[[recent:year]]</a></li>
 	</ul>
 
 	<br />
@@ -20,7 +22,6 @@
 		<strong>There are no popular topics.</strong>
 	</div>
 	<!-- ENDIF !topics.length -->
-
 
 	<div class="category row">
 		<div class="col-md-12">
