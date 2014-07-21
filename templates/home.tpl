@@ -49,6 +49,8 @@
 									<img src="{categories.posts.user.picture}" title="{categories.posts.user.username}" class="pull-left user-img" />
 								</a>
 								<div class="content">
+								<a href="{relative_path}/topic/{categories.posts.topic.slug}<!-- IF categories.posts.index -->/{categories.posts.index}<!-- ENDIF categories.posts.index -->">{categories.posts.topic.title}</a>
+                                                                        <hr/>
 									{categories.posts.content}
 									<p class="fade-out"></p>
 								</div>
