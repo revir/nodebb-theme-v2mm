@@ -42,7 +42,8 @@
 								<div class="topic-profile-pic hidden-xs text-center">
 									<a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
 										<img src="{posts.user.picture}" alt="{posts.user.username}" class="profile-image user-img" title="{posts.user.username}">
-									</a>
+									</a><br/>
+									<small class="username">{posts.user.username}</small>
 
 									<!-- IF posts.user.groups.length -->
 									<div class="text-center">
