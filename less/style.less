@@ -30,16 +30,34 @@ body {
 	}
 }
 
-.header #user_label {
-	>a {
-		padding-top:13px;
-		padding-bottom:13px;
+.header {
+	#user_label {
+		>a {
+			padding-top:13px;
+			padding-bottom:13px;
+		}
+
+		img {
+			width:24px;
+			height:24px;
+			border-radius: 50%;
+		}
 	}
 
-	img {
-		width:24px;
-		height:24px;
-		border-radius: 50%;
+	#notif-list, #chat-list {
+		li {
+			&.unread {
+				background-color: @brand-warning;
+			}
+		}
+	}
+}
+
+.chats-list {
+	li {
+		&.unread {
+			background-color: @brand-warning;
+		}
 	}
 }
 
