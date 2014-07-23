@@ -22,6 +22,6 @@
     "url": "https://github.com/psychobunny/nodebb-theme-lavender/issues"
   },
   "peerDependencies": {
-    "nodebb-theme-vanilla": "~0.0.101"
+    "nodebb-theme-vanilla": "~0.0.111"
   }
 }
