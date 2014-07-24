@@ -27,6 +27,7 @@
 									<!-- ELSE -->
 										[[global:posted_in_ago_by_guest, <a href="{relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a>, <span class="timeago" title="{topics.relativeTime}"></span>]]
 									<!-- ENDIF topics.user.userslug -->
+									<br/>
 									<!-- IMPORT partials/category_tags.tpl -->
 									</small>
 								</p>

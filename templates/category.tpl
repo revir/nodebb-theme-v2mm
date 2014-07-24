@@ -71,7 +71,7 @@
 									<!-- ELSE -->
 									[[global:posted_ago_by_guest, <span class="timeago" title="{topics.relativeTime}"></span>]]
 									<!-- ENDIF topics.user.userslug -->
-
+									<br/>
 									<!-- IMPORT partials/category_tags.tpl -->
 									</small>
 								</p>
