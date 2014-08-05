@@ -146,7 +146,9 @@
 								<span class="post-tools">
 									<!-- IF !posts.selfPost -->
 									<!-- IF posts.user.userslug -->
+									<!-- IF loggedIn -->
 									<button class="btn btn-sm btn-link chat" type="button" title="[[topic:chat]]"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> [[topic:chat]]</span></button>
+									<!-- ENDIF loggedIn -->
 									<!-- ENDIF posts.user.userslug -->
 									<!-- ENDIF !posts.selfPost -->
 									<!-- IF privileges.topics:reply -->
@@ -154,7 +156,9 @@
 									<button class="btn btn-sm btn-link post_reply" type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> [[topic:reply]]</span></button>
 									<!-- ENDIF privileges.topics:reply -->
 									<!-- IF !posts.selfPost -->
+									<!-- IF loggedIn -->
 									<button class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-flag-o"></i><span class="hidden-xs-inline"> [[topic:flag]]</span></button>
+									<!-- ENDIF loggedIn -->
 									<!-- ENDIF !posts.selfPost -->
 									<!-- IF posts.display_moderator_tools -->
 										<button class="btn btn-sm btn-link edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i><span class="hidden-xs-inline"> [[topic:edit]]</span></button>
