@@ -4,11 +4,11 @@
 		<li class="active">[[unread:title]]</li>
 	</ol>
 
-	<div id="category-no-topics" class="alert alert-warning {no_topics_message}">
+	<div id="category-no-topics" class="alert alert-warning <!-- IF topics.length -->hidden<!-- ENDIF topics.length -->">
 		<strong>[[unread:no_unread_topics]]</strong>
 	</div>
 
-	<div class="markread btn-group {show_markread_button}">
+	<div class="markread btn-group <!-- IF !topics.length -->hidden<!-- ENDIF !topics.length -->">
 		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 			[[unread:mark_as_read]] <span class="caret"></span>
 		</button>
