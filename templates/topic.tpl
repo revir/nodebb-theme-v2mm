@@ -133,9 +133,11 @@
 									<i class="fa fa-chevron-up"></i>
 								</a>
 								<span class="votes" data-votes="{posts.votes}">{posts.votes}</span>
+								<!-- IF !downvote:disabled -->
 								<a href="#" class="downvote <!-- IF posts.downvoted --> downvoted btn-primary <!-- ENDIF posts.downvoted -->">
 									<i class="fa fa-chevron-down"></i>
 								</a>
+								<!-- ENDIF !downvote:disabled -->
 								<!-- ENDIF !reputation:disabled -->
 
 								<!-- IF posts.user.custom_profile_info.length -->
