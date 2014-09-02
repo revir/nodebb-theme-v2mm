@@ -74,7 +74,7 @@
 								<small class="pull-right">
 									<span>
 										<!-- IF posts.user.userslug -->
-										<i class="fa fa-circle status offline"></i>
+										<i class="fa fa-circle status {posts.user.status}" title='[[global:{posts.user.status}]]'></i>
 										<!-- ENDIF posts.user.userslug -->
 										<span class="username-field" data-username="{posts.user.username}">
 											<!-- IF posts.user.userslug -->
