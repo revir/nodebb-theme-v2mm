@@ -76,7 +76,7 @@
 										<!-- IF posts.user.userslug -->
 										<i class="fa fa-circle status {posts.user.status}" title='[[global:{posts.user.status}]]'></i>
 										<!-- ENDIF posts.user.userslug -->
-										<span class="username-field" data-username="{posts.user.username}">
+										<span class="username-field" data-username="{posts.user.username}" data-uid="{posts.user.uid}">
 											<!-- IF posts.user.userslug -->
 											[[global:user_posted_ago, <a href="{relative_path}/user/{posts.user.userslug}" itemprop="author">{posts.user.username}</a>, <span class="timeago" title="{posts.relativeTime}"></span>]]
 											<!-- ELSE -->
