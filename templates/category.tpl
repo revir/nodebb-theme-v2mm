@@ -10,13 +10,19 @@
 	</li>
 	<!-- IF parent -->
 	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-		<a href="{relative_path}/{parent.slug}" itemprop="url"><span itemprop="title">{parent.name}</span></a>
+		<a href="{relative_path}/category/{parent.slug}" itemprop="url"><span itemprop="title">{parent.name}</span></a>
 	</li>
 	<!-- ENDIF parent -->
 	<li class="active" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
 		<span itemprop="title">{name} <a target="_blank" href="{relative_path}/category/{cid}.rss"><i class="fa fa-rss-square"></i></a></span>
 	</li>
 </ol>
+
+<div class="subcategories">
+	<!-- BEGIN children -->
+	<!-- IMPORT partials/category_child.tpl -->
+	<!-- END children -->
+</div>
 
 <div class="category row">
 	<div class="{topic_row_size}" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
