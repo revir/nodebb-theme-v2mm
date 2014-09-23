@@ -73,9 +73,13 @@ $('document').ready(function() {
 			}
 		});
 
+		$(window).on('action:posts.loaded', function() {
+			doMasonry();
+		});
+
 		$(window).on('action:widgets.loaded', function(ev, data) {
 			var url = data.url;
-			
+
 			if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 				if (url === "") {
 					doMasonry();
