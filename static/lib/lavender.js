@@ -77,6 +77,10 @@ $('document').ready(function() {
 			setupResizer();
 		}
 
+		$(window).on('action:posts.loaded', function() {
+			doMasonry();
+		});
+
 		function setupResizer() {
 			var div = $('<div class="overlay-container"><div class="panel resizer pointer"><div class="panel-body"><i class="fa fa-arrows-h fa-2x"></i></div></div></div>');
 
