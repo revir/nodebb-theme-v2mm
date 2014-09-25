@@ -63,7 +63,7 @@ $('document').ready(function() {
 		$(window).on('action:ajaxify.end', function(ev, data) {
 			var url = data.url;
 
-			if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			if(!/^\/admin\//.test(url) && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 				if (url === "") {
 					doMasonry();
 					$('.category-header .badge i').tooltip();
@@ -73,36 +73,32 @@ $('document').ready(function() {
 			}
 		});
 
-		$(window).on('action:widgets.loaded', function(ev, data) {
-			var url = data.url;
-			
-			if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-				if (url === "") {
-					doMasonry();
+		if (!$('.admin').length) {
+			setupResizer();
+		}
+
+		function setupResizer() {
+			var div = $('<div class="overlay-container"><div class="panel resizer pointer"><div class="panel-body"><i class="fa fa-arrows-h fa-2x"></i></div></div></div>');
+
+			div.css({
+				position:'fixed',
+				bottom: '20px',
+				right: '20px'
+			}).hide().appendTo(document.body);
+
+			$(window).on('mousemove', function(ev) {
+				if (ev.clientX > $(window).width() - 150 && ev.clientY > $(window).height() - 150) {
+					div.fadeIn();
+				} else {
+					div.stop(true, true).fadeOut();
 				}
-			}
-		});
+			});
 
-
-		var div = $('<div class="overlay-container"><div class="panel resizer pointer"><div class="panel-body"><i class="fa fa-arrows-h fa-2x"></i></div></div></div>');
-		div.css({
-			position:'fixed',
-			bottom: '20px',
-			right: '20px'
-		}).hide().appendTo(document.body);
-
-		$(window).on('mousemove', function(ev) {
-			if (ev.clientX > $(window).width() - 150 && ev.clientY > $(window).height() - 150) {
-				div.fadeIn();
-			} else {
-				div.stop(true, true).fadeOut();
-			}
-		});
-
-		div.find('.resizer').on('click', function() {
-			fixed = parseInt(fixed, 10) === 1 ? 0 : 1;
-			resize(fixed);
-		});
+			div.find('.resizer').on('click', function() {
+				fixed = parseInt(fixed, 10) === 1 ? 0 : 1;
+				resize(fixed);
+			});
+		}
 	});
 
 	(function() {
