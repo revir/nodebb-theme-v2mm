@@ -96,7 +96,11 @@
 									</a>
 									<ul class="dropdown-menu" role="menu" aria-labelledby="postMenu_{posts.pid}">
 										<li role="presentation">
-											<a href="#" role="menuitem" tabindex="-1" class="follow hide" title="[[topic:watch.title]]">[[topic:watch]] <i class="fa fa-eye"></i></a>
+											<!-- IF isFollowing -->
+											<a href="#" role="menuitem" tabindex="-1" class="follow" title="[[topic:unwatch.title]]"><span>[[topic:unwatch]]</span> <i class="fa fa-eye-slash"></i></a>
+											<!-- ELSE -->
+											<a href="#" role="menuitem" tabindex="-1" class="follow" title="[[topic:watch.title]]"><span>[[topic:watch]]</span> <i class="fa fa-eye"></i></a>
+											<!-- ENDIF isFollowing -->
 										</li>
 										<li role="presentation">
 											<a role="menuitem" tabindex="-1" data-favourited="{posts.favourited}" class="favourite">
