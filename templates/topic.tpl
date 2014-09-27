@@ -78,7 +78,7 @@
 										<!-- ENDIF posts.user.userslug -->
 										<span class="username-field" data-username="{posts.user.username}" data-uid="{posts.user.uid}">
 											<!-- IF posts.user.userslug -->
-											[[global:user_posted_ago, <a href="{relative_path}/user/{posts.user.userslug}" itemprop="author">{posts.user.username}</a>, <span class="timeago" title="{posts.relativeTime}"></span>]]
+											[[global:user_posted_ago, <strong><a href="{relative_path}/user/{posts.user.userslug}" itemprop="author">{posts.user.username}</a></strong>, <span class="timeago" title="{posts.relativeTime}"></span>]]
 											<!-- ELSE -->
 											[[global:guest_posted_ago, <span class="timeago" title="{posts.relativeTime}"></span>]]
 											<!-- ENDIF posts.user.userslug -->
