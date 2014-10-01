@@ -32,9 +32,10 @@
 			<!-- ENDIF privileges.topics:create -->
 
 			<span class="pull-right">
+				<!-- IF loggedIn -->
 				<button type="button" class="btn btn-default btn-success watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored -->"><i class="fa fa-eye"></i> [[topic:watch]]</button>
 				<button type="button" class="btn btn-default btn-warning ignore <!-- IF isIgnored -->hidden<!-- ENDIF isIgnored -->"><i class="fa fa-eye-slash"></i> [[category:ignore]]</button>
-
+				<!-- ENDIF loggedIn -->
 				<!-- IMPORT partials/category_tools.tpl -->
 
 				<div class="dropdown share-dropdown inline-block">
