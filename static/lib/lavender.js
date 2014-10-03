@@ -107,15 +107,12 @@ $('document').ready(function() {
 
 	(function() {
 		// loading animation
-		var ajaxifyGo = ajaxify.go,
-			loadData = ajaxify.loadData,
-			refreshTitle = app.refreshTitle,
+		var refreshTitle = app.refreshTitle,
 			loadingBar = $('.loading-bar');
 
-		ajaxify.go = function(url, callback, quiet) {
-			loadingBar.fadeIn(0).removeClass('reset')
-			return ajaxifyGo(url, callback, quiet);
-		};
+		$(window).on('action:ajaxify.start', function(data) {
+			loadingBar.fadeIn(0).removeClass('reset');
+		});
 
 		$(window).on('action:ajaxify.loadingTemplates', function() {
 			loadingBar.css('width', '90%');
