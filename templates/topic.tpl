@@ -45,6 +45,12 @@
 									</a>
 									<small class="username" title="{posts.user.username}"><a href="<!-- IF posts.user.userslug -->{relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">{posts.user.username}</a></small>
 
+									<!-- IF posts.user.banned -->
+									<div class="text-center">
+										<span class="label label-danger">[[user:banned]]</span>
+									</div>
+									<!-- ENDIF posts.user.banned -->
+
 									<!-- IF posts.user.groups.length -->
 									<div class="text-center">
 									<!-- BEGIN groups -->
