@@ -18,7 +18,7 @@
 	</li>
 </ol>
 
-<div class="subcategories">
+<div class="subcategories row">
 	<!-- BEGIN children -->
 	<!-- IMPORT partials/category_child.tpl -->
 	<!-- END children -->
