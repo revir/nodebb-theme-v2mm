@@ -213,7 +213,6 @@
 	<!-- IMPORT partials/move_thread_modal.tpl -->
 	<!-- IMPORT partials/fork_thread_modal.tpl -->
 	<!-- IMPORT partials/move_post_modal.tpl -->
-	<span class="hidden" id="csrf" data-csrf="{csrf}"></span>
 </div>
 
 <!-- IMPORT partials/noscript/paginator.tpl -->
