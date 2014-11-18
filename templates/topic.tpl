@@ -159,9 +159,9 @@
 									<!-- IF !posts.selfPost -->
 									<!-- IF posts.user.userslug -->
 									<!-- IF loggedIn -->
-									<!-- IF !disableChat -->
+									<!-- IF !config.disableChat -->
 									<button class="btn btn-sm btn-link chat" type="button" title="[[topic:chat]]"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> [[topic:chat]]</span></button>
-									<!-- ENDIF !disableChat -->
+									<!-- ENDIF !config.disableChat -->
 									<!-- ENDIF loggedIn -->
 									<!-- ENDIF posts.user.userslug -->
 									<!-- ENDIF !posts.selfPost -->
