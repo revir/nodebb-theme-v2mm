@@ -57,8 +57,9 @@ $('document').ready(function() {
 			var container = fixed ? $('.container-fluid') : $('.container');
 			container.toggleClass('container-fluid', fixed !== 1).toggleClass('container', fixed === 1);
 			localStorage.setItem('fixed', fixed);
-			doMasonry();
 		}
+
+		resize(fixed);
 
 		$(window).on('action:ajaxify.end', function(ev, data) {
 			var url = data.url;
@@ -68,8 +69,6 @@ $('document').ready(function() {
 					doMasonry();
 					$('.category-header .badge i').tooltip();
 				}
-
-				resize(fixed);
 			}
 		});
 
@@ -101,6 +100,7 @@ $('document').ready(function() {
 			div.find('.resizer').on('click', function() {
 				fixed = parseInt(fixed, 10) === 1 ? 0 : 1;
 				resize(fixed);
+				doMasonry();
 			});
 		}
 	});
