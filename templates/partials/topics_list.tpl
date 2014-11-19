@@ -22,11 +22,13 @@
 									<a href="{relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
 
 									<small>
-									<!-- IF topics.user.userslug -->
-										[[global:posted_in_ago_by, <a href="{relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a>, <span class="timeago" title="{topics.relativeTime}"></span>, {topics.user.username}]]
-									<!-- ELSE -->
-										[[global:posted_in_ago_by_guest, <a href="{relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a>, <span class="timeago" title="{topics.relativeTime}"></span>]]
-									<!-- ENDIF topics.user.userslug -->
+									[[global:posted_in_ago, <a href="{relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a>, <span class="timeago" title="{topics.relativeTime}"></span>]]
+									<!-- IF !topics.unreplied -->
+									<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}">[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]</a>
+									</span>
+									<!-- ENDIF !topics.unreplied -->
 									<br/>
 									<!-- IMPORT partials/category_tags.tpl -->
 									</small>

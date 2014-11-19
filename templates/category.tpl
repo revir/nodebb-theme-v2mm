@@ -80,12 +80,13 @@
 								<p><strong><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
 									<a href="{relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
 									<small>
-
-									<!-- IF topics.user.userslug -->
-									[[global:posted_ago_by, <span class="timeago" title="{topics.relativeTime}"></span>, {topics.user.username}]]
-									<!-- ELSE -->
-									[[global:posted_ago_by_guest, <span class="timeago" title="{topics.relativeTime}"></span>]]
-									<!-- ENDIF topics.user.userslug -->
+									[[global:posted_ago, <span class="timeago" title="{topics.relativeTime}"></span>]]
+									<!-- IF !topics.unreplied -->
+									<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}">[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]</a>
+									</span>
+									<!-- ENDIF !topics.unreplied -->
 									<br/>
 									<!-- IMPORT partials/category_tags.tpl -->
 									</small>
