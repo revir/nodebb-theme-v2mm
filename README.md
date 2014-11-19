@@ -8,15 +8,15 @@ A simple theme for NodeBB. Check out the theming guide that accompanies this wor
 
 **Home View**
 
-[![Home View](http://i.imgur.com/gfQYGHl.png)](http://i.imgur.com/gfQYGHl.png)
+[![Home View](http://i.imgur.com/fllGSje.png)](http://i.imgur.com/fllGSje.png)
 
 **Category View**
 
-[![Category View](http://i.imgur.com/JalyDRpl.png)](http://i.imgur.com/JalyDRp.png)
+[![Category View](http://i.imgur.com/qhX84In.png)](http://i.imgur.com/qhX84In.png)
 
 **Topic View**
 
-[![Topic View](http://i.imgur.com/R8YhchEl.png)](http://i.imgur.com/R8YhchE.png)
+[![Topic View](http://i.imgur.com/W7cRtzQ.png)](http://i.imgur.com/W7cRtzQ.png)
 
 ## Installation
 
