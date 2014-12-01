@@ -14,7 +14,7 @@
 	<ol class="breadcrumb">
 		<!-- BEGIN breadcrumbs -->
 		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-			<!-- IF !@last --><a href="/{breadcrumbs.url}" itemprop="url"><!-- ENDIF !@last -->
+			<!-- IF !@last --><a href="{breadcrumbs.url}" itemprop="url"><!-- ENDIF !@last -->
 				<span itemprop="title">
 					{breadcrumbs.text}
 					<!-- IF @last -->
