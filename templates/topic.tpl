@@ -10,18 +10,20 @@
 <input type="hidden" template-variable="postcount" value="{postcount}" />
 <input type="hidden" template-variable="viewcount" value="{viewcount}" />
 
-
 <div class="topic">
 	<ol class="breadcrumb">
+		<!-- BEGIN breadcrumbs -->
 		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-			<a href="{relative_path}/" itemprop="url"><span itemprop="title">[[global:home]]</span></a>
+			<!-- IF !@last --><a href="/{breadcrumbs.url}" itemprop="url"><!-- ENDIF !@last -->
+				<span itemprop="title">
+					{breadcrumbs.text}
+					<!-- IF @last -->
+					<!-- IF !feeds:disableRSS --><a target="_blank" href="{relative_path}/topic/{tid}.rss"><i class="fa fa-rss-square"></i></a><!-- ENDIF !feeds:disableRSS -->
+					<!-- ENDIF @last -->
+				</span>
+			<!-- IF !@last --></a><!-- ENDIF !@last -->
 		</li>
-		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-			<a href="{relative_path}/category/{category.slug}" itemprop="url"><span itemprop="title">{category.name}</span></a>
-		</li>
-		<li class="active" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-			<span itemprop="title">{title} <a target="_blank" href="{relative_path}/topic/{tid}.rss"><i class="fa fa-rss-square"></i></a></span>
-		</li>
+		<!-- END breadcrumbs -->
 		<div class="loading-indicator pull-right" done="0" style="display:none;">
 			<i class="fa fa-refresh fa-spin"></i>
 		</div>

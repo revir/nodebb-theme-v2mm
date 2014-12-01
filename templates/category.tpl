@@ -5,17 +5,18 @@
 <input type="hidden" template-variable="pageCount" value="{pageCount}" />
 
 <ol class="breadcrumb">
+	<!-- BEGIN breadcrumbs -->
 	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-		<a href="{relative_path}/" itemprop="url"><span itemprop="title">[[global:home]]</span></a>
+		<!-- IF !@last --><a href="/{breadcrumbs.url}" itemprop="url"><!-- ENDIF !@last -->
+			<span itemprop="title">
+				{breadcrumbs.text}
+				<!-- IF @last -->
+				<!-- IF !feeds:disableRSS --><a target="_blank" href="{relative_path}/category/{cid}.rss"><i class="fa fa-rss-square"></i></a><!-- ENDIF !feeds:disableRSS -->
+				<!-- ENDIF @last -->
+			</span>
+		<!-- IF !@last --></a><!-- ENDIF !@last -->
 	</li>
-	<!-- IF parent -->
-	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-		<a href="{relative_path}/category/{parent.slug}" itemprop="url"><span itemprop="title">{parent.name}</span></a>
-	</li>
-	<!-- ENDIF parent -->
-	<li class="active" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-		<span itemprop="title">{name} <a target="_blank" href="{relative_path}/category/{cid}.rss"><i class="fa fa-rss-square"></i></a></span>
-	</li>
+	<!-- END breadcrumbs -->
 </ol>
 
 <div class="subcategories row">
