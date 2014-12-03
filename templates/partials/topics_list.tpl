@@ -46,7 +46,7 @@
 
 						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
 							<!-- IF topics.unreplied -->
-							<p class="no-replies">[[category:no_replies]]</p>
+							<p class="no-replies"><a href="{relative_path}/topic/{topics.slug}" itemprop="url">[[category:no_replies]]</a></p>
 							<!-- ELSE -->
 
 							<a href="<!-- IF topics.teaser.user.userslug -->{relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->"><img class="profile-image small user-img" src="{topics.teaser.user.picture}" title="{topics.teaser.user.username}" /></a>
