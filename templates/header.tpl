@@ -19,7 +19,9 @@
 
 	<script>
 		var RELATIVE_PATH = "{relative_path}";
-		var config = JSON.parse('{config}');
+		var config = JSON.parse('{configJSON}');
+		var app = {};
+		app.user = JSON.parse('{userJSON}');
 	</script>
 	<script src="{relative_path}/nodebb.min.js?{script-buster}"></script>
 	<script>
