@@ -64,9 +64,9 @@ $('document').ready(function() {
 		$(window).on('action:ajaxify.end', function(ev, data) {
 			var url = data.url;
 
-			if(!/^admin\//.test(url) && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-				if (url === "") {
-					doMasonry();
+			if(!/^admin\//.test(data.url) && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+				doMasonry();
+				if ($('.home').length) {
 					$('.category-header .badge i').tooltip();
 				}
 			}
