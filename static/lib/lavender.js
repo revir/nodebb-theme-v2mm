@@ -10,7 +10,7 @@ $('document').ready(function() {
 			if($('.home').length) {
 				masonry = new Masonry('.row.home > div', {
 					itemSelector: '.category-item',
-					columnWidth: '.category-item',
+					columnWidth: '.category-item:not(.col-lg-12)',
 					transitionDuration: 0,
 					isInitLayout: false
 				});
