@@ -1,5 +1,6 @@
 <input type="hidden" template-variable="category_id" value="{cid}" />
 <input type="hidden" template-variable="category_name" value="{name}" />
+<input type="hidden" template-variable="category_slug" value="{slug}" />
 <input type="hidden" template-variable="topic_count" value="{topic_count}" />
 <input type="hidden" template-variable="currentPage" value="{currentPage}" />
 <input type="hidden" template-variable="pageCount" value="{pageCount}" />
@@ -38,7 +39,10 @@
 				<button type="button" class="btn btn-default btn-success watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored -->"><i class="fa fa-eye"></i> [[topic:watch]]</button>
 				<button type="button" class="btn btn-default btn-warning ignore <!-- IF isIgnored -->hidden<!-- ENDIF isIgnored -->"><i class="fa fa-eye-slash"></i> [[category:ignore]]</button>
 				<!-- ENDIF loggedIn -->
+
 				<!-- IMPORT partials/category_tools.tpl -->
+
+				<!-- IMPORT partials/category_sort.tpl -->
 
 				<div class="dropdown share-dropdown inline-block">
 					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
