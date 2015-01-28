@@ -124,12 +124,7 @@
 			<!-- END topics -->
 		</ul>
 		<!-- IF config.usePagination -->
-		<div class="text-center">
-			<ul class="pagination">
-				<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i> [[global:previouspage]]</a></li>
-				<li class="next pull-right"><a href="#">[[global:nextpage]] <i class="fa fa-chevron-right"></i></a></li>
-			</ul>
-		</div>
+			<!-- IMPORT partials/paginator.tpl -->
 		<!-- ENDIF config.usePagination -->
 	</div>
 
