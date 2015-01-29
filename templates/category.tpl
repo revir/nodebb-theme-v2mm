@@ -5,21 +5,7 @@
 <input type="hidden" template-variable="currentPage" value="{currentPage}" />
 <input type="hidden" template-variable="pageCount" value="{pageCount}" />
 
-<ol class="breadcrumb">
-	<!-- BEGIN breadcrumbs -->
-	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-		<!-- IF !@last --><a href="{breadcrumbs.url}" itemprop="url"><!-- ENDIF !@last -->
-			<span itemprop="title">
-				{breadcrumbs.text}
-				<!-- IF @last -->
-				<!-- IF !feeds:disableRSS --><a target="_blank" href="{relative_path}/category/{cid}.rss"><i class="fa fa-rss-square"></i></a><!-- ENDIF !feeds:disableRSS -->
-				<!-- ENDIF @last -->
-			</span>
-		<!-- IF !@last --></a><!-- ENDIF !@last -->
-	</li>
-	<!-- END breadcrumbs -->
-</ol>
-
+<!-- IMPORT partials/breadcrumbs.tpl -->
 
 <div class="category row">
 	<div class="{topic_row_size}" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
