@@ -3,7 +3,7 @@ $('document').ready(function() {
 		'lavender/masonry',
 		'lavender/imagesLoaded',
 	], function(Masonry, imagesLoaded) {
-		var fixed = localStorage.getItem('fixed') || 0,
+		var fixed = localStorage.getItem('fixed') || 1,
 			masonry;
 
 		function doMasonry() {
