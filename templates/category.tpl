@@ -5,10 +5,9 @@
 <input type="hidden" template-variable="currentPage" value="{currentPage}" />
 <input type="hidden" template-variable="pageCount" value="{pageCount}" />
 
-<!-- IMPORT partials/breadcrumbs.tpl -->
-
 <div class="category row">
 	<div class="{topic_row_size}" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
+		<!-- IMPORT partials/breadcrumbs.tpl -->
 		<div class="subcategories row">
 			<!-- BEGIN children -->
 			<!-- IMPORT partials/category_child.tpl -->
