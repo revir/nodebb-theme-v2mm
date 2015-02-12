@@ -1,0 +1,33 @@
+.home {
+	padding-left: 8px;
+	padding-right: 8px;
+	> div {
+		padding-left: 0px;
+	 	padding-right: 0px;
+	}
+
+	@media screen and (min-width: @screen-md-min) {
+		.col-md-3 {
+			width: 24.5%; // firefox rounds up, webkit runs down. go figure...
+		}
+
+	}
+	@media screen and (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+		.col-sm-6 {
+			width: 48.5%;
+		}
+	}
+
+	h4 {
+		white-space: normal;
+		text-overflow: initial;
+	}
+
+	.forum-stats {
+		padding-top:0px;
+	}
+
+	.category-item {
+		margin-bottom: 15px;
+	}
+}
