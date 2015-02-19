@@ -17,6 +17,10 @@
 		<div class="header category-tools clearfix">
 			<!-- IF privileges.topics:create -->
 			<button id="new_post" class="btn btn-primary">[[category:new_topic_button]]</button>
+			<!-- ELSE -->
+				<!-- IF !loggedIn -->
+				<a href="/login?next=category/{slug}" class="btn btn-primary">[[category:guest-login-post]]</a>
+				<!-- ENDIF !loggedIn -->
 			<!-- ENDIF privileges.topics:create -->
 
 			<span class="pull-right">
