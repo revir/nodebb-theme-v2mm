@@ -10,6 +10,9 @@
 		},
 		{
 			"hook": "filter:admin.header.build", "method": "addAdminNavigation"
+		},
+		{
+			"hook": "filter:config.get", "method": "getConfig"
 		}
 	],
 	"staticDirs": {
