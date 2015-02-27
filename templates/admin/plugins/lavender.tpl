@@ -3,7 +3,7 @@
 		<div class="panel-heading">Lavender Theme Settings</div>
 		<div class="panel-body">
 			<form>
-				<label>Masonry
+				<label>Disable Masonry
 					<input id="disableMasonry" type="checkbox" data-field="disableMasonry" />
 				</label>
 				
