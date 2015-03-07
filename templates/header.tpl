@@ -20,7 +20,9 @@
 	<script>
 		var RELATIVE_PATH = "{relative_path}";
 		var config = JSON.parse('{configJSON}');
-		var app = {};
+		var app = {
+			template: "{template.name}"
+		};
 		app.user = JSON.parse('{userJSON}');
 	</script>
 	<script src="{relative_path}/nodebb.min.js?{script-buster}"></script>
@@ -52,6 +54,5 @@
 			<!-- IMPORT partials/menu.tpl -->
 		</div>
 	</div>
-
 	<div class="container" id="content">
 	<!-- IMPORT partials/noscript/warning.tpl -->
