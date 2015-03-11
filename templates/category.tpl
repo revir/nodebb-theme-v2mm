@@ -25,8 +25,14 @@
 
 			<span class="pull-right">
 				<!-- IF loggedIn -->
-				<button type="button" class="btn btn-default btn-success watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored -->"><i class="fa fa-eye"></i> [[topic:watch]]</button>
-				<button type="button" class="btn btn-default btn-warning ignore <!-- IF isIgnored -->hidden<!-- ENDIF isIgnored -->"><i class="fa fa-eye-slash"></i> [[category:ignore]]</button>
+				<button type="button" class="btn btn-default btn-success watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored -->">
+					<i class="fa fa-eye"></i>
+					<span class="visible-sm-inline visible-md-inline visible-lg-inline">[[topic:watch]]</span>
+				</button>
+				<button type="button" class="btn btn-default btn-warning ignore <!-- IF isIgnored -->hidden<!-- ENDIF isIgnored -->">
+					<i class="fa fa-eye-slash">
+					<span class="visible-sm-inline visible-md-inline visible-lg-inline">[[category:ignore]]</span>
+				</button>
 				<!-- ENDIF loggedIn -->
 
 				<!-- IMPORT partials/category_tools.tpl -->
@@ -35,7 +41,9 @@
 
 				<div class="dropdown share-dropdown inline-block">
 					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-						[[topic:share]] <span class="caret"></span>
+						<span class="visible-sm-inline visible-md-inline visible-lg-inline">[[topic:share]]</span>
+						<span class="visible-xs-inline"><i class="fa fa-fw fa-share-alt"></i></span>
+						<span class="caret"></span>
 					</button>
 
 					<!-- IMPORT partials/share_dropdown.tpl -->
