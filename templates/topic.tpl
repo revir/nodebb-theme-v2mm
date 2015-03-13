@@ -182,9 +182,9 @@
 			</li>
 
 			<!-- IF !posts.index -->
-			<li class="post-bar" data-index="{posts.index}">
+			<div class="post-bar" data-index="{posts.index}">
 				<!-- IMPORT partials/post_bar.tpl -->
-			</li>
+			</div>
 			<!-- ENDIF !posts.index -->
 		<!-- END posts -->
 	</ul>
