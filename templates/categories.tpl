@@ -57,7 +57,7 @@
 								<p class="fade-out"></p>
 							</div>
 
-							<span class="pull-right footer">
+							<span class="pull-right post-preview-footer">
 								<span class="timeago" title="{categories.posts.relativeTime}"></span> &bull;
 								<a href="{relative_path}/topic/{categories.posts.topic.slug}<!-- IF categories.posts.index -->/{categories.posts.index}<!-- ENDIF categories.posts.index -->">[[global:read_more]]</a>
 							</span>
