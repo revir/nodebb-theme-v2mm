@@ -1,22 +1,10 @@
-<input type="hidden" template-variable="topic_id" value="{tid}" />
-<input type="hidden" template-variable="topic_slug" value="{slug}" />
-<input type="hidden" template-variable="category_id" value="{category.cid}" />
-<input type="hidden" template-variable="currentPage" value="{currentPage}" />
-<input type="hidden" template-variable="pageCount" value="{pageCount}" />
-<input type="hidden" template-variable="locked" template-type="boolean" value="{locked}" />
-<input type="hidden" template-variable="deleted" template-type="boolean" value="{deleted}" />
-<input type="hidden" template-variable="pinned" template-type="boolean" value="{pinned}" />
-<input type="hidden" template-variable="topic_name" value="{title}" />
-<input type="hidden" template-variable="postcount" value="{postcount}" />
-<input type="hidden" template-variable="viewcount" value="{viewcount}" />
-
 <div class="topic">
 	<!-- IMPORT partials/breadcrumbs.tpl -->
 
-	<ul id="post-container" class="posts" data-tid="{tid}">
+	<ul component="topic" id="post-container" class="posts" data-tid="{tid}">
 		<!-- BEGIN posts -->
-			<li class="post-row<!-- IF posts.deleted --> deleted<!-- ENDIF posts.deleted -->" data-pid="{posts.pid}" data-uid="{posts.uid}" data-username="{posts.user.username}" data-userslug="{posts.user.userslug}" data-index="{posts.index}" data-timestamp="{posts.timestamp}" data-votes="{posts.votes}" itemscope itemtype="http://schema.org/Comment">
-				<a id="post_anchor_{posts.index}" name="{posts.index}"></a>
+			<li component="post" class="post-row <!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted -->" <!-- IMPORT partials/data/topic.tpl -->>
+				<a component="post/anchor" name="{posts.index}"></a>
 
 				<meta itemprop="datePublished" content="{posts.relativeTime}">
 				<meta itemprop="dateModified" content="{posts.relativeEditTime}">
@@ -52,11 +40,11 @@
 								<div class="topic-text">
 									<!-- IF @first -->
 									<h3 class="topic-title">
-										<p id="topic_title_{posts.pid}" class="topic-title" itemprop="name"><i class="fa fa-thumb-tack hide"></i> <i class="fa fa-lock hide"></i> {title}</p>
+										<p component="post/header" class="topic-title" itemprop="name"><i class="fa fa-thumb-tack hide"></i> <i class="fa fa-lock hide"></i> {title}</p>
 										<hr>
 									</h3>
 									<!-- ENDIF @first -->
-									<div id="content_{posts.pid}" class="post-content" itemprop="text">{posts.content}</div>
+									<div component="post/content" class="post-content" itemprop="text">{posts.content}</div>
 									<!-- IF posts.user.signature -->
 									<div class="post-signature">{posts.user.signature}</div>
 									<!-- ENDIF posts.user.signature -->
@@ -94,16 +82,16 @@
 										<li role="presentation">
 											<!-- IF !posts.index -->
 											<!-- IF isFollowing -->
-											<a href="#" role="menuitem" tabindex="-1" class="follow" title="[[topic:unwatch.title]]"><span>[[topic:unwatch]]</span> <i class="fa fa-eye-slash"></i></a>
+											<a component="topic/follow" href="#" role="menuitem" tabindex="-1" class="follow" title="[[topic:unwatch.title]]"><span>[[topic:unwatch]]</span> <i class="fa fa-eye-slash"></i></a>
 											<!-- ELSE -->
-											<a href="#" role="menuitem" tabindex="-1" class="follow" title="[[topic:watch.title]]"><span>[[topic:watch]]</span> <i class="fa fa-eye"></i></a>
+											<a component="topic/follow" href="#" role="menuitem" tabindex="-1" class="follow" title="[[topic:watch.title]]"><span>[[topic:watch]]</span> <i class="fa fa-eye"></i></a>
 											<!-- ENDIF isFollowing -->
 											<!-- ENDIF !posts.index -->
 										</li>
 										<li role="presentation">
-											<a role="menuitem" tabindex="-1" data-favourited="{posts.favourited}" class="favourite">
+											<a component="post/favourite" role="menuitem" tabindex="-1" data-favourited="{posts.favourited}" class="favourite">
 												<span class="favourite-text">[[topic:favourite]]</span>
-												<span class="favouriteCount" data-favourites="{posts.reputation}">{posts.reputation}</span>&nbsp;
+												<span component="post/favourite-count" class="favouriteCount" data-favourites="{posts.reputation}">{posts.reputation}</span>&nbsp;
 												<!-- IF posts.favourited -->
 												<i class="fa fa-heart"></i>
 												<!-- ELSE -->
@@ -131,12 +119,12 @@
 								</div>
 								<!-- IF !reputation:disabled -->
 								&bull;
-								<a href="#" class="upvote <!-- IF posts.upvoted --> upvoted btn-primary <!-- ENDIF posts.upvoted -->">
+								<a component="post/upvote" href="#" class="upvote <!-- IF posts.upvoted --> upvoted btn-primary <!-- ENDIF posts.upvoted -->">
 									<i class="fa fa-chevron-up"></i>
 								</a>
-								<span class="votes" data-votes="{posts.votes}">{posts.votes}</span>
+								<span component="post/vote-count" class="votes" data-votes="{posts.votes}">{posts.votes}</span>
 								<!-- IF !downvote:disabled -->
-								<a href="#" class="downvote <!-- IF posts.downvoted --> downvoted btn-primary <!-- ENDIF posts.downvoted -->">
+								<a component="post/downvote" href="#" class="downvote <!-- IF posts.downvoted --> downvoted btn-primary <!-- ENDIF posts.downvoted -->">
 									<i class="fa fa-chevron-down"></i>
 								</a>
 								<!-- ENDIF !downvote:disabled -->
@@ -152,26 +140,26 @@
 									<!-- IF posts.user.userslug -->
 									<!-- IF loggedIn -->
 									<!-- IF !config.disableChat -->
-									<button class="btn btn-sm btn-link chat" type="button" title="[[topic:chat]]"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> [[topic:chat]]</span></button>
+									<button component="post/chat" class="btn btn-sm btn-link chat" type="button" title="[[topic:chat]]"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> [[topic:chat]]</span></button>
 									<!-- ENDIF !config.disableChat -->
 									<!-- ENDIF loggedIn -->
 									<!-- ENDIF posts.user.userslug -->
 									<!-- ENDIF !posts.selfPost -->
 									<!-- IF privileges.topics:reply -->
-									<button class="btn btn-sm btn-link quote" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> [[topic:quote]]</span></button>
-									<button class="btn btn-sm btn-link post_reply" type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> [[topic:reply]]</span></button>
+									<button component="post/quote" class="btn btn-sm btn-link quote" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> [[topic:quote]]</span></button>
+									<button component="post/reply" class="btn btn-sm btn-link post_reply" type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> [[topic:reply]]</span></button>
 									<!-- ENDIF privileges.topics:reply -->
 									<!-- IF !posts.selfPost -->
 									<!-- IF loggedIn -->
-									<button class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-flag-o"></i><span class="hidden-xs-inline"> [[topic:flag]]</span></button>
+									<button component="post/flag" class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-flag-o"></i><span class="hidden-xs-inline"> [[topic:flag]]</span></button>
 									<!-- ENDIF loggedIn -->
 									<!-- ENDIF !posts.selfPost -->
 									<!-- IF posts.display_moderator_tools -->
-										<button class="btn btn-sm btn-link edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i><span class="hidden-xs-inline"> [[topic:edit]]</span></button>
-										<button class="btn btn-sm btn-link delete" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i><span class="hidden-xs-inline"> [[topic:delete]]</span></button>
-										<button class="btn btn-sm btn-link purge <!-- IF !posts.deleted -->hidden<!-- ENDIF !posts.deleted -->" type="button" title="[[topic:purge]]"><i class="fa fa-eraser"></i><span class="hidden-xs-inline"> [[topic:purge]]</span></button>
+										<button component="post/edit" class="btn btn-sm btn-link edit" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i><span class="hidden-xs-inline"> [[topic:edit]]</span></button>
+										<button component="post/delete" class="btn btn-sm btn-link delete" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i><span class="hidden-xs-inline"> [[topic:delete]]</span></button>
+										<button component="post/purge" class="btn btn-sm btn-link purge <!-- IF !posts.deleted -->hidden<!-- ENDIF !posts.deleted -->" type="button" title="[[topic:purge]]"><i class="fa fa-eraser"></i><span class="hidden-xs-inline"> [[topic:purge]]</span></button>
 										<!-- IF posts.display_move_tools -->
-											<button class="btn btn-sm btn-link move" type="button" title="[[topic:move]]"><i class="fa fa-arrows"></i><span class="hidden-xs-inline"> [[topic:move]]</span></button>
+											<button component="post/move" class="btn btn-sm btn-link move" type="button" title="[[topic:move]]"><i class="fa fa-arrows"></i><span class="hidden-xs-inline"> [[topic:move]]</span></button>
 										<!-- ENDIF posts.display_move_tools -->
 									<!-- ENDIF posts.display_moderator_tools -->
 								</span>
@@ -203,3 +191,4 @@
 </div>
 
 <!-- IMPORT partials/noscript/paginator.tpl -->
+<!-- IMPORT partials/variables/topic.tpl -->
