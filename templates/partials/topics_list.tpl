@@ -1,6 +1,6 @@
-		<ul id="topics-container" data-nextstart="{nextStart}">
+		<ul component="category" id="topics-container" data-nextstart="{nextStart}">
 			<!-- BEGIN topics -->
-			<li class="category-item<!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-cid="{topics.cid}">
+			<li component="category/topic" class="category-item<!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-cid="{topics.cid}">
 				<meta itemprop="name" content="{topics.title}">
 
 				<div class="category-body">
