@@ -185,11 +185,7 @@
 	&::after {
 		z-index: 0;
 		margin-left: -24px;
-		-webkit-transition: opacity 250ms ease, margin-left 250ms ease;
-		-moz-transition: opacity 250ms ease, margin-left 250ms ease;
-		-ms-transition: opacity 250ms ease, margin-left 250ms ease;
-		-o-transition: opacity 250ms ease, margin-left 250ms ease;
-		transition: opacity 250ms ease, margin-left 250ms ease;
+		.transition(~"opacity 250ms ease, margin-left 250ms ease");
 	}
 
 	&.replying::after {
