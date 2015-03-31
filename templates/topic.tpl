@@ -119,12 +119,12 @@
 								</div>
 								<!-- IF !reputation:disabled -->
 								&bull;
-								<a component="post/upvote" href="#" class="upvote <!-- IF posts.upvoted --> upvoted btn-primary <!-- ENDIF posts.upvoted -->">
+								<a component="post/upvote" href="#" class="upvote<!-- IF posts.upvoted --> upvoted<!-- ENDIF posts.upvoted -->">
 									<i class="fa fa-chevron-up"></i>
 								</a>
 								<span component="post/vote-count" class="votes" data-votes="{posts.votes}">{posts.votes}</span>
 								<!-- IF !downvote:disabled -->
-								<a component="post/downvote" href="#" class="downvote <!-- IF posts.downvoted --> downvoted btn-primary <!-- ENDIF posts.downvoted -->">
+								<a component="post/downvote" href="#" class="downvote<!-- IF posts.downvoted --> downvoted<!-- ENDIF posts.downvoted -->">
 									<i class="fa fa-chevron-down"></i>
 								</a>
 								<!-- ENDIF !downvote:disabled -->
