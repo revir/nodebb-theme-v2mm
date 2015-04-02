@@ -106,9 +106,7 @@ $('document').ready(function() {
 	});
 
 	(function() {
-		// loading animation
-		var refreshTitle = app.refreshTitle,
-			loadingBar = $('.loading-bar');
+		var loadingBar = $('.loading-bar');
 
 		$(window).on('action:ajaxify.start', function(data) {
 			loadingBar.fadeIn(0).removeClass('reset');
@@ -118,7 +116,7 @@ $('document').ready(function() {
 			loadingBar.css('width', '90%');
 		});
 
-		app.refreshTitle = function(url) {
+		$(window).on('action:ajaxify.contentLoaded', function() {
 			loadingBar.css('width', '100%');
 			setTimeout(function() {
 				loadingBar.fadeOut(250);
@@ -127,8 +125,6 @@ $('document').ready(function() {
 					loadingBar.addClass('reset').css('width', '0%');
 				}, 250);
 			}, 750);
-
-			return refreshTitle(url);
-		};
+		});
 	}());
 });
