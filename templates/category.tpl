@@ -80,7 +80,7 @@
 							</div>
 							<div class="category-text">
 								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i component="topic/locked" class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
-									<a href="{relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
+									<a component="topic/header" href="{relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
 									<small>
 									[[global:posted_ago, <span class="timeago" title="{topics.relativeTime}"></span>]]
 									<!-- IF !topics.unreplied -->
