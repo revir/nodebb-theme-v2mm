@@ -1,6 +1,8 @@
 <div class="topic">
 	<!-- IMPORT partials/breadcrumbs.tpl -->
 
+	<div component="topic/deleted/message" class="alert alert-warning<!-- IF !deleted --> hidden<!-- ENDIF !deleted -->">[[topic:deleted_message]]</div>
+
 	<ul component="topic" id="post-container" class="posts" data-tid="{tid}">
 		<!-- BEGIN posts -->
 			<li component="post" class="post-row <!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted -->" <!-- IMPORT partials/data/topic.tpl -->>
@@ -30,7 +32,7 @@
 								<div class="topic-text">
 									<!-- IF @first -->
 									<h3 class="topic-title">
-										<p component="post/header" class="topic-title" itemprop="name"><i class="fa fa-thumb-tack hide"></i> <i class="fa fa-lock hide"></i> {title}</p>
+										<p component="post/header" class="topic-title" itemprop="name"><i class="fa fa-thumb-tack <!-- IF !pinned -->hidden<!-- ENDIF !pinned -->"></i> <i class="fa fa-lock <!-- IF !locked -->hidden<!-- ENDIF !locked -->"></i> {title}</p>
 										<hr>
 									</h3>
 									<!-- ENDIF @first -->
@@ -71,22 +73,17 @@
 									<ul class="dropdown-menu" role="menu" aria-labelledby="postMenu_{posts.pid}">
 										<li role="presentation">
 											<!-- IF !posts.index -->
-											<!-- IF isFollowing -->
-											<a component="topic/follow" href="#" role="menuitem" tabindex="-1" class="follow" title="[[topic:unwatch.title]]"><span>[[topic:unwatch]]</span> <i class="fa fa-eye-slash"></i></a>
-											<!-- ELSE -->
-											<a component="topic/follow" href="#" role="menuitem" tabindex="-1" class="follow" title="[[topic:watch.title]]"><span>[[topic:watch]]</span> <i class="fa fa-eye"></i></a>
-											<!-- ENDIF isFollowing -->
+											<a component="topic/follow" href="#" role="menuitem" tabindex="-1" class="<!-- IF isFollowing -->hidden<!-- ENDIF isFollowing -->" title="[[topic:watch.title]]"><span>[[topic:watch]]</span> <i class="fa fa-eye"></i></a>
+											<a component="topic/unfollow" href="#" role="menuitem" tabindex="-1" class="<!-- IF !isFollowing -->hidden<!-- ENDIF !isFollowing -->" title="[[topic:unwatch.title]]"><span>[[topic:unwatch]]</span> <i class="fa fa-eye-slash"></i></a>
 											<!-- ENDIF !posts.index -->
 										</li>
 										<li role="presentation">
 											<a component="post/favourite" role="menuitem" tabindex="-1" data-favourited="{posts.favourited}" class="favourite">
 												<span class="favourite-text">[[topic:favourite]]</span>
 												<span component="post/favourite-count" class="favouriteCount" data-favourites="{posts.reputation}">{posts.reputation}</span>&nbsp;
-												<!-- IF posts.favourited -->
-												<i class="fa fa-heart"></i>
-												<!-- ELSE -->
-												<i class="fa fa-heart-o"></i>
-												<!-- ENDIF posts.favourited -->
+
+												<i component="post/favourite/on" class="fa fa-heart <!-- IF !posts.favourited -->hidden<!-- ENDIF !posts.favourited -->"></i>
+												<i component="post/favourite/off" class="fa fa-heart-o <!-- IF posts.favourited -->hidden<!-- ENDIF posts.favourited -->"></i>
 											</a>
 										</li>
 										<!-- IF !config.disableSocialButtons -->
@@ -135,10 +132,10 @@
 									<!-- ENDIF loggedIn -->
 									<!-- ENDIF posts.user.userslug -->
 									<!-- ENDIF !posts.selfPost -->
-									<!-- IF privileges.topics:reply -->
-									<button component="post/quote" class="btn btn-sm btn-link quote" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> [[topic:quote]]</span></button>
-									<button component="post/reply" class="btn btn-sm btn-link post_reply" type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> [[topic:reply]]</span></button>
-									<!-- ENDIF privileges.topics:reply -->
+
+									<button component="post/quote" class="btn btn-sm btn-link quote <!-- IF !privileges.topics:reply -->hidden<!--ENDIF !privileges.topics:reply -->" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> [[topic:quote]]</span></button>
+									<button component="post/reply" class="btn btn-sm btn-link post_reply <!-- IF !privileges.topics:reply -->hidden<!--ENDIF !privileges.topics:reply -->" type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> [[topic:reply]]</span></button>
+
 									<!-- IF !posts.selfPost -->
 									<!-- IF loggedIn -->
 									<button component="post/flag" class="btn btn-sm btn-link flag" type="button" title="[[topic:flag_title]]"><i class="fa fa-flag-o"></i><span class="hidden-xs-inline"> [[topic:flag]]</span></button>
@@ -167,7 +164,7 @@
 		<!-- END posts -->
 	</ul>
 
-	<div class="post-bar col-xs-12 <!-- IF unreplied -->hide<!-- ENDIF unreplied --> bottom-post-bar">
+	<div class="post-bar col-xs-12 <!-- IF unreplied -->hidden<!-- ENDIF unreplied --> bottom-post-bar">
 		<!-- IMPORT partials/post_bar.tpl -->
 	</div>
 
