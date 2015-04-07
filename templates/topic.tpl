@@ -66,7 +66,13 @@
 									<!-- ENDIF posts.editor.username -->
 								</small>
 
-								<!-- IMPORT partials/topic/post-menu.tpl -->
+								<div class="dropdown moderator-tools">
+									<a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-gear"></i></a>
+									<ul class="dropdown-menu" role="menu">
+										<!-- IMPORT partials/topic/post-menu.tpl -->
+									</ul>
+								</div>
+
 								<!-- IF !reputation:disabled -->
 								&bull;
 								<a component="post/upvote" href="#" class="upvote<!-- IF posts.upvoted --> upvoted<!-- ENDIF posts.upvoted -->">
