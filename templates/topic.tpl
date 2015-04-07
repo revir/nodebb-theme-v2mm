@@ -66,44 +66,7 @@
 									<!-- ENDIF posts.editor.username -->
 								</small>
 
-								<div class="dropdown share-dropdown">
-									<a href="#" class="dropdown-toggle postMenu favourite-tooltip" id="postMenu_{posts.pid}" data-toggle="dropdown">
-										<i class="fa fa-heart"></i>
-									</a>
-									<ul class="dropdown-menu" role="menu" aria-labelledby="postMenu_{posts.pid}">
-										<li role="presentation">
-											<!-- IF !posts.index -->
-											<a component="topic/follow" href="#" role="menuitem" tabindex="-1" class="<!-- IF isFollowing -->hidden<!-- ENDIF isFollowing -->" title="[[topic:watch.title]]"><span>[[topic:watch]]</span> <i class="fa fa-eye"></i></a>
-											<a component="topic/unfollow" href="#" role="menuitem" tabindex="-1" class="<!-- IF !isFollowing -->hidden<!-- ENDIF !isFollowing -->" title="[[topic:unwatch.title]]"><span>[[topic:unwatch]]</span> <i class="fa fa-eye-slash"></i></a>
-											<!-- ENDIF !posts.index -->
-										</li>
-										<li role="presentation">
-											<a component="post/favourite" role="menuitem" tabindex="-1" data-favourited="{posts.favourited}" class="favourite">
-												<span class="favourite-text">[[topic:favourite]]</span>
-												<span component="post/favourite-count" class="favouriteCount" data-favourites="{posts.reputation}">{posts.reputation}</span>&nbsp;
-
-												<i component="post/favourite/on" class="fa fa-heart <!-- IF !posts.favourited -->hidden<!-- ENDIF !posts.favourited -->"></i>
-												<i component="post/favourite/off" class="fa fa-heart-o <!-- IF posts.favourited -->hidden<!-- ENDIF posts.favourited -->"></i>
-											</a>
-										</li>
-										<!-- IF !config.disableSocialButtons -->
-										<li role="presentation" class="divider"></li>
-										<li role="presentation" class="dropdown-header">[[topic:share_this_post]]</li>
-										<li role="presentation">
-											<a role="menuitem" class="facebook-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-facebook"></i></span> Facebook</a>
-										</li>
-										<li role="presentation">
-											<a role="menuitem" class="twitter-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-twitter"></i></span> Twitter</a>
-										</li>
-										<li role="presentation">
-											<a role="menuitem" class="google-share" tabindex="-1" href="#"><span class="menu-icon"><i class="fa fa-google-plus"></i></span> Google+</a>
-										</li>
-										<!-- ENDIF !config.disableSocialButtons -->
-										<li class="text-center">
-											<input type="text" id="post_{posts.pid}_link" value="" class="form-control post-link inline-block"></input>
-										</li>
-									</ul>
-								</div>
+								<!-- IMPORT partials/topic/post-menu.tpl -->
 								<!-- IF !reputation:disabled -->
 								&bull;
 								<a component="post/upvote" href="#" class="upvote<!-- IF posts.upvoted --> upvoted<!-- ENDIF posts.upvoted -->">
@@ -132,24 +95,6 @@
 									<!-- ENDIF loggedIn -->
 									<!-- ENDIF posts.user.userslug -->
 									<!-- ENDIF !posts.selfPost -->
-
-									<button component="post/quote" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!--ENDIF !privileges.topics:reply -->" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> [[topic:quote]]</span></button>
-									<button component="post/reply" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!--ENDIF !privileges.topics:reply -->" type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> [[topic:reply]]</span></button>
-
-									<!-- IF !posts.selfPost -->
-									<!-- IF loggedIn -->
-									<button component="post/flag" class="btn btn-sm btn-link" type="button" title="[[topic:flag_title]]"><i class="fa fa-flag-o"></i><span class="hidden-xs-inline"> [[topic:flag]]</span></button>
-									<!-- ENDIF loggedIn -->
-									<!-- ENDIF !posts.selfPost -->
-									<!-- IF posts.display_moderator_tools -->
-										<button component="post/edit" class="btn btn-sm btn-link" type="button" title="[[topic:edit]]"><i class="fa fa-pencil"></i><span class="hidden-xs-inline"> [[topic:edit]]</span></button>
-										<button component="post/delete" class="btn btn-sm btn-link <!-- IF posts.deleted -->hidden<!-- ENDIF posts.deleted -->" type="button" title="[[topic:delete]]"><i class="fa fa-trash-o"></i><span class="hidden-xs-inline"> [[topic:delete]]</span></button>
-										<button component="post/restore" class="btn btn-sm btn-link <!-- IF !posts.deleted -->hidden<!-- ENDIF !posts.deleted -->" type="button" title="[[topic:restore]]"><i class="fa fa-history"></i><span class="hidden-xs-inline"> [[topic:restore]]</span></button>
-										<button component="post/purge" class="btn btn-sm btn-link <!-- IF !posts.deleted -->hidden<!-- ENDIF !posts.deleted -->" type="button" title="[[topic:purge]]"><i class="fa fa-eraser"></i><span class="hidden-xs-inline"> [[topic:purge]]</span></button>
-										<!-- IF posts.display_move_tools -->
-											<button component="post/move" class="btn btn-sm btn-link" type="button" title="[[topic:move]]"><i class="fa fa-arrows"></i><span class="hidden-xs-inline"> [[topic:move]]</span></button>
-										<!-- ENDIF posts.display_move_tools -->
-									<!-- ENDIF posts.display_moderator_tools -->
 								</span>
 							</div>
 						</div>
