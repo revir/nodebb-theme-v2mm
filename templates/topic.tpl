@@ -50,9 +50,9 @@
 								<small class="pull-right">
 									<span>
 										<!-- IF posts.user.userslug -->
-										<i class="fa fa-circle status {posts.user.status}" title='[[global:{posts.user.status}]]'></i>
+										<i component="user/status" class="fa fa-circle status {posts.user.status}" title='[[global:{posts.user.status}]]'></i>
 										<!-- ENDIF posts.user.userslug -->
-										<span class="username-field" data-username="{posts.user.username}" data-uid="{posts.user.uid}">
+										<span data-username="{posts.user.username}" data-uid="{posts.user.uid}">
 											<!-- IF posts.user.userslug -->
 											[[global:user_posted_ago, <strong><a href="{relative_path}/user/{posts.user.userslug}" itemprop="author">{posts.user.username}</a></strong>, <span class="timeago" title="{posts.relativeTime}"></span>]]
 											<!-- ELSE -->
