@@ -2,7 +2,7 @@
 	<div class="col-lg-9 col-sm-12" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
 		<div class="row <!-- IF !disableMasonry -->masonry<!-- ENDIF !disableMasonry -->">
 			<!-- BEGIN categories -->
-			<div class="<!-- IF categories.class -->{categories.class}<!-- ELSE -->col-md-3 col-sm-6 col-xs-12<!-- ENDIF categories.class --> category-item" data-cid="{categories.cid}" data-numRecentReplies="{categories.numRecentReplies}">
+			<div component="categories/category" class="<!-- IF categories.class -->{categories.class}<!-- ELSE -->col-md-3 col-sm-6 col-xs-12<!-- ENDIF categories.class --> category-item" data-cid="{categories.cid}" data-numRecentReplies="{categories.numRecentReplies}">
 				<meta itemprop="name" content="{categories.name}">
 
 				<div class="category-icon">
@@ -43,7 +43,7 @@
 						</div>
 						<!-- IF !categories.link -->
 						<!-- BEGIN posts -->
-						<div class="post-preview clearfix">
+						<div component="category/posts" class="post-preview clearfix">
 							<strong><a href="{relative_path}/topic/{categories.posts.topic.slug}">{categories.posts.topic.title}</a></strong>
 							<hr/>
 							<a style="color: {categories.color};" href="<!-- IF categories.posts.user.userslug -->{relative_path}/user/{categories.posts.user.userslug}<!-- ELSE -->#<!-- ENDIF categories.posts.user.userslug-->">
