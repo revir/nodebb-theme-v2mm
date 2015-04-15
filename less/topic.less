@@ -1,6 +1,7 @@
 .topic {
 	> ul {
 		margin-bottom: 0;
+
 		> li {
 			padding-bottom: 0;
 			margin-bottom: 15px;
@@ -44,6 +45,20 @@
 		.post-content {
 			ul, ol  {
 				margin-bottom: 10px;
+			}
+
+			ul {
+				> li {
+					list-style-type: disc;
+
+					ul > li {
+						list-style-type: circle;
+
+						ul > li {
+							list-style-type: square;
+						}
+					}
+				}
 			}
 		}
 	}
