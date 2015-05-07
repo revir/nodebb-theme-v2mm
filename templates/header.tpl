@@ -29,10 +29,10 @@
 	<!-- IMPORT partials/requirejs-config.tpl -->
 
 	<!-- IF useCustomJS -->
-	{customJS}
+	{{customJS}}
 	<!-- ENDIF useCustomJS -->
 	<!-- IF useCustomCSS -->
-	<style type="text/css">{customCSS}</style>
+	<style type="text/css">{{customCSS}}</style>
 	<!-- ENDIF useCustomCSS -->
 
 </head>
