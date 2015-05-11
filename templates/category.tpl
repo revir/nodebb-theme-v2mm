@@ -70,7 +70,7 @@
 							<!-- ENDIF privileges.editable -->
 
 							<div class="category-profile-pic">
-								<a href="<!-- IF topics.user.userslug -->{relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
+								<a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
 									<!-- IF topics.thumb -->
 									<img src="{topics.thumb}" alt="{topics.title}" class="profile-image user-img" title="{topics.title}">
 									<!-- ELSE -->
@@ -80,13 +80,13 @@
 							</div>
 							<div class="category-text">
 								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i component="topic/locked" class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
-									<a component="topic/header" href="{relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
+									<a component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
 									<small>
 									[[global:posted_ago, <span class="timeago" title="{topics.relativeTime}"></span>]]
 									<!-- IF !topics.unreplied -->
 									<span class="hidden-md hidden-lg">
 									<br/>
-									<a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}">[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]</a>
+									<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]</a>
 									</span>
 									<!-- ENDIF !topics.unreplied -->
 									<br/>
@@ -107,8 +107,8 @@
 							<!-- IF topics.unreplied -->
 							<p class="no-replies">[[category:no_replies]]</p>
 							<!-- ELSE -->
-							<a href="<!-- IF topics.teaser.user.userslug -->{relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->"><img class="profile-image small user-img" src="{topics.teaser.user.picture}" title="{topics.teaser.user.username}" /></a>
-							<a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}">
+							<a href="<!-- IF topics.teaser.user.userslug -->{config.relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->"><img class="profile-image small user-img" src="{topics.teaser.user.picture}" title="{topics.teaser.user.username}" /></a>
+							<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
 								[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]
 							</a>
 							<!-- ENDIF topics.unreplied -->
