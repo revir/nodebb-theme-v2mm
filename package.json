@@ -20,8 +20,5 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/psychobunny/nodebb-theme-lavender/issues"
-  },
-  "peerDependencies": {
-    "nodebb-theme-vanilla": "^1.0.0"
   }
 }
