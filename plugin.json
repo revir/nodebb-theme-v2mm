@@ -9,6 +9,9 @@
 			"hook": "static:app.load", "method": "init"
 		},
 		{
+			"hook": "static:app.preload", "method": "preinit"
+		},
+		{
 			"hook": "filter:admin.header.build", "method": "addAdminNavigation"
 		},
 		{
