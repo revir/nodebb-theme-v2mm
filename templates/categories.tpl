@@ -39,7 +39,7 @@
 							<!-- ENDIF categories.link-->
 								<h4><!-- IF categories.icon --><i class="fa {categories.icon} visible-xs-inline"></i> <!-- ENDIF categories.icon -->{categories.name}</h4>
 							</a>
-							<div class="description" itemprop="description">{categories.description}</div>
+							<div class="description" itemprop="description">{categories.descriptionParsed}</div>
 						</div>
 						<!-- IF !categories.link -->
 						<!-- BEGIN posts -->
