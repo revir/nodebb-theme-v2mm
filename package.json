@@ -5,7 +5,7 @@
   "main": "theme.less",
   "repository": {
     "type": "git",
-    "url": "https://github.com/psychobunny/nodebb-theme-lavender"
+    "url": "https://github.com/NodeBB/nodebb-theme-lavender"
   },
   "keywords": [
     "nodebb",
@@ -19,6 +19,6 @@
   },
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/psychobunny/nodebb-theme-lavender/issues"
+    "url": "https://github.com/NodeBB/nodebb-theme-lavender/issues"
   }
 }

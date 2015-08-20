@@ -1,7 +1,7 @@
 {
     "id": "nodebb-theme-lavender",
-    "name": "Lavender Theme for NodeBB",
-    "description": "A simple theme for NodeBB. Check out the theming guide that accompanies this work at http://burnaftercompiling.com",
-    "url": "https://www.github.com/psychobunny/nodebb-theme-lavender",
+    "name": "Lavender",
+    "description": "A theme that utilizes a masonry (magazine-like) homepage",
+    "url": "https://github.com/NodeBB/nodebb-theme-lavender",
     "screenshot": "screenshot.png"
 }
