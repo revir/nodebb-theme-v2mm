@@ -1,7 +1,7 @@
 {
     "id": "nodebb-theme-lavender",
     "name": "Lavender",
-    "description": "A theme that utilizes a masonry (magazine-like) homepage",
+    "description": "A theme that utilizes a masonry (magazine-like) homepage.",
     "url": "https://github.com/NodeBB/nodebb-theme-lavender",
     "screenshot": "screenshot.png"
 }
