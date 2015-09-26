@@ -109,13 +109,14 @@
 						</div>
 					</div>
 				</div>
+
+				<!-- IF !posts.index -->
+				<div class="post-bar" data-index="{posts.index}">
+					<!-- IMPORT partials/post_bar.tpl -->
+				</div>
+				<!-- ENDIF !posts.index -->
 			</li>
 
-			<!-- IF !posts.index -->
-			<div class="post-bar" data-index="{posts.index}">
-				<!-- IMPORT partials/post_bar.tpl -->
-			</div>
-			<!-- ENDIF !posts.index -->
 		<!-- END posts -->
 	</ul>
 
