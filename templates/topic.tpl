@@ -6,7 +6,7 @@
 	<ul component="topic" id="post-container" class="posts" data-tid="{tid}">
 		<!-- BEGIN posts -->
 			<li component="post" class="<!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted -->" <!-- IMPORT partials/data/topic.tpl -->>
-				<a component="post/anchor" name="{posts.index}"></a>
+				<a component="post/anchor" name="{posts.index}" data-index="{posts.index}"></a>
 				<div class="post-row">
 
 					<meta itemprop="datePublished" content="{posts.relativeTime}">
@@ -129,6 +129,17 @@
 	<!-- IF config.usePagination -->
 		<!-- IMPORT partials/paginator.tpl -->
 	<!-- ENDIF config.usePagination -->
+
+	<div class="visible-xs visible-sm pagination-block text-center">
+		<div class="progress-bar"></div>
+		<div class="wrapper">
+			<i class="fa fa-2x fa-angle-double-up pointer fa-fw pagetop"></i>
+			<i class="fa fa-2x fa-angle-up pointer fa-fw pageup"></i>
+			<span class="pagination-text"></span>
+			<i class="fa fa-2x fa-angle-down pointer fa-fw pagedown"></i>
+			<i class="fa fa-2x fa-angle-double-down pointer fa-fw pagebottom"></i>
+		</div>
+	</div>
 
 
 </div>
