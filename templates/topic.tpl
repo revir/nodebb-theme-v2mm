@@ -69,9 +69,7 @@
 
 									<div class="dropdown moderator-tools" component="post/tools">
 										<a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-gear"></i></a>
-										<ul class="dropdown-menu" role="menu">
-											<!-- IMPORT partials/topic/post-menu.tpl -->
-										</ul>
+										<ul class="dropdown-menu" role="menu"></ul>
 									</div>
 
 									<!-- IF !reputation:disabled -->
