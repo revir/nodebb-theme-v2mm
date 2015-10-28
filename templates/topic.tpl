@@ -32,10 +32,10 @@
 									</div>
 									<div class="topic-text">
 										<!-- IF @first -->
-										<h3 class="topic-title">
+										<h1 class="topic-title">
 											<p component="post/header" class="topic-title" itemprop="name"><i class="fa fa-thumb-tack <!-- IF !pinned -->hidden<!-- ENDIF !pinned -->"></i> <i class="fa fa-lock <!-- IF !locked -->hidden<!-- ENDIF !locked -->"></i> <span component="topic/title">{title}</span></p>
 											<hr>
-										</h3>
+										</h1>
 										<!-- ENDIF @first -->
 										<div component="post/content" class="post-content" itemprop="text">{posts.content}</div>
 										<!-- IF posts.user.signature -->
