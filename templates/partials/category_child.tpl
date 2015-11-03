@@ -32,7 +32,7 @@
 							<a href="{children.link}" itemprop="url" target="_blank">
 							<!-- ELSE -->
 							<a href="{config.relative_path}/category/{children.slug}" itemprop="url">
-							<!-- ENDIF children.link-->
+							<!-- ENDIF children.link -->
 								<h4><!-- IF children.icon --><i class="fa {children.icon} visible-xs-inline"></i> <!-- ENDIF children.icon -->{children.name}</h4>
 							</a>
 							<div class="description" itemprop="description">{children.description}</div>
@@ -43,7 +43,7 @@
 							<div class="post-preview-content">
 								<strong><a href="{config.relative_path}/topic/{children.posts.topic.slug}">{children.posts.topic.title}</a></strong>
 								<hr/>
-								<a style="color: {children.color};" href="<!-- IF children.posts.user.userslug -->{config.relative_path}/user/{children.posts.user.userslug}<!-- ELSE -->#<!-- ENDIF children.posts.user.userslug-->">
+								<a style="color: {children.color};" href="<!-- IF children.posts.user.userslug -->{config.relative_path}/user/{children.posts.user.userslug}<!-- ELSE -->#<!-- ENDIF children.posts.user.userslug -->">
 									<img src="{children.posts.user.picture}" title="{children.posts.user.username}" class="pull-left user-img" />
 								</a>
 								<div class="content">
