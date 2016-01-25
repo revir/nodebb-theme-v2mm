@@ -58,11 +58,11 @@
 											<i component="user/status" class="fa fa-circle status {posts.user.status}" title='[[global:{posts.user.status}]]'></i>
 											<!-- ENDIF posts.user.userslug -->
 											<span data-username="{posts.user.username}" data-uid="{posts.user.uid}">
-												<!-- IF posts.user.userslug -->
-												[[global:user_posted_ago, <strong><a href="{config.relative_path}/user/{posts.user.userslug}" itemprop="author">{posts.user.username}</a></strong>, <span class="timeago" title="{posts.relativeTime}"></span>]]
+												<!-- IF posts.user.uid -->
+												<strong><a href="{config.relative_path}/user/{posts.user.userslug}" itemprop="author">{posts.user.username}</a></strong> | <span class="timeago" title="{posts.relativeTime}"></span>
 												<!-- ELSE -->
-												[[global:guest_posted_ago, <span class="timeago" title="{posts.relativeTime}"></span>]]
-												<!-- ENDIF posts.user.userslug -->
+												[[global:guest]] | <span class="timeago" title="{posts.relativeTime}"></span>
+												<!-- ENDIF posts.user.uid -->
 											</span>
 										</span>
 
