@@ -30,7 +30,7 @@
 									<!-- ENDIF !topics.noAnchor -->
 
 									<small>
-									[[global:posted_in_ago, <a href="{config.relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a>, <span class="timeago" title="{topics.relativeTime}"></span>]]
+									<a href="{config.relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a> &bull; <span class="timeago" title="{topics.relativeTime}"></span>
 									<!-- IF !topics.unreplied -->
 									<span class="hidden-md hidden-lg">
 									<br/>
