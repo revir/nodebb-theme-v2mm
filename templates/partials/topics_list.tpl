@@ -24,9 +24,9 @@
 							<div class="category-text">
 								<p><strong><!-- IF topics.pinned --><i class="fa fa-thumb-tack"></i><!-- ENDIF topics.pinned --> <!-- IF topics.locked --><i class="fa fa-lock"></i><!-- ENDIF topics.locked --></strong>
 									<!-- IF !topics.noAnchor -->
-									<a href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.titleEscaped}</a><br />
+									<a href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
 									<!-- ELSE -->
-									<a itemprop="url" class="topic-title">{topics.titleEscaped}</a><br />
+									<a itemprop="url" class="topic-title">{topics.title}</a><br />
 									<!-- ENDIF !topics.noAnchor -->
 
 									<small>
