@@ -9,7 +9,7 @@
 						<div class="col-md-8 col-sm-9">
 
 							<!-- IF showSelect -->
-							<i class="fa fa-fw fa-square-o pull-left select pointer"></i>
+							<i class="fa fa-fw fa-square-o pull-left select pointer" component="topic/select"></i>
 							<!-- ENDIF showSelect -->
 
 							<div class="category-profile-pic">
