@@ -1,6 +1,7 @@
 		<ul component="category" id="topics-container" data-nextstart="{nextStart}">
+			<meta itemprop="itemListOrder" content="descending">
 			<!-- BEGIN topics -->
-			<li component="category/topic" class="category-item<!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-cid="{topics.cid}">
+			<li component="category/topic" class="category-item {function.generateTopicClass}" itemprop="itemListElement" <!-- IMPORT partials/data/category.tpl -->>
 				<meta itemprop="name" content="{function.stripTags, title}">
 
 				<div class="category-body">
@@ -22,11 +23,11 @@
 								</a>
 							</div>
 							<div class="category-text">
-								<p><strong><!-- IF topics.pinned --><i class="fa fa-thumb-tack"></i><!-- ENDIF topics.pinned --> <!-- IF topics.locked --><i class="fa fa-lock"></i><!-- ENDIF topics.locked --></strong>
+								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i component="topic/locked" class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
 									<!-- IF !topics.noAnchor -->
-									<a href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
+									<a component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
 									<!-- ELSE -->
-									<a itemprop="url" class="topic-title">{topics.title}</a><br />
+									<a component="topic/header" itemprop="url" class="topic-title">{topics.title}</a><br />
 									<!-- ENDIF !topics.noAnchor -->
 
 									<small>
@@ -43,10 +44,12 @@
 								</p>
 							</div>
 						</div>
+
 						<div class="col-xs-1 category-stat hidden-xs">
 							<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong><br />
 							<small>[[global:posts]]</small>
 						</div>
+
 						<div class="col-xs-1 category-stat hidden-xs">
 							<strong class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</strong><br />
 							<small>[[global:views]]</small>
