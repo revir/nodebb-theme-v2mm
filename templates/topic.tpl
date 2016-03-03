@@ -9,8 +9,8 @@
 				<a component="post/anchor" data-index="{posts.index}" name="{posts.index}"></a>
 				<div class="post-row">
 
-					<meta itemprop="datePublished" content="{posts.relativeTime}">
-					<meta itemprop="dateModified" content="{posts.relativeEditTime}">
+					<meta itemprop="datePublished" content="{posts.timestampISO}">
+					<meta itemprop="dateModified" content="{posts.editedISO}">
 
 					<div class="topic-item">
 						<div class="topic-body">
@@ -59,9 +59,9 @@
 											<!-- ENDIF posts.user.userslug -->
 											<span data-username="{posts.user.username}" data-uid="{posts.user.uid}">
 												<!-- IF posts.user.uid -->
-												<strong><a href="{config.relative_path}/user/{posts.user.userslug}" itemprop="author">{posts.user.username}</a></strong> | <span class="timeago" title="{posts.relativeTime}"></span>
+												<strong><a href="{config.relative_path}/user/{posts.user.userslug}" itemprop="author">{posts.user.username}</a></strong> | <span class="timeago" title="{posts.timestampISO}"></span>
 												<!-- ELSE -->
-												[[global:guest]] | <span class="timeago" title="{posts.relativeTime}"></span>
+												[[global:guest]] | <span class="timeago" title="{posts.timestampISO}"></span>
 												<!-- ENDIF posts.user.uid -->
 											</span>
 										</span>

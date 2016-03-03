@@ -31,11 +31,11 @@
 									<!-- ENDIF !topics.noAnchor -->
 
 									<small>
-									<a href="{config.relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a> &bull; <span class="timeago" title="{topics.relativeTime}"></span>
+									<a href="{config.relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a> &bull; <span class="timeago" title="{topics.timestampISO}"></span>
 									<!-- IF !topics.unreplied -->
 									<span class="hidden-md hidden-lg">
 									<br/>
-									<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><span class="timeago" title="{topics.teaser.timestamp}"></span></a>
+									<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><span class="timeago" title="{topics.teaser.timestampISO}"></span></a>
 									</span>
 									<!-- ENDIF !topics.unreplied -->
 									<br/>
