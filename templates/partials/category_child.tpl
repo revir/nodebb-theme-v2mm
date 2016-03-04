@@ -44,7 +44,11 @@
 								<strong><a href="{config.relative_path}/topic/{children.posts.topic.slug}">{children.posts.topic.title}</a></strong>
 								<hr/>
 								<a style="color: {children.color};" href="<!-- IF children.posts.user.userslug -->{config.relative_path}/user/{children.posts.user.userslug}<!-- ELSE -->#<!-- ENDIF children.posts.user.userslug -->">
+									<!-- IF children.posts.user.picture -->
 									<img src="{children.posts.user.picture}" title="{children.posts.user.username}" class="pull-left user-img" />
+									<!-- ELSE -->
+									<div class="pull-left user-img user-icon" title="{children.posts.user.username}" style="background-color: {children.posts.user.icon:bgColor}">{children.posts.user.icon:text}</div>
+									<!-- ENDIF children.posts.user.picture -->
 								</a>
 								<div class="content">
 								{children.posts.content}
