@@ -67,7 +67,7 @@
 								<!-- ENDIF topics.teaser.user.picture -->
 							</a>
 							<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
-								<span class="timeago" title="{topics.teaser.timestamp}"></span>
+								<span class="timeago" title="{topics.teaser.timestampISO}"></span>
 							</a>
 
 							<!-- ENDIF topics.unreplied -->
