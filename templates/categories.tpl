@@ -63,7 +63,7 @@
 							</div>
 
 							<span class="pull-right post-preview-footer">
-								<span class="timeago" title="{categories.posts.timestamp}"></span> &bull;
+								<span class="timeago" title="{categories.posts.timestampISO}"></span> &bull;
 								<a href="{config.relative_path}/topic/{categories.posts.topic.slug}<!-- IF categories.posts.index -->/{categories.posts.index}<!-- ENDIF categories.posts.index -->">[[global:read_more]]</a>
 							</span>
 						</div>
