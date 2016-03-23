@@ -15,11 +15,15 @@
 
 							<div class="category-profile-pic">
 								<a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
+									<!-- IF topics.thumb -->
+									<img src="{topics.thumb}" class="user-img" title="{topics.user.username}" />
+									<!-- ELSE -->
 									<!-- IF topics.user.picture -->
-									{function.renderTopicImage}
+									<img component="user/picture" data-uid="{topics.user.uid}" src="{topics.user.picture}" class="user-img" title="{topics.user.username}" />
 									<!-- ELSE -->
 									<div class="user-icon" style="background-color: {topics.user.icon:bgColor};" title="{topics.user.username}">{topics.user.icon:text}</div>
 									<!-- ENDIF topics.user.picture -->
+									<!-- ENDIF topics.thumb -->
 								</a>
 							</div>
 							<div class="category-text">
