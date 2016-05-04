@@ -113,6 +113,9 @@
 						</div>
 					</div>
 				</div>
+				<!-- IF !posts.index -->
+				<div class="post-bar-placeholder"></div>
+				<!-- ENDIF !posts.index -->
 			</li>
 		<!-- END posts -->
 	</ul>
