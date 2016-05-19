@@ -1,6 +1,6 @@
 {
   "name": "nodebb-theme-lavender",
-  "version": "3.0.11",
+  "version": "3.0.12",
   "description": "Lavender Theme for NodeBB",
   "main": "theme.less",
   "repository": {
