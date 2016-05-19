@@ -18,7 +18,7 @@
 				<!-- ENDIF !loggedIn -->
 			<!-- ENDIF privileges.topics:create -->
 
-			<span class="pull-right">
+			<span class="pull-right" component="category/controls">
 				<!-- IMPORT partials/category_watch.tpl -->
 
 				<!-- IMPORT partials/category_sort.tpl -->
