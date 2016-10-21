@@ -110,20 +110,23 @@
 									</span>
 								</div>
 							</div>
+
+							<!-- IF !posts.index -->
 							<div class="row">
 								<!-- IMPORT partials/post_bar.tpl -->
 							</div>
+							<!-- ENDIF !posts.index -->
+
 						</div>
 					</div>
 				</div>
-				<!-- IF !posts.index -->
-				<div class="post-bar-placeholder"></div>
-				<!-- ENDIF !posts.index -->
 			</li>
 		<!-- END posts -->
 	</ul>
 
-
+	<div class="post-bar">
+		<!-- IMPORT partials/post_bar.tpl -->
+	</div>
 
 	<!-- IF config.usePagination -->
 		<!-- IMPORT partials/paginator.tpl -->
