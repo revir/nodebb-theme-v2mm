@@ -20,9 +20,6 @@
 								color: {categories.color};
 							"
 						>
-							<!-- IF !categories.link -->
-							<span class="badge {categories.unread-class}"><i class="fa fa-book" data-toggle="tooltip" title="[[global:topics]]"></i> <span class="human-readable-number" title="{categories.totalTopicCount}">{categories.totalTopicCount}</span>&nbsp; <i class="fa fa-pencil" data-toggle="tooltip" title="[[global:posts]]"></i> <span class="human-readable-number" title="{categories.totalPostCount}">{categories.totalPostCount}</span></span>
-							<!-- ENDIF !categories.link -->
 
 							<!-- IF categories.icon -->
 							<div><i class="fa {categories.icon} fa-4x"></i></div>
