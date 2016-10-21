@@ -1,0 +1,8 @@
+{
+    "id": "nodebb-theme-v2mm",
+    "name": "V2mm",
+    "description": "A theme based on nodebb theme lavender",
+    "url": "https://github.com/revir/nodebb-theme-v2mm",
+    "screenshot": "screenshot.png",
+    "baseTheme": "nodebb-theme-vanilla"
+}

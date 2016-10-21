@@ -1,0 +1,134 @@
+@import "variables";
+@import "whiteplum";
+@import "keyframes";
+
+@import "categories";
+@import "category";
+@import "topic";
+
+body {
+	background:#FAFAFA;
+}
+
+.loading-bar {
+ 	width: 0%;
+ 	position: absolute;
+ 	left: 0px;
+ 	height: 2px;
+ 	background: @brand-primary;
+ 	z-index: 1;
+
+ 	-webkit-transition: width 0.2s ease-in;
+ 	-moz-transition: width 0.2s ease-in;
+ 	-o-transition: width 0.2s ease-in;
+ 	-ms-transition: width 0.2s ease-in;
+ 	transition: width 0.2s ease-in;
+}
+
+.admin {
+	background: white;
+
+	.panel[data-widget] {
+		border-top: 0;
+		box-shadow: 0px 0px 1px #555;
+	}
+}
+
+.header {
+	#user_label {
+		>a {
+			padding-top:13px;
+			padding-bottom:13px;
+		}
+
+		img, .user-icon {
+			width:24px;
+			height:24px;
+			border-radius: 50%;
+		}
+	}
+
+	#notif-list, #chat-list {
+		li {
+			&.unread {
+				background-color: @brand-warning;
+			}
+		}
+	}
+}
+
+.chats-list {
+	li {
+		&.unread {
+			background-color: @brand-warning;
+		}
+	}
+}
+
+.header-topic-title {
+	padding-top:5px;
+	span {
+		height:25px;
+	}
+}
+
+.breadcrumb {
+	background-color: white;
+}
+
+.account {
+	.user-profile-picture {
+		border-radius: 50%;
+	}
+}
+
+.taskbar {
+	li > a {
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+}
+
+.composer {
+	.instructions {
+		line-height: 25px;
+
+	}
+}
+
+.postMenu, .upvote.btn-primary, .downvote.btn-primary {
+	background: transparent;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	display: inline-block;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+.facebook-share, .twitter-share, .google-share {
+	background: transparent;
+}
+
+.facebook-share .menu-icon {
+	background: #3b5998;
+}
+
+.twitter-share .menu-icon {
+	background: #2fc2ef;
+}
+
+.google-share .menu-icon {
+	background: #df5138;
+}
+
+.facebook-share .menu-icon, .twitter-share .menu-icon, .google-share .menu-icon {
+	color:white;
+	border-radius: 100%;
+}
+
+.post-preview-footer {
+	opacity: 0.8;
+	font-size: 12px;
+	margin-top: 10px;
+}

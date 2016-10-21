@@ -1,0 +1,31 @@
+{
+  "author": {
+    "email": "revir.qing@gmail.com",
+    "name": "River Yang"
+  },
+  "bugs": {
+    "url": "https://github.com/revir/nodebb-theme-v2mm/issues"
+  },
+  "dependencies": {},
+  "description": "V2mm Theme for NodeBB",
+  "devDependencies": {},
+  "directories": {},
+  "homepage": "https://github.com/revir/nodebb-theme-v2mm#readme",
+  "keywords": [
+    "nodebb",
+    "v2mm",
+    "theme"
+  ],
+  "license": "BSD-2-Clause",
+  "main": "theme.less",
+  "name": "nodebb-theme-v2mm",
+  "nbbpm": {
+    "compatibility": "^1.0.0"
+  },
+  "optionalDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NodeBB/nodebb-theme-v2mm.git"
+  },
+  "version": "1.0.0"
+}

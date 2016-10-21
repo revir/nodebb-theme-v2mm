@@ -1,0 +1,27 @@
+{
+	"id": "nodebb-theme-v2mm",
+	"library": "./lib/theme.js",
+	"hooks": [
+		{
+			"hook": "filter:widgets.getAreas", "method": "defineWidgetAreas", "callbacked": true
+		},
+		{
+			"hook": "static:app.load", "method": "init"
+		},
+		{
+			"hook": "static:app.preload", "method": "preinit"
+		},
+		{
+			"hook": "filter:admin.header.build", "method": "addAdminNavigation"
+		},
+		{
+			"hook": "filter:config.get", "method": "getConfig"
+		}
+	],
+	"scripts": [
+		"static/lib/lavender.js",
+		"static/vendor/masonry.js",
+		"static/vendor/imagesLoaded.js"
+	],
+	"languages": "languages"
+}
