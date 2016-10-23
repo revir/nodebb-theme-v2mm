@@ -25,7 +25,7 @@
   "optionalDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NodeBB/nodebb-theme-v2mm.git"
+    "url": "git+https://github.com/revir/nodebb-theme-v2mm.git"
   },
   "version": "1.0.0"
 }
