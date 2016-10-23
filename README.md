@@ -8,15 +8,12 @@ A simple theme based on lavender.
 
 **Home View**
 
-[![Home View](http://i.imgur.com/fllGSje.png)](http://i.imgur.com/fllGSje.png)
+[![Home View](./screenshot-hot.png)](./screenshot-hot.png)
 
 **Category View**
 
-[![Category View](http://i.imgur.com/qhX84In.png)](http://i.imgur.com/qhX84In.png)
+[![Category View](./screenshot.png)](./screenshot.png)
 
-**Topic View**
-
-[![Topic View](http://i.imgur.com/W7cRtzQ.png)](http://i.imgur.com/W7cRtzQ.png)
 
 ## Installation
 
