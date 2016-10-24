@@ -1,8 +1,7 @@
 V2mm Theme for NodeBB
 =========================
 
-A simple theme based on lavender.
-
+A nice theme used by [v2mm](http://v2mm.tech).
 
 ## Screenshots
 
@@ -22,4 +21,4 @@ A simple theme based on lavender.
 
 ## Credits
 
-modified from "Lavender theme" by [psychobunny](https://github.com/NodeBB/nodebb-theme-lavender)
+Modified from "Lavender theme" by [psychobunny](https://github.com/NodeBB/nodebb-theme-lavender)
