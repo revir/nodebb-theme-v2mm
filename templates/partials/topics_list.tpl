@@ -27,12 +27,26 @@
 								</a>
 							</div>
 							<div class="category-text">
-								<p><strong><i component="topic/pinned" class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i component="topic/locked" class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
-									<!-- IF !topics.noAnchor -->
-									<a component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
+								<p>
+								<strong>
+								<i component="topic/pinned" class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i>
+								<i component="topic/locked" class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i>
+
+								</strong>
+									<!-- IF topics.externalLink -->
+									<a component="topic/header" href="{topics.externalLink}" target="_blank" itemprop="url" class="topic-title external-link">
+										<i class="fa fa-external-link <!-- IF !topics.externalLink --> hide<!-- ENDIF !topics.externalLink -->"></i>
+										{topics.title}
+									</a><br />
 									<!-- ELSE -->
-									<a component="topic/header" itemprop="url" class="topic-title">{topics.title}</a><br />
-									<!-- ENDIF !topics.noAnchor -->
+
+										<!-- IF !topics.noAnchor -->
+										<a component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
+										<!-- ELSE -->
+										<a component="topic/header" itemprop="url" class="topic-title">{topics.title}</a><br />
+										<!-- ENDIF !topics.noAnchor -->
+
+									<!-- ENDIF topics.externalLink -->
 
 									<small>
 									<a href="{config.relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a> &bull; <span class="timeago small text-muted" title="{topics.timestampISO}"></span>

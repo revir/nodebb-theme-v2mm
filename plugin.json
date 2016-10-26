@@ -16,6 +16,9 @@
 		},
 		{
 			"hook": "filter:config.get", "method": "getConfig"
+		},
+		{
+			"hook": "filter:topic.create", "method": "setExternalLinkOnSaveTopic"
 		}
 	],
 	"scripts": [
