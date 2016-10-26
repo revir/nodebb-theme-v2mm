@@ -34,10 +34,16 @@
 
 								</strong>
 									<!-- IF topics.externalLink -->
-									<a component="topic/header" href="{topics.externalLink}" target="_blank" itemprop="url" class="topic-title external-link">
+									<a component="topic/header" href="{config.relative_path}/external_topic?tid={topics.tid}&link={topics.externalLink}" target="_blank" itemprop="url" class="topic-title external-link" onclick="$(this).closest('li.unread').removeClass('unread')">
 										<i class="fa fa-external-link <!-- IF !topics.externalLink --> hide<!-- ENDIF !topics.externalLink -->"></i>
 										{topics.title}
-									</a><br />
+									</a>
+									&nbsp;
+									<a component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">
+										<i class="fa fa-arrow-right" aria-hidden="true"></i>
+									</a>
+
+									<br />
 									<!-- ELSE -->
 
 										<!-- IF !topics.noAnchor -->
