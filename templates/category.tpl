@@ -3,28 +3,55 @@
 
 		<!-- IMPORT partials/breadcrumbs.tpl -->
 
-		<div class="subcategories row">
-			<!-- BEGIN children -->
-			<!-- IMPORT partials/category_child.tpl -->
-			<!-- END children -->
-		</div>
+		<div class="header category-tools clearfix row">
+			<div class="col-md-7 col-xs-12">
+					<div
+						id="category-{cid}" class="category-header category-header-image category-header-image-{imageClass} pull-left"
+						style="
+							<!-- IF backgroundImage -->background-image: url({backgroundImage});<!-- ENDIF backgroundImage -->
+							<!-- IF bgColor -->background-color: {bgColor};<!-- ENDIF bgColor -->
+							color: {color};
+						"
+					></div>
 
-		<div class="header category-tools clearfix">
-			<!-- IF privileges.topics:create -->
-			<button id="new_topic" class="btn btn-primary">[[category:new_topic_button]]</button>
-			<!-- ELSE -->
-				<!-- IF !loggedIn -->
-				<a href="{config.relative_path}/login" class="btn btn-primary">[[category:guest-login-post]]</a>
-				<!-- ENDIF !loggedIn -->
-			<!-- ENDIF privileges.topics:create -->
+					<div class="twrapper">
+						<p class="text-muted description">
+							{description}
+						</p>
 
-			<span class="pull-right" component="category/controls">
-				<!-- IMPORT partials/category_watch.tpl -->
+						<div>
+							<!-- IF privileges.topics:create -->
+							<button id="new_topic" class="btn btn-success">[[v2mm:new_topic_button]]</button>
+							<!-- ELSE -->
+								<!-- IF !loggedIn -->
+								<a href="{config.relative_path}/login" class="btn btn-success">[[category:guest-login-post]]</a>
+								<!-- ENDIF !loggedIn -->
+							<!-- ENDIF privileges.topics:create -->
 
-				<!-- IMPORT partials/category_sort.tpl -->
+							<span class="sub-wrapper">
+							<!-- BEGIN children -->
+							<!-- IF @first -->
+							<span class="text-muted split-text"> | </span>
+							<!-- ENDIF @first -->
+							<a class="children-name" href="{config.relative_path}/category/{children.slug}" itemprop="url">
+								{children.name}
+							</a>
+							<!-- END children -->
+							</span>
+						</div>
+					</div>
+				</span>
+			</div>
+			<div class="col-md-5 col-xs-12">
+				<span class="pull-right" component="category/controls">
+					<!-- IMPORT partials/category_watch.tpl -->
 
-				<!-- IMPORT partials/category_tools.tpl -->
-			</span>
+					<!-- IMPORT partials/category_sort.tpl -->
+
+					<!-- IMPORT partials/category_tools.tpl -->
+				</span>
+			</div>
+
 		</div>
 
 		<!-- IF !topics.length -->
