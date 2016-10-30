@@ -12,7 +12,11 @@
 							<!-- IF bgColor -->background-color: {bgColor};<!-- ENDIF bgColor -->
 							color: {color};
 						"
-					></div>
+					>
+						<!-- IF icon -->
+						<div><i class="fa {icon} fa-2x"></i></div>
+						<!-- ENDIF icon -->
+					</div>
 
 					<div class="twrapper">
 						<p class="text-muted description">
