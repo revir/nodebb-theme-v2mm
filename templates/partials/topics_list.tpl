@@ -55,7 +55,13 @@
 									<!-- ENDIF topics.externalLink -->
 
 									<small>
-									<a href="{config.relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a> &bull; <span class="timeago small text-muted" title="{topics.timestampISO}"></span>
+									<a class="category-name" href="{config.relative_path}/category/{topics.category.slug}">
+									{topics.category.name}</a>
+
+									<!-- IMPORT partials/category_tags.tpl -->
+
+									&bull; <span class="timeago small text-muted" title="{topics.timestampISO}"></span>
+
 									<!-- IF !topics.unreplied -->
 									<span class="hidden-md hidden-lg">
 									<br/>
@@ -63,7 +69,7 @@
 									</span>
 									<!-- ENDIF !topics.unreplied -->
 									<br/>
-									<!-- IMPORT partials/category_tags.tpl -->
+
 									</small>
 								</p>
 							</div>

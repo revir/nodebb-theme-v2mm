@@ -61,8 +61,6 @@
 
 				.post-content {
 					overflow: hidden;
-					text-overflow: ellipsis;
-    				white-space: nowrap;
 
 					blockquote {
 						display: none;
@@ -152,6 +150,16 @@
 
 		a.external-link:hover {
 			text-decoration: underline;
+		}
+
+		a.category-name {
+			background-color: #e2e2e2;
+			color: #777;
+			padding: 3px;
+			border-radius: 5%;
+		}
+		a[href*="tags/"] {
+			vertical-align: text-bottom;
 		}
 	}
 }
