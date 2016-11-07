@@ -30,11 +30,11 @@
 							<!-- IF privileges.topics:create -->
 							<button id="new_topic" class="btn btn-success">[[v2mm:new_topic_button]]</button>
 							<!-- ELSE -->
-								<!-- IF !loggedIn -->
-								<a href="{config.relative_path}/login" class="btn btn-success">[[category:guest-login-post]]</a>
-								<!-- ELSE -->
+								<!-- IF loggedIn -->
 								<button id="new_topic" disabled="true" class="btn btn-success">[[v2mm:new_topic_button]]</button>
-								<!-- ENDIF !loggedIn -->
+								<!-- ELSE -->
+								<a href="{config.relative_path}/login" class="btn btn-success">[[category:guest-login-post]]</a>
+								<!-- ENDIF loggedIn -->
 							<!-- ENDIF privileges.topics:create -->
 
 							<span class="sub-wrapper">
