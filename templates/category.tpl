@@ -32,6 +32,8 @@
 							<!-- ELSE -->
 								<!-- IF !loggedIn -->
 								<a href="{config.relative_path}/login" class="btn btn-success">[[category:guest-login-post]]</a>
+								<!-- ELSE -->
+								<button id="new_topic" disabled="true" class="btn btn-success">[[v2mm:new_topic_button]]</button>
 								<!-- ENDIF !loggedIn -->
 							<!-- ENDIF privileges.topics:create -->
 
