@@ -1,7 +1,10 @@
 <div class="category row">
+	<!-- IF isCustom -->
+	<div class="col-sm-12">
+	<!-- ELSE -->
 	<div class="col-md-9" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
-
 		<!-- IMPORT partials/breadcrumbs.tpl -->
+	<!-- ENDIF isCustom -->
 
 		<div class="header category-tools clearfix row">
 			<div class="col-md-7 col-xs-12">
@@ -44,7 +47,6 @@
 							</span>
 						</div>
 					</div>
-				</span>
 			</div>
 			<div class="col-md-5 col-xs-12">
 				<span class="pull-right" component="category/controls">

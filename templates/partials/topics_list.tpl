@@ -6,8 +6,7 @@
 
 				<div class="category-body">
 					<div class="row">
-
-						<div class="col-md-8 col-sm-9">
+						<div class="<!-- IF !isCustom --> col-md-8 col-sm-10 <!-- ENDIF !isCustom --> col-xs-12">
 
 							<!-- IF showSelect -->
 							<i class="fa fa-fw fa-square-o pull-left select pointer" component="topic/select"></i>
@@ -38,6 +37,16 @@
 										<i class="fa fa-external-link <!-- IF !topics.externalLink --> hide<!-- ENDIF !topics.externalLink -->"></i>
 										{topics.title}
 									</a>
+									<!-- IF isCustom -->
+									<!-- IF topics.externalAuthorName -->
+									&nbsp;
+									<em class="text-muted small">By</em>
+									<a class="external-author-name" href="{topics.externalAuthorLink}" target="_blank">
+									{topics.externalAuthorName}
+									</a>
+									<!-- ENDIF topics.externalAuthorName -->
+									<!-- ENDIF isCustom -->
+
 									&nbsp;
 									<a component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">
 										<i class="fa fa-arrow-right" aria-hidden="true"></i>
@@ -54,6 +63,43 @@
 
 									<!-- ENDIF topics.externalLink -->
 
+									<!-- IF isCustom -->
+
+									<!-- IF topics.externalComment -->
+									<a class="external-comment" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
+									{topics.externalComment}
+									</a>
+									<!-- ENDIF topics.externalComment -->
+
+									<small>
+									<span>
+										<i title="[[v2mm:upvote]]" class="fa fa-thumbs-o-up"></i>
+										<strong class="human-readable-number" title="{topics.upvotes}">{topics.upvotes}</strong>
+									</span>
+									&bull;
+
+									<span>
+										<i title="[[v2mm:downvote]]" class="fa fa-thumbs-o-down"></i>
+										<strong class="human-readable-number" title="{topics.downvotes}">{topics.downvotes}</strong>
+									</span>
+									&bull;
+
+									<a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
+										<span>
+											<i title="[[global:posts]]" class="fa fa-comment-o"></i>
+											<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong>
+										</span>
+									</a>
+
+									<!-- IMPORT partials/category_tags.tpl -->
+									&bull;
+									<a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
+										<span class="timeago small text-muted" title="{topics.timestampISO}"></span>
+									</a>
+
+									</small>
+
+									<!-- ELSE -->
 									<small>
 									<a class="category-name" href="{config.relative_path}/category/{topics.category.slug}">
 									{topics.category.name}</a>
@@ -69,12 +115,15 @@
 									</span>
 									<!-- ENDIF !topics.unreplied -->
 									<br/>
-
 									</small>
+
+									<!-- ENDIF isCustom -->
 								</p>
 							</div>
 						</div>
 
+						<!-- IF isCustom -->
+						<!-- ELSE -->
 						<div class="col-xs-1 category-stat hidden-xs">
 							<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong><br />
 							<small>[[global:posts]]</small>
@@ -85,8 +134,10 @@
 							<small>[[global:views]]</small>
 						</div>
 
+
 						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
 							<div class="card" style="border-color: {topics.category.bgColor}">
+								<!-- IF topics.unreplied -->
 								<!-- IF topics.externalComment -->
 								<p>
 									<a href="{config.relative_path}/user/{topics.user.userslug}">
@@ -104,10 +155,10 @@
 									{topics.externalComment}
 								</div>
 								<!-- ELSE -->
-								<!-- IF topics.unreplied -->
 								<p>
 									[[category:no_replies]]
 								</p>
+								<!-- ENDIF topics.externalComment -->
 
 								<!-- ELSE -->
 								<!-- IF topics.teaser.pid -->
@@ -128,11 +179,13 @@
 								</div>
 								<!-- ENDIF topics.teaser.pid -->
 								<!-- ENDIF topics.unreplied -->
-								<!-- ENDIF topics.externalComment -->
+
 							</div>
 
 
 						</div>
+
+						<!-- ENDIF isCustom -->
 					</div>
 				</div>
 

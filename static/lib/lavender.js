@@ -132,4 +132,32 @@ $('document').ready(function() {
 			$('.navbar-header button').click();
 		}
 	});
+
+	$(window).on('action:widgets.loaded', function(){
+		if (ajaxify && ajaxify.data.isCustom) {
+			$('[widget-area="sidebar"]').hide();
+			var cls = $('[no-widget-target="sidebar"]').attr('no-widget-class');
+			$('[no-widget-target="sidebar"]').attr('class', '');
+			$('[no-widget-target="sidebar"]').attr('class', cls);
+		}
+	});
+
+	var oldNewTopicFunc = app.newTopic;
+ 	app.newTopic = function (cid, tags) {
+ 		if (ajaxify && ajaxify.data.isCustom) {
+ 			var hint = "// 请按照格式填写。本行注释，提交之后将会被自动删除。";
+ 			hint += "\n";
+ 			hint += "\n官网URL：";
+ 			hint += "\n作者名字：";
+ 			hint += "\n作者URL：";
+
+ 			$(window).trigger('action:composer.topic.new', {
+ 				cid: cid || ajaxify.data.cid || 0,
+ 				tags: tags || (ajaxify.data.tag ? [ajaxify.data.tag] : []),
+ 				body: hint
+ 			});
+ 		} else {
+ 			oldNewTopicFunc(cid, tags);
+ 		}
+	};
 });

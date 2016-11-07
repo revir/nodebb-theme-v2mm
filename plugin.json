@@ -22,6 +22,9 @@
 		},
 		{
 			"hook": "action:topic.save", "method": "saveTopicToRootCategory"
+		},
+		{
+			"hook": "filter:category.topics.get", "method": "filterCategoryTopics"
 		}
 	],
 	"scripts": [
