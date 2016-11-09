@@ -33,7 +33,7 @@
 
 								</strong>
 									<!-- IF topics.externalLink -->
-									<a component="topic/header" href="{config.relative_path}/external_topic?tid={topics.tid}&link={topics.externalLink}" target="_blank" itemprop="url" class="topic-title external-link" onclick="$(this).closest('li.unread').removeClass('unread')">
+									<a component="topic/header" href="{config.relative_path}/external_topic?tid={topics.tid}&link={topics.externalLink}" <!-- IF !topics.isInternalLink --> rel="nofollow" <!-- ENDIF !topics.isInternalLink --> target="_blank" itemprop="url" class="topic-title external-link" onclick="$(this).closest('li.unread').removeClass('unread')">
 										<i class="fa fa-external-link <!-- IF !topics.externalLink --> hide<!-- ENDIF !topics.externalLink -->"></i>
 										{topics.title}
 									</a>
@@ -41,7 +41,7 @@
 									<!-- IF topics.externalAuthorName -->
 									&nbsp;
 									<em class="text-muted small">By</em>
-									<a class="external-author-name" href="{topics.externalAuthorLink}" target="_blank">
+									<a class="external-author-name" href="{topics.externalAuthorLink}" rel="nofollow" target="_blank">
 									{topics.externalAuthorName}
 									</a>
 									<!-- ENDIF topics.externalAuthorName -->
