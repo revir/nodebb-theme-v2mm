@@ -3,5 +3,6 @@
     "downvote": "反对",
     "new_topic_button": "创建一个新主题",
     "no_description": "没有描述",
-    "no-externalLink": "没有官网URL"
+    "no-externalLink": "没有官网URL",
+    "loading_more_posts": "加载中"
 }

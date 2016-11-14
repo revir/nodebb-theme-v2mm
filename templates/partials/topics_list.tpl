@@ -71,7 +71,7 @@
 									</a>
 									<!-- ENDIF topics.externalComment -->
 
-									<small>
+									<small class="text-muted">
 									<span>
 										<i title="[[v2mm:upvote]]" class="fa fa-thumbs-o-up"></i>
 										<strong class="human-readable-number" title="{topics.upvotes}">{topics.upvotes}</strong>
@@ -84,7 +84,7 @@
 									</span>
 									&bull;
 
-									<a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
+									<a class="text-muted" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
 										<span>
 											<i title="[[global:posts]]" class="fa fa-comment-o"></i>
 											<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong>
@@ -92,7 +92,7 @@
 									</a>
 									&bull;
 
-									<a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
+									<a class="text-muted" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
 										<span>
 											<i title="[[global:views]]" class="fa fa-eye"></i>
 											<strong class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</strong>
@@ -101,7 +101,7 @@
 
 									<!-- IMPORT partials/category_tags.tpl -->
 									&bull;
-									<a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
+									<a class="text-muted" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
 										<span class="timeago small text-muted" title="{topics.timestampISO}"></span>
 									</a>
 
