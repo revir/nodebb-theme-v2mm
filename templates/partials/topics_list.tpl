@@ -119,7 +119,7 @@
 									<!-- IF !topics.unreplied -->
 									<span class="hidden-md hidden-lg">
 									<br/>
-									<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><span class="timeago" title="{topics.teaser.timestampISO}"></span></a>
+									<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><span class="timeago text-muted" title="{topics.teaser.timestampISO}"></span></a>
 									</span>
 									<!-- ENDIF !topics.unreplied -->
 									<br/>
@@ -156,7 +156,7 @@
 										<!-- ENDIF topics.user.picture -->
 									</a>
 									<a class="permalink" href="{config.relative_path}/topic/{topics.slug}">
-										<span class="timeago" title="{topics.timestampISO}"></span>
+										<span class="timeago text-muted" title="{topics.timestampISO}"></span>
 									</a>
 								</p>
 								<div class="post-content">
@@ -179,7 +179,7 @@
 										<!-- ENDIF topics.teaser.user.picture -->
 									</a>
 									<a class="permalink" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
-										<span class="timeago" title="{topics.teaser.timestampISO}"></span>
+										<span class="timeago text-muted" title="{topics.teaser.timestampISO}"></span>
 									</a>
 								</p>
 								<div class="post-content">
