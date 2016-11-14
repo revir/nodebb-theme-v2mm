@@ -90,6 +90,14 @@
 											<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong>
 										</span>
 									</a>
+									&bull;
+
+									<a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
+										<span>
+											<i title="[[global:views]]" class="fa fa-eye"></i>
+											<strong class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</strong>
+										</span>
+									</a>
 
 									<!-- IMPORT partials/category_tags.tpl -->
 									&bull;
