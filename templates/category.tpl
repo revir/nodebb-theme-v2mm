@@ -7,7 +7,7 @@
 	<!-- ENDIF isCustom -->
 
 		<div class="header category-tools clearfix row">
-			<div class="col-md-8 col-xs-12">
+			<div class="col-md-8 col-sm-12 col-xs-12">
 					<div
 						id="category-{cid}" class="category-header category-header-image category-header-image-{imageClass} pull-left"
 						style="
@@ -50,7 +50,7 @@
 						</div>
 					</div>
 			</div>
-			<div class="col-md-4 col-xs-12">
+			<div class="col-md-4 hidden-xs hidden-sm">
 				<span class="pull-right" component="category/controls">
 					<!-- IMPORT partials/category_watch.tpl -->
 
