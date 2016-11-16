@@ -6,11 +6,10 @@
     <!-- END tags -->
     </span>
 
-    <!-- IF tags.length -->
-    <span>&bull;</span>
-    <!-- ENDIF tags.length -->
-
-    <small class="topic-stats text-muted">
+    <small class="topic-stats hidden-xs hidden-sm">
+        <!-- IF tags.length -->
+        <span>&bull;</span>
+        <!-- ENDIF tags.length -->
         <span><i title="[[global:posts]]" class="fa fa-comment-o"></i></span>
         <strong><span component="topic/post-count" class="human-readable-number" title="{postcount}">{postcount}</span></strong> &bull;
         <span><i title="[[global:views]]" class="fa fa-eye"></i></span>

@@ -67,7 +67,7 @@
 										</span>
 
 
-										<span component="post/editor" class="<!-- IF !posts.editor.username --> hidden<!-- ENDIF !posts.editor.username -->">, [[global:last_edited_by, {posts.editor.username}]] <span class="timeago small text-muted" title="{posts.editedISO}"></span></span>
+										<span component="post/editor" class="hidden-xs hidden-sm text-muted <!-- IF !posts.editor.username --> hidden<!-- ENDIF !posts.editor.username -->">, [[global:last_edited_by, {posts.editor.username}]] <span class="timeago small text-muted" title="{posts.editedISO}"></span></span>
 
 									</small>
 
@@ -94,7 +94,7 @@
 										&bull; {posts.user.custom_profile_info.content}
 										<!-- END custom_profile_info -->
 									<!-- ENDIF posts.user.custom_profile_info.length -->
-									<span class="post-tools">
+									<span class="post-tools hidden-xs hidden-sm">
 										<!-- IF !posts.selfPost -->
 										<!-- IF posts.user.userslug -->
 										<!-- IF loggedIn -->
