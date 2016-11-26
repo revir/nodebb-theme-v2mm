@@ -95,31 +95,22 @@
 										<!-- END custom_profile_info -->
 									<!-- ENDIF posts.user.custom_profile_info.length -->
 									<span class="post-tools hidden-xs hidden-sm">
-										<!-- IF !posts.selfPost -->
-										<!-- IF posts.user.userslug -->
-										<!-- IF loggedIn -->
-										<!-- IF !config.disableChat -->
-										<button component="post/chat" class="btn btn-sm btn-link chat" type="button" title="[[topic:chat]]"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> [[topic:chat]]</span></button>
-										<!-- ENDIF !config.disableChat -->
-										<!-- ENDIF loggedIn -->
-										<!-- ENDIF posts.user.userslug -->
-										<!-- ENDIF !posts.selfPost -->
-
-										<button component="post/quote" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> [[topic:quote]]</span></button>
-										<button component="post/reply" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> [[topic:reply]]</span></button>
+										<button component="post/quote" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i></button>
+										<button component="post/reply" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button"><i class="fa fa-reply"></i></button>
 									</span>
 								</div>
 							</div>
 
-							<!-- IF !posts.index -->
-							<div class="row">
-								<!-- IMPORT partials/post_bar.tpl -->
-							</div>
-							<!-- ENDIF !posts.index -->
+
 
 						</div>
 					</div>
 				</div>
+				<!-- IF !posts.index -->
+				<div class="post-bar hidden">
+					<!-- IMPORT partials/post_bar.tpl -->
+				</div>
+				<!-- ENDIF !posts.index -->
 			</li>
 		<!-- END posts -->
 	</ul>

@@ -142,6 +142,12 @@ $('document').ready(function() {
 		}
 	});
 
+	$(window).on('action:topic.loaded', function(evt, data) {
+		if (data.postcount > 2) {
+			$('.post-bar.hidden').removeClass('hidden');
+		}
+	});
+
 	var oldNewTopicFunc = app.newTopic;
  	app.newTopic = function (cid, tags) {
  		if (ajaxify && ajaxify.data.isCustom) {
