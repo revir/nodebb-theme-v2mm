@@ -89,14 +89,25 @@
 									<!-- ENDIF !downvote:disabled -->
 									<!-- ENDIF !reputation:disabled -->
 
+									&bull;
+									<a component="post/bookmark" href="#" data-bookmarked="{posts.bookmarked}" title="[[topic:bookmark]]">
+										<i component="post/bookmark/on" class="fa fa-heart <!-- IF !posts.bookmarked -->hidden<!-- ENDIF !posts.bookmarked -->"></i>
+										<i component="post/bookmark/off" class="fa fa-heart-o <!-- IF posts.bookmarked -->hidden<!-- ENDIF posts.bookmarked -->"></i>
+										<span component="post/bookmark-count" class="bookmarkCount" data-bookmarks="{posts.bookmarks}">{posts.bookmarks}</span>
+									</a>
+
 									<!-- IF posts.user.custom_profile_info.length -->
 										<!-- BEGIN custom_profile_info -->
 										&bull; {posts.user.custom_profile_info.content}
 										<!-- END custom_profile_info -->
 									<!-- ENDIF posts.user.custom_profile_info.length -->
 									<span class="post-tools hidden-xs hidden-sm">
-										<button component="post/quote" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i></button>
-										<button component="post/reply" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button"><i class="fa fa-reply"></i></button>
+										<button component="post/quote" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i>
+											<span class="hidden-xs-inline"> [[topic:quote]]</span>
+										</button>
+										<button component="post/reply" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button"><i class="fa fa-reply"></i>
+											<span class="hidden-xs-inline"> [[topic:reply]]</span>
+										</button>
 									</span>
 								</div>
 							</div>
