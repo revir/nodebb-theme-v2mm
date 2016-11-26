@@ -6,7 +6,7 @@
 		<!-- IMPORT partials/breadcrumbs.tpl -->
 	<!-- ENDIF isCustom -->
 
-		<div class="header category-tools clearfix row">
+		<div class="header category-tools clearfix">
 			<div class="col-md-8 col-sm-12 col-xs-12">
 					<div
 						id="category-{cid}" class="category-header category-header-image category-header-image-{imageClass} pull-left"
