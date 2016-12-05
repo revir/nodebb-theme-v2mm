@@ -96,6 +96,15 @@
 										<span component="post/bookmark-count" class="bookmarkCount" data-bookmarks="{posts.bookmarks}">{posts.bookmarks}</span>
 									</a>
 
+									&bull;
+									<a href="#" class='basicShareBtn'
+									    data-shareUrl='{config.url}/post/{posts.pid}'
+									    data-sharePic='{posts.user.picture}'
+									    title="分享"
+									>
+										<i class="fa fa-share-alt" aria-hidden="true"></i>
+									</a>
+
 									<!-- IF posts.user.custom_profile_info.length -->
 										<!-- BEGIN custom_profile_info -->
 										&bull; {posts.user.custom_profile_info.content}
@@ -147,6 +156,8 @@
 
 
 </div>
+
+<script src='https://revir.b0.upaiyun.com/lib/more-basic-share-0.1.js'></script>
 
 <!-- IF !config.usePagination -->
 <noscript>
