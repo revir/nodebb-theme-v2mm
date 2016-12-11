@@ -25,6 +25,12 @@
 		},
 		{
 			"hook": "filter:category.topics.get", "method": "filterCategoryTopics"
+		},
+		{
+			"hook": "filter:user.account.edit", "method": "getEditUserProfile"
+		},
+		{
+			"hook": "filter:user.updateProfile", "method": "editUserProfile"
 		}
 	],
 	"scripts": [

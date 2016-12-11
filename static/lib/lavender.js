@@ -166,4 +166,11 @@ $('document').ready(function() {
  			oldNewTopicFunc(cid, tags);
  		}
 	};
+
+	$(window).on('action:profile.update', function (evt, userData) {
+		$('.extra-site-control').each(function () {
+			var site = this.id;
+			userData[site] = this.value;
+		});
+	});
 });
