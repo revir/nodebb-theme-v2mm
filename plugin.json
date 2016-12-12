@@ -30,6 +30,9 @@
 			"hook": "filter:user.account.edit", "method": "getEditUserProfile"
 		},
 		{
+			"hook": "filter:user.account", "method": "getUserAccount"
+		},
+		{
 			"hook": "filter:user.updateProfile", "method": "editUserProfile"
 		}
 	],

@@ -105,7 +105,13 @@
 
                     <!-- BEGIN extraSites -->
                     <div class="control-group">
-                        <label class="control-label" for="{extraSites.name}">{extraSites.name}</label>
+                        <label class="control-label" for="{extraSites.name}">
+                        <span class="fa-stack">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-stack-1x fa-inverse {extraSites.fa}">{extraSites.faText}</i>
+                        </span>
+                        {extraSites.name}
+                        </label>
                         <div class="controls">
                             <input class="form-control extra-site-control" type="text" id="{extraSites.name}" placeholder="http://..." value="{extraSites.value}">
                         </div>
