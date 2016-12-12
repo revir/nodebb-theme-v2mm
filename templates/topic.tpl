@@ -78,15 +78,17 @@
 
 									<!-- IF !reputation:disabled -->
 									&bull;
-									<a component="post/upvote" href="#" class="upvote<!-- IF posts.upvoted --> upvoted<!-- ENDIF posts.upvoted -->">
-										<i title="[[v2mm:upvote]]" class="fa fa-thumbs-o-up"></i>
-									</a>
-									<span component="post/vote-count" class="votes" data-votes="{posts.votes}">{posts.votes}</span>
-									<!-- IF !downvote:disabled -->
-									<a component="post/downvote" href="#" class="downvote<!-- IF posts.downvoted --> downvoted<!-- ENDIF posts.downvoted -->">
-										<i title="[[v2mm:downvote]]" class="fa fa-thumbs-o-down"></i>
-									</a>
-									<!-- ENDIF !downvote:disabled -->
+									<span class="votes">
+										<a component="post/upvote" href="#" class="upvote<!-- IF posts.upvoted --> upvoted<!-- ENDIF posts.upvoted -->">
+											<i title="[[v2mm:upvote]]" class="fa fa-thumbs-o-up"></i>
+										</a>
+										<span component="post/vote-count" class="votes" data-votes="{posts.votes}">{posts.votes}</span>
+										<!-- IF !downvote:disabled -->
+										<a component="post/downvote" href="#" class="downvote<!-- IF posts.downvoted --> downvoted<!-- ENDIF posts.downvoted -->">
+											<i title="[[v2mm:downvote]]" class="fa fa-thumbs-o-down"></i>
+										</a>
+										<!-- ENDIF !downvote:disabled -->
+									</span>
 									<!-- ENDIF !reputation:disabled -->
 
 									&bull;
