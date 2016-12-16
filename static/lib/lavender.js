@@ -151,7 +151,7 @@ $('document').ready(function() {
 	var oldNewTopicFunc = app.newTopic;
  	app.newTopic = function (cid, tags) {
  		if (ajaxify && ajaxify.data.isCustom) {
- 			var hint = "// 请按照格式填写。本行注释，提交之后将会被自动删除。";
+ 			var hint = "// 请按照格式填写, 官网URL是必要字段，作者URL之后换行写描述。本行注释，提交之后将会被自动删除。";
  			hint += "\n";
  			hint += "\n官网URL：";
  			hint += "\n作者名字：";

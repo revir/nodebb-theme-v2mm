@@ -21,6 +21,9 @@
 			"hook": "filter:topic.create", "method": "setExternalLinkOnSaveTopic"
 		},
 		{
+			"hook": "filter:topic.edit", "method": "setExternalLinkOnSaveTopic"
+		},
+		{
 			"hook": "action:topic.save", "method": "saveTopicToRootCategory"
 		},
 		{
