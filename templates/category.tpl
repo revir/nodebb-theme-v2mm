@@ -29,18 +29,12 @@
 						<div>
 							<!-- IF privileges.topics:create -->
 							<button id="new_topic" class="btn btn-success">[[v2mm:new_topic_button]]</button>
-							<!-- ELSE -->
-								<!-- IF loggedIn -->
-								<button id="new_topic" disabled="true" class="btn btn-success">[[v2mm:new_topic_button]]</button>
-								<!-- ELSE -->
-								<a href="{config.relative_path}/login" class="btn btn-success">[[category:guest-login-post]]</a>
-								<!-- ENDIF loggedIn -->
 							<!-- ENDIF privileges.topics:create -->
 
 							<span class="sub-wrapper">
 							<!-- BEGIN children -->
 							<!-- IF @first -->
-							<span class="text-muted split-text"> | </span>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
 							<!-- ENDIF @first -->
 							<a class="children-name" href="{config.relative_path}/category/{children.slug}" itemprop="url">
 								{children.name}
