@@ -6,7 +6,7 @@
     <!-- END tags -->
     </span>
 
-    <small class="topic-stats hidden-xs hidden-sm">
+    <small class="topic-stats">
         <!-- IF tags.length -->
         <span>&bull;</span>
         <!-- ENDIF tags.length -->
