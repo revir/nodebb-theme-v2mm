@@ -163,3 +163,109 @@ div[widget-area="sidebar"] .recent-replies ul li {
 .user-icon {
 	border-radius: 50% !important;
 }
+
+.ajaxifying-effect {
+	z-index: 1000;
+	.fish {
+		position: fixed;
+		top: 100px;
+		width: 100px;
+	  	height: 100px;
+	  	animation: swim 3s infinite;
+	}
+
+	/* Bubbles */
+	.bubbles {
+	  position: fixed;
+	  bottom: 0;
+	  margin-right: 50px;
+	  background-color: white;
+	  border-radius: 50%;
+	  opacity: .50;
+	  width: 40px;
+	  height: 40px;
+	  animation: up 4s infinite;
+	}
+
+	.bubble-2 {
+	  left: 350px;
+	  animation: up 2s infinite;
+	}
+
+	.bubble-3 {
+	  left: 750px;
+	  opacity: .30;
+	  animation: up 5s infinite;
+	}
+
+	.bubble-4 {
+	  left: 1150px;
+	  animation: up 6s infinite;
+	}
+
+	.bubble-5 {
+	  left: 50px;
+	  animation: up 5s infinite;
+	}
+
+	.bubble-6 {
+	  left: 300px;
+	  opacity: .30;
+	  animation: up 3s infinite;
+	}
+
+	.bubble-7 {
+	  left: 670px;
+	  animation: up 4s infinite;
+	}
+
+	.bubble-8 {
+	  left: 1050px;
+	  opacity: .30;
+	  animation: up 3s infinite;
+	}
+
+	.bubble-9 {
+	  left: 1650px;
+	  opacity: .30;
+	  animation: up 8s infinite;
+	}
+
+	.bubble-10 {
+	  left: 2050px;
+	  opacity: .30;
+	  animation: up 6s infinite;
+	}
+
+	.bubble-11 {
+	  left: 2550px;
+	  opacity: .30;
+	  animation: up 5s infinite;
+	}
+
+	/* Swim Animation */
+	@keyframes swim {
+	  0% {
+	    transform: translateY(-50px) translateX(0) rotate(30deg);
+	  }
+	  25% {
+	    transform: translateY(50px) translateX(250px) rotate(20deg);
+	  }
+	  50% {
+	    transform: translateY(100px) translateX(500px);
+	  }
+	  75% {
+	    transform: translateY(50px) translateX(850px) rotate(-20deg);
+	  }
+	  100% {
+	    transform: translateY(-170px) translateX(1200px) rotate(-40deg);
+	  }
+	}
+
+	/* Bubbles Animation */
+	@keyframes up {
+	  100% {
+	    transform: translateY(-1100px);
+	  }
+	}
+}
