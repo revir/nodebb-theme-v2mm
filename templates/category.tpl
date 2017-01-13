@@ -7,53 +7,50 @@
 	<!-- ENDIF isCustom -->
 
 		<div class="header category-tools clearfix">
-			<div class="col-md-8 col-sm-12 col-xs-12">
-					<div
-						id="category-{cid}" class="category-header category-header-image category-header-image-{imageClass} pull-left"
-						style="
-							<!-- IF backgroundImage -->background-image: url({backgroundImage});<!-- ENDIF backgroundImage -->
-							<!-- IF bgColor -->background-color: {bgColor};<!-- ENDIF bgColor -->
-							color: {color};
-						"
-					>
-						<!-- IF icon -->
-						<div><i class="fa {icon} fa-2x"></i></div>
-						<!-- ENDIF icon -->
-					</div>
-
-					<div class="twrapper">
-						<p class="text-muted description">
-							{description}
-						</p>
-
-						<div>
-							<!-- IF privileges.topics:create -->
-							<button id="new_topic" class="btn btn-success">[[v2mm:new_topic_button]]</button>
-							<!-- ENDIF privileges.topics:create -->
-
-							<span class="sub-wrapper">
-							<!-- BEGIN children -->
-							<!-- IF @first -->
-							<i class="fa fa-angle-right" aria-hidden="true"></i>
-							<!-- ENDIF @first -->
-							<a class="children-name" href="{config.relative_path}/category/{children.slug}" itemprop="url">
-								{children.name}
-							</a>
-							<!-- END children -->
-							</span>
-						</div>
-					</div>
-			</div>
-			<div class="col-md-4 hidden-xs hidden-sm">
-				<span class="pull-right" component="category/controls">
-					<!-- IMPORT partials/category_watch.tpl -->
-
-					<!-- IMPORT partials/category_sort.tpl -->
-
-					<!-- IMPORT partials/category_tools.tpl -->
-				</span>
+			<div
+				id="category-{cid}" class="category-header category-header-image category-header-image-{imageClass} pull-left"
+				style="
+					<!-- IF backgroundImage -->background-image: url({backgroundImage});<!-- ENDIF backgroundImage -->
+					<!-- IF bgColor -->background-color: {bgColor};<!-- ENDIF bgColor -->
+					color: {color};
+				"
+			>
+				<!-- IF icon -->
+				<div><i class="fa {icon} fa-2x"></i></div>
+				<!-- ENDIF icon -->
 			</div>
 
+			<div class="hidden-xs hidden-sm pull-right" component="category/controls">
+				<!-- IMPORT partials/category_watch.tpl -->
+
+				<!-- IMPORT partials/category_sort.tpl -->
+
+				<!-- IMPORT partials/category_tools.tpl -->
+			</div>
+			<p class="description">
+				{description}
+			</p>
+
+			<div class="twrapper">
+				<div>
+					<!-- IF privileges.topics:create -->
+					<!-- IF !children.length -->
+					<button id="new_topic" class="btn btn-success">[[v2mm:new_topic_button]]</button>
+					<!-- ENDIF !children.length -->
+					<!-- ENDIF privileges.topics:create -->
+
+					<span class="sub-wrapper">
+					<!-- BEGIN children -->
+					<!-- IF @first -->
+					<i class="fa fa-angle-right" aria-hidden="true"></i>
+					<!-- ENDIF @first -->
+					<a class="children-name" href="{config.relative_path}/category/{children.slug}" itemprop="url">
+						{children.name}
+					</a>
+					<!-- END children -->
+					</span>
+				</div>
+			</div>
 		</div>
 
 		<!-- IF !topics.length -->
