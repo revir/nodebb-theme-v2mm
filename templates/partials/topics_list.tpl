@@ -146,28 +146,9 @@
 						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
 							<div class="card" style="border-color: {topics.category.bgColor}">
 								<!-- IF topics.unreplied -->
-								<!-- IF topics.externalComment -->
-								<p>
-									<a href="{config.relative_path}/user/{topics.user.userslug}">
-										<!-- IF topics.user.picture -->
-										<img title="{topics.user.username}" class="user-img" src="{topics.user.picture}" />
-										<!-- ELSE -->
-										<span title="{topics.user.username}" class="user-icon user-img" style="background-color: {topics.user.icon:bgColor};">{topics.user.icon:text}</span>
-										<!-- ENDIF topics.user.picture -->
-									</a>
-									<a class="permalink" href="{config.relative_path}/topic/{topics.slug}">
-										<span class="timeago text-muted" title="{topics.timestampISO}"></span>
-									</a>
-								</p>
-								<div class="post-content">
-									{topics.externalComment}
-								</div>
-								<!-- ELSE -->
 								<p>
 									[[category:no_replies]]
 								</p>
-								<!-- ENDIF topics.externalComment -->
-
 								<!-- ELSE -->
 								<!-- IF topics.teaser.pid -->
 								<p>
@@ -187,10 +168,7 @@
 								</div>
 								<!-- ENDIF topics.teaser.pid -->
 								<!-- ENDIF topics.unreplied -->
-
 							</div>
-
-
 						</div>
 
 						<!-- ENDIF isCustom -->

@@ -33,6 +33,9 @@
 			"hook": "filter:category.topics.get", "method": "filterCategoryTopics"
 		},
 		{
+			"hook": "filter:topics.get", "method": "fixExternalTopicTeaser"
+		},
+		{
 			"hook": "filter:user.account.edit", "method": "getEditUserProfile"
 		},
 		{
