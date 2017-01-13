@@ -112,8 +112,6 @@
 									<a class="topic-category-name" href="{config.relative_path}/category/{topics.category.slug}">
 									{topics.category.name}</a>
 
-									<!-- IMPORT partials/category_tags.tpl -->
-
 									&bull; <span class="timeago small text-muted" title="{topics.timestampISO}"></span>
 
 									<!-- IF !topics.unreplied -->
