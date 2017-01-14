@@ -72,6 +72,11 @@
 									<!-- ENDIF topics.externalComment -->
 
 									<small class="text-muted">
+
+									<a class="topic-category-name" href="{config.relative_path}/category/{topics.category.slug}">
+									{topics.category.name}</a>
+									&bull;
+
 									<span>
 										<i title="[[v2mm:upvote]]" class="fa fa-thumbs-o-up"></i>
 										<strong class="human-readable-number" title="{topics.upvotes}">{topics.upvotes}</strong>
