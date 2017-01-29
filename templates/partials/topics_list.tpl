@@ -117,15 +117,31 @@
 									<a class="topic-category-name" href="{config.relative_path}/category/{topics.category.slug}">
 									{topics.category.name}</a>
 
-									&bull; <span class="timeago small text-muted" title="{topics.timestampISO}"></span>
+									&bull;
+									<a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
+										<span class="timeago small text-muted" title="{topics.timestampISO}"></span>
+									</a>
 
+									<span class="visible-xs-inline">
+									&bull;
+									<a class="text-muted" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
+										<span>
+											<i title="[[global:views]]" class="fa fa-eye"></i>
+											<strong class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</strong>
+										</span>
+									</a>
+									&bull;
+									<a class="text-muted" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
+										<span>
+											<i title="[[global:posts]]" class="fa fa-comment-o"></i>
+											<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong>
+										</span>
+									</a>
 									<!-- IF !topics.unreplied -->
-									<span class="hidden-md hidden-lg">
-									<br/>
+									&bull;
 									<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><span class="timeago text-muted" title="{topics.teaser.timestampISO}"></span></a>
-									</span>
 									<!-- ENDIF !topics.unreplied -->
-									<br/>
+									</span>
 									</small>
 
 									<!-- ENDIF isCustom -->
