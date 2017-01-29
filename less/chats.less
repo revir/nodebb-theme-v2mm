@@ -1,0 +1,31 @@
+.chats-list {
+    li {
+        padding-left: 0;
+
+        .user-img {
+            margin-left: 0;
+        }
+
+        .members {
+            padding-left: 0;
+        }
+
+        .teaser-content {
+            // TODO: what if margin left > 30, multi-user chat?
+            margin-left: 30px;
+            text-overflow: ellipsis;
+            display: block;
+            overflow: hidden;
+        }
+
+        .timeago {
+            margin-right: -15px;
+        }
+    }
+}
+
+.expanded-chat, .chat-modal {
+    textarea {
+        resize: vertical;
+    }
+}

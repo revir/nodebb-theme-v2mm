@@ -84,7 +84,7 @@
 
 
                     <!-- IF !config.disableChat -->
-                    <li class="chats dropdown">
+                    <li class="chats dropdown hidden-xs">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="[[global:header.chats]]" id="chat_dropdown" component="chat/dropdown">
                             <i component="chat/icon" class="fa fa-comment-o fa-fw"></i> <span class="visible-xs-inline">[[global:header.chats]]</span>
                         </a>
@@ -99,6 +99,12 @@
                             <li class="notif-dropdown-link"><a href="#" class="mark-all-read" component="chats/mark-all-read">[[modules:chat.mark_all_read]]</a></li>
                             <li class="notif-dropdown-link"><a href="{relative_path}/user/{user.userslug}/chats">[[modules:chat.see_all]]</a></li>
                         </ul>
+                    </li>
+
+                    <li class="chats visible-xs">
+                        <a href="{relative_path}/user/{user.userslug}/chats" title="[[global:header.chats]]">
+                            <i component="chat/icon" class="fa fa-comment-o fa-fw"></i> <span class="visible-xs-inline">[[global:header.chats]]</span>
+                        </a>
                     </li>
                     <!-- ENDIF !config.disableChat -->
 
