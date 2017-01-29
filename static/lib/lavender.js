@@ -178,6 +178,15 @@ $('document').ready(function() {
 		app.newTopic();
 	});
 
+	$('body').on('click', '.directly-open-chat', function () {
+		var roomId = $(this).data('roomid');
+		if (!ajaxify.currentPage.match(/^chats\//)) {
+			app.openChat(roomId);
+		} else {
+			ajaxify.go('user/' + app.user.userslug + '/chats/' + roomId);
+		}
+	});
+
 	$(window).on('action:profile.update', function (evt, userData) {
 		$('.extra-site-control').each(function () {
 			var site = this.id;

@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <div class="col-md-9 col-sm-12 col-xs-12">
+    <div class="col-md-9 hidden-sm hidden-xs">
         <!-- IF roomId -->
         <div component="chat/messages" class="panel panel-default expanded-chat" data-roomid="{roomId}">
             <div class="panel-heading">
