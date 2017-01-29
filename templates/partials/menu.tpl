@@ -21,11 +21,12 @@
 
                 <div class="post-wrapper visible-xs-block pull-right">
                     <!-- IF config.loggedIn -->
-                    <button id="new_topic" class="btn btn-success">[[category:new_topic_button]]</button>
+                    <button class="btn btn-success new_topic">[[category:new_topic_button]]</button>
                     <!-- ELSE -->
                     <a component="category/post/guest" href="{config.relative_path}/login" class="btn btn-success">[[category:guest-login-post]]</a>
                     <!-- ENDIF config.loggedIn -->
                 </div>
+
             </div>
 
             <div class="navbar-collapse collapse navbar-ex1-collapse" id="nav-dropdown">

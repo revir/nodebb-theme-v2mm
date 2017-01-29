@@ -134,7 +134,7 @@ $('document').ready(function() {
 
 	$(window).on('action:ajaxify.start', function() {
 		if ($('.navbar .navbar-collapse').hasClass('in')) {
-			$('.navbar-header button').click();
+			$('.navbar-header .navbar-toggle').click();
 		}
 	});
 
@@ -174,10 +174,23 @@ $('document').ready(function() {
  		}
 	};
 
+	$('body').on('click', '.btn.new_topic', function () {
+		app.newTopic();
+	});
+
 	$(window).on('action:profile.update', function (evt, userData) {
 		$('.extra-site-control').each(function () {
 			var site = this.id;
 			userData[site] = this.value;
 		});
+	});
+
+	// change icon-bar color on mobile when notification coming.
+	$(window).on('action:notification.updateCount', function (evt, payload) {
+		if (payload.count) {
+			$('.navbar-header .navbar-toggle .icon-bar').css('background-color', 'red');
+		} else {
+			$('.navbar-header .navbar-toggle .icon-bar').css('background-color', '#ccc');
+		}
 	});
 });

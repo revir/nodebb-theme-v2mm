@@ -31,11 +31,11 @@
 				{description}
 			</p>
 
-			<div class="twrapper">
+			<div class="twrapper hidden-xs">
 				<div>
 					<!-- IF privileges.topics:create -->
 					<!-- IF !children.length -->
-					<button id="new_topic" class="btn btn-success">[[v2mm:new_topic_button]]</button>
+					<button class="btn btn-success new_topic">[[v2mm:new_topic_button]]</button>
 					<!-- ENDIF !children.length -->
 					<!-- ENDIF privileges.topics:create -->
 
