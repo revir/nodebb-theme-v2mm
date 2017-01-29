@@ -112,6 +112,8 @@ $('document').ready(function() {
 	$(window).on('action:ajaxify.start', function(data) {
 		loadingBar.fadeIn(0).removeClass('reset');
 		ajaxifyingEffect.removeClass('hidden');
+
+		$('.navbar-header .post-wrapper').addClass('visible-xs-block').show();
 	});
 
 	$(window).on('action:ajaxify.loadingTemplates', function() {
@@ -149,6 +151,8 @@ $('document').ready(function() {
 		if (data.postcount > 2) {
 			$('.post-bar.hidden').removeClass('hidden');
 		}
+		$('.navbar-header .post-wrapper').removeClass('visible-xs-block').hide();
+
 	});
 
 	var oldNewTopicFunc = app.newTopic;
