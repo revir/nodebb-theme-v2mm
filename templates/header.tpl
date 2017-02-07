@@ -5,7 +5,7 @@
 	<!-- BEGIN metaTags -->
 	{function.buildMetaTag}
 	<!-- END metaTags -->
-	<link rel="stylesheet" type="text/css" href="{relative_path}/stylesheet.css?{config.cache-buster}" />
+	<link rel="stylesheet" type="text/css" href="{relative_path}/assets/stylesheet.css?{config.cache-buster}" />
 	<!-- BEGIN linkTags -->
 	{function.buildLinkTag}
 	<!-- END linkTags -->
@@ -25,7 +25,7 @@
 			user: JSON.parse('{{userJSON}}')
 		};
 	</script>
-	<script src="{relative_path}/nodebb.min.js?{config.cache-buster}"></script>
+	<script src="{relative_path}/assets/nodebb.min.js?{config.cache-buster}"></script>
 
 	<!-- IF useCustomJS -->
 	{{customJS}}
