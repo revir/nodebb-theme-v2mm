@@ -31,7 +31,7 @@
 				{description}
 			</p>
 
-			<div class="twrapper hidden-xs">
+			<div class="twrapper">
 				<div>
 					<!-- IF privileges.topics:create -->
 					<!-- IF !children.length -->
