@@ -1,3 +1,11 @@
+.navbar-header {
+	[component="navbar/title"] {
+	    padding-top: 8px;
+	    text-overflow: ellipsis;
+	    overflow: hidden;
+	    white-space: nowrap;
+	}
+}
 .topic {
 	> ul {
 		margin-bottom: 0;
@@ -27,6 +35,11 @@
 
 	.topic-item {
 		position: relative;
+		background-color: white;
+
+		.topic-header {
+			padding: 10px 10px 5px;
+		}
 
 		.post-tools {
 			opacity: 0;
@@ -35,7 +48,7 @@
 		 	-o-transition: opacity 0.25s ease-in;
 		 	-ms-transition: opacity 0.25s ease-in;
 		 	transition: opacity 0.25s ease-in;
-			button {
+			.btn {
 				color: @gray-dark;
 			}
 		}
@@ -179,6 +192,7 @@
 	.topic-footer {
 		background-color: white;
 		border-bottom: 1px solid;
+		border-top: 1px dotted #aaa;
 
 		.pull-right {
 			text-align: right;
@@ -186,7 +200,7 @@
 		}
 
 		.row {
-			padding: 10px 10px 10px 20px;
+			padding: 10px 10px 10px 15px;
 		}
 	}
 

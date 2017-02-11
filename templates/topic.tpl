@@ -13,6 +13,28 @@
 					<meta itemprop="dateModified" content="{posts.editedISO}">
 
 					<div class="topic-item">
+						<div class="topic-header visible-xs">
+							<div class="row">
+								<div class="col-xs-12">
+									<small class="">
+										<span>
+											<!-- IF posts.user.userslug -->
+											<i component="user/status" class="fa fa-circle status {posts.user.status}" title='[[global:{posts.user.status}]]'></i>
+											<!-- ENDIF posts.user.userslug -->
+											<span data-username="{posts.user.username}" data-uid="{posts.user.uid}">
+												<!-- IF posts.user.uid -->
+												<strong><a href="{config.relative_path}/user/{posts.user.userslug}" itemprop="author">{posts.user.username}</a></strong> | <span class="timeago small text-muted" title="{posts.timestampISO}"></span>
+												<!-- ELSE -->
+												[[global:guest]] | <span class="timeago" title="{posts.timestampISO}"></span>
+												<!-- ENDIF posts.user.uid -->
+											</span>
+										</span>
+										<span component="post/editor" class="hidden-xs hidden-sm text-muted <!-- IF !posts.editor.username --> hidden<!-- ENDIF !posts.editor.username -->">, [[global:last_edited_by, {posts.editor.username}]] <span class="timeago small text-muted" title="{posts.editedISO}"></span></span>
+
+									</small>
+								</div>
+							</div>
+						</div>
 						<div class="topic-body">
 							<div class="row">
 								<div class="col-md-12">
@@ -52,7 +74,7 @@
 						<div class="topic-footer">
 							<div class="row">
 								<div class="">
-									<small class="pull-right">
+									<small class="pull-right hidden-xs">
 										<span>
 											<!-- IF posts.user.userslug -->
 											<i component="user/status" class="fa fa-circle status {posts.user.status}" title='[[global:{posts.user.status}]]'></i>
@@ -98,26 +120,26 @@
 										<span component="post/bookmark-count" class="bookmarkCount" data-bookmarks="{posts.bookmarks}">{posts.bookmarks}</span>
 									</a>
 
-									&bull;
-									<a href="#" class='basicShareBtn'
-									    data-shareUrl='{config.url}/post/{posts.pid}'
-									    data-sharePic='{posts.user.picture}'
-									    title="分享"
-									>
-										<i class="fa fa-share-alt" aria-hidden="true"></i>
-									</a>
-
 									<!-- IF posts.user.custom_profile_info.length -->
 										<!-- BEGIN custom_profile_info -->
 										&bull; {posts.user.custom_profile_info.content}
 										<!-- END custom_profile_info -->
 									<!-- ENDIF posts.user.custom_profile_info.length -->
-									<span class="post-tools hidden-xs hidden-sm">
+									<span class="post-tools">
+										<a href="#" class='btn btn-sm btn-link basicShareBtn'
+										    data-shareUrl='{config.url}/post/{posts.pid}'
+										    data-sharePic='{posts.user.picture}'
+										    title="分享"
+										>
+											<i class="fa fa-share-alt" aria-hidden="true"></i>
+											<span class="hidden-xs"> [[topic:share]]</span>
+										</a>
+
 										<button component="post/quote" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i>
-											<span class="hidden-xs-inline"> [[topic:quote]]</span>
+											<span class="hidden-xs"> [[topic:quote]]</span>
 										</button>
 										<button component="post/reply" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button"><i class="fa fa-reply"></i>
-											<span class="hidden-xs-inline"> [[topic:reply]]</span>
+											<span class="hidden-xs"> [[topic:reply]]</span>
 										</button>
 									</span>
 								</div>
