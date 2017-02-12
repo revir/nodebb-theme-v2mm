@@ -4,7 +4,10 @@
     "new_topic_button": "New topic",
     "no_description": "No description",
     "no-externalLink": "No official URL",
+    "no-externalAuthorName": "No author name",
+    "no-externalAuthorLink": "No author link",
     "loading_more_posts": "Loading more",
     "url-not-right": "URL is not right",
-    "reply": "Write a comment"
+    "reply": "Write a comment",
+    "description_length_check": "There must be a description with at least 42 characters."
 }
