@@ -51,5 +51,6 @@
 		"static/vendor/masonry.js",
 		"static/vendor/imagesLoaded.js"
 	],
-	"languages": "languages"
+	"languages": "languages",
+	"defaultLang": "zh_CN"
 }
