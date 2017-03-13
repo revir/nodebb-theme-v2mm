@@ -208,4 +208,8 @@ $('document').ready(function() {
 			categoryTagsTools.init(obj.cid);
 		});
 	});
+
+	// $(window).on('action:infinitescroll.loadmore', function (evt, obj) {
+	// 	$('.v2mm-loading-spin').removeClass('hidden');
+	// });
 });

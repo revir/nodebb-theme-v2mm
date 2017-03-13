@@ -195,5 +195,12 @@
 				</div>
 
 			</li>
+
+			<!-- IF @last -->
+			<li class="v2mm-loading-spin text-center hidden hidden-sm hidden-xs">
+			    <i class="fa fa-spinner fa-spin fa-4x" title="loading..."></i>
+			</li>
+			<!-- ENDIF @last -->
+
 			<!-- END topics -->
 		</ul>
