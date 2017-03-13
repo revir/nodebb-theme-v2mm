@@ -202,4 +202,10 @@ $('document').ready(function() {
 			$('.navbar-header .navbar-toggle .icon-bar').css('background-color', '#ccc');
 		}
 	});
+
+	$(window).on('action:category.loaded', function (evt, obj) {
+		require(['forum/categoryTagsTools'], function (categoryTagsTools) {
+			categoryTagsTools.init(obj.cid);
+		});
+	});
 });

@@ -48,6 +48,7 @@
 	"scripts": [
 		"static/lib/lavender.js",
 		"static/lib/category.js",
+		"static/lib/categoryTagsTools.js",
 		"static/vendor/masonry.js",
 		"static/vendor/imagesLoaded.js"
 	],
