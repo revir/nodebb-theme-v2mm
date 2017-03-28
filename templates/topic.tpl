@@ -127,7 +127,7 @@
 									<!-- ENDIF posts.user.custom_profile_info.length -->
 									<span class="post-tools">
 										<a href="#" class='btn btn-sm btn-link need-share-button'
-										    data-share-url='{config.url}/post/{posts.pid}'
+										    data-share-url='{config.relative_path}/post/{posts.pid}'
 										    data-share-image='{posts.user.picture}'
 										    title="分享"
 										>
