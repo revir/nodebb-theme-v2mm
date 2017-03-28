@@ -125,8 +125,8 @@
 	  	},
 	  	'twitter' : function(el) {
             var myoptions = getOptions(el);
-	  		var url = myoptions.protocol + 'twitter.com/home?status=';
-	  		url += encodeURIComponent(myoptions.title) + encodeURIComponent(myoptions.url);
+	  		var url = myoptions.protocol + 'twitter.com/intent/tweet?text=';
+	  		url += encodeURIComponent(myoptions.title) + "&url=" + encodeURIComponent(myoptions.url);
 
         root.popup(url);
 	  	},
@@ -368,6 +368,9 @@
             var val = el.dataset[option];
             if (new_option === 'networks') {
                 val = val.toLowerCase().split(',');
+            } else if (new_option === 'url' && val && val[0] === '/') {
+                // fix relative url problem.
+                val = location.origin + val;
             }
             ret[new_option] = val;
           }
