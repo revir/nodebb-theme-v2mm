@@ -33,26 +33,16 @@
 
 								</strong>
 									<!-- IF topics.externalLink -->
-									<a component="topic/header" href="{config.relative_path}/external_topic?tid={topics.tid}&link={topics.externalLink}" <!-- IF !topics.isInternalLink --> rel="nofollow" <!-- ENDIF !topics.isInternalLink --> target="_blank" itemprop="url" class="topic-title external-link" onclick="$(this).closest('li.unread').removeClass('unread')">
-										<i class="fa fa-external-link <!-- IF !topics.externalLink --> hide<!-- ENDIF !topics.externalLink -->"></i>
-										{topics.title}
-									</a>
-									<!-- IF isCustom -->
-									<!-- IF topics.externalAuthorName -->
-									&nbsp;
-									<em class="text-muted small">By</em>
-									<a class="external-author-name" href="{topics.externalAuthorLink}" rel="nofollow" target="_blank">
-									{topics.externalAuthorName}
-									</a>
-									<!-- ENDIF topics.externalAuthorName -->
-									<!-- ENDIF isCustom -->
+										<a component="topic/header" href="{topics.externalLink}" rel="nofollow" target="_blank" itemprop="url" class="topic-title external-link" data-tid="{topics.tid}">
+											<i class="fa fa-external-link"></i>
+											{topics.title}
+										</a>
+										&nbsp;
+										<a component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">
+											<i class="fa fa-arrow-right" aria-hidden="true"></i>
+										</a>
 
-									&nbsp;
-									<a component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">
-										<i class="fa fa-arrow-right" aria-hidden="true"></i>
-									</a>
-
-									<br />
+										<br />
 									<!-- ELSE -->
 
 										<!-- IF !topics.noAnchor -->
@@ -62,57 +52,6 @@
 										<!-- ENDIF !topics.noAnchor -->
 
 									<!-- ENDIF topics.externalLink -->
-
-									<!-- IF isCustom -->
-
-									<!-- IF topics.externalComment -->
-									<a class="external-comment" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
-									{topics.externalComment}
-									</a>
-									<!-- ENDIF topics.externalComment -->
-
-									<small class="text-muted">
-
-									<a class="topic-category-name" href="{config.relative_path}/category/{topics.category.slug}">
-									{topics.category.name}</a>
-									&bull;
-
-									<span>
-										<i title="[[v2mm:upvote]]" class="fa fa-thumbs-o-up"></i>
-										<strong class="human-readable-number" title="{topics.upvotes}">{topics.upvotes}</strong>
-									</span>
-									&bull;
-
-									<span>
-										<i title="[[v2mm:downvote]]" class="fa fa-thumbs-o-down"></i>
-										<strong class="human-readable-number" title="{topics.downvotes}">{topics.downvotes}</strong>
-									</span>
-									&bull;
-
-									<a class="text-muted" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
-										<span>
-											<i title="[[global:posts]]" class="fa fa-comment-o"></i>
-											<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong>
-										</span>
-									</a>
-									&bull;
-
-									<a class="text-muted" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
-										<span>
-											<i title="[[global:views]]" class="fa fa-eye"></i>
-											<strong class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</strong>
-										</span>
-									</a>
-
-									<!-- IMPORT partials/category_tags.tpl -->
-									&bull;
-									<a class="text-muted" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">
-										<span class="timeago small text-muted" title="{topics.timestampISO}"></span>
-									</a>
-
-									</small>
-
-									<!-- ELSE -->
 									<small>
 									<a class="topic-category-name" href="{config.relative_path}/category/{topics.category.slug}">
 									{topics.category.name}</a>
@@ -143,8 +82,6 @@
 									<!-- ENDIF !topics.unreplied -->
 									</span>
 									</small>
-
-									<!-- ENDIF isCustom -->
 								</p>
 							</div>
 						</div>

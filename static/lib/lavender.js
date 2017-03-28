@@ -187,6 +187,15 @@ $('document').ready(function() {
 		}
 	});
 
+	$('body').on('click', 'a.topic-title.external-link', function () {
+		$(this).closest('li.unread').removeClass('unread');
+		socket.emit('plugins.v2mm.goExternal', {
+		    tid: $(this).data('tid')
+		}, function (err) {
+		  if (err) return app.alertError(err.message);
+		});
+	});
+
 	$(window).on('action:profile.update', function (evt, userData) {
 		$('.extra-site-control').each(function () {
 			var site = this.id;
