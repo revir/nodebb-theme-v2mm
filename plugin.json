@@ -51,8 +51,7 @@
 		"static/lib/category.js",
 		"static/lib/categoryTagsTools.js",
 		"static/vendor/masonry.js",
-		"static/vendor/imagesLoaded.js",
-		"static/vendor/needsharebutton.js"
+		"static/vendor/imagesLoaded.js"
 	],
 	"staticDirs": {
 		"css": "public/css",

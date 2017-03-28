@@ -27,6 +27,7 @@
 		};
 	</script>
 	<script src="{relative_path}/nodebb.min.js?{config.cache-buster}"></script>
+	<script src="/plugins/nodebb-theme-v2mm/lib/needsharebutton.js"></script>
 
 	<!-- IF useCustomJS -->
 	{{customJS}}

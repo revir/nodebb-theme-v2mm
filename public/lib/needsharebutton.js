@@ -48,18 +48,11 @@
 	    var content;
 	    // check querySelector existance for old browsers
 	    if (document.querySelector) {
-		    if (content = document.querySelector('meta[property="og:title"]') || document.querySelector('meta[name="twitter:title"]')) {
-		      return content.getAttribute('content');
-		    } else if (content = document.querySelector('title')) {
+		    if (content = document.querySelector('title')){
 		      return content.innerText;
-		    } else
-		    	return '';
-		  } else {
-		  	if (content = document.title)
-		      return content.innerText;
-		    else
-		    	return '';
-		  }
+		    }
+        }
+        return document.title;
 	  };
 
 	  // get image from html
