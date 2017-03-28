@@ -51,8 +51,13 @@
 		"static/lib/category.js",
 		"static/lib/categoryTagsTools.js",
 		"static/vendor/masonry.js",
-		"static/vendor/imagesLoaded.js"
+		"static/vendor/imagesLoaded.js",
+		"static/vendor/needsharebutton.js"
 	],
+	"staticDirs": {
+		"css": "public/css",
+		"lib": "public/lib"
+	},
 	"languages": "languages",
 	"defaultLang": "zh_CN"
 }

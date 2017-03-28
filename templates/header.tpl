@@ -6,6 +6,7 @@
 	{function.buildMetaTag}
 	<!-- END metaTags -->
 	<link rel="stylesheet" type="text/css" href="{relative_path}/stylesheet.css?{config.cache-buster}" />
+	<link rel="stylesheet" type="text/css" href="/plugins/nodebb-theme-v2mm/css/needsharebutton.css" />
 	<!-- BEGIN linkTags -->
 	{function.buildLinkTag}
 	<!-- END linkTags -->

@@ -126,9 +126,9 @@
 										<!-- END custom_profile_info -->
 									<!-- ENDIF posts.user.custom_profile_info.length -->
 									<span class="post-tools">
-										<a href="#" class='btn btn-sm btn-link basicShareBtn'
-										    data-shareUrl='{config.url}/post/{posts.pid}'
-										    data-sharePic='{posts.user.picture}'
+										<a href="#" class='btn btn-sm btn-link need-share-button'
+										    data-share-url='{config.url}/post/{posts.pid}'
+										    data-share-image='{posts.user.picture}'
 										    title="分享"
 										>
 											<i class="fa fa-share-alt" aria-hidden="true"></i>
@@ -180,8 +180,6 @@
 
 
 </div>
-
-<script src='https://revir.b0.upaiyun.com/lib/more-basic-share-0.1.js'></script>
 
 <!-- IF !config.usePagination -->
 <noscript>
