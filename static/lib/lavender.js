@@ -155,25 +155,6 @@ $('document').ready(function() {
 
 	});
 
-	var oldNewTopicFunc = app.newTopic;
- 	app.newTopic = function (cid, tags) {
- 		if (ajaxify && ajaxify.data.isCustom) {
- 			var hint = "// 请按照格式填写, 作者可以是组织或个人, 作者URL之后换行写描述, 描述字符需大于42个字符。本行注释，提交之后将会被自动删除。";
- 			hint += "\n";
- 			hint += "\n官网URL：";
- 			hint += "\n作者名字：";
- 			hint += "\n作者URL：";
-
- 			$(window).trigger('action:composer.topic.new', {
- 				cid: cid || ajaxify.data.cid || 0,
- 				tags: tags || (ajaxify.data.tag ? [ajaxify.data.tag] : []),
- 				body: hint
- 			});
- 		} else {
- 			oldNewTopicFunc(cid, tags);
- 		}
-	};
-
 	$('body').on('click', '.btn.new_topic', function () {
 		app.newTopic();
 	});
@@ -217,6 +198,23 @@ $('document').ready(function() {
 			categoryTagsTools.init(obj.cid);
 		});
 	});
+
+	$(window).on('action:app.load', function (evt) {
+		socket.emit('plugins.v2mm.getAllCategories', {}, function (err, categories) {
+			app.parseAndTranslate('partials/categories_tree', {categories: categories}, function (html) {
+				$('#dropdown-categories').addClass('dropdown-toggle');
+				$('#dropdown-categories').parent().addClass("dropdown");
+				$('#dropdown-categories').parent().append(html);
+				$('#dropdown-categories').mouseenter(function () {
+					$('#dropdown-categories').parent().addClass("open");
+				});
+				$('#dropdown-categories').parent().mouseleave(function () {
+					$('#dropdown-categories').parent().removeClass("open");
+				});
+			});
+		});
+	});
+
 
 	// $(window).on('action:infinitescroll.loadmore', function (evt, obj) {
 	// 	$('.v2mm-loading-spin').removeClass('hidden');

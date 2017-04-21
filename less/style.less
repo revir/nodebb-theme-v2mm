@@ -79,6 +79,45 @@ body {
 			font-size: 34px;
 		}
 	}
+
+	.categories-tree.dropdown-menu {
+		padding: 50px 20px;
+		width: 800px;
+		overflow: hidden;
+
+		.dropdown-item {
+			margin-bottom: 15px;
+			font-size: 16px;
+		}
+		span.category-root {
+		    display: table-cell;
+		    width: 100px;
+		    text-align: right;
+
+		    a {
+		    	color: #a2a2a2;
+		    	// color: @gray-lighter;
+		    	margin-right: 5px;
+		    	&:hover {
+		    		color: #555;
+		    	}
+		    }
+		}
+		span.category-children {
+		    font-weight: 800;
+		    display: table-cell;
+
+		    a {
+		    	margin-left: 10px;
+		    	white-space: nowrap;
+		    	color: @gray-dark;
+
+		    	&:hover {
+		    		color: @gray-darker;
+		    	}
+		    }
+		}
+	}
 }
 
 .chats-list {
