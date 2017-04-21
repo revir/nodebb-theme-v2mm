@@ -34,8 +34,8 @@
         }
     }
 
-	// share dropdown class
-	window.needShareDropdown = function(elem, options) {
+	// share button class
+	window.needShareButton = function(elem, options) {
 		// create element reference
 		var root = this;
 		root.elem = elem || 'need-share-button';
@@ -110,6 +110,33 @@
 		  		dropdownEl.appendChild(img);
 	  		}
 	  	},
+        'douban': function (el) {
+            var myoptions = getOptions(el);
+            var url = 'https://www.douban.com/share/service?name='
+            + encodeURIComponent(myoptions.title)
+            + "&href="+encodeURIComponent(myoptions.url)
+            + "&image="+encodeURIComponent(myoptions.image);
+            root.popup(url);
+        },
+        'qqzone': function (el) {
+            var myoptions = getOptions(el);
+            var url = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title='
+            + encodeURIComponent(myoptions.title)
+            + "&url="+encodeURIComponent(myoptions.url)
+            + "&pics="+encodeURIComponent(myoptions.image)
+            + "&desc="+ encodeURIComponent(myoptions.description);
+            root.popup(url);
+        },
+        'renren': function (el) {
+            var myoptions = getOptions(el);
+            var url = 'http://widget.renren.com/dialog/share?title='
+            + encodeURIComponent(myoptions.title)
+            + "&resourceUrl="+encodeURIComponent(myoptions.url)
+            + "&pic="+encodeURIComponent(myoptions.image)
+            + "&description="+ encodeURIComponent(myoptions.description);
+            root.popup(url);
+        },
+
 	  	'mailto' : function(el) {
             var myoptions = getOptions(el);
 	  		var url = 'mailto:?subject=' + encodeURIComponent(myoptions.title) + '&body=Thought you might enjoy reading this: ' + encodeURIComponent(myoptions.url) + ' - ' + encodeURIComponent(myoptions.description);
@@ -327,7 +354,7 @@
 			boxForm: 'horizontal', // horizontal or vertical
 			position: 'bottomCenter', // top / middle / bottom + Left / Center / Right
 			protocol: ['http', 'https'].indexOf(window.location.href.split(':')[0]) === -1 ? 'https://' : '//',
-			networks: 'Weibo,Wechat,Twitter,Pinterest,Facebook,GooglePlus,Reddit,Linkedin,Tumblr,Evernote'
+			networks: 'Weibo,Wechat,Douban,QQZone,Twitter,Pinterest,Facebook,GooglePlus,Reddit,Linkedin,Tumblr,Evernote'
 		};
 
     // integrate custom options
@@ -478,5 +505,5 @@
 
   };
 
-  new needShareDropdown('.need-share-button');
+  new needShareButton('.need-share-button');
 })();

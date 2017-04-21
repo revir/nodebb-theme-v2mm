@@ -183,6 +183,36 @@
 
   background: #d52b2b;
 }
+.need-share-button_douban {
+  color: #072;
+}
+.need-share-button_douban:before {
+  content: '豆';
+}
+.need-share-button_douban.need-share-button_link-box {
+  color: #fff;
+
+  background: #072;
+}
+.need-share-button_qqzone {
+  color: #ffce00;
+}
+.need-share-button_qqzone:before {
+  content: '\f1d6';
+}
+.need-share-button_qqzone.need-share-button_link-box {
+  color: #fff;
+
+  background: #ffce00;
+}
+.need-share-button_renren {
+  color: #207cc5;
+}
+.need-share-button_renren.need-share-button_link-box {
+  color: #fff;
+
+  background: #207cc5;
+}
 .need-share-button_mailto {
   color: #efbe00;
 }
