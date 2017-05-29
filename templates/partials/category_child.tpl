@@ -1,67 +1,70 @@
-			<div class="<!-- IF children.class -->{children.class}<!-- ELSE -->col-md-3 col-sm-6 col-xs-12<!-- ENDIF children.class --> category-item" data-cid="{children.cid}" data-numRecentReplies="{children.numRecentReplies}">
-				<meta itemprop="name" content="{children.name}">
+<div component="categories/category" class="<!-- IF ../class -->{../class}<!-- ELSE -->col-md-3 col-sm-6 col-xs-12<!-- ENDIF ../class --> category-item" data-cid="{../cid}" data-numRecentReplies="{../numRecentReplies}">
+	<meta itemprop="name" content="{../name}">
 
-				<div class="category-icon">
+	<div class="category-icon">
 
-					<!-- IF children.link -->
-					<a style="color: {children.color};" href="{children.link}" itemprop="url" target="_blank">
-					<!-- ELSE -->
-					<a style="color: {children.color};" href="{config.relative_path}/category/{children.slug}" itemprop="url">
-					<!-- ENDIF children.link -->
-						<div
-							id="category-{children.cid}" class="category-header category-header-image-{children.imageClass}"
-							style="
-								<!-- IF children.backgroundImage -->background-image: url({children.backgroundImage});<!-- ENDIF children.backgroundImage -->
-								<!-- IF children.bgColor -->background-color: {children.bgColor};<!-- ENDIF children.bgColor -->
-								color: {children.color};
-							"
-						>
-							<!-- IF !children.link -->
-							<span class="badge {children.unread-class}"><i class="fa fa-book" data-toggle="tooltip" title="[[global:topics]]"></i> <span class="human-readable-number" title="{children.totalTopicCount}">{children.totalTopicCount}</span>&nbsp; <i class="fa fa-pencil" data-toggle="tooltip" title="[[global:posts]]"></i> <span class="human-readable-number" title="{children.totalPostCount}">{children.totalPostCount}</span></span>
-							<!-- ENDIF !children.link -->
+		<!-- IF ../link -->
+		<a style="color: {../color};" href="{../link}" itemprop="url" target="_blank">
+		<!-- ELSE -->
+		<a style="color: {../color};" href="{config.relative_path}/category/{../slug}" itemprop="url">
+		<!-- ENDIF ../link -->
+			<div
+				id="category-{../cid}" class="category-header category-header-image-{../imageClass}"
+				style="
+					<!-- IF ../backgroundImage -->background-image: url({../backgroundImage});<!-- ENDIF ../backgroundImage -->
+					<!-- IF ../bgColor -->background-color: {../bgColor};<!-- ENDIF ../bgColor -->
+					color: {../color};
+				"
+			>
+				<!-- IF !../link -->
+				<span class="badge {../unread-class}"><i class="fa fa-book" data-toggle="tooltip" title="[[global:topics]]"></i> <span class="human-readable-number" title="{../totalTopicCount}">{../totalTopicCount}</span>&nbsp; <i class="fa fa-pencil" data-toggle="tooltip" title="[[global:posts]]"></i> <span class="human-readable-number" title="{../totalPostCount}">{../totalPostCount}</span></span>
+				<!-- ENDIF !../link -->
 
-							<!-- IF children.icon -->
-							<div><i class="fa {children.icon} fa-4x"></i></div>
-							<!-- ENDIF children.icon -->
-						</div>
-					</a>
-
-					<div class="category-box">
-						<div class="category-info">
-							<!-- IF children.link -->
-							<a href="{children.link}" itemprop="url" target="_blank">
-							<!-- ELSE -->
-							<a href="{config.relative_path}/category/{children.slug}" itemprop="url">
-							<!-- ENDIF children.link -->
-								<h4><!-- IF children.icon --><i class="fa {children.icon} visible-xs-inline"></i> <!-- ENDIF children.icon -->{children.name}</h4>
-							</a>
-							<div class="description" itemprop="description">{children.description}</div>
-						</div>
-						<!-- IF !children.link -->
-						<!-- BEGIN posts -->
-						<div class="post-preview clearfix">
-							<div class="post-preview-content">
-								<strong><a href="{config.relative_path}/topic/{children.posts.topic.slug}">{children.posts.topic.title}</a></strong>
-								<hr/>
-								<a style="color: {children.color};" href="<!-- IF children.posts.user.userslug -->{config.relative_path}/user/{children.posts.user.userslug}<!-- ELSE -->#<!-- ENDIF children.posts.user.userslug -->">
-									<!-- IF children.posts.user.picture -->
-									<img src="{children.posts.user.picture}" title="{children.posts.user.username}" class="pull-left user-img" />
-									<!-- ELSE -->
-									<div class="pull-left user-img user-icon" title="{children.posts.user.username}" style="background-color: {children.posts.user.icon:bgColor}">{children.posts.user.icon:text}</div>
-									<!-- ENDIF children.posts.user.picture -->
-								</a>
-								<div class="content">
-								{children.posts.content}
-								</div>
-								<p class="fade-out"></p>
-							</div>
-							<span class="pull-right post-preview-footer">
-								<span class="timeago" title="{children.posts.timestampISO}"></span> &bull;
-								<a href="{config.relative_path}/topic/{children.posts.topic.slug}<!-- IF children.posts.index -->/{children.posts.index}<!-- ENDIF children.posts.index -->">[[global:read_more]]</a>
-							</span>
-						</div>
-						<!-- END posts -->
-						<!-- ENDIF !children.link -->
-					</div>
-				</div>
+				<!-- IF ../icon -->
+				<div><i class="fa {../icon} fa-4x"></i></div>
+				<!-- ENDIF ../icon -->
 			</div>
+		</a>
+
+		<div class="category-box">
+			<div class="category-info">
+				<!-- IF ../link -->
+				<a href="{../link}" itemprop="url" target="_blank">
+				<!-- ELSE -->
+				<a href="{config.relative_path}/category/{../slug}" itemprop="url">
+				<!-- ENDIF ../link -->
+					<h4><!-- IF ../icon --><i class="fa {../icon} visible-xs-inline"></i> <!-- ENDIF ../icon -->{../name}</h4>
+				</a>
+				<div class="description" itemprop="description">{../descriptionParsed}</div>
+			</div>
+
+			<!-- IF !../link -->
+			<!-- BEGIN posts -->
+			<div component="category/posts" class="post-preview clearfix">
+				<strong><a href="{config.relative_path}/topic/{../topic.slug}">{../topic.title}</a></strong>
+				<hr/>
+				<a style="color: {../color};" href="<!-- IF ../user.userslug -->{config.relative_path}/user/{../user.userslug}<!-- ELSE -->#<!-- ENDIF ../user.userslug -->">
+					<!-- IF ../user.picture -->
+					<img src="{../user.picture}" title="{../user.username}" class="pull-left user-img" />
+					<!-- ELSE -->
+					<div class="pull-left user-img user-icon" title="{../user.username}" style="background-color: {../user.icon:bgColor}">{../user.icon:text}</div>
+					<!-- ENDIF ../user.picture -->
+				</a>
+				<div class="post-preview-content">
+
+					<div class="content">
+					{../content}
+					</div>
+					<p class="fade-out"></p>
+				</div>
+
+				<span class="pull-right post-preview-footer">
+					<span class="timeago" title="{../timestampISO}"></span> &bull;
+					<a href="{config.relative_path}/topic/{../topic.slug}<!-- IF ../index -->/{../index}<!-- ENDIF ../index -->">[[global:read_more]]</a>
+				</span>
+			</div>
+			<!-- END posts -->
+			<!-- ENDIF !../link -->
+		</div>
+	</div>
+</div>
