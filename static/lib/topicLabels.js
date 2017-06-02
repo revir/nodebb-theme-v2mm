@@ -15,7 +15,7 @@ define('forum/topicLabelsTool', ['components', 'translator', 'topicSelect'], fun
         });
       };
       $('.label-tools .toggle-label').click(function() {
-        var action, label, labelName, labeledTopics, msg, tids;
+        var action, cid, label, labelName, labeledTopics, msg, tids;
         labelName = $(this).data('name');
         if (ajaxify.data.template.topic) {
           tids = [String(ajaxify.data.tid)];
@@ -47,10 +47,12 @@ define('forum/topicLabelsTool', ['components', 'translator', 'topicSelect'], fun
           action = 'add';
           msg = 'Add label success.';
         }
+        cid = ajaxify.data.cid;
         socket.emit('plugins.v2mm.handleLabel', {
           action: action,
           label: label,
-          tids: tids
+          tids: tids,
+          cid: cid
         }, function(err) {
           if (err) {
             return app.alertError(err.message);
@@ -63,7 +65,7 @@ define('forum/topicLabelsTool', ['components', 'translator', 'topicSelect'], fun
       });
       return $('.label-tools .removeAllLabels').click(function() {
         bootbox.confirm('Are you sure you wish to remove all labels?', function(confirm) {
-          var action, tids;
+          var action, cid, tids;
           if (!confirm) {
             return;
           }
@@ -73,9 +75,11 @@ define('forum/topicLabelsTool', ['components', 'translator', 'topicSelect'], fun
             tids = topicSelect.getSelectedTids();
           }
           action = 'removeAll';
+          cid = ajaxify.data.cid;
           return socket.emit('plugins.v2mm.handleLabel', {
             action: action,
-            tids: tids
+            tids: tids,
+            cid: cid
           }, function(err) {
             if (err) {
               return app.alertError(err.message);

@@ -37,7 +37,8 @@ define 'forum/topicLabelsTool', ['components', 'translator', 'topicSelect'], (om
                     action = 'add'
                     msg = 'Add label success.'
 
-                socket.emit 'plugins.v2mm.handleLabel', {action, label, tids}, (err)->
+                cid = ajaxify.data.cid
+                socket.emit 'plugins.v2mm.handleLabel', {action, label, tids, cid}, (err)->
                     return app.alertError(err.message) if err
 
                     running = false
@@ -56,7 +57,8 @@ define 'forum/topicLabelsTool', ['components', 'translator', 'topicSelect'], (om
                         tids = topicSelect.getSelectedTids()
 
                     action = 'removeAll'
-                    socket.emit 'plugins.v2mm.handleLabel', {action, tids}, (err)->
+                    cid = ajaxify.data.cid
+                    socket.emit 'plugins.v2mm.handleLabel', {action, tids, cid}, (err)->
                         return app.alertError(err.message) if err
 
                         running = false
