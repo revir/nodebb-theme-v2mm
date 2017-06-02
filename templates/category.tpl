@@ -26,6 +26,8 @@
 				<!-- IMPORT partials/category_sort.tpl -->
 
 				<!-- IMPORT partials/category_tools.tpl -->
+
+				<!-- IMPORT partials/label_tools.tpl -->
 			</div>
 			<p class="description">
 				{description}

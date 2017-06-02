@@ -153,6 +153,9 @@ $('document').ready(function() {
 		}
 		$('.navbar-header .post-wrapper').removeClass('visible-xs-block').hide();
 
+		require(['forum/topicLabelsTool'], function (topicLabelsTool) {
+			topicLabelsTool.init();
+		});
 	});
 
 	$('body').on('click', '.btn.new_topic', function () {
@@ -196,6 +199,9 @@ $('document').ready(function() {
 	$(window).on('action:category.loaded', function (evt, obj) {
 		require(['forum/categoryTagsTools'], function (categoryTagsTools) {
 			categoryTagsTools.init(obj.cid);
+		});
+		require(['forum/topicLabelsTool'], function (topicLabelsTool) {
+			topicLabelsTool.init();
 		});
 	});
 

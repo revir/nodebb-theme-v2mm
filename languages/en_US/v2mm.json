@@ -9,5 +9,12 @@
     "loading_more_posts": "Loading more",
     "url-not-right": "URL is not right",
     "reply": "Write a comment",
-    "description_length_check": "There must be a description with at least 42 characters."
+    "description_length_check": "There must be a description with at least 42 characters.",
+
+    "error.privilege.label.create": "No privilege to create label",
+    "invalid-label-name": "invalid label name",
+    "label_tools.removeSuccess": "Remove label success",
+    "label_tools.addSuccess": "Add label success",
+    "label_tools.title": "Labels",
+    "label_tools.removeAllLabels": "Remove all labels"
 }

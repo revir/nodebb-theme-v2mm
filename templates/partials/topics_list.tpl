@@ -32,6 +32,17 @@
 								<i component="topic/locked" class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i>
 
 								</strong>
+
+								<!-- BEGIN topics.labels -->
+								<span
+								class="label topic-label"
+								style="background-color: {topics.labels.bkColor}; color: {topics.labels.color}"
+								data-name={topics.labels.name}>
+
+								{topics.labels.value}
+								</span>
+								<!-- END topics.labels -->
+
 									<!-- IF topics.externalLink -->
 										<a component="topic/header" href="{topics.externalLink}" rel="nofollow" target="_blank" itemprop="url" class="topic-title external-link" data-tid="{topics.tid}">
 											<i class="fa fa-external-link"></i>
@@ -46,9 +57,12 @@
 									<!-- ELSE -->
 
 										<!-- IF !topics.noAnchor -->
-										<a component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
+										<a component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a>
+										<br />
 										<!-- ELSE -->
-										<a component="topic/header" itemprop="url" class="topic-title">{topics.title}</a><br />
+										<a component="topic/header" itemprop="url" class="topic-title">{topics.title}</a>
+
+										<br />
 										<!-- ENDIF !topics.noAnchor -->
 
 									<!-- ENDIF topics.externalLink -->
@@ -86,8 +100,6 @@
 							</div>
 						</div>
 
-						<!-- IF isCustom -->
-						<!-- ELSE -->
 						<div class="col-xs-1 category-stat hidden-xs">
 							<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong><br />
 							<small>[[global:posts]]</small>
@@ -126,8 +138,6 @@
 								<!-- ENDIF topics.unreplied -->
 							</div>
 						</div>
-
-						<!-- ENDIF isCustom -->
 					</div>
 				</div>
 

@@ -38,6 +38,8 @@
         <!-- IMPORT partials/topic/sort.tpl -->
 
         <!-- IMPORT partials/thread_tools.tpl -->
+
+        <!-- IMPORT partials/label_tools.tpl -->
     </span>
 </div>
 <div style="clear:both;"></div>

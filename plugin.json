@@ -18,6 +18,9 @@
 			"hook": "filter:config.get", "method": "getConfig"
 		},
 		{
+			"hook": "filter:controllers.topic.get", "method": "filterTopic"
+		},
+		{
 			"hook": "filter:topic.create", "method": "setExternalLinkOnSaveTopic"
 		},
 		{
@@ -33,7 +36,10 @@
 			"hook": "filter:category.topics.get", "method": "filterCategoryTopics"
 		},
 		{
-			"hook": "filter:topics.get", "method": "fixExternalTopicTeaser"
+			"hook": "filter:category.get", "method": "filterCategoryGet"
+		},
+		{
+			"hook": "filter:topics.get", "method": "filterTopics"
 		},
 		{
 			"hook": "filter:user.account.edit", "method": "getEditUserProfile"
@@ -49,6 +55,7 @@
 		"static/lib/lavender.js",
 		"static/lib/infinitescroll.js",
 		"static/lib/categoryTagsTools.js",
+		"static/lib/topicLabels.js",
 		"static/vendor/masonry.js",
 		"static/vendor/imagesLoaded.js"
 	],
@@ -56,6 +63,9 @@
 		"css": "public/css",
 		"lib": "public/lib"
 	},
+	"acpScripts": [
+		"static/lib/admin.js"
+	],
 	"languages": "languages",
 	"defaultLang": "zh_CN"
 }

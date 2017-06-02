@@ -59,7 +59,21 @@
 									<div class="topic-text">
 										<!-- IF @first -->
 										<h1 class="topic-title">
-											<p component="post/header" class="topic-title" itemprop="name"><i class="fa fa-thumb-tack <!-- IF !pinned -->hidden<!-- ENDIF !pinned -->"></i> <i class="fa fa-lock <!-- IF !locked -->hidden<!-- ENDIF !locked -->"></i> <span component="topic/title">{title}</span></p>
+											<p component="post/header" class="topic-title" itemprop="name">
+											<i class="fa fa-thumb-tack <!-- IF !pinned -->hidden<!-- ENDIF !pinned -->"></i> 
+											<i class="fa fa-lock <!-- IF !locked -->hidden<!-- ENDIF !locked -->"></i>
+
+											<!-- BEGIN labels -->
+											<span
+											class="label topic-label"
+											style="background-color: {labels.bkColor}; color: {labels.color}"
+											data-name={labels.name}>
+
+											{labels.value}
+											</span>
+											<!-- END labels -->
+
+											<span component="topic/title">{title}</span></p>
 											<hr>
 										</h1>
 										<!-- ENDIF @first -->
