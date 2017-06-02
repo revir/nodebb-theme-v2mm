@@ -33,6 +33,9 @@
 			"hook": "action:topic.save", "method": "saveTopicToRootCategory"
 		},
 		{
+			"hook": "action:topic.purge", "method": "onPurgeTopic"
+		},
+		{
 			"hook": "filter:category.topics.get", "method": "filterCategoryTopics"
 		},
 		{
