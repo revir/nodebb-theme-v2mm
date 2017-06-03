@@ -167,20 +167,6 @@
 		}
 	}
 
-	[component="post/upvote"], [component="post/downvote"] {
-		color: @gray-light;
-		width: 20px;
-		height: 20px;
-		line-height: 18px;
-		text-align: center;
-		display: inline-block;
-	}
-
-	[component="post/upvote"].upvoted, [component="post/downvote"].downvoted {
-		color: @brand-primary;
-		line-height: 18px;
-	}
-
 	.menu-icon {
 		margin-right: 5px;
 	}
@@ -201,6 +187,25 @@
 
 		.row {
 			padding: 10px 10px 10px 15px;
+		}
+
+		.vote-count, .bookmarkCount, .upvoted, .downvoted, .bookmarked {
+			font-size: 18px;
+			color: #F57C00;
+		}
+
+		.vote-count, .bookmarkCount {
+			vertical-align: sub;
+		}
+		
+		.toggle-tool {
+			width: 30px;
+			height: 20px;
+			line-height: 18px;
+			text-align: center;
+			display: inline-block;
+			font-size: 18px;
+			vertical-align: sub;
 		}
 	}
 

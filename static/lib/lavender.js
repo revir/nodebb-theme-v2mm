@@ -212,7 +212,12 @@ $('document').ready(function() {
 				$('#dropdown-categories').parent().addClass("dropdown");
 				$('#dropdown-categories').parent().append(html);
 				$('#dropdown-categories').mouseenter(function () {
-					$('#dropdown-categories').parent().addClass("open");
+					setTimeout(function () {
+						if ($('#dropdown-categories').is(':hover')) {
+							$('#dropdown-categories').parent().addClass("open");
+						}
+					}, 200);
+					
 				});
 				$('#dropdown-categories').parent().mouseleave(function () {
 					setTimeout(function () {

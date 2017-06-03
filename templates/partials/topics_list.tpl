@@ -30,6 +30,8 @@
 								<strong>
 								<i component="topic/pinned" class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i>
 								<i component="topic/locked" class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i>
+								
+								<i class="fa fa-bar-chart-o<!-- IF !topics.pollId --> hide<!-- ENDIF !topics.pollId -->"></i>
 
 								</strong>
 
