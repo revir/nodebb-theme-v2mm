@@ -93,32 +93,29 @@
 
 									</small>
 
-									<div class="dropdown moderator-tools" component="post/tools">
-										<a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-gear"></i></a>
-										<ul class="dropdown-menu" role="menu"></ul>
-									</div>
-
 									<!-- IF !reputation:disabled -->
-									&bull;
-									<span class="votes">
-										<a component="post/upvote" href="#" class="upvote<!-- IF posts.upvoted --> upvoted<!-- ENDIF posts.upvoted -->">
+									<span class="votes-wrapper">
+										<a component="post/upvote" href="#" class="toggle-tool upvote<!-- IF posts.upvoted --> upvoted <!-- ENDIF posts.upvoted -->">
 											<i title="[[v2mm:upvote]]" class="fa fa-thumbs-o-up"></i>
 										</a>
-										<span component="post/vote-count" class="votes" data-votes="{posts.votes}">{posts.votes}</span>
+										<span component="post/vote-count" class="vote-count " data-votes="{posts.votes}">{posts.votes}</span>
 										<!-- IF !downvote:disabled -->
-										<a component="post/downvote" href="#" class="downvote<!-- IF posts.downvoted --> downvoted<!-- ENDIF posts.downvoted -->">
+										<a component="post/downvote" href="#" class="toggle-tool downvote<!-- IF posts.downvoted --> downvoted <!-- ENDIF posts.downvoted -->">
 											<i title="[[v2mm:downvote]]" class="fa fa-thumbs-o-down"></i>
 										</a>
 										<!-- ENDIF !downvote:disabled -->
 									</span>
 									<!-- ENDIF !reputation:disabled -->
 
-									&bull;
-									<a component="post/bookmark" href="#" data-bookmarked="{posts.bookmarked}" title="[[topic:bookmark]]">
-										<i component="post/bookmark/on" class="fa fa-bookmark <!-- IF !posts.bookmarked -->hidden<!-- ENDIF !posts.bookmarked -->"></i>
+									<a class="toggle-tool" component="post/bookmark" href="#" data-bookmarked="{posts.bookmarked}" title="[[topic:bookmark]]">
+										<i component="post/bookmark/on" class="fa fa-bookmark bookmarked <!-- IF !posts.bookmarked -->hidden<!-- ENDIF !posts.bookmarked -->"></i>
 										<i component="post/bookmark/off" class="fa fa-bookmark-o <!-- IF posts.bookmarked -->hidden<!-- ENDIF posts.bookmarked -->"></i>
-										<span component="post/bookmark-count" class="bookmarkCount" data-bookmarks="{posts.bookmarks}">{posts.bookmarks}</span>
 									</a>
+
+									<div class="dropdown moderator-tools toggle-tool" component="post/tools">
+										<a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-plus-square-o"></i></a>
+										<ul class="dropdown-menu" role="menu"></ul>
+									</div>
 
 									<!-- IF posts.user.custom_profile_info.length -->
 										<!-- BEGIN custom_profile_info -->
@@ -126,7 +123,7 @@
 										<!-- END custom_profile_info -->
 									<!-- ENDIF posts.user.custom_profile_info.length -->
 									<span class="post-tools">
-										<a href="#" class='btn btn-sm btn-link need-share-button'
+										<a href="#" class='btn btn-link need-share-button'
 										    data-share-url='{config.relative_path}/post/{posts.pid}'
 										    data-share-image='{posts.user.picture}'
 										    title="分享"
@@ -135,10 +132,10 @@
 											<span class="hidden-xs"> [[topic:share]]</span>
 										</a>
 
-										<button component="post/quote" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i>
+										<button component="post/quote" class="btn btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i>
 											<span class="hidden-xs"> [[topic:quote]]</span>
 										</button>
-										<button component="post/reply" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button"><i class="fa fa-reply"></i>
+										<button component="post/reply" class="btn btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button"><i class="fa fa-reply"></i>
 											<span class="hidden-xs"> [[topic:reply]]</span>
 										</button>
 									</span>
