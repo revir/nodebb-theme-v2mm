@@ -23,7 +23,7 @@ _ = require('underscore')
                 return callback(null, can)
 
     TopicLabel.create = (name, data, uid, callback) ->
-        if !name || name.length < (meta.config.minimumLabelLength || 3)
+        if !name || name.length < (meta.config.minimumLabelLength || 2)
             return setImmediate(callback, new Error('[[v2mm:invalid-label-name]]'))
         
         cleanName = utils.cleanUpTag(name, meta.config.maximumLabelLength || 255)
