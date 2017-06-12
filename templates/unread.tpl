@@ -8,7 +8,7 @@
                 <!-- IF loggedIn -->
                 <button component="category/post" id="new_topic" class="btn btn-success">[[v2mm:new_topic_button]]</button>
                 <!-- ELSE -->
-                <a component="category/post/guest" href="{config.relative_path}/login" class="btn btn-primary">[[category:guest-login-post]]</a>
+                <a component="category/post/guest" href="{config.relative_path}/login" rel="nofollow" class="btn btn-primary">[[category:guest-login-post]]</a>
                 <!-- ENDIF loggedIn -->
             </div>
             <div class="markread btn-group pull-right<!-- IF !topics.length --> hidden<!-- ENDIF !topics.length -->">
