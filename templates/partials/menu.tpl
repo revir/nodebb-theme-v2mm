@@ -185,7 +185,6 @@
                         </a>
                     </li>
                     <!-- ENDIF allowRegistration -->
-                    <li><div style="padding: 15px 0; font-size: 20px;">快速登录：</div></li>
                     <li class="github"><a rel="nofollow" target="_top" href="/auth/github"><i class="fa fa-github fa-2x"></i></a></li>
                     <li class="google"><a rel="nofollow" target="_top" href="/auth/google"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
                 </ul>
@@ -194,7 +193,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="">
-                            <button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="[[global:header.search]]"></i></button>
+                            <button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw fa-2x" title="[[global:header.search]]"></i></button>
                             <div class="hidden" id="search-fields">
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">
