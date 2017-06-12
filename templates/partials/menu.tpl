@@ -185,12 +185,15 @@
                         </a>
                     </li>
                     <!-- ENDIF allowRegistration -->
-                    <li>
+                    <!-- <li>
                         <a href="{relative_path}/login">
                             <i class="fa fa-sign-in visible-xs-inline"></i>
                             <span>[[global:login]]</span>
                         </a>
-                    </li>
+                    </li> -->
+                    <li><div style="padding: 15px 0; font-size: 20px;">快速登录：</div></li>
+                    <li class="github"><a rel="nofollow" target="_top" href="/auth/github"><i class="fa fa-github fa-2x"></i></a></li>
+                    <li class="google"><a rel="nofollow" target="_top" href="/auth/google"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
                 </ul>
                 <!-- ENDIF config.loggedIn -->
                 <!-- IF config.searchEnabled -->
