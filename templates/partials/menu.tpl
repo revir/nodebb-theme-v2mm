@@ -190,7 +190,7 @@
                 </ul>
                 <!-- ENDIF config.loggedIn -->
                 <!-- IF config.searchEnabled -->
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right <!-- IF config.loggedIn -->hidden<!-- ENDIF config.loggedIn -->">
                     <li>
                         <form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET" action="">
                             <button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw fa-2x" title="[[global:header.search]]"></i></button>
