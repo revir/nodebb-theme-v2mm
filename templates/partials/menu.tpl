@@ -23,7 +23,7 @@
                     <!-- IF config.loggedIn -->
                     <button class="btn btn-success new_topic">[[category:new_topic_button]]</button>
                     <!-- ELSE -->
-                    <a component="category/post/guest" href="{config.relative_path}/login" class="btn btn-success">[[category:guest-login-post]]</a>
+                    <a component="category/post/guest" href="{config.relative_path}/login" rel="nofollow" class="btn btn-success">[[category:guest-login-post]]</a>
                     <!-- ENDIF config.loggedIn -->
                 </div>
 
@@ -179,18 +179,12 @@
                 <ul id="logged-out-menu" class="nav navbar-nav navbar-right pull-right">
                     <!-- IF allowRegistration -->
                     <li>
-                        <a href="{relative_path}/register">
+                        <a href="{relative_path}/register" rel="nofollow">
                             <i class="fa fa-pencil visible-xs-inline"></i>
                             <span>[[global:register]]</span>
                         </a>
                     </li>
                     <!-- ENDIF allowRegistration -->
-                    <!-- <li>
-                        <a href="{relative_path}/login">
-                            <i class="fa fa-sign-in visible-xs-inline"></i>
-                            <span>[[global:login]]</span>
-                        </a>
-                    </li> -->
                     <li><div style="padding: 15px 0; font-size: 20px;">快速登录：</div></li>
                     <li class="github"><a rel="nofollow" target="_top" href="/auth/github"><i class="fa fa-github fa-2x"></i></a></li>
                     <li class="google"><a rel="nofollow" target="_top" href="/auth/google"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
@@ -249,7 +243,7 @@
                 <!-- ELSE -->
                 <ul class="nav navbar-nav navbar-right pull-right">
                     <li>
-                        <a href="{relative_path}/login">
+                        <a href="{relative_path}/login" rel="nofollow">
                             <i class="fa fa-sign-in visible-xs-inline"></i>
                             <span>[[global:login]]</span>
                         </a>
