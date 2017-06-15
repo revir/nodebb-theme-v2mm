@@ -7,7 +7,7 @@
     "no-externalAuthorName": "没有填作者名字",
     "no-externalAuthorLink": "没有填作者URL",
     "loading_more_posts": "加载中",
-    "url-not-right": "URL设置不正确",
+    "url-not-right": "链接地址不合法",
     "reply": "发表评论",
     "description_length_check": "需要至少42个字的描述，不许偷懒哦！",
 
@@ -16,5 +16,7 @@
     "label_tools.removeSuccess": "移除标签成功",
     "label_tools.addSuccess": "添加标签成功",
     "label_tools.title": "标签",
-    "label_tools.removeAllLabels": "移除所有标签"
+    "label_tools.removeAllLabels": "移除所有标签",
+
+    "external_url_placeholder": "在此输入原创链接（可选项）"
 }

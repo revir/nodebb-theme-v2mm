@@ -62,7 +62,7 @@
 											<p component="post/header" class="topic-title" itemprop="name">
 											<i class="fa fa-thumb-tack <!-- IF !pinned -->hidden<!-- ENDIF !pinned -->"></i> 
 											<i class="fa fa-lock <!-- IF !locked -->hidden<!-- ENDIF !locked -->"></i>
-
+											
 											<!-- BEGIN labels -->
 											<span
 											class="label topic-label"
@@ -72,9 +72,21 @@
 											{labels.value}
 											</span>
 											<!-- END labels -->
+											
+											<!-- IF externalLink -->
+											<a href="{externalLink}" rel="nofollow" target="_blank" itemprop="url" class="topic-title external-link" data-tid="{tid}">
+											<i class="fa fa-external-link"></i>
+											<!-- ENDIF externalLink -->
 
-											<span component="topic/title">{title}</span></p>
-											<hr>
+											<span component="topic/title">{title}</span>
+
+											<!-- IF externalLink -->
+											</a>
+											<!-- ENDIF externalLink -->
+
+											</p>
+	
+											<hr/>
 										</h1>
 										<!-- ENDIF @first -->
 										<div component="post/content" class="post-content" itemprop="text">{posts.content}</div>

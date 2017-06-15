@@ -16,5 +16,6 @@
     "label_tools.removeSuccess": "Remove label success",
     "label_tools.addSuccess": "Add label success",
     "label_tools.title": "Labels",
-    "label_tools.removeAllLabels": "Remove all labels"
+    "label_tools.removeAllLabels": "Remove all labels",
+    "external_url_placeholder": "Enter the original topic url (optional)"
 }
