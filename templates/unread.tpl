@@ -83,8 +83,11 @@
                 <!-- IMPORT partials/paginator.tpl -->
             <!-- ENDIF config.usePagination -->
 
-            <div widget-area="footer" class="unread-footer"></div>
-
+            <div widget-area="footer" class="unread-footer">
+                <!-- BEGIN widgets.footer -->
+                {{widgets.footer.html}}
+                <!-- END widgets.footer -->
+            </div>
         </div>
     </div>
 </div>

@@ -1,6 +1,10 @@
 <!-- IMPORT partials/breadcrumbs.tpl -->
 
-<div widget-area="header" class="register-header"></div>
+<div widget-area="header" class="register-header">
+    <!-- BEGIN widgets.header -->
+    {{widgets.header.html}}
+    <!-- END widgets.header -->
+</div>
 
 <div class="row register">
     <div class="{register_window:spansize}">
