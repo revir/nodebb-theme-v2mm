@@ -30,7 +30,6 @@ This theme is for learning and playing NodeBB -- just for fun.
 
     npm install nodebb-theme-v2mm
 
-
 ## Credits
 
 Modified from "Lavender theme" by [psychobunny](https://github.com/NodeBB/nodebb-theme-lavender)

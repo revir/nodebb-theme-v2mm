@@ -12,7 +12,8 @@ $('document').ready(function() {
 					itemSelector: '.category-item',
 					columnWidth: '.category-item:not(.col-lg-12)',
 					transitionDuration: 0,
-					isInitLayout: false
+					isInitLayout: false,
+					isOriginLeft: $('html').attr('data-dir') === 'ltr',
 				});
 
 				$('.row.categories > div p img').imagesLoaded(function() {
@@ -217,7 +218,7 @@ $('document').ready(function() {
 							$('#dropdown-categories').parent().addClass("open");
 						}
 					}, 200);
-					
+
 				});
 				$('#dropdown-categories').parent().mouseleave(function () {
 					setTimeout(function () {

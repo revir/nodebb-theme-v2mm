@@ -1,10 +1,6 @@
 <div class="category row">
-	<!-- IF isCustom -->
-	<div class="col-sm-12">
-	<!-- ELSE -->
-	<div class="col-md-9" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
+	<div class="<!-- IF widgets.sidebar.length -->col-lg-9 col-sm-12<!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
 		<!-- IMPORT partials/breadcrumbs.tpl -->
-	<!-- ENDIF isCustom -->
 
 		<div class="header category-tools clearfix">
 			<div
@@ -68,7 +64,13 @@
 		<!-- ENDIF config.usePagination -->
 	</div>
 
-	<div widget-area="sidebar" class="col-md-3 col-xs-12 category-sidebar"></div>
+	<!-- IF topics.length -->
+	<div widget-area="sidebar" class="col-md-3 col-xs-12 category-sidebar <!-- IF !widgets.sidebar.length -->hidden<!-- ENDIF !widgets.sidebar.length -->">
+		<!-- BEGIN widgets.sidebar -->
+		{{widgets.sidebar.html}}
+		<!-- END widgets.sidebar -->
+	</div>
+	<!-- ENDIF topics.length -->
 </div>
 
 <!-- IMPORT partials/move_thread_modal.tpl -->
