@@ -148,9 +148,7 @@ $('document').ready(function() {
 		if (app.user && (app.user.isAdmin || app.user.isGlobalMod || app.user.isMod)) {
 			require(['forum/categoryTagsTools']);
 
-			require(['forum/topicLabelsTool'], function (topicLabelsTool) {
-				topicLabelsTool.init();
-			});
+			require(['forum/topicLabelsTool']);
 		}
 	});
 
@@ -193,9 +191,7 @@ $('document').ready(function() {
 		if (obj && obj.cid) {
 			if (app.user && (app.user.isAdmin || app.user.isGlobalMod || app.user.isMod)) {
 				require(['forum/categoryTagsTools']);
-				require(['forum/topicLabelsTool'], function (topicLabelsTool) {
-					topicLabelsTool.init();
-				});
+				require(['forum/topicLabelsTool']);
 			}
 		}
 	});
