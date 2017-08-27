@@ -139,15 +139,6 @@ $('document').ready(function() {
 		}
 	});
 
-	$(window).on('action:widgets.loaded', function(){
-		if (ajaxify && ajaxify.data.isCustom) {
-			$('[widget-area="sidebar"]').hide();
-			var cls = $('[no-widget-target="sidebar"]').attr('no-widget-class');
-			$('[no-widget-target="sidebar"]').attr('class', '');
-			$('[no-widget-target="sidebar"]').attr('class', cls);
-		}
-	});
-
 	$(window).on('action:topic.loaded', function(evt, data) {
 		if (data.postcount > 2) {
 			$('.post-bar.hidden').removeClass('hidden');
@@ -198,12 +189,14 @@ $('document').ready(function() {
 	});
 
 	$(window).on('action:category.loaded', function (evt, obj) {
-		require(['forum/categoryTagsTools'], function (categoryTagsTools) {
-			categoryTagsTools.init(obj.cid);
-		});
-		require(['forum/topicLabelsTool'], function (topicLabelsTool) {
-			topicLabelsTool.init();
-		});
+		if (obj && obj.cid) {
+			require(['forum/categoryTagsTools'], function (categoryTagsTools) {
+				categoryTagsTools.init(obj.cid);
+			});
+			require(['forum/topicLabelsTool'], function (topicLabelsTool) {
+				topicLabelsTool.init();
+			});
+		}
 	});
 
 	$(window).on('action:app.load', function (evt) {
