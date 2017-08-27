@@ -5,7 +5,7 @@ define('forum/categoryTagsTools', ['composer/tags', 'topicSelect', 'components']
     var categoryTagsTools = {};
     console.log('categoryTagsTools enter....');
 
-    function openModal(cid, tids) {
+    function openModal(data, tids) {
       app.parseAndTranslate('modals/add-tags', {}, function (html) {
         var modal = bootbox.dialog({
           size: 'large',
@@ -26,7 +26,6 @@ define('forum/categoryTagsTools', ['composer/tags', 'topicSelect', 'components']
                 var tags = modal.find('.tags').tagsinput('items');
 
                 socket.emit('plugins.v2mm.addTagsToTopics', {
-                    cid: cid,
                     tids: tids,
                     tags: tags
                 }, function (err) {
@@ -37,27 +36,35 @@ define('forum/categoryTagsTools', ['composer/tags', 'topicSelect', 'components']
                   //close dropdown;
                   $('.thread-tools.open').find('.dropdown-toggle').trigger('click');
 
+                  if (data.tid) {
+                    ajaxify.refresh();
+                  }
+
                 });
               }
             }
           }
         });
 
-        ComposerTags.init(modal, {cid: cid});
+        ComposerTags.init(modal, data);
       });
     }
 
-    categoryTagsTools.init = function (cid) {
-        console.log('categoryTagsTools init....');
-        components.get('topic/add-tags').on('click', function () {
-            var tids = topicSelect.getSelectedTids();
-            if (cid && tids.length) {
-               app.loadJQueryUI(function () {
-                   openModal(cid, tids);
-               });
-            }
-            return false;
-        });
-    };
+    function handler () {
+      var tids;
+      if (ajaxify.data.tid) {
+         tids = [ajaxify.data.tid];
+      } else {
+         tids = topicSelect.getSelectedTids();
+      }
+      if (tids.length) {
+         app.loadJQueryUI(function () {
+             openModal(ajaxify.data, tids);
+         });
+      }
+      return false;
+    }
+        // $(document).off('click', '[component="topic/add-tags"]', handler);
+    $(document).on('click', '[component="topic/add-tags"]', handler);
     return categoryTagsTools;
 });
