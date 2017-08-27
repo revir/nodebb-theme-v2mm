@@ -165,11 +165,8 @@ $('document').ready(function() {
 
 	$('body').on('click', 'a.topic-title.external-link', function () {
 		$(this).closest('li.unread').removeClass('unread');
-		socket.emit('plugins.v2mm.goExternal', {
-		    tid: $(this).data('tid')
-		}, function (err) {
-		  if (err) return app.alertError(err.message);
-		});
+		var tid = $(this).data('tid');
+		$.post('/api/v2mm/topic/'+tid+'/view');
 	});
 
 	$(window).on('action:profile.update', function (evt, userData) {
