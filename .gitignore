@@ -1,0 +1,22 @@
+npm-debug.log
+node_modules/
+sftp-config.json
+config.json
+public/src/nodebb.min.js
+public/config.json
+public/css/*.css
+*.sublime-project
+*.sublime-workspace
+.project
+.idea
+*.swp
+Vagrantfile
+.vagrant
+provision.sh
+*.komodoproject
+
+feeds/recent.rss
+
+# winston?
+error.log
+events.log

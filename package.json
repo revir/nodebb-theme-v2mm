@@ -20,12 +20,12 @@
   "main": "theme.less",
   "name": "nodebb-theme-v2mm",
   "nbbpm": {
-    "compatibility": "^1.0.0"
+    "compatibility": "^1.4.4"
   },
   "optionalDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NodeBB/nodebb-theme-v2mm.git"
   },
-  "version": "1.0.0"
+  "version": "2.1.0"
 }

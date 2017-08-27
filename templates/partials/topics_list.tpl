@@ -87,7 +87,6 @@
 								<!-- ENDIF topics.unreplied -->
 							</div>
 
-
 						</div>
 					</div>
 				</div>

@@ -66,7 +66,6 @@
 											</span>
 										</span>
 
-
 										<span component="post/editor" class="<!-- IF !posts.editor.username --> hidden<!-- ENDIF !posts.editor.username -->">, [[global:last_edited_by, {posts.editor.username}]] <span class="timeago small text-muted" title="{posts.editedISO}"></span></span>
 
 									</small>
@@ -122,8 +121,6 @@
 			</li>
 		<!-- END posts -->
 	</ul>
-
-
 
 	<!-- IF config.usePagination -->
 		<!-- IMPORT partials/paginator.tpl -->

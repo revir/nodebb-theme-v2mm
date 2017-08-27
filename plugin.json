@@ -18,6 +18,9 @@
 			"hook": "filter:config.get", "method": "getConfig"
 		}
 	],
+	"staticDirs": {
+		"vendor": "static/vendor"
+	},
 	"scripts": [
 		"static/lib/lavender.js",
 		"static/vendor/masonry.js",
