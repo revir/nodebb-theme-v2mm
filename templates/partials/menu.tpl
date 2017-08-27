@@ -21,9 +21,9 @@
 
                 <div class="post-wrapper visible-xs-block pull-right">
                     <!-- IF config.loggedIn -->
-                    <button class="btn btn-success new_topic">[[category:new_topic_button]]</button>
+                    <button class="btn btn-default new_topic">[[category:new_topic_button]]</button>
                     <!-- ELSE -->
-                    <a component="category/post/guest" href="{config.relative_path}/login" rel="nofollow" class="btn btn-success">[[category:guest-login-post]]</a>
+                    <a component="category/post/guest" href="{config.relative_path}/login" rel="nofollow" class="btn btn-default">[[category:guest-login-post]]</a>
                     <!-- ENDIF config.loggedIn -->
                 </div>
 
