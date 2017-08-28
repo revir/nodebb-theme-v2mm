@@ -156,13 +156,23 @@ $('document').ready(function() {
 		app.newTopic();
 	});
 
-	$('body').on('click', '.directly-open-chat', function () {
-		var roomId = $(this).data('roomid');
-		if (!ajaxify.currentPage.match(/^chats\//)) {
-			app.openChat(roomId);
-		} else {
-			ajaxify.go('user/' + app.user.userslug + '/chats/' + roomId);
-		}
+	$('body').on('click', '.chat-actions', function () {
+		var $el = $(this);
+		require(['forum/chats'], function(Chats) {
+			var roomId = $el.data('roomid') || $el.closest('li').data('roomid');
+			if ($el.hasClass('directly-open-chat')) {
+				if (!ajaxify.currentPage.match(/^chats\//)) {
+					app.openChat(roomId);
+				} else {
+					ajaxify.go('user/' + app.user.userslug + '/chats/' + roomId);
+				}
+			} else if ($el.hasClass('switch-room')){
+				Chats.switchChat(roomId);
+			} else if ($el.hasClass('leave-room')) {
+				Chats.leave($el.closest('li'));
+			}
+		});
+		return false;
 	});
 
 	$('body').on('click', 'a.topic-title.external-link', function () {
