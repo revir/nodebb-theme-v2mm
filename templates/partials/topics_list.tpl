@@ -45,13 +45,12 @@
 								</span>
 								<!-- END topics.labels -->
 
+								<!-- IF topics.noAnchor -->
+								<a component="topic/header" itemprop="url" class="topic-title">{topics.title}</a>
+								<br />
+
+								<!-- ELSE -->
 									<!-- IF topics.externalLink -->
-										<!-- IF topics.noAnchor -->
-										<a component="topic/header" itemprop="url" class="topic-title">{topics.title}</a>
-										<br />
-
-										<!-- ELSE -->
-
 										<a component="topic/header" href="{topics.externalLink}" rel="nofollow" target="_blank" itemprop="url" class="topic-title external-link" data-tid="{topics.tid}">
 											<i class="fa fa-external-link"></i>
 											{topics.title}
@@ -61,19 +60,13 @@
 											<i class="fa fa-arrow-right" aria-hidden="true"></i>
 										</a>
 										<br />
-										<!-- ENDIF topics.noAnchor -->
 
 									<!-- ELSE -->
-
-										<!-- IF topics.noAnchor -->
-										<a component="topic/header" itemprop="url" class="topic-title">{topics.title}</a>
-										<br />
-										<!-- ELSE -->
 										<a component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a>
 										<br />
-										<!-- ENDIF topics.noAnchor -->
-
 									<!-- ENDIF topics.externalLink -->
+								<!-- ENDIF topics.noAnchor -->
+
 									<small>
 									<a class="topic-category-name" href="{config.relative_path}/category/{topics.category.slug}">
 									{topics.category.name}</a>
