@@ -25,6 +25,11 @@
 			user: JSON.parse('{{userJSON}}')
 		};
 	</script>
+	<script src="{relative_path}/assets/nodebb.min.js?{config.cache-buster}"></script>
+
+	<!-- BEGIN scripts -->
+	<script type="text/javascript" src="{scripts.src}"></script>
+	<!-- END scripts -->
 
 	<!-- IF useCustomJS -->
 	{{customJS}}
