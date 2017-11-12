@@ -26,7 +26,7 @@
 			user: JSON.parse('{{userJSON}}')
 		};
 	</script>
-	<!-- <script src="{relative_path}/assets/nodebb.min.js?{config.cache-buster}"></script> -->
+	<script src="{relative_path}/assets/nodebb.min.js?{config.cache-buster}"></script>
 	<script src="{relative_path}/plugins/nodebb-theme-v2mm/lib/needsharebutton.js"></script>
 
 	<!-- IF useCustomHTML -->
