@@ -167,7 +167,7 @@ $('document').ready(function() {
 					ajaxify.go('user/' + app.user.userslug + '/chats/' + roomId);
 				}
 			} else if ($el.hasClass('switch-room')){
-				Chats.switchChat(roomId);
+				ajaxify.go('user/' + app.user.userslug + '/chats/' + roomId);
 			} else if ($el.hasClass('leave-room')) {
 				Chats.leave($el.closest('li'));
 			}
