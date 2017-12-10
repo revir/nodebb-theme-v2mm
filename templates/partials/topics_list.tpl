@@ -30,7 +30,7 @@
 								<strong>
 								<i component="topic/pinned" class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i>
 								<i component="topic/locked" class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i>
-								
+
 								<i class="fa fa-bar-chart-o<!-- IF !topics.pollId --> hide<!-- ENDIF !topics.pollId -->"></i>
 
 								</strong>
@@ -45,6 +45,11 @@
 								</span>
 								<!-- END topics.labels -->
 
+								<!-- IF topics.noAnchor -->
+								<a component="topic/header" itemprop="url" class="topic-title">{topics.title}</a>
+								<br />
+
+								<!-- ELSE -->
 									<!-- IF topics.externalLink -->
 										<a component="topic/header" href="{topics.externalLink}" rel="nofollow" target="_blank" itemprop="url" class="topic-title external-link" data-tid="{topics.tid}">
 											<i class="fa fa-external-link"></i>
@@ -54,20 +59,14 @@
 										<a component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">
 											<i class="fa fa-arrow-right" aria-hidden="true"></i>
 										</a>
-
 										<br />
-									<!-- ELSE -->
 
-										<!-- IF !topics.noAnchor -->
+									<!-- ELSE -->
 										<a component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a>
 										<br />
-										<!-- ELSE -->
-										<a component="topic/header" itemprop="url" class="topic-title">{topics.title}</a>
-
-										<br />
-										<!-- ENDIF !topics.noAnchor -->
-
 									<!-- ENDIF topics.externalLink -->
+								<!-- ENDIF topics.noAnchor -->
+
 									<small>
 									<a class="topic-category-name" href="{config.relative_path}/category/{topics.category.slug}">
 									{topics.category.name}</a>

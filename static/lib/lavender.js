@@ -12,7 +12,8 @@ $('document').ready(function() {
 					itemSelector: '.category-item',
 					columnWidth: '.category-item:not(.col-lg-12)',
 					transitionDuration: 0,
-					isInitLayout: false
+					isInitLayout: false,
+					isOriginLeft: $('html').attr('data-dir') === 'ltr',
 				});
 
 				$('.row.categories > div p img').imagesLoaded(function() {
@@ -138,46 +139,46 @@ $('document').ready(function() {
 		}
 	});
 
-	$(window).on('action:widgets.loaded', function(){
-		if (ajaxify && ajaxify.data.isCustom) {
-			$('[widget-area="sidebar"]').hide();
-			var cls = $('[no-widget-target="sidebar"]').attr('no-widget-class');
-			$('[no-widget-target="sidebar"]').attr('class', '');
-			$('[no-widget-target="sidebar"]').attr('class', cls);
-		}
-	});
-
 	$(window).on('action:topic.loaded', function(evt, data) {
 		if (data.postcount > 2) {
 			$('.post-bar.hidden').removeClass('hidden');
 		}
 		$('.navbar-header .post-wrapper').removeClass('visible-xs-block').hide();
 
-		require(['forum/topicLabelsTool'], function (topicLabelsTool) {
-			topicLabelsTool.init();
-		});
+		if (app.user && (app.user.isAdmin || app.user.isGlobalMod || app.user.isMod)) {
+			require(['forum/categoryTagsTools']);
+
+			require(['forum/topicLabelsTool']);
+		}
 	});
 
 	$('body').on('click', '.btn.new_topic', function () {
 		app.newTopic();
 	});
 
-	$('body').on('click', '.directly-open-chat', function () {
-		var roomId = $(this).data('roomid');
-		if (!ajaxify.currentPage.match(/^chats\//)) {
-			app.openChat(roomId);
-		} else {
-			ajaxify.go('user/' + app.user.userslug + '/chats/' + roomId);
-		}
+	$('body').on('click', '.chat-actions', function () {
+		var $el = $(this);
+		require(['forum/chats'], function(Chats) {
+			var roomId = $el.data('roomid') || $el.closest('li').data('roomid');
+			if ($el.hasClass('directly-open-chat')) {
+				if (!ajaxify.currentPage.match(/^chats\//)) {
+					app.openChat(roomId);
+				} else {
+					ajaxify.go('user/' + app.user.userslug + '/chats/' + roomId);
+				}
+			} else if ($el.hasClass('switch-room')){
+				ajaxify.go('user/' + app.user.userslug + '/chats/' + roomId);
+			} else if ($el.hasClass('leave-room')) {
+				Chats.leave($el.closest('li'));
+			}
+		});
+		return false;
 	});
 
 	$('body').on('click', 'a.topic-title.external-link', function () {
 		$(this).closest('li.unread').removeClass('unread');
-		socket.emit('plugins.v2mm.goExternal', {
-		    tid: $(this).data('tid')
-		}, function (err) {
-		  if (err) return app.alertError(err.message);
-		});
+		var tid = $(this).data('tid');
+		$.post('/api/v2mm/topic/'+tid+'/view');
 	});
 
 	$(window).on('action:profile.update', function (evt, userData) {
@@ -197,12 +198,12 @@ $('document').ready(function() {
 	});
 
 	$(window).on('action:category.loaded', function (evt, obj) {
-		require(['forum/categoryTagsTools'], function (categoryTagsTools) {
-			categoryTagsTools.init(obj.cid);
-		});
-		require(['forum/topicLabelsTool'], function (topicLabelsTool) {
-			topicLabelsTool.init();
-		});
+		if (obj && obj.cid) {
+			if (app.user && (app.user.isAdmin || app.user.isGlobalMod || app.user.isMod)) {
+				require(['forum/categoryTagsTools']);
+				require(['forum/topicLabelsTool']);
+			}
+		}
 	});
 
 	$(window).on('action:app.load', function (evt) {
@@ -217,7 +218,7 @@ $('document').ready(function() {
 							$('#dropdown-categories').parent().addClass("open");
 						}
 					}, 200);
-					
+
 				});
 				$('#dropdown-categories').parent().mouseleave(function () {
 					setTimeout(function () {

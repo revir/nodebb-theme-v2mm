@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="{function.localeToHTML, defaultLang}" <!-- IF languageDirection -->data-dir="{languageDirection}" style="direction: {languageDirection};" <!-- ENDIF languageDirection -->>
 <head>
 	<title>{browserTitle}</title>
 	<!-- BEGIN metaTags -->
 	{function.buildMetaTag}
 	<!-- END metaTags -->
-	<link rel="stylesheet" type="text/css" href="{relative_path}/stylesheet.css?{config.cache-buster}" />
-	<link rel="stylesheet" type="text/css" href="/plugins/nodebb-theme-v2mm/css/needsharebutton.css" />
+	<link rel="stylesheet" type="text/css" href="{relative_path}/assets/stylesheet.css?{config.cache-buster}" />
+	<link rel="stylesheet" type="text/css" href="{relative_path}/plugins/nodebb-theme-v2mm/css/needsharebutton.css" />
 	<!-- BEGIN linkTags -->
 	{function.buildLinkTag}
 	<!-- END linkTags -->
@@ -26,15 +26,15 @@
 			user: JSON.parse('{{userJSON}}')
 		};
 	</script>
-	<script src="{relative_path}/nodebb.min.js?{config.cache-buster}"></script>
-	<script src="/plugins/nodebb-theme-v2mm/lib/needsharebutton.js"></script>
+	<script src="{relative_path}/assets/nodebb.min.js?{config.cache-buster}"></script>
+	<script src="{relative_path}/plugins/nodebb-theme-v2mm/lib/needsharebutton.js"></script>
 
-	<!-- IF useCustomJS -->
-	{{customJS}}
-	<!-- ENDIF useCustomJS -->
+	<!-- IF useCustomHTML -->
+	{{customHTML}}
+	<!-- END -->
 	<!-- IF useCustomCSS -->
 	<style type="text/css">{{customCSS}}</style>
-	<!-- ENDIF useCustomCSS -->
+	<!-- END -->
 
 </head>
 

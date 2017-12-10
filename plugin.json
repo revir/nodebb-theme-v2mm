@@ -54,6 +54,11 @@
 			"hook": "filter:user.updateProfile", "method": "editUserProfile"
 		}
 	],
+	"staticDirs": {
+		"vendor": "static/vendor",
+		"css": "public/css",
+		"lib": "public/lib"
+	},
 	"scripts": [
 		"static/lib/lavender.js",
 		"static/lib/infinitescroll.js",
@@ -62,10 +67,6 @@
 		"static/vendor/masonry.js",
 		"static/vendor/imagesLoaded.js"
 	],
-	"staticDirs": {
-		"css": "public/css",
-		"lib": "public/lib"
-	},
 	"acpScripts": [
 		"static/lib/admin.js"
 	],

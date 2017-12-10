@@ -60,9 +60,9 @@
 										<!-- IF @first -->
 										<h1 class="topic-title">
 											<p component="post/header" class="topic-title" itemprop="name">
-											<i class="fa fa-thumb-tack <!-- IF !pinned -->hidden<!-- ENDIF !pinned -->"></i> 
+											<i class="fa fa-thumb-tack <!-- IF !pinned -->hidden<!-- ENDIF !pinned -->"></i>
 											<i class="fa fa-lock <!-- IF !locked -->hidden<!-- ENDIF !locked -->"></i>
-											
+
 											<!-- BEGIN labels -->
 											<span
 											class="label topic-label"
@@ -72,7 +72,7 @@
 											{labels.value}
 											</span>
 											<!-- END labels -->
-											
+
 											<!-- IF externalLink -->
 											<a href="{externalLink}" rel="nofollow" target="_blank" itemprop="url" class="topic-title external-link" data-tid="{tid}">
 											<i class="fa fa-external-link"></i>
@@ -85,7 +85,7 @@
 											<!-- ENDIF externalLink -->
 
 											</p>
-	
+
 											<hr/>
 										</h1>
 										<!-- ENDIF @first -->
@@ -113,7 +113,6 @@
 												<!-- ENDIF posts.user.uid -->
 											</span>
 										</span>
-
 
 										<span component="post/editor" class="hidden-xs hidden-sm text-muted <!-- IF !posts.editor.username --> hidden<!-- ENDIF !posts.editor.username -->">, [[global:last_edited_by, {posts.editor.username}]] <span class="timeago small text-muted" title="{posts.editedISO}"></span></span>
 
