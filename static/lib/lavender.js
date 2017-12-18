@@ -109,10 +109,12 @@ $('document').ready(function() {
 
 	var loadingBar = $('.loading-bar');
 	var ajaxifyingEffect = $('.ajaxifying-effect');
+	var oldColor = $("body").css('backgroundColor');
 
 	$(window).on('action:ajaxify.start', function(data) {
 		loadingBar.fadeIn(0).removeClass('reset');
 		ajaxifyingEffect.removeClass('hidden');
+		$("body").css('backgroundColor', '#303333');
 
 		$('.navbar-header .post-wrapper').addClass('visible-xs-block').show();
 	});
@@ -124,6 +126,8 @@ $('document').ready(function() {
 	$(window).on('action:ajaxify.contentLoaded', function() {
 		loadingBar.css('width', '100%');
 		ajaxifyingEffect.addClass('hidden');
+		$("body").css('backgroundColor', oldColor);
+
 		setTimeout(function() {
 			loadingBar.fadeOut(250);
 
