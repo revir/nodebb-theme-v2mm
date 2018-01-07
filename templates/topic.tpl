@@ -58,6 +58,11 @@
 									</div>
 									<div class="topic-text">
 										<!-- IF @first -->
+										<!-- IF privileges.isAdminOrMod -->
+										<button component="post/edit" class="btn btn-default btn-sm pull-right" type="button">
+											<span class="hidden-xs"> [[topic:edit]]</span>
+										</button>
+										<!-- END -->
 										<h1 class="topic-title">
 											<p component="post/header" class="topic-title" itemprop="name">
 											<i class="fa fa-thumb-tack <!-- IF !pinned -->hidden<!-- ENDIF !pinned -->"></i>
@@ -208,4 +213,3 @@
 	<!-- IMPORT partials/paginator.tpl -->
 </noscript>
 <!-- ENDIF !config.usePagination -->
-
