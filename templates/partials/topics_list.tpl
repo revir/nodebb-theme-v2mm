@@ -112,7 +112,7 @@
 						</div>
 
 
-						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+						<div class="col-xs-2 replies hidden-sm hidden-xs">
 							<div class="card" style="border-color: {topics.category.bgColor}">
 								<!-- IF topics.unreplied -->
 								<p>
