@@ -37,7 +37,7 @@
                     <li class="{navigation.class}">
                         <a href="{navigation.route}" title="{navigation.title}" id="{navigation.id}"<!-- IF navigation.properties.targetBlank --> target="_blank"<!-- ENDIF navigation.properties.targetBlank -->>
                             <!-- IF navigation.iconClass -->
-                            <i class="fa fa-fw {navigation.iconClass}"></i>
+                            <i class="fa fa-fw {navigation.iconClass}" data-content="{navigation.content}"></i>
                             <!-- ENDIF navigation.iconClass -->
 
                             <!-- IF navigation.text -->
