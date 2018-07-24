@@ -36,6 +36,9 @@
 			"hook": "action:topic.purge", "method": "onPurgeTopic"
 		},
 		{
+			"hook": "action:topic.pin", "method": "onPinTopic"
+		},
+		{
 			"hook": "filter:category.topics.get", "method": "filterCategoryTopics"
 		},
 		{
